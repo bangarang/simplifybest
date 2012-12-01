@@ -13,7 +13,7 @@
  *= require_tree .
  */
 
-
+body { background: #fafafa; }
 .copyright {
 	background: #272727;
 	padding-top: 20px !important;

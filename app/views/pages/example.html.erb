@@ -1,35 +1,37 @@
 <style>
   table { border: none; }
   .top-bar { margin: 0; }
-  .title h1 { color: #fff; text-align: right; text-shadow: rgba(0, 0, 0, 0.4) 0 1px 2px; margin:0; margin-left:-30px;margin-right:-30px; padding:5px 30px; font-size: 70px; }
-  body { background: url('assets/paper.png') repeat; }
-  .prodnav { z-index: 10; background: #fff; }
-  .prodnav li { list-style: none; float: left; padding: 5px;}
+  .title h1 { color: #d00; text-align: right; text-shadow: rgba(0, 0, 0, 0.4) 0 1px 2px; margin:0; margin-left:-30px;margin-right:-30px; padding:5px 30px; font-size: 70px; }
+  .prodnav { z-index: 100; background: #d00; }
+  .prodnav ul { background: #d00; }
+  .prodnav li { list-style: none; float: left; padding: 5px; background: #d00;}
   .prodnav a { color: black; }
   .prodnav a:hover { color:#d00; }
   .active { color:red; }
 
+  .sect { border-bottom: solid #999 thin; }
   .orbit-bullets li.has-thumb { width: 100px; height: 75px; }
+
 </style>
 <div class="wrapper"></div>
 <div class="row title homepage">
   <h1>TASKalfa 3050ci</h1>
-  <h3 class="lead">30 ppm Color Multifunctional 12 x 18 Unit </h3>
-</div>
-<div class="row">
-  <ul class="prodnav twelve" data-magellan-expedition>
-    <li>Jump to:</li>
-    <li data-magellan-arrival='overview'><a href="#overview">Overview</a></li>
-    <li data-magellan-arrival='gallery'><a href="#gallery">Gallery</a></li>
-    <li data-magellan-arrival='specifications'>Specifications</li>
-    <li data-magellan-arrival='accessories'>Accessories</li>
-    <li data-magellan-arrival='downloads'>Downloads</li>
-  </ul>
+  <h3 class="subheader right">30 ppm Color Multifunctional 12 x 18 Unit </h3>
 </div>
 
 <div class="box">
-  <div class="row" data-magellan-destination='overview' id="overview">
-    <h3>Overview</h3>
+  <div class="row prodnav">
+    <ul class="twelve columns" data-magellan-expedition="fixed">
+      <li>Jump to:</li>
+      <li data-magellan-arrival='overview'><a href="#overview">Overview</a></li>
+      <li data-magellan-arrival='gallery'><a href="#gallery">Gallery</a></li>
+      <li data-magellan-arrival='specifications'>Specifications</li>
+      <li data-magellan-arrival='accessories'>Accessories</li>
+      <li data-magellan-arrival='downloads'>Downloads</li>
+    </ul>
+  </div>
+
+  <div class="row sect" data-magellan-destination='overview' id="overview">
     <div class="four columns">
       <img src="/assets/TASKalfa3050ci/02.jpg" />
     </div>
@@ -38,9 +40,8 @@
       <p>Kyocera’s award-winning ultra-reliability and unique long-life technology ensure superior performance, proven productivity and maximum efficiency. When it comes to document imaging innovation and quality you can rely on, the TASKalfa 3050ci delivers.</p>
     </div>
   </div>
-</div>
-<div class="box">
-  <div class="row" data-magellan-destination='gallery' id="gallery">
+
+  <div class="row sect" data-magellan-destination='gallery' id="gallery">
     <h3>Gallery</h3>
     <div class="twelve columns">
       <ul class="block-grid eight-up mobile-two-up" data-clearing>
@@ -63,10 +64,8 @@
       </ul>
     </div>
   </div>
-</div>
 
-<div class="box">
-  <div class="row" data-magellan-destination='specifications'>
+  <div class="row sect" data-magellan-destination='specifications'>
     <h3>Specifications</h3>
       <dl class="tabs contained four-up">
         <dd class="active"><a href="#general">General Specifications</a></dd>
@@ -253,12 +252,8 @@
         </li>
       </ul>
   </div>
-</div>
 
-<div class="box">
-  <div class="row">
-
-    
+  <div class="row sect">
     <div class="six columns">
       <h4 data-magellan-destination='accessories'>Accessories</h4>
       <table style="width: 100%;"> 
@@ -389,15 +384,15 @@
             <td>15K Yield</td>
           </tr>
           <tr>
-            <td>Maintenance Kit <br />( Drum, Developer(K), Transfer Unit )</td>
+            <td>Maintenance Kit: <br />Drum, Developer (K), Transfer Unit</td>
             <td>600K Yield</td>
           </tr>
           <tr>
-            <td>Maintenance Kit <br />( 3x Drums, Developers(CMY) )</td>
+            <td>Maintenance Kit: <br />3x Drums, Developers(CMY)</td>
             <td>600K Yield</td>
           </tr>
           <tr>
-            <td>Maintenance Kit <br />( Fuser Unit )</td>
+            <td>Maintenance Kit: <br />Fuser Unit</td>
             <td>300K Yield</td>
           </tr>
           <tr>
@@ -408,11 +403,8 @@
       </table>
     </div>
   </div>
-</div>
 
-<div class="box">
-  <div class="row">
-
+  <div class="row sect">
     <div class="twelve columns" data-magellan-destination='downloads'>
       <h3>Downloads</h3>
       <table style="width: 100%;"> 
