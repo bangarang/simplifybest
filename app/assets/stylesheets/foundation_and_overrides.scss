@@ -96,7 +96,7 @@ $mainColor: #d00;
 // Top Bar Settings
 
 // $topBarBgColor: #d00;
-// $topBarHeight: 75px;
+$topBarHeight: 45px;
 // $topBarHeightMobile: 45px;
 // $topBarBtmMargin: 30px;
 // $topBarTitleWeight: bold;
@@ -261,4 +261,6 @@ ul.block-grid[data-clearing] { overflow: visible; }
     }
 }
 
-body { background: url('/assets/paper.png') ; }
+body { background: #eee ; }
+
+dl.sub-nav { margin: 0; }

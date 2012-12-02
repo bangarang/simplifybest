@@ -2,7 +2,7 @@ Simplifybest::Application.routes.draw do
   root :to => 'pages#home'
 
   match 'about' => 'pages#about'
-  match 'productexample' => 'pages#example'
+  match 'taskalfa3050ci' => 'pages#taskalfa3050ci'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
