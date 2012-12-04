@@ -3,6 +3,7 @@ Simplifybest::Application.routes.draw do
 
   match 'about' => 'pages#about'
   match 'taskalfa3050ci' => 'pages#taskalfa3050ci'
+  match 'taskalfa3550ci' => 'pages#taskalfa3550ci'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
