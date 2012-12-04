@@ -1,9 +1,13 @@
-<% provide(:title, 'Example Product') %>
+<% provide(:title, 'TASKalfa 3050ci') %>
 
 <style>
   table { border: none; }
   .top-bar { margin: 0; }
   .title h1 { color: #d00; text-shadow: rgba(0, 0, 0, 0.4) 0 1px 2px; margin:0; margin-left:-30px;margin-right:-30px; padding:5px 30px; font-size: 70px; }
+
+  h3.title { color: white;background: rgba(221, 0, 0, 0.9);text-shadow: rgba(0, 0, 0, 0.9) 0 1px 2px;margin: 10px -30px 10px 0;padding: 5px 30px;font-size: 40px;text-transform: uppercase; }
+
+  h4.title { color: #d00; }
   .prodnav { z-index: 1; background: white; width:1060px;}
   p.name { color: #d00; margin:0; padding:5px; font-size: 14px; }
   /*dl.sub-nav { float:right; }*/
@@ -11,7 +15,13 @@
   .orbit-bullets li.has-thumb { width: 100px; height: 75px; }
   .sub-nav { width: 100%; }
 
-  @media only screen and (max-width: 767px) { .prodnav { width:100%; }  }
+  #gallery { background: url('/assets/linen.png') repeat; padding: 10px 0; }
+  #accessories { background: url('/assets/linen.png') repeat; padding: 10px 0; }
+  .titlec { margin:0;}
+  .block-grid.eight-up > li { height: 80px; overflow: hidden; padding:1px;}
+
+  .specs { padding: 0 30px; }
+  @media only screen and (max-width: 767px) { .specs { padding:0; }  }
 </style>
 <div class="wrapper"></div>
 <div class="row title homepage">
@@ -20,34 +30,35 @@
 </div>
 
 <div class="box">
-  <div class="row prodnav" data-magellan-expedition="fixed">
+  <div class="row prodnav">
     <div class="twelve columns">
       <dl class="sub-nav right">
         <dt>TASKalfa 3050ci Navigation:</dt>
-        <dd data-magellan-arrival='overview'><a href="#overview">Overview</a></dd>
-        <dd data-magellan-arrival='gallery'><a href="#gallery">Gallery</a></dd>
-        <dd data-magellan-arrival='specifications'><a href="#specifications">Specifications</a></dd>
-        <dd data-magellan-arrival='accessories'><a href="#accessories">Accessories</a></dd>
-        <dd data-magellan-arrival='downloads'><a href="#downloads">Downloads</a></dd>
+        <dd><a href="#overview">Overview</a></dd>
+        <dd><a href="#gallery">Gallery</a></dd>
+        <dd><a href="#specifications">Specifications</a></dd>
+        <dd><a href="#accessories">Accessories</a></dd>
+        <dd><a href="#downloads">Downloads</a></dd>
       </dl>
     </div>
   </div>
 
 
-  <div class="row" data-magellan-destination='overview' id="overview">
+  <div class="row" id="overview">
+    <div class="twelve columns"><h3 class="title right">Overview</h3></div>
     <div class="four columns">
-      <img src="/assets/TASKalfa3050ci/02.jpg" />
-    </div>
+        <img src="assets/TASKalfa3050ci/02.jpg">
+      </div>
     <div class="eight columns">
       <p>Created to provide superior functionality to meet the full range of your day-to-day document imaging needs, the TASKalfa 3050ci incorporates robust productivity at 30 ppm black and color, flexible configurations and vibrant image quality. Spectacular color technology and professional finishing options offer you the ability to reduce outsourcing costs by keeping shorter runs of production-quality printed pieces in-house, while an EFI Fiery® Controller option enables you to incorporate the highest level of color output you may require for those special projects. Integrated business applications provide the added power and capabilities to help simplify your document workflow.</p>
       <p>Kyocera’s award-winning ultra-reliability and unique long-life technology ensure superior performance, proven productivity and maximum efficiency. When it comes to document imaging innovation and quality you can rely on, the TASKalfa 3050ci delivers.</p>
     </div>
   </div>
 
-  <div class="row" data-magellan-destination='gallery' id="gallery">
-    <h3>Gallery</h3>
-    <div class="twelve columns">
-      <ul class="block-grid eight-up mobile-two-up" data-clearing>
+  <div class="row" id="gallery">
+    <div class="twelve columns"><h3 class="title right">Gallery</h3></div>
+    <div class="twelve columns"> 
+      <ul class='block-grid eight-up' data-clearing>
         <li><img src="assets/TASKalfa3050ci/00.jpg"></li>
         <li><img src="assets/TASKalfa3050ci/01.jpg"></li>
         <li><img src="assets/TASKalfa3050ci/03.jpg"></li>
@@ -68,8 +79,9 @@
     </div>
   </div>
 
-  <div class="row" data-magellan-destination='specifications' id='specifications'>
-    <h3>Specifications</h3>
+  <div class="row" id='specifications'>
+    <div class="twelve columns"><h3 class="title right">Specifications</h3></div>
+    <div class="twelve columns specs">
       <dl class="tabs contained four-up">
         <dd class="active"><a href="#general">General Specifications</a></dd>
         <dd><a href="#papersupply">Paper Supply</a></dd>
@@ -254,13 +266,17 @@
             </table>
         </li>
       </ul>
+    </div>
   </div>
 
-  <div class="row" data-magellan-destination='accessories' id='accessories'>
+  <div class="row" id='accessories'>
+    <div class="twelve columns"><h3 class="title right">Accessories</h3></div>
     <div class="six columns">
-      <h4>Accessories</h4>
       <table style="width: 100%;"> 
         <tbody>
+          <tr>
+            <td><h4 class="title">Accessories</h4></td>
+          </tr>
           <tr>
             <td><b>DP-771</b></td>
             <td>175 Sheet Dual Scan Document Processor</td>
@@ -361,15 +377,11 @@
     </div>
     
     <div class="six columns">
-      <h4>Supply Items</h4>
       <table style="width: 100%;"> 
-        <thead>
-          <tr>
-            <th>Description</th>
-            <th>Print Yield</th>
-          </tr>
-        </thead>
         <tbody>
+          <tr>
+            <td><h4 class="title">Supply Items</h4></td>
+          </tr>
           <tr>
             <td>Black Toner</td>
             <td>25K Yield</td>
@@ -407,9 +419,9 @@
     </div>
   </div>
 
-  <div class="row" data-magellan-destination='downloads' id='downloads'>
+  <div class="row" id='downloads'>
+    <div class="twelve columns"><h3 class="title right">Downloads</h3></div>
     <div class="twelve columns">
-      <h3>Downloads</h3>
       <table style="width: 100%;"> 
         <tbody>
           <tr>
