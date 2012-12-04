@@ -268,3 +268,5 @@ dl.sub-nav { margin: 0; }
 table { border: none; }
 
 .block-grid.eight-up > li { height: 80px; overflow: hidden; padding:1px;}
+
+ul[data-clearing] li { cursor: pointer; }

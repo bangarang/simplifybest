@@ -4,6 +4,11 @@ Simplifybest::Application.routes.draw do
   match 'about' => 'pages#about'
   match 'taskalfa3050ci' => 'pages#taskalfa3050ci'
   match 'taskalfa3550ci' => 'pages#taskalfa3550ci'
+  match 'taskalfa4550ci' => 'pages#taskalfa4550ci'
+  match 'taskalfa5550ci' => 'pages#taskalfa5550ci'
+  match 'taskalfa6550ci' => 'pages#taskalfa6550ci'
+  match 'taskalfa7550ci' => 'pages#taskalfa7550ci'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
