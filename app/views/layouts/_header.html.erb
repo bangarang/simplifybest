@@ -1,7 +1,6 @@
 <nav class="top-bar contain-to-grid">
   <ul>
     <li class="name"><h1><%= link_to'Simplified Office Solutions', root_path %></h1></li>
-    <!-- <li><img src="/assets/logo.t.png" width="120px" /></li> -->
     <li class="toggle-topbar"><a href="#"></a></li>
   </ul>
   <section>
@@ -10,6 +9,10 @@
        <li class="has-dropdown">
         <a class="active" href="#">Products</a>
         <ul class="dropdown">
+          <li><label>B&W MFP</label></li>
+          <li><%= link_to 'TASKalfa 3500i', taskalfa3500i_path %></li>
+          <li><%= link_to 'TASKalfa 4500i', taskalfa4500i_path %></li>
+          <li><%= link_to 'TASKalfa 5500i', taskalfa5500i_path %></li>
           <li><label>Color MFP</label></li>
           <li><%= link_to 'TASKalfa 3050ci', taskalfa3050ci_path %></li>
           <li><%= link_to 'TASKalfa 3550ci', taskalfa3550ci_path %></li>
