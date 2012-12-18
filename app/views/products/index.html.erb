@@ -6,14 +6,12 @@
         <th>Image</th>
         <th>Name</th>
         <th>Excerpt</th>
-        <th>Description</th>
       </tr>
       <% for product in @products %>
         <tr>
           <td><%= image_tag product.image_url(:thumb).to_s if product.image? %></td>
           <td><%= link_to product.name, product %></td>
           <td><%= product.excerpt %></td>
-          <td><%= product.description %></td>
         </tr>
       <% end %>
     </table>
