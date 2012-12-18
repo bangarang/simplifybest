@@ -5,8 +5,6 @@ gem 'newrelic_rpm'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'fog'
-gem 'carrierwave_direct'
-gem 'sidekiq'
 
 
 group :development, :test do
