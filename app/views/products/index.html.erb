@@ -1,18 +1,23 @@
 <% provide(:title, 'Products') %>
+<div class="box">
+  <div class="row">
+    <table>
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Excerpt</th>
+        <th>Description</th>
+      </tr>
+      <% for product in @products %>
+        <tr>
+          <td><%= image_tag product.image_url(:thumb).to_s if product.image? %></td>
+          <td><%= link_to product.name, product %></td>
+          <td><%= product.excerpt %></td>
+          <td><%= product.description %></td>
+        </tr>
+      <% end %>
+    </table>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Excerpt</th>
-    <th>Description</th>
-  </tr>
-  <% for product in @products %>
-    <tr>
-      <td><%= product.name %></td>
-      <td><%= product.excerpt %></td>
-      <td><%= product.description %></td>
-    </tr>
-  <% end %>
-</table>
-
-<p><%= link_to "New Product", new_product_path %></p>
+    <p><%= link_to "New Product", new_product_path %></p>
+  </div>
+</div>

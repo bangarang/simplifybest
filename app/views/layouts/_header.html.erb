@@ -7,7 +7,7 @@
 
     <ul class="right">
       <li class="has-dropdown">
-        <a class="active" href="#">Dynamic Products</a>
+        <%= link_to "Dynamic Products", products_path%>
         <ul class="dropdown">
           <% for product in @products %>
           <li><%= link_to product.name, product %></li>
