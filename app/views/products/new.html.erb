@@ -1,16 +1,26 @@
-<% provide(:title, 'TASKalfa 3050ci') %>
+<% provide(:title, "New Product!") %>
+<%= form_for @product, :html => {:multipart => true} do |f| %>
 
 <div class="wrapper"></div>
 <div class="row title homepage">
-  <h1 class="right">TASKalfa 3050ci</h1>
-  <h3 class="subheader right">30 ppm Color Multifunctional 12 x 18 Unit </h3>
+  <h1 class="right"><%= f.text_field :name, :placeholder => "Product Name" %></h1>
+</div>
+ <div class="row title homepage">
+  <h3 class="subheader right"><%= f.text_field :excerpt, :placeholder => "Product Excerpt" %></h3>
+</div>
+
+<div class="row">
+  <div class="right">
+    <%= link_to "Show", @product %> |
+    <%= link_to "View All", products_path %>
+  </div>
 </div>
 
 <div class="box">
   <div class="row prodnav">
     <div class="twelve columns">
       <dl class="sub-nav right">
-        <dt>TASKalfa 3050ci Navigation:</dt>
+        <dt><%= @product.name %> Navigation:</dt>
         <dd><a href="#overview">Overview</a></dd>
         <dd><a href="#gallery">Gallery</a></dd>
         <dd><a href="#specifications">Specifications</a></dd>
@@ -27,12 +37,12 @@
       <h3 class="title right">Overview</h3>
     </div>
     <div class="four columns mainimage">
-        <img src="assets/TASKalfa3050ci/02.jpg">
-      </div>
+      <%= f.file_field :image %><br />
+      or
+      <%= f.text_field :remote_image_url, :placeholder => 'Image URL' %>
+    </div>
     <div class="eight columns">
-      <p>Created to provide superior functionality to meet the full range of your day-to-day document imaging needs, the TASKalfa 3050ci incorporates robust productivity at 30 ppm black and color, flexible configurations and vibrant image quality. Spectacular color technology and professional finishing options offer you the ability to reduce outsourcing costs by keeping shorter runs of production-quality printed pieces in-house, while an EFI Fiery® Controller option enables you to incorporate the highest level of color output you may require for those special projects. Integrated business applications provide the added power and capabilities to help simplify your document workflow.</p>
-      <p>Kyocera’s award-winning ultra-reliability and unique long-life technology ensure superior performance, proven productivity and maximum efficiency. When it comes to document imaging innovation and quality you can rely on, the TASKalfa 3050ci delivers.</p>
-
+      <%= f.text_area :description %>
     </div>
   </div>
 
@@ -40,22 +50,7 @@
     <div class="twelve columns"><h3 class="title right">Gallery</h3></div>
     <div class="twelve columns"> 
       <ul class='block-grid eight-up mobile-three-up' data-clearing>
-        <li><img src="assets/TASKalfa3050ci/00.jpg"></li>
-        <li><img src="assets/TASKalfa3050ci/01.jpg"></li>
-        <li><img src="assets/TASKalfa3050ci/03.jpg"></li>
-        <li><img src="assets/TASKalfa3050ci/04.jpg"></li> 
-        <li><img src="assets/TASKalfa3050ci/05.jpg"></li>
-        <li><img src="assets/TASKalfa3050ci/06.jpg"></li>
-        <li><img src="assets/TASKalfa3050ci/07.jpg"></li>
-        <li><img src="assets/TASKalfa3050ci/08.jpg"></li>
-        <li><img src="assets/TASKalfa3050ci/09.jpg"></li>
-        <li><img src="assets/TASKalfa3050ci/10.jpg"></li>
-        <li><img src="assets/TASKalfa3050ci/11.jpg"></li>
-        <li><img src="assets/TASKalfa3050ci/12.jpg"></li>
-        <li><img src="assets/TASKalfa3050ci/14.jpg"></li>
-        <li><img src="assets/TASKalfa3050ci/15.jpg"></li>
-        <li><img src="assets/TASKalfa3050ci/16.jpg"></li>
-        <li><img src="assets/TASKalfa3050ci/17.jpg"></li>
+
       </ul>
     </div>
   </div>
@@ -259,100 +254,9 @@
             <td><h4 class="title">Accessories</h4></td>
           </tr>
           <tr>
-            <td><b>DP-771</b></td>
-            <td>175 Sheet Dual Scan Document Processor</td>
-          </tr>
-          <tr>
-            <td><b>DP-770</b></td>
-            <td>100 Sheet Reversing Automatic Document Processor</td>
-          </tr>
-          <tr>
-            <td><b>DF-770</b></td>
-            <td>1,000 Sheet Finisher</td>
-          </tr>
-          <tr>
-            <td><b>DF-790</b></td>
-            <td>4,000 Sheet Finisher</td>
-          </tr>
-          <tr>
-            <td><b>BF-730</b></td>
-            <td>Booklet and Tri Folding Unit for DF-790</td>
-          </tr>
-          <tr>
-            <td><b>MT-730</b></td>
-            <td>7 Bin Mailbox for 4,000 Sheet Finisher</td>
-          </tr>
-          <tr>
-            <td><b>PH-7A</b></td>
-            <td>2/3 Hole Punch Unit for either Finisher</td>
-          </tr>
-          <tr>
-            <td><b>JS-731</b></td>
-            <td>Outer Job Separator</td>
-          </tr>
-          <tr>
-            <td><b>JS-730</b></td>
-            <td>Inner Job Separator</td>
-          </tr>
-          <tr>
-            <td><b>PF-770</b></td>
-            <td>3,000 Sheet Side Large Capacity Tray - Letter</td>
-          </tr>
-          <tr>
-            <td><b>PF-780</b></td>
-            <td>500 Sheet Side Multi-Media Tray</td>
-          </tr>
-          <tr>
-            <td><b>PF-730</b></td>
-            <td>Dual 500 Sheet Paper Trays</td>
-          </tr>
-          <tr>
-            <td><b>PF-740</b></td>
-            <td>Dual 1,500 Sheet Paper Trays</td>
-          </tr>
-          <tr>
-            <td><b>Fax System(V)</b></td>
-            <td>Fax Board</td>
-          </tr>
-          <tr>
-            <td><b>Internet FAX Kit (A)</b></td>
-            <td>Internet FAX Kit</td>
-          </tr>
-          <tr>
-            <td><b>Printed Document Guard Kit (A)</b></td>
-            <td>Printed Document Guard</td>
-          </tr>
-          <tr>
-            <td><b>Data Security Kit (E)</b></td>
-            <td>Hard Drive Encryption/Overwrite Kit</td>
-          </tr>
-          <tr>
-            <td><b>Keyboard Holder (A)</b></td>
-            <td>Keyboard Tray Kit</td>
-          </tr>
-          <tr>
-            <td><b>UG-34</b></td>
-            <td>Optional Printer Emulation for IBM Prorinter, Epson LQ-850, Diabro 630</td>
-          </tr>
-          <tr>
-            <td><b>IB-50</b></td>
-            <td>Gigabit EtherNet Board for Dual NIC</td>
-          </tr>
-          <tr>
-            <td><b>Card Reader Holder(B)</b></td>
-            <td>HID Card Reader Holder for Card Authentication Kit(B)</td>
-          </tr>
-
-          <tr>
-            <td><b>MM-16-128</b></td>
-            <td>Additional Fax Memory Board</td>
-          </tr>
-          <tr>
-            <td><b>SD-144-1G(A)</b></td>
-            <td>1GB SDRAM MEMORY</td>
-          </tr>
-
-
+              <td><b>Spec Title</b></td>
+              <td>Spec Data</td>
+            </tr>
         </tbody>
       </table>
     </div>
@@ -360,41 +264,13 @@
     <div class="six columns">
       <table style="width: 100%;"> 
         <tbody>
-          <tr>
-            <td><h4 class="title">Supply Items</h4></td>
-          </tr>
-          <tr>
-            <td>Black Toner</td>
-            <td>25K Yield</td>
-          </tr>
-          <tr>
-            <td>Cyan Toner</td>
-            <td>15K Yield</td>
-          </tr>
-          <tr>
-            <td>Yellow Toner</td>
-            <td>15K Yield</td>
-          </tr>
-          <tr>
-            <td>Magenta Toner</td>
-            <td>15K Yield</td>
-          </tr>
-          <tr>
-            <td>Maintenance Kit: <br />Drum, Developer (K), Transfer Unit</td>
-            <td>600K Yield</td>
-          </tr>
-          <tr>
-            <td>Maintenance Kit: <br />3x Drums, Developers(CMY)</td>
-            <td>600K Yield</td>
-          </tr>
-          <tr>
-            <td>Maintenance Kit: <br />Fuser Unit</td>
-            <td>300K Yield</td>
-          </tr>
-          <tr>
-            <td>Waste Toner Box</td>
-            <td>25K Yield</td>
-          </tr>
+            <tr>
+              <td><h4 class="title">Supply Items</h4></td>
+            </tr>
+      <tr>
+                <td><b>Spec Title</b></td>
+                <td>Spec Data</td>
+            </tr>
         </tbody>
       </table>
     </div>
@@ -405,24 +281,19 @@
     <div class="twelve columns">
       <table style="width: 100%;"> 
         <tbody>
-          <tr>
-            <td><b>Specification</b></td>
-            <td>This is the specification content</td>
-          </tr>
-          <tr>
-            <td><b>Specification</b></td>
-            <td>This is the specification content</td>
-          </tr>
-          <tr>
-            <td><b>Specification</b></td>
-            <td>This is the specification content</td>
-          </tr>
-          <tr>
-            <td><b>Specification</b></td>
-            <td>This is the specification content</td>
-          </tr>
+            <tr>
+                <td><b>Spec Title</b></td>
+                <td>Spec Data</td>
+            </tr>
         </tbody>
       </table>
     </div>
   </div>
+  <div class="row">
+    <div class="two columns centered">
+      <%= f.submit :class => "medium radius button"%>
+    </div>
+  </div>
+  <br/>
 </div>
+<% end %>

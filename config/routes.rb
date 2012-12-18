@@ -1,4 +1,6 @@
 Simplifybest::Application.routes.draw do
+  resources :products
+
   root :to => 'pages#home'
 
   match 'about' => 'pages#about'

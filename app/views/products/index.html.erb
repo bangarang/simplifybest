@@ -1,0 +1,18 @@
+<% provide(:title, 'Products') %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Excerpt</th>
+    <th>Description</th>
+  </tr>
+  <% for product in @products %>
+    <tr>
+      <td><%= product.name %></td>
+      <td><%= product.excerpt %></td>
+      <td><%= product.description %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Product", new_product_path %></p>

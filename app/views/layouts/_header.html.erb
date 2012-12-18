@@ -6,22 +6,30 @@
   <section>
 
     <ul class="right">
-       <li class="has-dropdown">
-        <a class="active" href="#">Products</a>
+      <li class="has-dropdown">
+        <a class="active" href="#">Dynamic Products</a>
         <ul class="dropdown">
-          <li><label>B&W MFP</label></li>
-          <li><%= link_to 'TASKalfa 3500i', taskalfa3500i_path %></li>
-          <li><%= link_to 'TASKalfa 4500i', taskalfa4500i_path %></li>
-          <li><%= link_to 'TASKalfa 5500i', taskalfa5500i_path %></li>
-          <li><label>Color MFP</label></li>
-          <li><%= link_to 'TASKalfa 3050ci', taskalfa3050ci_path %></li>
-          <li><%= link_to 'TASKalfa 3550ci', taskalfa3550ci_path %></li>
-          <li><%= link_to 'TASKalfa 4550ci', taskalfa4550ci_path %></li>
-          <li><%= link_to 'TASKalfa 5550ci', taskalfa5550ci_path %></li>
+          <% for product in @products %>
+          <li><%= link_to product.name, product %></li>
+          <% end %>
         </ul>
-        </li>
-      	<li class="divider"></li>
-        <li><%= link_to'About', about_path %></li>
-        </ul>
+      </li>
+      <li class="has-dropdown">
+      <a class="active" href="#">Static Products</a>
+      <ul class="dropdown">
+        <li><label>B&W MFP</label></li>
+        <li><%= link_to 'TASKalfa 3500i', taskalfa3500i_path %></li>
+        <li><%= link_to 'TASKalfa 4500i', taskalfa4500i_path %></li>
+        <li><%= link_to 'TASKalfa 5500i', taskalfa5500i_path %></li>
+        <li><label>Color MFP</label></li>
+        <li><%= link_to 'TASKalfa 3050ci', taskalfa3050ci_path %></li>
+        <li><%= link_to 'TASKalfa 3550ci', taskalfa3550ci_path %></li>
+        <li><%= link_to 'TASKalfa 4550ci', taskalfa4550ci_path %></li>
+        <li><%= link_to 'TASKalfa 5550ci', taskalfa5550ci_path %></li>
+      </ul>
+      </li>
+      <li class="divider"></li>
+      <li><%= link_to'About', about_path %></li>
+    </ul>
   </section>
 </nav>

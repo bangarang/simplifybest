@@ -38,6 +38,16 @@ GEM
       rack-test (>= 0.5.4)
       selenium-webdriver (~> 2.0)
       xpath (~> 0.1.4)
+    carrierwave (0.7.1)
+      activemodel (>= 3.2.0)
+      activesupport (>= 3.2.0)
+    carrierwave_direct (0.0.8)
+      carrierwave
+      fog
+      uuid
+    celluloid (0.12.4)
+      facter (>= 1.6.12)
+      timers (>= 1.0.0)
     childprocess (0.3.6)
       ffi (~> 1.0, >= 1.0.6)
     chunky_png (1.2.6)
@@ -54,11 +64,25 @@ GEM
       sass (~> 3.1)
     compass-rails (1.0.3)
       compass (>= 0.12.2, < 0.14)
+    connection_pool (0.9.2)
     diff-lcs (1.1.3)
     erubis (2.7.0)
+    excon (0.16.10)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    facter (1.6.16)
     ffi (1.1.5)
+    fog (1.8.0)
+      builder
+      excon (~> 0.14)
+      formatador (~> 0.2.0)
+      mime-types
+      multi_json (~> 1.0)
+      net-scp (~> 1.0.4)
+      net-ssh (>= 2.1.3)
+      nokogiri (~> 1.5.0)
+      ruby-hmac
+    formatador (0.2.4)
     fssm (0.2.9)
     hike (1.2.1)
     i18n (0.6.1)
@@ -69,16 +93,24 @@ GEM
     json (1.7.5)
     libwebsocket (0.1.5)
       addressable
+    macaddr (1.6.1)
+      systemu (~> 2.5.0)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.19)
+    mocha (0.9.8)
+      rake
     modular-scale (1.0.2)
       compass (>= 0.11.5)
       sassy-math (>= 1.2)
     multi_json (1.3.7)
+    net-scp (1.0.4)
+      net-ssh (>= 1.99.1)
+    net-ssh (2.6.2)
     newrelic_rpm (3.5.3.25)
+    nifty-generators (0.4.6)
     nokogiri (1.5.5)
     pg (0.12.2)
     polyglot (0.3.3)
@@ -107,6 +139,10 @@ GEM
     rake (10.0.1)
     rdoc (3.12)
       json (~> 1.4)
+    redis (3.0.2)
+    redis-namespace (1.2.1)
+      redis (~> 3.0.0)
+    rmagick (2.13.1)
     rspec (2.11.0)
       rspec-core (~> 2.11.0)
       rspec-expectations (~> 2.11.0)
@@ -120,6 +156,7 @@ GEM
       activesupport (>= 3.0)
       railties (>= 3.0)
       rspec (~> 2.11.0)
+    ruby-hmac (0.4.0)
     rubyzip (0.9.9)
     sass (3.2.3)
     sass-rails (3.2.5)
@@ -133,13 +170,21 @@ GEM
       libwebsocket (~> 0.1.3)
       multi_json (~> 1.0)
       rubyzip
+    sidekiq (2.6.0)
+      celluloid (~> 0.12.0)
+      connection_pool (~> 0.9.2)
+      multi_json (~> 1)
+      redis (~> 3)
+      redis-namespace
     sprockets (2.1.3)
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.5)
+    systemu (2.5.2)
     thor (0.16.0)
     tilt (1.3.3)
+    timers (1.0.2)
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
@@ -147,6 +192,8 @@ GEM
     uglifier (1.2.3)
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
+    uuid (2.3.6)
+      macaddr (~> 1.0)
     xpath (0.1.4)
       nokogiri (~> 1.3)
     zurb-foundation (3.2.0)
@@ -160,14 +207,21 @@ PLATFORMS
 
 DEPENDENCIES
   capybara (= 1.1.2)
+  carrierwave
+  carrierwave_direct
   coffee-rails (= 3.2.2)
   compass-rails
+  fog
   jquery-rails (= 2.0.2)
+  mocha
   newrelic_rpm
+  nifty-generators
   pg (= 0.12.2)
   rails (= 3.2.8)
+  rmagick
   rspec-rails (= 2.11.0)
   sass-rails (= 3.2.5)
+  sidekiq
   sqlite3 (= 1.3.5)
   uglifier (= 1.2.3)
   zurb-foundation
