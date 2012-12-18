@@ -69,56 +69,43 @@
             <table style="width: 100%;"> 
               <tbody>
                 <tr>
-                  <td><b>Configuration</b></td>
-                  <td>Color Multifunctional System – Print/Scan/Copy/Optional Fax</td>
+                  <td><%= f.text_field :configuration, :placeholder => "Configuration" %></td>
                 </tr>
                 <tr>
-                  <td><b>Speed</b></td>
-                  <td>Color and Black - Letter: 30 ppm, Legal: 18 ppm, Ledger: 15 ppm, 12" x 18": 15 ppm (print only)</td>
+                  <td><%= f.text_field :speed, :placeholder => "Speed" %></td>
                 </tr>
                 <tr>
-                  <td><b>Warm-up Time</b></td>
-                  <td>25 Seconds or Less (Power On)</td>
+                  <td><%= f.text_field :warmup, :placeholder => "Warm-Up Time" %></td>
                 </tr>
                 <tr>
-                  <td><b>First Page Out</b></td>
-                  <td>Copy: 6.2 Seconds or Less Black, 8.1 Seconds or Less Color; Print: 7.3 Seconds or Less Black, 9.5 Seconds or Less Color</td>
+                  <td><%= f.text_field :firstout, :placeholder => "First Page Out" %></td>
                 </tr>
                 <tr>
-                  <td><b>Resolution</b></td>
-                  <td>600 x 600 dpi; 9600 x 600 dpi interpolated</td>
+                  <td><%= f.text_field :resolution, :placeholder => "Resolution" %></td>
                 </tr>
                 <tr>
-                  <td><b>Memory</b></td>
-                  <td>2 GB RAM Standard</td>
+                  <td><%= f.text_field :memory, :placeholder => "RAM Memory" %></td>
                 </tr>
                 <tr>
-                  <td><b>Hard Disk Drive</b></td>
-                  <td>160 GB HDD</td>
+                  <td><%= f.text_field :hdd, :placeholder => "Hard Disk Drive" %></td>
                 </tr>
                 <tr>
-                  <td><b>Duplex</b></td>
-                  <td>Standard Stackless Duplex Supports Statement to 12" x 18", 16 lb Bond - 120 lb Index (60 – 220gsm)</td>
+                  <td><%= f.text_field :duplex, :placeholder => "Duplex" %></td>
                 </tr>
                 <tr>
-                  <td><b>Standard Output Tray</b></td>
-                  <td>Statement - 12” x 18” / 250 sheets; up to 12” x 47” Banner/Single Sheet</td>
+                  <td><%= f.text_field :stdoutput, :placeholder => "Standard Output Tray" %></td>
                 </tr>
                 <tr>
-                  <td><b>Electrical</b></td>
-                  <td>120V, 60Hz, 12.0A</td>
+                  <td><%= f.text_field :electrical, :placeholder => "Electrical" %></td>
                 </tr>
                 <tr>
-                  <td><b>Dimensions</b></td>
-                  <td>26.30" W x 30.20" D x 29.41" H</td>
+                  <td><%= f.text_field :dimensions, :placeholder => "Dimensions" %></td>
                 </tr>
                 <tr>
-                  <td><b>Weight</b></td>
-                  <td>251.33 lbs</td>
+                  <td><%= f.text_field :weight, :placeholder => "Weight" %></td>
                 </tr>
                 <tr>
-                  <td><b>Max Duty Cycle</b></td>
-                  <td>150,000 Pages Per Month</td>
+                  <td><%= f.text_field :maxdutycycle, :placeholder => "Max Duty Cycle" %></td>
                 </tr>
               </tbody>
             </table>
@@ -127,28 +114,22 @@
             <table style="width: 100%;"> 
               <tbody>
                 <tr>
-                  <td><b>Standard Paper Sources</b></td>
-                  <td>Dual 500 Sheet Trays, 150 Sheet MPT; Auto Selection/Switching</td>
+                  <td><%= f.text_field :stdsources, :placeholder => "Standard Paper Sources" %></td>
                 </tr>
                 <tr>
-                  <td><b>Optional Paper Sources</b></td>
-                  <td>Dual 500 Sheet Trays (PF-730), Dual 1,500 Sheet Trays (PF-740); 3,000 Sheet Large Capacity Tray (PF-770)</td>
+                  <td><%= f.text_field :optsources, :placeholder => "Optional Paper Sources" %></td>
                 </tr>
                 <tr>
-                  <td><b>Paper Capacity</b></td>
-                  <td>Standard: 1,150 Sheets; Maximum: 7,150 Sheets</td>
+                  <td><%= f.text_field :papercap, :placeholder => "Paper Capacity" %></td>
                 </tr>
                 <tr>
-                  <td><b>Paper Size</b></td>
-                  <td>Trays 1, 2 and PF-730: 5.5" x 8.5" – 12" x 18"; PF-740, PF-770: 8.5" x 11"; MPT: 5.5" x 8.5" – 12" x 18" (Multiple Sheets); Up to 12” x 47” Banner (Single Sheet)</td>
+                  <td><%= f.text_field :papersize, :placeholder => "Paper Size" %></td>
                 </tr>
                 <tr>
-                  <td><b>Paper Weight</b></td>
-                  <td>Trays: 16 lb Bond – 120 lb index (60 – 220gsm); MPT: 16 lb Bond – 110 lb Cover (60 – 300gsm)</td>
+                  <td><%= f.text_field :paperweight, :placeholder => "Paper Weight" %></td>
                 </tr>
                 <tr>
-                  <td><b>Input Materials</b></td>
-                  <td>Bond Paper, Recycled Paper, Transparencies, Cardstock, Envelopes</td>
+                  <td><%= f.text_field :inputmaterials, :placeholder => "Input Materials" %></td>
                 </tr>
               </tbody>
             </table>
@@ -157,48 +138,37 @@
             <table style="width: 100%;"> 
               <tbody>
                 <tr>
-                  <td><b>Standard Controller</b></td>
-                  <td>IBM PowerPC 750CL / 600 MHz</td>
+                  <td><%= f.text_field :stdcontroller, :placeholder => "Standard Controller" %></td>
                 </tr>
                 <tr>
-                  <td><b>PDLs / Emulations</b></td>
-                  <td>PRESCRIBE, PCL6 (5c, XL), KPDL3 (PS3), XPS; Optional: UG–34 IBM ProPrinter, Diablo 630, LQ-850</td>
+                  <td><%= f.text_field :emulations, :placeholder => "PDLs / Emulations" %></td>
                 </tr>
                 <tr>
-                  <td><b>Fonts</b></td>
-                  <td>136 KPDL3, 93 PCL6, 8 Windows Vista, 1 Bitmap</td>
+                  <td><%= f.text_field :fonts, :placeholder => "Fonts" %></td>
                 </tr>
                 <tr>
-                  <td><b>Windows OS Compatibility</b></td>
-                  <td>Windows XP/2003/Vista/2008/7</td>
+                  <td><%= f.text_field :windows, :placeholder => "Windows OS Compatibility" %></td>
                 </tr>
                 <tr>
-                  <td><b>Novell OS Compatibility</b></td>
-                  <td>Novell NetWare 3.x/4.x/5.x/6.x</td>
+                  <td><%= f.text_field :novell, :placeholder => "Novell OS Compatibility" %></td>
                 </tr>
                 <tr>
-                  <td><b>MAC OS Compatibility</b></td>
-                  <td>Mac OS 10.x</td>
+                  <td><%= f.text_field :macos, :placeholder => "MAC OS Compatibility" %></td>
                 </tr>
                 <tr>
-                  <td><b>UNIX OS Compatibility</b></td>
-                  <td>Sun OS 4.1.x; Solaris 2.x; AIX; HP-UX (LPR)</td>
+                  <td><%= f.text_field :unixos, :placeholder => "UNIX OS Compatibility" %></td>
                 </tr>
                 <tr>
-                  <td><b>Interfaces</b></td>
-                  <td>Standard: 10/100/1000BaseTX, Hi-Speed USB 2.0, 2 USB Host Interfaces, 2 Expansion Slots <br />Optional: 10/100/1000BaseTX (IB-50 for Dual NIC)</td>
+                  <td><%= f.text_field :interfaces, :placeholder => "Interfaces" %></td>
                 </tr>
                 <tr>
-                  <td><b>Network Print and Supported Protocols</b></td>
-                  <td>TCP/IP, IPX/SPX, AppleTalk, NetBEUI, IPv6, IPsec, SSL, WSD Print</td>
+                  <td><%= f.text_field :protocols, :placeholder => "Network Print and Supported Protocols" %></td>
                 </tr>
                 <tr>
-                  <td><b>Drivers</b></td>
-                  <td>KX Driver, Mini Driver, KX Driver for XPS, XPS Mini Driver, Network Fax Driver, PPD for MAC</td>
+                  <td><%= f.text_field :drivers, :placeholder => "Drivers" %></td>
                 </tr>
                 <tr>
-                  <td><b>Utilities</b></td>
-                  <td>PRESCRIBE, PDF Direct Print, KMnet Admin, KMnet Viewer, Kyocera Command Center RX</td>
+                  <td><%= f.text_field :utilities, :placeholder => "Utilities" %></td>
                 </tr>
               </tbody>
             </table>
@@ -207,36 +177,28 @@
             <table style="width: 100%;"> 
               <tbody>
                 <tr>
-                  <td><b>Scan Resolution</b></td>
-                  <td>200, 300, 400, 600 dpi</td>
+                  <td><%= f.text_field :scanresolutions, :placeholder => "Scan Resolution" %></td>
                 </tr>
                 <tr>
-                  <td><b>File Formats</b></td>
-                  <td>BW: TIFF, XPS, PDF, PDF/A; Color: TIFF, JPEG, XPS, PDF, PDF/A</td>
+                  <td><%= f.text_field :fileformats, :placeholder => "File Formats" %></td>
                 </tr>
                 <tr>
-                  <td><b>PDF Extension</b></td>
-                  <td>High Compression PDF, Encrypted PDF</td>
+                  <td><%= f.text_field :pdfextension, :placeholder => "PDF Extension" %></td>
                 </tr>
                 <tr>
-                  <td><b>Scan Speeds</b></td>
-                  <td>DP-770: Simplex: 65 ipm BW, 65 ipm Color (300 dpi); Duplex: 39 ipm BW, 39 ipm Color (300 dpi) <br />DP-771: Simplex: 70 ipm BW, 70 ipm Color (300 dpi); Duplex: 100 ipm BW, 80 ipm Color (300 dpi)</td>
+                  <td><%= f.text_field :scanspeed, :placeholder => "Scan Speeds" %></td>
                 </tr>
                 <tr>
-                  <td><b>Connectivity / Supported Protocols</b></td>
-                  <td>10/100/1000BaseTX, TCP/IP</td>
+                  <td><%= f.text_field :connectivity, :placeholder => "Connectivity / Supported Protocols" %></td>
                 </tr>
                 <tr>
-                  <td><b>Scanning Functions</b></td>
-                  <td>Scan to Folder (SMB), Scan to e-Mail, Scan to FTP, Scan to USB, WSD Scan, TWAIN Scan</td>
+                  <td><%= f.text_field :scanfunction, :placeholder => "Scanning Functions" %></td>
                 </tr>
                 <tr>
-                  <td><b>Original Size</b></td>
-                  <td>Through DP: Statement to 11" x 17"; Glass: up to 11" x 17"</td>
+                  <td><%= f.text_field :originalsize, :placeholder => "Original Size" %></td>
                 </tr>
                 <tr>
-                  <td><b>Scan Driver</b></td>
-                  <td>TWAIN/WIA Driver</td>
+                  <td><%= f.text_field :scandriver, :placeholder => "Scan Driver" %></td>
                 </tr>
               </tbody>
             </table>
@@ -294,6 +256,5 @@
       <%= f.submit :class => "medium radius button"%>
     </div>
   </div>
-  <br/>
 </div>
 <% end %>

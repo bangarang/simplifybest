@@ -40,7 +40,7 @@
         <%= image_tag @product.image_url(:thumb).to_s %>
       </div>
     <div class="eight columns">
-      <%= @product.description %>
+      <%= @product.description.html_safe %>
     </div>
   </div>
 
