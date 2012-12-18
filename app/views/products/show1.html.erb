@@ -1,0 +1,290 @@
+<% provide(:title, @product.name) %>
+
+
+<div class="wrapper"></div>
+<div class="row title homepage">
+  <h1 class="right"><%= @product.name %></h1>
+</div>
+ <div class="row title homepage">
+  <h3 class="subheader right"><%= @product.excerpt %></h3>
+</div>
+
+<div class="row">
+	<div class="right">
+	  <%= link_to "Edit", edit_product_path(@product) %> |
+	  <%= link_to "Delete Product", @product, :confirm => 'Are you sure?', :method => :delete %>
+	</div>
+</div>
+
+<div class="box">
+  <div class="row prodnav">
+    <div class="twelve columns">
+      <dl class="sub-nav right">
+        <dt><%= @product.name %> Navigation:</dt>
+        <dd><a href="#overview">Overview</a></dd>
+        <dd><a href="#gallery">Gallery</a></dd>
+        <dd><a href="#specifications">Specifications</a></dd>
+        <dd><a href="#accessories">Accessories</a></dd>
+        <dd><a href="#downloads">Downloads</a></dd>
+      </dl>
+    </div>
+  </div>
+
+
+  <div class="row" id="overview"> 
+    <div class="twelve columns">
+      <h3 class="title right">Overview</h3>
+    </div>
+    <div class="four columns mainimage">
+        <%= image_tag @product.image_url(:thumb).to_s %>
+      </div>
+    <div class="eight columns">
+      <%= @product.description.html_safe %>
+    </div>
+  </div>
+
+  <div class="row" id="gallery">
+    <div class="twelve columns"><h3 class="title right">Gallery</h3></div>
+    <div class="twelve columns"> 
+      <ul class='block-grid eight-up mobile-three-up' data-clearing>
+
+      </ul>
+    </div>
+  </div>
+
+    <div class="row" id='specifications'>
+    <div class="twelve columns"><h3 class="title right">Specifications</h3></div>
+    <div class="twelve columns specs">
+      <dl class="tabs four-up">
+        <dd class="active"><a href="#general">General Specifications</a></dd>
+        <dd><a href="#papersupply">Paper Supply</a></dd>
+        <dd><a href="#print">Print Specifications</a></dd>
+        <dd><a href="#scan">Scan Specifications</a></dd>
+      </dl>
+      <ul class="tabs-content">
+        <li class="active" id="generalTab">
+            <table style="width: 100%;"> 
+              <tbody>
+                <tr>
+                  <td><b>Configuration</b></td>
+                  <td><%= @product.configuration %></td>
+                </tr>
+                <tr>
+                  <td><b>Speed</b></td>
+                  <td><%= @product.speed %></td>
+                </tr>
+                <tr>
+                  <td><b>Warm-up Time</b></td>
+                  <td><%= @product.warmup %></td>
+                </tr>
+                <tr>
+                  <td><b>First Page Out</b></td>
+                  <td><%= @product.firstout %></td>
+                </tr>
+                <tr>
+                  <td><b>Resolution</b></td>
+                  <td><%= @product.resolution %></td>
+                </tr>
+                <tr>
+                  <td><b>Memory</b></td>
+                  <td><%= @product.memory %></td>
+                </tr>
+                <tr>
+                  <td><b>Hard Disk Drive</b></td>
+                  <td><%= @product.hdd %></td>
+                </tr>
+                <tr>
+                  <td><b>Duplex</b></td>
+                  <td><%= @product.duplex %></td>
+                </tr>
+                <tr>
+                  <td><b>Standard Output Tray</b></td>
+                  <td><%= @product.stdoutput %></td>
+                </tr>
+                <tr>
+                  <td><b>Electrical</b></td>
+                  <td><%= @product.electrical %></td>
+                </tr>
+                <tr>
+                  <td><b>Dimensions</b></td>
+                  <td><%= @product.dimensions %></td>
+                </tr>
+                <tr>
+                  <td><b>Weight</b></td>
+                  <td><%= @product.weight %></td>
+                </tr>
+                <tr>
+                  <td><b>Max Duty Cycle</b></td>
+                  <td><%= @product.maxdutycycle %></td>
+                </tr>
+              </tbody>
+            </table>
+        </li>
+        <li id="papersupplyTab">
+            <table style="width: 100%;"> 
+              <tbody>
+                <tr>
+                  <td><b>Standard Paper Sources</b></td>
+                  <td><%= @product.stdsources %></td>
+                </tr>
+                <tr>
+                  <td><b>Optional Paper Sources</b></td>
+                  <td><%= @product.optsources %></td>
+                </tr>
+                <tr>
+                  <td><b>Paper Capacity</b></td>
+                  <td><%= @product.papercap %></td>
+                </tr>
+                <tr>
+                  <td><b>Paper Size</b></td>
+                  <td><%= @product.papersize %></td>
+                </tr>
+                <tr>
+                  <td><b>Paper Weight</b></td>
+                  <td><%= @product.paperweight %></td>
+                </tr>
+                <tr>
+                  <td><b>Input Materials</b></td>
+                  <td><%= @product.inputmaterials %></td>
+                </tr>
+              </tbody>
+            </table>
+        </li>
+        <li id="printTab">
+            <table style="width: 100%;"> 
+              <tbody>
+                <tr>
+                  <td><b>Standard Controller</b></td>
+                  <td><%= @product.stdcontroller %></td>
+                </tr>
+                <tr>
+                  <td><b>PDLs / Emulations</b></td>
+                  <td><%= @product.emulations %></td>
+                </tr>
+                <tr>
+                  <td><b>Fonts</b></td>
+                  <td><%= @product.fonts %></td>
+                </tr>
+                <tr>
+                  <td><b>Windows OS Compatibility</b></td>
+                  <td><%= @product.windows %></td>
+                </tr>
+                <tr>
+                  <td><b>Novell OS Compatibility</b></td>
+                  <td><%= @product.novell %></td>
+                </tr>
+                <tr>
+                  <td><b>MAC OS Compatibility</b></td>
+                  <td><%= @product.macos %></td>
+                </tr>
+                <tr>
+                  <td><b>UNIX OS Compatibility</b></td>
+                  <td><%= @product.unixos %></td>
+                </tr>
+                <tr>
+                  <td><b>Interfaces</b></td>
+                  <td><%= @product.interfaces %></td>
+                </tr>
+                <tr>
+                  <td><b>Network Print and Supported Protocols</b></td>
+                  <td><%= @product.protocols %></td>
+                </tr>
+                <tr>
+                  <td><b>Drivers</b></td>
+                  <td><%= @product.drivers %></td>
+                </tr>
+                <tr>
+                  <td><b>Utilities</b></td>
+                  <td><%= @product.utilities %></td>
+                </tr>
+              </tbody>
+            </table>
+        </li>
+        <li id="scanTab">
+            <table style="width: 100%;"> 
+              <tbody>
+                <tr>
+                  <td><b>Scan Resolution</b></td>
+                  <td><%= @product.scanresolutions %></td>
+                </tr>
+                <tr>
+                  <td><b>File Formats</b></td>
+                  <td><%= @product.fileformats %></td>
+                </tr>
+                <tr>
+                  <td><b>PDF Extension</b></td>
+                  <td><%= @product.pdfextension %></td>
+                </tr>
+                <tr>
+                  <td><b>Scan Speeds</b></td>
+                  <td><%= @product.scanspeed %></td>
+                </tr>
+                <tr>
+                  <td><b>Connectivity / Supported Protocols</b></td>
+                  <td><%= @product.connectivity %></td>
+                </tr>
+                <tr>
+                  <td><b>Scanning Functions</b></td>
+                  <td><%= @product.scanfunction %></td>
+                </tr>
+                <tr>
+                  <td><b>Original Size</b></td>
+                  <td><%= @product.originalsize %></td>
+                </tr>
+                <tr>
+                  <td><b>Scan Driver</b></td>
+                  <td><%= @product.scandriver%></td>
+                </tr>
+              </tbody>
+            </table>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row" id='accessories'>
+    <div class="twelve columns"><h3 class="title right">Accessories</h3></div>
+    <div class="six columns">
+      <table style="width: 100%;"> 
+        <tbody>
+          <tr>
+            <td><h4 class="title">Accessories</h4></td>
+          </tr>
+          <tr>
+              <td><b>Spec Title</b></td>
+              <td>Spec Data</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <div class="six columns">
+      <table style="width: 100%;"> 
+        <tbody>
+          	<tr>
+            	<td><h4 class="title">Supply Items</h4></td>
+          	</tr>
+			<tr>
+                <td><b>Spec Title</b></td>
+                <td>Spec Data</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="row" id='downloads'>
+    <div class="twelve columns"><h3 class="title right">Downloads</h3></div>
+    <div class="twelve columns">
+      <table style="width: 100%;"> 
+        <tbody>
+          	<tr>
+                <td><b>Spec Title</b></td>
+                <td>Spec Data</td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
