@@ -46,5 +46,4 @@ private
   def display_products
     @products = Product.all
   end
-
 end
