@@ -36,7 +36,7 @@
       <h3 class="title right">Overview</h3>
     </div>
     <div class="four columns mainimage">
-
+        <%= image_tag @product.image_url(:thumb).to_s if @product.image? %>
       </div>
     <div class="eight columns">
       <%= @product.description.html_safe %>
