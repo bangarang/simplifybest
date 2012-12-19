@@ -10,7 +10,13 @@
 </div>
 
 <div class="row">
-  <div class="right">
+  <div class="six columns">
+    <%= f.collection_select :category_id, Category.find(:all), :id, :name, :prompt => "Select a Category" %>
+    or create one:
+    <%= f.text_field :new_category_name %>
+  </div>
+  <div class="six columns right">
+    <%= link_to "Show", @product %> |
     <%= link_to "View All", products_path %>
   </div>
 </div>

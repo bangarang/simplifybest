@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_filter :display_products
+  before_filter :display_products, :display_categories
 
   before_filter :find_product, only: [:show, :edit, :update, :destroy]
 
@@ -11,6 +11,7 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @category = Category.all
   end
 
   def edit
@@ -41,6 +42,10 @@ class ProductsController < ApplicationController
 private 
   def find_product
     @product = Product.find_by_slug!(params[:id])
+  end
+
+  def display_categories
+    @categories = Category.all
   end
 
   def display_products

@@ -7,15 +7,18 @@
 
     <ul class="right">
       <li class="has-dropdown">
-        <%= link_to "Dynamic Products", products_path%>
+        <%= link_to "Products", products_path%>
         <ul class="dropdown">
-          <% for product in @products %>
-          <li><%= link_to product.name, product %></li>
+          <% for category in @categories %>
+            <li><label><%= category.name %></label></li>
+            <% for product in category.products.order(:name) %>
+              <li><%= link_to product.name, product %></li>
+            <% end %>
           <% end %>
         </ul>
       </li>
       <li class="has-dropdown">
-      <a class="active" href="#">Static Products</a>
+      <a href="#">Static Products</a>
       <ul class="dropdown">
         <li><label>B&W MFP</label></li>
         <li><%= link_to 'TASKalfa 3500i', taskalfa3500i_path %></li>
