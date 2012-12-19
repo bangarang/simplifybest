@@ -5,7 +5,6 @@ gem 'newrelic_rpm'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'fog'
-gem 'turbolinks'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'

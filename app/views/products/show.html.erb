@@ -50,7 +50,11 @@
     <div class="twelve columns"><h3 class="title right">Gallery</h3></div>
     <div class="twelve columns"> 
       <ul class='block-grid eight-up mobile-three-up' data-clearing>
-
+        <% for product_picture in @product.product_pictures %>
+          <% if product_picture.picture %>
+            <li><img data-caption="<%= product_picture.name %>" src="<%= product_picture.picture_url %>" ></li>
+          <% end %>
+        <% end %>
       </ul>
     </div>
   </div>

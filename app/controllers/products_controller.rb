@@ -44,6 +44,10 @@ private
     @product = Product.find_by_slug!(params[:id])
   end
 
+  def display_product_pictures
+    @product_pictures = ProductPicture.all
+  end
+
   def display_categories
     @categories = Category.all
   end

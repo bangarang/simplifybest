@@ -1,0 +1,15 @@
+<%= form_for @product_picture, :html => {:multipart => true} do |f| %>
+  <%= f.hidden_field :product_id %>
+  
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.file_field :picture %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

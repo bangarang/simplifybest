@@ -1,4 +1,6 @@
 Simplifybest::Application.routes.draw do
+  resources :product_pictures
+
   resources :categories
 
   resources :products

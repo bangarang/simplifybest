@@ -18,6 +18,8 @@ class Product < ActiveRecord::Base
 
   before_validation :generate_slug
 
+  has_many :product_pictures
+
   # Categories
   belongs_to :category
   attr_accessor :new_category_name

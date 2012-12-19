@@ -39,7 +39,6 @@
 
 
   <div class="row" id="overview">
-    <!-- <div class="twelve columns"><h3 class="title right">Overview</h3></div> -->
     <div class="twelve columns">
       <h3 class="title right">Overview</h3>
     </div>
@@ -58,10 +57,18 @@
   <div class="row" id="gallery">
     <div class="twelve columns"><h3 class="title right">Gallery</h3></div>
     <div class="twelve columns"> 
-      <ul class='block-grid eight-up mobile-three-up' data-clearing>
-
+      <ul class='block-grid three-up mobile'>
+        <% for product_picture in @product.product_pictures %>
+            <li class="painting" style="background:white;">
+              <%= image_tag product_picture.picture_url, :alt => product_picture.name if product_picture.picture? %>
+              <%= link_to "edit", edit_product_picture_path(product_picture) %> |
+              <%= link_to "remove", product_picture, :confirm => 'Are you sure?', :method => :delete %></li>
+        <% end %>
       </ul>
     </div>
+    <p>
+     <%= link_to "Add a Product Picture", new_product_picture_path(:product_id => @product.id) %>
+    </p>
   </div>
 
   <div class="row" id='specifications'>
