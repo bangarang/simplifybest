@@ -1,15 +1,13 @@
 <div class="container footer">
-  <br />
   <div class="page-padding">
     <div class="row">
       <div class="four columns">
         <h3>Products</h3>
-          <a href="">Color Printers</a>
-          <a href="">Monochrome Printers</a>
-          <a href="">Color MFPs</a>
-          <a href="">Monochrome MFPs</a>
-          <a href="">Wide Format</a>
-          <a href="">Fax Machines</a>
+        <ul>
+          <% for category in @categories %>
+          <li><%= link_to category.name, category %></li>
+          <% end %>
+        </ul>
       </div>
       <div class="four columns">
         <p>Donec id elit non mi porta gravida at eget metus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec sed odio dui. Curabitur blandit tempus porttitor. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Sed posuere consectetur est at lobortis.</p>
@@ -20,17 +18,14 @@
     </div>
   </div>
 </div>
-
-
 <div class="container copyright">
   <div class="page-padding">
     <div class="row">
       <div class="five columns">
         <p>&copy; 2012 Simplified Office Solutions. All rights reserved.</p>
       </div
-            <div class="seven columns">
+      <div class="seven columns">
         <ul class="right">
-        
           <li><a href="/" class="home" title="Home">Home</a></li>
           <li><a href="" class="products" title="Products">Products</a></li>
           <li><a href="" class="services" title="Services">Services</a></li>

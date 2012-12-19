@@ -15,7 +15,8 @@
   </div>
 	<div class="six columns right">
 	  <%= link_to "Edit", edit_product_path(@product) %> |
-	  <%= link_to "Delete Product", @product, :confirm => 'Are you sure?', :method => :delete %>
+	  <%= link_to "Delete Product", @product, :confirm => 'Are you sure?', :method => :delete %> |
+    <%= link_to "View All", products_path %>
 	</div>
 </div>
 
@@ -287,14 +288,13 @@
   <div class="row" id='downloads'>
     <div class="twelve columns"><h3 class="title right">Downloads</h3></div>
     <div class="twelve columns">
-      <table style="width: 100%;"> 
-        <tbody>
-          	<tr>
-                <td><b>Spec Title</b></td>
-                <td>Spec Data</td>
-            </tr>
-        </tbody>
-      </table>
+      <ul> 
+        <% for download in @product.downloads %>
+          <% if download.download %>
+            <li><%= link_to download.name, download.download_url %></li>
+          <% end %>
+        <% end %>
+      </ul>
     </div>
   </div>
 </div>

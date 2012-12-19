@@ -1,5 +1,5 @@
 class Product < ActiveRecord::Base
-  attr_accessible :name, :excerpt, :description, :image, :remote_image_url, :category_id, :new_category_name, :accessories_attributes, :supply_items_attributes
+  attr_accessible :name, :excerpt, :description, :image, :remote_image_url, :category_id, :new_category_name, :accessories_attributes, :supply_items_attributes, :product_pictures_attributes, :downloads_attributes
   mount_uploader :image, ImageUploader
 
   # General Specs
@@ -19,6 +19,8 @@ class Product < ActiveRecord::Base
   before_validation :generate_slug
 
   has_many :product_pictures
+
+  accepts_nested_attributes_for :product_pictures, allow_destroy: true
   has_many :accessories
 
   accepts_nested_attributes_for :accessories, allow_destroy: true
@@ -26,6 +28,10 @@ class Product < ActiveRecord::Base
   has_many :supply_items
 
   accepts_nested_attributes_for :supply_items, allow_destroy: true
+
+  has_many :downloads
+
+  accepts_nested_attributes_for :downloads, allow_destroy: true
 
   # Categories
   belongs_to :category

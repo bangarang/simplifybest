@@ -1,0 +1,7 @@
+<li style="background:white;">
+  	<%= f.hidden_field :product_id %>
+    <%= f.text_field :name, :placeholder => "Name" %>
+    <%= f.file_field :picture %>
+    <%= f.hidden_field :_destroy %>
+    <%= link_to "Remove", '#', class: "remove_li" %>
+</li>

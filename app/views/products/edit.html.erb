@@ -10,13 +10,9 @@
 </div>
 
 <div class="row">
-  <div class="six columns">
-    <%= f.collection_select :category_id, Category.find(:all), :id, :name, :prompt => "Select a Category" %>
-    or create one:
-    <%= f.text_field :new_category_name %>
-  </div>
-	<div class="six columns right">
+	<div class="right">
 	  <%= link_to "Show", @product %> |
+    <%= link_to "Delete Product", @product, :confirm => 'Are you sure?', :method => :delete %> |
 	  <%= link_to "View All", products_path %>
 	</div>
 </div>
@@ -55,19 +51,13 @@
   <div class="row" id="gallery">
     <div class="twelve columns"><h3 class="title right">Gallery</h3></div>
     <div class="twelve columns"> 
-      <ul class='block-grid three-up mobile'>
-        <% for product_picture in @product.product_pictures %>
-          <li class="painting" style="background:white;">
-            <%= image_tag product_picture.picture_url, :alt => product_picture.name if product_picture.picture? %>
-            <%= link_to "edit", edit_product_picture_path(product_picture) %> |
-            <%= link_to "remove", product_picture, :confirm => 'Are you sure?', :method => :delete %>
-          </li>
+      <ul class='pictures'>
+        <%= f.fields_for :product_pictures, :html => {:multipart => true} do |builder| %>
+          <%= render 'product_picture_fields', f: builder %>
         <% end %>
+        <%= link_to_add_fields "Add a Product Picture", f, :product_pictures %>
       </ul>
     </div>
-    <p>
-     <%= link_to "Add a Product Picture", new_product_picture_path(:product_id => @product.id) %>
-    </p>
   </div>
 
   <div class="row" id='specifications'>
@@ -260,14 +250,12 @@
   <div class="row" id='downloads'>
     <div class="twelve columns"><h3 class="title right">Downloads</h3></div>
     <div class="twelve columns">
-      <table style="width: 100%;"> 
-        <tbody>
-          	<tr>
-                <td><b>Spec Title</b></td>
-                <td>Spec Data</td>
-            </tr>
-        </tbody>
-      </table>
+      <ul>
+        <%= f.fields_for :downloads, :html => {:multipart => true} do |builder| %>
+          <%= render 'download_fields', f: builder %>
+        <% end %>
+        <%= link_to_add_fields "Add a Download", f, :downloads %>
+      </ul>
     </div>
   </div>
   <div class="row">
