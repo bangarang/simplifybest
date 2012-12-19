@@ -257,10 +257,12 @@
           <tr>
             <td><h4 class="title">Accessories</h4></td>
           </tr>
+          <% @product.accessories.each do |accessory| %>
           <tr>
-              <td><b>Spec Title</b></td>
-              <td>Spec Data</td>
-            </tr>
+            <td><b><%= accessory.name %></b></td>
+            <td><%= accessory.description %></td>
+          </tr>
+          <% end %>
         </tbody>
       </table>
     </div>
@@ -268,13 +270,15 @@
     <div class="six columns">
       <table style="width: 100%;"> 
         <tbody>
-          	<tr>
-            	<td><h4 class="title">Supply Items</h4></td>
-          	</tr>
-			<tr>
-                <td><b>Spec Title</b></td>
-                <td>Spec Data</td>
-            </tr>
+        	<tr>
+          	<td><h4 class="title">Supply Items</h4></td>
+          </tr>
+			    <% @product.supply_items.each do |supply_item| %>
+          <tr>
+            <td><b><%= supply_item.name %></b></td>
+            <td><%= supply_item.description %></td>
+          </tr>
+          <% end %>
         </tbody>
       </table>
     </div>

@@ -1,0 +1,5 @@
+<tr>
+  <td><b><%= f.text_field :name, :placeholder => "Name" %></b></td>
+  <td><%= f.text_field :description, :placeholder => "Description" %></td>
+  <td><%= f.hidden_field :_destroy %><%= link_to "Remove", '#', class: "remove_fields" %></td>
+</tr>

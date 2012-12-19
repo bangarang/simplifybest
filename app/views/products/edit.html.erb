@@ -21,8 +21,6 @@
 	</div>
 </div>
 
-
-
 <div class="box">
   <div class="row prodnav">
     <div class="twelve columns">
@@ -59,10 +57,11 @@
     <div class="twelve columns"> 
       <ul class='block-grid three-up mobile'>
         <% for product_picture in @product.product_pictures %>
-            <li class="painting" style="background:white;">
-              <%= image_tag product_picture.picture_url, :alt => product_picture.name if product_picture.picture? %>
-              <%= link_to "edit", edit_product_picture_path(product_picture) %> |
-              <%= link_to "remove", product_picture, :confirm => 'Are you sure?', :method => :delete %></li>
+          <li class="painting" style="background:white;">
+            <%= image_tag product_picture.picture_url, :alt => product_picture.name if product_picture.picture? %>
+            <%= link_to "edit", edit_product_picture_path(product_picture) %> |
+            <%= link_to "remove", product_picture, :confirm => 'Are you sure?', :method => :delete %>
+          </li>
         <% end %>
       </ul>
     </div>
@@ -231,10 +230,12 @@
           <tr>
             <td><h4 class="title">Accessories</h4></td>
           </tr>
+          <%= f.fields_for :accessories do |builder| %>
+            <%= render 'accessory_fields', f: builder %>
+          <% end %>
           <tr>
-              <td><b>Spec Title</b></td>
-              <td>Spec Data</td>
-            </tr>
+            <td><%= link_to_add_fields "Add an Accessory", f, :accessories %></td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -242,13 +243,15 @@
     <div class="six columns">
       <table style="width: 100%;"> 
         <tbody>
-          	<tr>
-            	<td><h4 class="title">Supply Items</h4></td>
-          	</tr>
-			<tr>
-                <td><b>Spec Title</b></td>
-                <td>Spec Data</td>
-            </tr>
+        	<tr>
+          	<td><h4 class="title">Supply Items</h4></td>
+        	</tr>
+		      <%= f.fields_for :supply_items do |builder| %>
+            <%= render 'supply_item_fields', f: builder %>
+          <% end %>
+          <tr>
+            <td><%= link_to_add_fields "Add a Supply Item", f, :supply_items %></td>
+          </tr>
         </tbody>
       </table>
     </div>
