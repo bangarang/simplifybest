@@ -10,10 +10,10 @@
 </div>
 
 <div class="row">
-  <div class="six columns">
+  <div class="left">
     <%= @product.category.name %>
   </div>
-	<div class="six columns right">
+	<div class="right">
 	  <%= link_to "Edit", edit_product_path(@product) %> |
 	  <%= link_to "Delete Product", @product, :confirm => 'Are you sure?', :method => :delete %> |
     <%= link_to "View All", products_path %>
