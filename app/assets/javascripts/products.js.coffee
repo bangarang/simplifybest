@@ -7,9 +7,21 @@ jQuery ->
     $(this).closest('tr').hide()
     event.preventDefault()
 
-  $('form').on 'click', '.remove_li', (event) ->
+  $('form').on 'click', '.remove_div', (event) ->
     $(this).prev('input[type=hidden]').val('1')
-    $(this).closest('li').hide()
+    $(this).closest('div').hide()
+    event.preventDefault()
+
+  $('form').on 'click', '.add_pics', (event) ->
+    time = new Date().getTime()
+    regexp = new RegExp($(this).data('id'), 'g')
+    $('.ppicture_edit').append($(this).data('fields').replace(regexp, time))
+    event.preventDefault()
+
+  $('form').on 'click', '.add_trs', (event) ->
+    time = new Date().getTime()
+    regexp = new RegExp($(this).data('id'), 'g')
+    $(this).closest('tr').before($(this).data('fields').replace(regexp, time))
     event.preventDefault()
 
   $('form').on 'click', '.add_fields', (event) ->

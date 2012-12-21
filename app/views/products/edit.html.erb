@@ -10,16 +10,25 @@
 </div>
 
 <div class="row">
-  <div class="left">
-    <%= f.collection_select :category_id, Category.find(:all), :id, :name, :prompt => "Select a Category" %>
-    or create one:
-    <%= f.text_field :new_category_name %>
+  <div class="five columns">
+    <div class="left">
+      <%= f.collection_select :category_id, Category.find(:all), :id, :name, :prompt => "Select a Category" %>
+      or create one:
+      <%= f.text_field :new_category_name %>
+    </div>
   </div>
-	<div class="right">
-	  <%= link_to "Show", @product %> |
-    <%= link_to "Delete Product", @product, :confirm => 'Are you sure?', :method => :delete %> |
-	  <%= link_to "View All", products_path %>
-	</div>
+
+  <div class="two columns">
+    <%= f.submit :class => "small radius button right"%>
+  </div>
+
+  <div class="five columns">
+  	<div class="right">
+  	  <%= link_to "Show", @product %> |
+      <%= link_to "Delete Product", @product, :confirm => 'Are you sure?', :method => :delete %> |
+  	  <%= link_to "View All", products_path %>
+  	</div>
+  </div>
 </div>
 
 <div class="box">
@@ -54,15 +63,16 @@
   </div>
 
   <div class="row" id="gallery">
-    <div class="twelve columns"><h3 class="title right">Gallery</h3></div>
-    <div class="twelve columns"> 
-      <ul class='pictures'>
+    <div class="twelve columns"><h3 class="title right">Gallery</h3></div> 
+      <div class="nine columns ppicture_edit">
         <%= f.fields_for :product_pictures, :html => {:multipart => true} do |builder| %>
           <%= render 'product_picture_fields', f: builder %>
         <% end %>
-        <%= link_to_add_fields "Add a Product Picture", f, :product_pictures %>
-      </ul>
-    </div>
+        <butt>
+      </div>
+      <div class="three columns">
+        <%= link_to_add_pics "Add a Product Picture", f, :product_pictures %>
+      </div>
   </div>
 
   <div class="row" id='specifications'>
@@ -220,7 +230,7 @@
   <div class="row" id='accessories'>
     <div class="twelve columns"><h3 class="title right">Accessories</h3></div>
     <div class="six columns">
-      <table style="width: 100%;"> 
+      <table class="accessories"> 
         <tbody>
           <tr>
             <td><h4 class="title">Accessories</h4></td>
@@ -228,26 +238,26 @@
           <%= f.fields_for :accessories do |builder| %>
             <%= render 'accessory_fields', f: builder %>
           <% end %>
-          <tr>
-            <td><%= link_to_add_fields "Add an Accessory", f, :accessories %></td>
+          <tr style="background:white;">
+            <td><%= link_to_add_trs "Add an Accessory", f, :accessories %></td>
           </tr>
         </tbody>
       </table>
     </div>
     
     <div class="six columns">
-      <table style="width: 100%;"> 
-        <tbody>
-        	<tr>
-          	<td><h4 class="title">Supply Items</h4></td>
-        	</tr>
-		      <%= f.fields_for :supply_items do |builder| %>
-            <%= render 'supply_item_fields', f: builder %>
-          <% end %>
-          <tr>
-            <td><%= link_to_add_fields "Add a Supply Item", f, :supply_items %></td>
-          </tr>
-        </tbody>
+      <table class="supplies"> 
+        	<tbody>
+            <tr>
+            	<td><h4 class="title">Supply Items</h4></td>
+          	</tr>
+  		      <%= f.fields_for :supply_items do |builder| %>
+              <%= render 'supply_item_fields', f: builder %>
+            <% end %>
+            <tr style="background:white;">
+              <td><%= link_to_add_trs "Add a Supply Item", f, :supply_items %></td>
+            </tr>
+          </tbody>
       </table>
     </div>
   </div>
@@ -263,10 +273,10 @@
       </ul>
     </div>
   </div>
-  <div class="row">
+  <!-- <div class="row">
   	<div class="two columns centered">
   		<%= f.submit :class => "medium radius button"%>
   	</div>
-  </div>
+  </div> -->
 </div>
 <% end %>

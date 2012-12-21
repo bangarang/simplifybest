@@ -274,3 +274,11 @@ ul[data-clearing] li { cursor: pointer; }
 .add_fields { margin: auto; display: table; }
 
 .clearing-assembled .clearing-container ul[data-clearing] li.visible { border-top: 4px solid #d00; }
+
+[class*="column"] + [class*="column"]:last-child { float:left;}
+
+div.ppicture { padding: 0 5px; }
+
+.remove_div { display: table; margin:10px auto; }
+
+.add_trs { display: table; margin: 10px auto; }

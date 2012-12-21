@@ -1,7 +1,18 @@
-<li style="background:white;">
-  	<%= f.hidden_field :product_id %>
-    <%= f.text_field :name, :placeholder => "Name" %>
-    <%= f.file_field :picture %>
-    <%= f.hidden_field :_destroy %>
-    <%= link_to "Remove", '#', class: "remove_li" %>
-</li>
+<div class="four columns ppicture">
+	<div>
+		<% if f.object.name %>
+			<%= image_tag f.object.picture_url().to_s %>
+			<%= f.hidden_field :product_id %>
+		    <%= f.text_field :name, :placeholder => "Name" %>
+		    <%= f.file_field :picture %>
+		    <%= f.hidden_field :_destroy %>
+		    <%= link_to "Remove", '#', class: "remove_div small button" %>
+		<% elsif %>
+		  	<%= f.hidden_field :product_id %>
+		    <%= f.text_field :name, :placeholder => "Name" %>
+		    <%= f.file_field :picture %>
+		    <%= f.hidden_field :_destroy %>
+		    <%= link_to "Remove", '#', class: "remove_div small button" %>
+	    <% end %>
+	</div>
+</div>

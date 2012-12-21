@@ -53,7 +53,7 @@
       <ul class='block-grid eight-up mobile-three-up' data-clearing>
         <% for product_picture in @product.product_pictures %>
           <% if product_picture.picture %>
-            <li><img data-caption="<%= product_picture.name %>" src="<%= product_picture.picture_url %>" ></li>
+            <li><a href="<%= product_picture.picture_url %>" ><img data-caption="<%= product_picture.name %>" src="<%= product_picture.picture_url(:thumb) %>" ></a></li>
           <% end %>
         <% end %>
       </ul>
