@@ -65,3 +65,9 @@ p.name { color: #d00; margin:0; padding:5px; font-size: 14px; }
 .accessories, .supplies { width:100%; background: white; }
 .trs { background: white; }
 
+.wrapper { background: #112; height: 400px; margin-bottom: -400px; margin-top: -30px; }
+
+
+
+
+
