@@ -275,7 +275,12 @@ ul[data-clearing] li { cursor: pointer; }
 
 .clearing-assembled .clearing-container ul[data-clearing] li.visible { border-top: 4px solid #d00; }
 
-[class*="column"] + [class*="column"]:last-child { float:left;}
+[class*="columns ppicture"] + [class*="columns ppicture"]:last-child { float:left;}
+
+@media only screen and (max-width: 767px) {
+[class*="column"] + [class*="column"]:last-child {
+float: none;
+}}
 
 div.ppicture { padding: 0 5px; }
 

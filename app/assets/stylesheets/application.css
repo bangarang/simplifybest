@@ -56,7 +56,15 @@ p.name { color: #d00; margin:0; padding:5px; font-size: 14px; }
 
 .mainimage {margin: -80px 0 0 0; text-align: center;}
 .mainimage img { max-height: 400px;  }
-@media only screen and (max-width: 767px) { .specs { padding:0; } h3.title { margin: 10px 0; text-align: center; padding:5px;} .mainimage { margin-top:0 ; } }
+
+.wrapper { background: #112; height: 400px; margin-bottom: -400px; margin-top: 0; }
+
+@media only screen and (max-width: 767px) { 
+	.specs { padding:0; } 
+	h3.title { margin: 10px 0; text-align: center; padding:5px;} 
+	.mainimage { margin-top:0 ; } 
+	.wrapper { margin-top: 0;} 
+}
 
 .ie8 h3.title, .ie7 h3.title { background: #d00; }
 .ppicture div { padding:5px; height:330px; background:white; }
@@ -65,7 +73,7 @@ p.name { color: #d00; margin:0; padding:5px; font-size: 14px; }
 .accessories, .supplies { width:100%; background: white; }
 .trs { background: white; }
 
-.wrapper { background: #112; height: 400px; margin-bottom: -400px; margin-top: -30px; }
+
 
 
 
