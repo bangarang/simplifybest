@@ -1,0 +1,102 @@
+2012-12-24T00:47:44+00:00 app[web.1]: Disconnected from ActiveRecord
+2012-12-24T00:47:44+00:00 app[web.1]: ** [NewRelic][12/24/12 00:47:44 +0000 24e63d80-c61e-439d-929d-af54ea9a53b1 (11)] INFO : Starting the worker thread in 11 after forking.
+2012-12-24T00:47:45+00:00 app[web.1]: 
+2012-12-24T00:47:45+00:00 app[web.1]: 
+2012-12-24T00:47:45+00:00 app[web.1]: Processing by Devise::SessionsController#new as HTML
+2012-12-24T00:47:45+00:00 app[web.1]:   [1m[36mProduct Load (3.7ms)[0m  [1mSELECT "products".* FROM "products" [0m
+2012-12-24T00:47:45+00:00 app[web.1]: Started GET "/login" for 64.134.166.80 at 2012-12-24 00:47:45 +0000
+2012-12-24T00:47:45+00:00 app[web.1]:   [1m[35mCategory Load (3.8ms)[0m  SELECT "categories".* FROM "categories" 
+2012-12-24T00:47:45+00:00 app[web.1]: ** [NewRelic][12/24/12 00:47:45 +0000 24e63d80-c61e-439d-929d-af54ea9a53b1 (15)] INFO : Starting the worker thread in 15 after forking.
+2012-12-24T00:47:45+00:00 app[web.1]: Connected to ActiveRecord
+2012-12-24T00:47:45+00:00 app[web.1]:   Rendered devise/shared/_links.erb (1.5ms)
+2012-12-24T00:47:45+00:00 app[web.1]:   Rendered devise/sessions/new.html.erb within layouts/application (28.8ms)
+2012-12-24T00:47:45+00:00 app[web.1]: I, [2012-12-24T00:47:45.513149 #15]  INFO -- : worker=2 ready
+2012-12-24T00:47:45+00:00 app[web.1]: I, [2012-12-24T00:47:45.490253 #2]  INFO -- : master process ready
+2012-12-24T00:47:45+00:00 app[web.1]: WARN: tilt autoloading 'sass' in a non thread-safe way; explicit require 'sass' suggested.
+2012-12-24T00:47:46+00:00 heroku[router]: at=info method=GET path=/login host=new.simplifybest.com fwd=64.134.166.80 dyno=web.1 queue=0 wait=0ms connect=1ms service=1408ms status=500 bytes=643
+2012-12-24T00:47:46+00:00 app[web.1]:   app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb__1561265980867253699_50476480'
+2012-12-24T00:47:46+00:00 app[web.1]: 
+2012-12-24T00:47:46+00:00 app[web.1]: Completed 500 Internal Server Error in 1171ms
+2012-12-24T00:47:46+00:00 app[web.1]: 
+2012-12-24T00:47:46+00:00 app[web.1]:     15: 	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+2012-12-24T00:47:46+00:00 app[web.1]: Load path: /app
+2012-12-24T00:47:46+00:00 app[web.1]:     17: 	<!-- Included CSS Files -->
+2012-12-24T00:47:46+00:00 app[web.1]:     19: 	
+2012-12-24T00:47:46+00:00 app[web.1]:     20: 	<!-- Included JS Files  -->
+2012-12-24T00:47:46+00:00 app[web.1]:   app/assets/stylesheets/foundation_and_overrides.scss:1
+2012-12-24T00:47:46+00:00 app[web.1]: 
+2012-12-24T00:47:46+00:00 app[web.1]:     16:   
+2012-12-24T00:47:46+00:00 app[web.1]: ActionView::Template::Error (File to import not found or unreadable: foundation/common/ratios.
+2012-12-24T00:47:46+00:00 app[web.1]:   (in /app/app/assets/stylesheets/foundation_and_overrides.scss)):
+2012-12-24T00:47:46+00:00 app[web.1]:     18: 	<%= stylesheet_link_tag    "application" %>
+2012-12-24T00:47:46+00:00 app[web.1]:     21: 	<%= javascript_include_tag "application" %>
+2012-12-24T00:47:47+00:00 heroku[router]: at=info method=GET path=/ host=new.simplifybest.com fwd=64.134.166.80 dyno=web.1 queue=0 wait=0ms connect=1ms service=35ms status=500 bytes=643
+2012-12-24T00:47:47+00:00 app[web.1]: 
+2012-12-24T00:47:47+00:00 app[web.1]: Started GET "/" for 64.134.166.80 at 2012-12-24 00:47:47 +0000
+2012-12-24T00:47:47+00:00 app[web.1]: ActionView::Template::Error (File to import not found or unreadable: foundation/common/ratios.
+2012-12-24T00:47:47+00:00 app[web.1]:   Rendered pages/home.html.erb within layouts/application (0.4ms)
+2012-12-24T00:47:47+00:00 app[web.1]:     21: 	<%= javascript_include_tag "application" %>
+2012-12-24T00:47:47+00:00 app[web.1]:     20: 	<!-- Included JS Files  -->
+2012-12-24T00:47:47+00:00 app[web.1]:     15: 	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+2012-12-24T00:47:47+00:00 app[web.1]:     16:   
+2012-12-24T00:47:47+00:00 app[web.1]:   app/assets/stylesheets/foundation_and_overrides.scss:1
+2012-12-24T00:47:47+00:00 app[web.1]: 
+2012-12-24T00:47:47+00:00 app[web.1]:     17: 	<!-- Included CSS Files -->
+2012-12-24T00:47:47+00:00 app[web.1]:     18: 	<%= stylesheet_link_tag    "application" %>
+2012-12-24T00:47:47+00:00 app[web.1]: 
+2012-12-24T00:47:47+00:00 app[web.1]: 
+2012-12-24T00:47:47+00:00 app[web.1]:   (in /app/app/assets/stylesheets/foundation_and_overrides.scss)):
+2012-12-24T00:47:47+00:00 app[web.1]:     19: 	
+2012-12-24T00:47:47+00:00 app[web.1]:   app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb__1561265980867253699_50476480'
+2012-12-24T00:47:47+00:00 app[web.1]:   [1m[35mCategory Load (2.2ms)[0m  SELECT "categories".* FROM "categories" 
+2012-12-24T00:47:47+00:00 app[web.1]: Completed 500 Internal Server Error in 18ms
+2012-12-24T00:47:47+00:00 app[web.1]: 
+2012-12-24T00:47:47+00:00 app[web.1]: Load path: /app
+2012-12-24T00:47:47+00:00 app[web.1]: Processing by PagesController#home as HTML
+2012-12-24T00:47:47+00:00 app[web.1]:   [1m[36mProduct Load (2.9ms)[0m  [1mSELECT "products".* FROM "products" [0m
+2012-12-24T00:47:50+00:00 app[web.1]: 
+2012-12-24T00:47:50+00:00 app[web.1]:     15: 	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+2012-12-24T00:47:50+00:00 app[web.1]:     17: 	<!-- Included CSS Files -->
+2012-12-24T00:47:50+00:00 app[web.1]:     19: 	
+2012-12-24T00:47:50+00:00 app[web.1]:     16:   
+2012-12-24T00:47:50+00:00 app[web.1]:     20: 	<!-- Included JS Files  -->
+2012-12-24T00:47:50+00:00 app[web.1]:   Rendered pages/home.html.erb within layouts/application (0.1ms)
+2012-12-24T00:47:50+00:00 app[web.1]: Load path: /app
+2012-12-24T00:47:50+00:00 app[web.1]:   app/views/layouts/application.html.erb:18:in `_app_views_layouts_application_html_erb__1561265980867253699_50476480'
+2012-12-24T00:47:50+00:00 app[web.1]: 
+2012-12-24T00:47:50+00:00 app[web.1]: 
+2012-12-24T00:47:50+00:00 app[web.1]:   [1m[35mCategory Load (2.2ms)[0m  SELECT "categories".* FROM "categories" 
+2012-12-24T00:47:50+00:00 app[web
+.1]: Completed 500 Internal Server Error in 57ms
+2012-12-24T00:47:50+00:00 app[web.1]:   (in /app/app/assets/stylesheets/foundation_and_overrides.scss)):
+2012-12-24T00:47:50+00:00 app[web.1]: ActionView::Template::Error (File to import not found or unreadable: foundation/common/ratios.
+2012-12-24T00:47:50+00:00 app[web.1]:     21: 	<%= javascript_include_tag "application" %>
+2012-12-24T00:47:50+00:00 app[web.1]: 
+2012-12-24T00:47:50+00:00 app[web.1]: 
+2012-12-24T00:47:50+00:00 app[web.1]: Started GET "/" for 64.134.166.80 at 2012-12-24 00:47:50 +0000
+2012-12-24T00:47:50+00:00 app[web.1]: Processing by PagesController#home as HTML
+2012-12-24T00:47:50+00:00 app[web.1]:   [1m[36mProduct Load (2.9ms)[0m  [1mSELECT "products".* FROM "products" [0m
+2012-12-24T00:47:50+00:00 app[web.1]:   app/assets/stylesheets/foundation_and_overrides.scss:1
+2012-12-24T00:47:50+00:00 app[web.1]:     18: 	<%= stylesheet_link_tag    "application" %>
+2012-12-24T00:47:53+00:00 app[web.1]: ** [NewRelic][12/24/12 00:47:53 +0000 24e63d80-c61e-439d-929d-af54ea9a53b1 (7)] INFO : Reporting performance data every 60 seconds.
+2012-12-24T00:47:53+00:00 app[web.1]: ** [NewRelic][12/24/12 00:47:53 +0000 24e63d80-c61e-439d-929d-af54ea9a53b1 (7)] INFO : Connected to NewRelic Service at collector-3.newrelic.com
+2012-12-24T00:47:54+00:00 app[web.1]: ** [NewRelic][12/24/12 00:47:54 +0000 24e63d80-c61e-439d-929d-af54ea9a53b1 (11)] INFO : Connected to NewRelic Service at collector-3.newrelic.com
+2012-12-24T00:47:54+00:00 app[web.1]: ** [NewRelic][12/24/12 00:47:54 +0000 24e63d80-c61e-439d-929d-af54ea9a53b1 (11)] INFO : Reporting performance data every 60 seconds.
+2012-12-24T00:47:55+00:00 app[web.1]: ** [NewRelic][12/24/12 00:47:55 +0000 24e63d80-c61e-439d-929d-af54ea9a53b1 (15)] INFO : Reporting performance data every 60 seconds.
+2012-12-24T00:47:55+00:00 app[web.1]: ** [NewRelic][12/24/12 00:47:55 +0000 24e63d80-c61e-439d-929d-af54ea9a53b1 (15)] INFO : Connected to NewRelic Service at collector-3.newrelic.com
+2012-12-24T00:48:02+00:00 heroku[api]: Starting process with command `restart` by alex@simplifybest.com
+2012-12-24T00:48:10+00:00 heroku[run.1301]: State changed from starting to complete
+2012-12-24T00:48:10+00:00 heroku[run.1301]: Client connection closed. Sending SIGHUP to all processes
+2012-12-24T00:48:10+00:00 heroku[run.1301]: Awaiting client
+2012-12-24T00:48:10+00:00 heroku[run.1301]: Starting process with command `restart`
+2012-12-24T00:48:12+00:00 heroku[run.1301]: Process exited with status 127
+2012-12-24T00:48:21+00:00 heroku[web.1]: State changed from up to starting
+2012-12-24T00:48:23+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2012-12-24T00:48:24+00:00 app[web.1]: I, [2012-12-24T00:48:24.150740 #2]  INFO -- : reaped #<Process::Status: pid 7 exit 0> worker=0
+2012-12-24T00:48:24+00:00 app[web.1]: I, [2012-12-24T00:48:24.150854 #2]  INFO -- : reaped #<Process::Status: pid 11 exit 0> worker=1
+2012-12-24T00:48:24+00:00 app[web.1]: I, [2012-12-24T00:48:24.150910 #2]  INFO -- : reaped #<Process::Status: pid 15 exit 0> worker=2
+2012-12-24T00:48:24+00:00 app[web.1]: I, [2012-12-24T00:48:24.151142 #2]  INFO -- : master complete
+2012-12-24T00:48:25+00:00 heroku[web.1]: Process exited with status 0
+2012-12-24T00:48:41+00:00 heroku[web.1]: State changed from starting to up
+2012-12-24T00:48:49+00:00 heroku[router]: at=info method=GET path=/ host=new.simplifybest.com fwd=64.134.166.80 dyno=web.1 queue=0 wait=0ms connect=1ms service=5813ms status=500 bytes=643
+2012-12-24T01:01:50+00:00 heroku[router]: at=info method=GET path=/ host=new.simplifybest.com fwd=64.134.166.80 dyno=web.1 queue=0 wait=0ms connect=0ms service=1360ms status=500 bytes=643

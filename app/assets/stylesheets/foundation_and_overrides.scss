@@ -278,9 +278,8 @@ ul[data-clearing] li { cursor: pointer; }
 [class*="columns ppicture"] + [class*="columns ppicture"]:last-child { float:left;}
 
 @media only screen and (max-width: 767px) {
-[class*="column"] + [class*="column"]:last-child {
-float: none;
-}}
+  [class*="column"] + [class*="column"]:last-child { float: none;}
+}
 
 div.ppicture { padding: 0 5px; }
 
