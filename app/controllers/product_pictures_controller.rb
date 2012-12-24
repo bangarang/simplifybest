@@ -1,6 +1,4 @@
 class ProductPicturesController < ApplicationController
-  before_filter :display_products, :display_categories
-  
   def index
     @product_pictures = ProductPicture.all
   end
@@ -44,17 +42,5 @@ class ProductPicturesController < ApplicationController
     @product_picture.destroy
     flash[:notice] = "Successfully destroyed Product Picture."
     redirect_to @product_picture.product
-  end
-private 
-  def find_product
-    @product = Product.find_by_slug!(params[:id])
-  end
-
-  def display_categories
-    @categories = Category.all
-  end
-
-  def display_products
-    @products = Product.all
   end
 end

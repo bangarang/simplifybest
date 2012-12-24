@@ -26,4 +26,12 @@ module ApplicationHelper
     link_to(name, '#', class: "add_trs small button left", data: {id: id, fields: fields.gsub("\n", "")})
   end
 
+  def flash_class(level)
+    case level
+      when :notice then "alert-box success"
+      when :success then "alert-box"
+      when :error then "alert-box alert"
+      when :alert then "alert-box secondary"
+    end
+  end
 end

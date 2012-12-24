@@ -7,6 +7,10 @@ gem 'rmagick'
 gem 'fog'
 gem 'unicorn'
 gem 'jquery-rails'
+gem 'devise'
+gem 'rolify'
+gem 'cancan'
+
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'

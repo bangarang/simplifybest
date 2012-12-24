@@ -1,37 +1,33 @@
 <% provide(:title, "Edit #{@product.name}") %>
 <%= form_for @product, :html => {:multipart => true} do |f| %>
+<div class="box">
+  <div class="row">
+    <div class="four columns">
+      <%= image_tag @product.image_url(:main).to_s if @product.image? %>
+      <%= f.file_field :image %><br />
+      or
+      <%= f.text_field :remote_image_url, :placeholder => 'Image URL' %>
 
-<div class="wrapper"></div>
-<div class="row title homepage">
-  <h1 class="right"><%= f.text_field :name, :placeholder => "Product Name" %></h1>
-</div>
- <div class="row title homepage">
-  <h3 class="subheader right"><%= f.text_field :excerpt, :placeholder => "Product Excerpt" %></h3>
-</div>
-
-<div class="row">
-  <div class="five columns">
-    <div class="left">
-      <%= f.collection_select :category_id, Category.find(:all), :id, :name, :prompt => "Select a Category" %>
-      or create one:
+    </div>
+    <div class="six columns" style="margin-top:30px;">
+      Name: <%= f.text_field :name, :placeholder => "Product Name" %>
+      Excerpt: <%= f.text_field :excerpt, :placeholder => "Product Excerpt" %>
+      Category: <%= f.collection_select :category_id, Category.find(:all), :id, :name, :prompt => "Select a Category" %>
+          or create one:
       <%= f.text_field :new_category_name %>
+      <div class="row">
+        <div class="six columns">
+          <%= f.submit :class => "small radius button"%>
+        </div>
+        <div class="six columns">
+          <%= link_to "Show", @product %> |
+          <%= link_to "Delete Product", @product, :confirm => 'Are you sure?', :method => :delete %> |
+          <%= link_to "View All", products_path %>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="two columns">
-    <%= f.submit :class => "small radius button right"%>
-  </div>
-
-  <div class="five columns">
-  	<div class="right">
-  	  <%= link_to "Show", @product %> |
-      <%= link_to "Delete Product", @product, :confirm => 'Are you sure?', :method => :delete %> |
-  	  <%= link_to "View All", products_path %>
-  	</div>
-  </div>
-</div>
-
-<div class="box">
   <div class="row prodnav">
     <div class="twelve columns">
       <dl class="sub-nav right">
@@ -50,14 +46,7 @@
     <div class="twelve columns">
       <h3 class="title right">Overview</h3>
     </div>
-    <div class="four columns mainimage">
-      <%= image_tag @product.image_url(:main).to_s if @product.image? %>
-    	<%= f.file_field :image %><br />
-    	or
-    	<%= f.text_field :remote_image_url, :placeholder => 'Image URL' %>
-
-    </div>
-    <div class="eight columns">
+    <div class="eight columns right">
     	<%= f.text_area :description %>
     </div>
   </div>

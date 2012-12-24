@@ -29,16 +29,17 @@ body { background: #fafafa; }
 .copyright ul li {
 	display: inline;
 }
+
 .top-bar { margin:0; }
 h1.super { color: white; font-size: 100px; line-height: 100px; margin-bottom: 12px;  text-shadow: rgba(0, 0, 0, 0.4) 0 1px 2px; text-align: right; }
 h1.super.last-line { color:#d00; }
 .box.homepage { margin-top: 0px; }
-.box{ width: 1000px; max-width: 100%; background: white; margin: 10px auto;padding: 0; box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); -moz-box-shadow: 0 0 15px rgba(0,0,0,0.13); -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); }
-
+.box{ width: 1000px; max-width: 100%; margin: 10px auto;padding: 0; box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); -moz-box-shadow: 0 0 15px rgba(0,0,0,0.13); -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); }
+.page { background: white; }
    /* Product CSS */
 
 .top-bar { margin: 0; }
-.title h1 { color: #d00; text-shadow: rgba(0, 0, 0, 0.4) 0 1px 2px; margin:0; margin-left:-30px;margin-right:-30px; padding:5px 30px; font-size: 70px; }
+.title h1 { color: #d00; text-shadow: rgba(0, 0, 0, 0.4) 0 1px 2px; margin:20px -30px 0 -30px; padding:5px 30px; font-size: 70px; background: rgba(255,255,255,0.9); }
 
 h3.title { color: white;background: rgba(221, 0, 0, 0.9);text-shadow: rgba(0, 0, 0, 0.9) 0 1px 2px;margin: 10px -30px 10px 0;padding: 5px 30px;font-size: 40px;text-transform: uppercase; }
 
@@ -59,13 +60,6 @@ p.name { color: #d00; margin:0; padding:5px; font-size: 14px; }
 
 .wrapper { background: #112; height: 400px; margin-bottom: -400px; margin-top: 0; }
 
-@media only screen and (max-width: 767px) { 
-	.specs { padding:0; } 
-	h3.title { margin: 10px 0; text-align: center; padding:5px;} 
-	.mainimage { margin-top:0 ; } 
-	.wrapper { margin-top: 0;} 
-}
-
 .ie8 h3.title, .ie7 h3.title { background: #d00; }
 .ppicture div { padding:5px; height:330px; background:white; }
 .ppicture img { display: table; margin: 0 auto 10px auto; height: 175px; }
@@ -73,9 +67,19 @@ p.name { color: #d00; margin:0; padding:5px; font-size: 14px; }
 .accessories, .supplies { width:100%; background: white; }
 .trs { background: white; }
 
+.home-placeholder { background: url('/assets/paperpile.jpg'); background-size: 100%; padding-bottom: 125px;}
+.home-content { margin-top: -125px; }
 
 
+.product-placeholder { background: url('/assets/paperpile.jpg'); background-size: 100%;  padding-bottom: 200px;}
+.product-content { margin-top: -200px; }
 
+.prod-admin {margin-top: -20px; background: rgba(255,255,255,0.9);}
+.prod-admin div { padding: 10px; background: white;}
 
-
-
+@media only screen and (max-width: 767px) { 
+	.specs { padding:0; } 
+	h3.title { margin: 10px 0; text-align: center; padding:5px;} 
+	.mainimage { margin-top:0 ; } 
+	.wrapper { margin-top: 0;} 
+}

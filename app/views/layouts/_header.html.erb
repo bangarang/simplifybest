@@ -6,6 +6,9 @@
   <section>
 
     <ul class="right">
+      <% if user_signed_in? %>
+      <li style="color:white;">Signed in as: <%= current_user.email %></li>
+      <% end %>
       <li class="has-dropdown">
         <%= link_to "Products", products_path%>
         <ul class="dropdown">
@@ -33,6 +36,11 @@
       </li>
       <li class="divider"></li>
       <li><%= link_to'About', about_path %></li>
+    <% if user_signed_in? %>
+      <li><%= link_to 'Log Out', destroy_user_session_path, :method => 'delete', :confirm => 'Are you sure?' %></li>
+    <% else %>
+      <li><%= link_to 'Log In', new_user_session_path %></li>
+    <% end %>
     </ul>
   </section>
 </nav>

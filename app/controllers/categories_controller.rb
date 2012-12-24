@@ -1,6 +1,4 @@
 class CategoriesController < ApplicationController
-  before_filter :display_products, :display_categories
-
   def index
     @categories = Category.all
   end
@@ -37,16 +35,4 @@ class CategoriesController < ApplicationController
     @category.destroy
     redirect_to categories_url, :notice => "Successfully destroyed Product."
   end
-
-
-private 
-
-  def display_categories
-    @categories = Category.all
-  end
-
-  def display_products
-    @products = Product.all
-  end
-
 end

@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
-  before_filter :display_products, :display_categories
-
   before_filter :find_product, only: [:show, :edit, :update, :destroy]
+
+  before_filter :authenticate_user!, :except => [:show, :new]
 
   def index
   end
@@ -42,17 +42,5 @@ class ProductsController < ApplicationController
 private 
   def find_product
     @product = Product.find_by_slug!(params[:id])
-  end
-
-  def display_product_pictures
-    @product_pictures = ProductPicture.all
-  end
-
-  def display_categories
-    @categories = Category.all
-  end
-
-  def display_products
-    @products = Product.all
   end
 end
