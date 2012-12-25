@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   before_filter :find_product, only: [:show, :edit, :update, :destroy]
 
-  before_filter :authenticate_user!, :except => [:show, :new]
+  before_filter :authenticate_user!, :except => [:show, :index]
 
   def index
   end
