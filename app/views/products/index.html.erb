@@ -1,17 +1,25 @@
 <% provide(:title, 'Products') %>
-<div class="box">
+
+<div class="product-placeholder">
+  <div class="row title">
+    <h1 class="right">Our Products</h1>
+  </div>
+</div>
+
+<div class="box product-content">
   <% for category in @categories %>
     <h3 class="title right"><%= category.name %></h3>
-    <ul class="block-grid four-up">
+    <ul class="block-grid four-up mobile">
     <% for product in category.products.order(:name) %>
       <li>
-        <ul class="pricing-table">
-          <li class="thumbnail"><%= image_tag product.image_url(:thumb).to_s if product.image? %></li>
-          <li class="title"><%= product.name %></li>
-          <li class="description"><%= product.excerpt %></li>
-          <li class="bullet-item"><%= product.speed %></li>
-          <li class="bullet-item"><%= product.maxdutycycle %></li>
-        </ul>
+        <a href="<%= product_path(product) %>">
+          <ul class="pricing-table box">
+            <li class="thumbnail"><%= image_tag product.image_url(:thumb).to_s if product.image? %></li>
+            <li class="title"><%= product.name %></li>
+            <li class="description"><%= product.excerpt %></li>
+            <li class="bullet-item"><%= product.maxdutycycle %></li>
+          </ul>
+        </a>
       </li>
     <% end %>
     </ul>
