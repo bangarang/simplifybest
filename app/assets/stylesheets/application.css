@@ -33,9 +33,9 @@ body { background: #fafafa; }
 .top-bar { margin:0; }
 h1.super { color: white; font-size: 100px; line-height: 100px; margin-bottom: 12px;  text-shadow: rgba(0, 0, 0, 0.4) 0 1px 2px; text-align: right; }
 h1.super.last-line { color:#d00; }
-.box.homepage { margin-top: 0px; }
-.box{ width: 1000px; max-width: 100%; margin: 10px auto;padding: 0; box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); -moz-box-shadow: 0 0 15px rgba(0,0,0,0.13); -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); }
-.page { background: white; }
+.box.homepage { margin-top: 0px;}
+.box { width: 1000px; max-width: 100%; margin: 10px auto; background: white; padding: 0; box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); -moz-box-shadow: 0 0 15px rgba(0,0,0,0.13); -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); }
+/*.page { background: white; }*/
    /* Product CSS */
 
 .top-bar { margin: 0; }
