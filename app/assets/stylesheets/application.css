@@ -80,6 +80,8 @@ p.name { color: #d00; margin:0; padding:5px; font-size: 14px; }
 
 .thumbnail { display: table; margin:auto; }
 
+.index { width: 100%; margin:auto; }
+
 @media only screen and (max-width: 767px) { 
 	.specs { padding:0; } 
 	h3.title { margin: 10px 0; text-align: center; padding:5px;} 
