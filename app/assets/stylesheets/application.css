@@ -40,7 +40,7 @@ h1.super.last-line { color:#d00; }
 .top-bar { margin: 0; }
 .title h1 { color: #d00; text-shadow: rgba(0, 0, 0, 0.4) 0 1px 2px; margin: 20px 0 20px -30px; padding:5px 30px; font-size: 70px; background: rgba(255,255,255,0.9); }
 
-.title h3 { padding:5px 30px; background: rgba(255,255,255,0.9); }
+.title h3 { margin:20px 0 20px -30px; padding:5px 30px; background: rgba(255,255,255,0.9); }
 
 h3.title { color: white;background: rgba(221, 0, 0, 0.9);text-shadow: rgba(0, 0, 0, 0.9) 0 1px 2px;margin: 10px -30px 10px 0;padding: 5px 30px;font-size: 40px;text-transform: uppercase; }
 
@@ -69,7 +69,7 @@ p.name { color: #d00; margin:0; padding:5px; font-size: 14px; }
 .trs { background: white; }
 
 .home-placeholder { background: url('/assets/paperpile.jpg'); background-size: 100%; padding-bottom: 125px;}
-.home-content { margin-top: -125px; }
+.home-content { margin-top: -136px; }
 
 
 .product-placeholder { background: url('/assets/paperpile.jpg'); background-size: 100%;  padding-bottom: 200px;}
@@ -79,10 +79,17 @@ p.name { color: #d00; margin:0; padding:5px; font-size: 14px; }
 .prod-admin div { padding: 10px; background: white;}
 
 .thumbnail { display: table; margin:auto; }
+.downloads ul li { list-style: none; }
 
 @media only screen and (max-width: 767px) { 
 	.specs { padding:0; } 
 	h3.title { margin: 10px 0; text-align: center; padding:5px;} 
 	.mainimage { margin-top:0 ; } 
 	.wrapper { margin-top: 0;} 
+	h1.super { font-size: 30px; line-height: 30px; }
+	.title h1 { font-size: 30px; }
+	.title h3 { font-size: 25px; }
+	h3.title { font-size: 25px ; 	}
+
+
 }
