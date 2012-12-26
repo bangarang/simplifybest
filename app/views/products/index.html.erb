@@ -7,6 +7,11 @@
 </div>
 
 <div class="box product-content">
+  <% if can? :edit, Product %>
+  <div class="twelve columns">
+    <%= link_to "New Product", new_product_path, :class => "small button right" %>
+  </div>
+  <% end %>
   <% for category in @categories %>
     <div class="twelve columns"><h3 class="title right"><%= category.name %></h3></div>
     <ul class="block-grid four-up mobile index">
@@ -18,14 +23,12 @@
             <li class="title"><%= product.name %></li>
             <li class="description"><%= product.excerpt %></li>
             <li class="bullet-item"><%= product.maxdutycycle %></li>
+            <li class="cta-button"><a class="small button" href="#">Buy it Now &raquo;</a></li>
           </ul>
         </a>
       </li>
     <% end %>
     </ul>
-  <% end %>
-  <% if can? :edit, Product %>
-    <p><%= link_to "New Product", new_product_path %></p>
   <% end %>
   </div>
 </div>

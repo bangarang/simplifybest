@@ -78,8 +78,14 @@ p.name { color: #d00; margin:0; padding:5px; font-size: 14px; }
 .prod-admin {margin-top: -20px; background: rgba(255,255,255,0.9);}
 .prod-admin div { padding: 10px; background: white;}
 
-.thumbnail { display: table; margin:auto; }
+.thumbnail { display: table; margin:auto; padding: 15px; }
 .downloads ul li { list-style: none; }
+
+/*.alert-box { color: #fff; text-shadow: 0 -1px rgba(0, 0, 0, 0.3); height:30px; font-weight: bold; font-size: 14px; padding:7px; text-align: center;}
+.alert-box.notice { background: #2ba6cb; }
+.alert-box.success { background: #5da423; }
+.alert-box.error { background: #d00; }
+.alert-box.alert { background: #e9e9e9; color: #505050;}*/
 
 @media only screen and (max-width: 767px) { 
 	.specs { padding:0; } 
