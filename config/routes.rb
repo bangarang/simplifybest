@@ -19,6 +19,8 @@ Simplifybest::Application.routes.draw do
 
   match 'about' => 'pages#about'
 
+  match '/email' => 'application#send_mail'
+
   # Color MFPs
 
   match 'taskalfa3050ci' => 'pages#taskalfa3050ci'

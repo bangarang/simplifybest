@@ -1,0 +1,10 @@
+<div id="meters" class="reveal-modal">
+  <%= form_tag('/email', :method => 'post') do %>
+    <p>Name: <%= text_field_tag :name, @name %>
+    <p>Address: <%= text_field_tag :address, @address %>
+    <p>Subject: <%= text_field_tag :subject, @subject %>
+    <p>Message: <%= text_area_tag  :body, @body %>
+    <%= submit_tag "Send" %>
+  <% end %>
+  <a class="close-reveal-modal">&#215;</a>
+</div>

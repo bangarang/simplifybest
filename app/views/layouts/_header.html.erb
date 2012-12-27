@@ -9,6 +9,7 @@
       <% if user_signed_in? %>
       <li style="color:white;">Signed in as: <%= current_user.email %></li>
       <% end %>
+      <li><a href="#" data-reveal-id="meters">Meters</a></li>
       <li class="has-dropdown">
         <%= link_to "Our Products", products_path%>
         <ul class="dropdown">

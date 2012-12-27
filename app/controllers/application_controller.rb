@@ -5,8 +5,14 @@ class ApplicationController < ActionController::Base
   end
 
   before_filter :display_products, :display_categories
-
- private 
+  
+  def send_mail
+    ServiceMailer.meters(params).deliver
+    flash[:notice] = "Email was sent successfully."
+    redirect_to root_path
+  end
+ 
+private 
   def find_product
     @product = Product.find_by_slug!(params[:id])
   end
