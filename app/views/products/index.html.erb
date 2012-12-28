@@ -13,22 +13,27 @@
   </div>
   <% end %>
   <% for category in @categories %>
+  <div class="row">
     <div class="twelve columns"><h3 class="title right"><%= category.name %></h3></div>
-    <ul class="block-grid four-up mobile index">
-    <% for product in category.products.order(:name) %>
-      <li>
-        <a href="<%= product_path(product) %>">
-          <ul class="pricing-table box product">
-            <li class="thumbnail"><%= image_tag product.image_url(:thumb).to_s if product.image? %></li>
-            <li class="title"><%= product.name %></li>
-            <li class="description"><%= product.excerpt %></li>
-            <li class="bullet-item"><%= product.maxdutycycle %></li>
-            <li class="cta-button"><a class="small button" href="<%= product_path(product) %>">More Info&raquo;</a></li>
-          </ul>
-        </a>
-      </li>
-    <% end %>
-    </ul>
-  <% end %>
   </div>
+  <div class="row">
+    <div class="twelve columns">
+      <ul class="block-grid four-up mobile index">
+      <% for product in category.products.order(:name) %>
+        <li>
+          <a href="<%= product_path(product) %>">
+            <ul class="pricing-table box product">
+              <li class="thumbnail"><%= image_tag product.image_url(:thumb).to_s if product.image? %></li>
+              <li class="title"><%= product.name %></li>
+              <li class="description"><%= product.excerpt %></li>
+              <li class="bullet-item"><%= product.maxdutycycle %></li>
+              <li class="cta-button"><a class="small button" href="<%= product_path(product) %>">More Info&raquo;</a></li>
+            </ul>
+          </a>
+        </li>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+  <% end %>
 </div>

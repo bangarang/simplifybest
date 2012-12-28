@@ -80,10 +80,11 @@ p.name { color: #d00; margin:0; padding:5px; font-size: 14px; }
 .thumbnail { display: table; margin:auto; padding: 15px; }
 .downloads ul li { list-style: none; }
 
-.name { width:150px; }
 .banner { margin:5px 20px 0 20px; }
+.banner a img.logo { height:100px; }
 .not-banner { display:none; }
 
+.white-bar { background: white; height:60px; }
 @media only screen and (max-width: 1030px) {
   	h3.title { margin:10px -15px 10px 0; }
 }
