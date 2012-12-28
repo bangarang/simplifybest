@@ -1,0 +1,53 @@
+<%= form_for @meter do |f| %>
+  <% @meter.errors.full_messages.each do |msg| %>
+      <div class="row"><p><%= msg %></p></div>
+   <% end %>
+  <div class="row">
+    <div class="two columns">
+      <%= f.label "Name:", :class => "right inline" %>
+    </div>
+    <div class="five columns">
+      <%= f.text_field :first, :placeholder => "First" %>
+    </div>
+    <div class="five columns">
+      <%= f.text_field :last, :placeholder => "Last" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="two columns">
+      <%= f.label "Company:", :class => "right inline" %>
+    </div>
+    <div class="ten columns">
+      <%= f.text_field :company, :placeholder => "My Company, LLC." %>
+    </div>
+  </div>  
+  <div class="row">
+    <div class="two columns">
+      <%= f.label "E-Mail:", :class => "right inline" %>
+    </div>
+    <div class="ten columns">
+      <%= f.text_field :address, :placeholder => "me@mycompany.com" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="two columns">
+      <%= f.label "SOS#:", :class => "right inline" %>
+    </div>
+    <div class="ten columns">
+      <%= f.text_field :sos, :placeholder => "SOS1234" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="two columns">
+      <%= f.label "Meter:", :class => "right inline" %>
+    </div>
+    <div class="ten columns">
+      <%= f.text_field :meter, :placeholder => "123456789" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="four columns centered">
+      <%= f.submit "Submit Meter Reading", :class => "small button" %>
+    </div>
+  </div>
+<% end %>

@@ -1,27 +1,42 @@
 class ServiceMailer < ActionMailer::Base
   default :to => "alex@simplifybest.com"
-  default :from => "meter-reading@simplifybest.com"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
   #
   #   en.service_mailer.meters.subject
   #
-  def meters(email_params, sent_at = Time.now)
-    @sent_on = sent_at
-    @name = email_params[:name]
-    @company = email_params[:company]
-    @sos = email_params[:sos]
-    @meter = email_params[:meter]
-    mail(:subject => "Meter Reading")
-  end
 
-  def hi(email_params, sent_at = Time.now)
+  def meter(meter, sent_at = Time.now)
     @sent_on = sent_at
-    @first = email_params[:first]
-    @last = email_params[:last]
-    @company = email_params[:company]
-    @address = email_params[:address]
-    mail(:subject => "Messages Test")
+    @first = meter.first
+    @last = meter.last
+    @company = meter.company
+    @address = meter.address
+    @sos = meter.sos
+    @meter = meter.meter
+    mail(:subject => "Online Meter Reading", :from => "meter-reading@simplifybest.com")
+  end
+  
+  def supply(supply_order, sent_at = Time.now)
+    @sent_on = sent_at
+    @first = supply_order.first
+    @last = supply_order.last
+    @company = supply_order.company
+    @address = supply_order.address
+    @sos = supply_order.sos
+    @comment = supply_order.comment
+    mail(:subject => "Online Supply Order", :from => "supply-orders@simplifybest.com")
+  end
+  
+  def service(service_call, sent_at = Time.now)
+    @sent_on = sent_at
+    @first = service_call.first
+    @last = service_call.last
+    @company = service_call.company
+    @address = service_call.address
+    @sos = service_call.sos
+    @comment = service_call.comment
+    mail(:subject => "Online Service Call", :from => "service-calls@simplifybest.com")
   end
 end

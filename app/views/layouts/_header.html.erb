@@ -1,6 +1,7 @@
 <nav class="top-bar contain-to-grid">
   <ul>
-    <li class="name"><a href="<%= root_url %>"><%= image_tag("logo.t.png", :class => "logo") %></a></li>
+    <li class="name banner"><a href="<%= root_url %>"><%= image_tag("logob.png", :class => "logo") %></a></li>
+    <li class="name not-banner"><a href="<%= root_url %>"><%= image_tag("logo.t.png", :class => "logo") %></a></li>
     <li class="toggle-topbar"><a href="#"></a></li>
   </ul>
   <section>
@@ -9,7 +10,19 @@
       <% if user_signed_in? %>
       <li style="color:white;">Signed in as: <%= current_user.email %></li>
       <% end %>
-      <li><a href="#" data-reveal-id="meters">Meters</a></li>
+      <li class="has-dropdown">
+        <% if can? :edit, Message %>
+        <%= link_to 'Service', messages_url %>
+        <% else %>
+        <a href="#">Service</a>
+        <% end %>
+        <ul class="dropdown">
+          <li><label>Contact Us</label></li>
+          <li><a href="#" data-reveal-id="service">Service Call</a></li>
+          <li><a href="#" data-reveal-id="meter">Meter Reading</a></li>
+          <li><a href="#" data-reveal-id="supply">Supply Order</a></li>
+        </ul>
+      </li>
       <li class="has-dropdown">
         <%= link_to "Our Products", products_path%>
         <ul class="dropdown">

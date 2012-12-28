@@ -33,8 +33,32 @@
 	<% end %>
 	<%= render "layouts/header" %>
   	<%= yield %>
-  	<div id="meters" class="reveal-modal">
-  		<%= render "messages/form" %>
+  	<div id="meter" class="reveal-modal">
+  		<div class="row">
+  			<div class="twelve columns">
+  				<h2>Send us Your Meter:</h2>
+  			</div>
+  		</div>
+  		<%= render "meters/form" %>
+  		<a class="close-reveal-modal">&#215;</a>
+  	</div>
+  	<div id="supply" class="reveal-modal">
+  		<div class="row">
+  			<div class="twelve columns">
+  				<h2>Place a Supply Order</h2>
+  			</div>
+  		</div>
+  		<%= render "supply_orders/form" %>
+  		<a class="close-reveal-modal">&#215;</a>
+  	</div>
+  	<div id="service" class="reveal-modal">
+  		<div class="row">
+  			<div class="twelve columns">
+  				<h2>Place a Service Call</h2>
+  			</div>
+  		</div>
+  		<%= render "service_calls/form" %>
+  		<a class="close-reveal-modal">&#215;</a>
   	</div>
   	<%= render "layouts/footer" %>
 </body>

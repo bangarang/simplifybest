@@ -1,0 +1,32 @@
+<% provide(:title, "Supply Order") %>
+
+<p>
+  <strong>First:</strong>
+  <%= @supply_order.first %>
+</p>
+<p>
+  <strong>Last:</strong>
+  <%= @supply_order.last %>
+</p>
+<p>
+  <strong>Company:</strong>
+  <%= @supply_order.company %>
+</p>
+<p>
+  <strong>Address:</strong>
+  <%= @supply_order.address %>
+</p>
+<p>
+  <strong>SOS # :</strong>
+  <%= @supply_order.sos %>
+</p>
+<p>
+  <strong>Comment</strong>
+  <%= @supply_order.comment %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_supply_order_path(@supply_order) %> |
+  <%= link_to "Destroy", @supply_order, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", supply_orders_path %>
+</p>

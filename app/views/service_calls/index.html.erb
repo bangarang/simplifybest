@@ -1,0 +1,23 @@
+<% provide(:title, "service_calls") %>
+
+<table>
+  <tr>
+    <th>First</th>
+    <th>Last</th>
+    <th>Company</th>
+    <th>Address</th>
+  </tr>
+  <% for service_call in @service_calls %>
+    <tr>
+      <td><%= service_call.first %></td>
+      <td><%= service_call.last %></td>
+      <td><%= service_call.company %></td>
+      <td><%= service_call.address %></td>
+      <td><%= link_to "Show", service_call %></td>
+      <td><%= link_to "Edit", edit_service_call_path(meter) %></td>
+      <td><%= link_to "Destroy", service_call, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Message", new_service_call_path %></p>

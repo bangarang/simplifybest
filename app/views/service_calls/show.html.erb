@@ -1,0 +1,32 @@
+<% provide(:title, "service_call") %>
+
+<p>
+  <strong>First:</strong>
+  <%= @service_call.first %>
+</p>
+<p>
+  <strong>Last:</strong>
+  <%= @service_call.last %>
+</p>
+<p>
+  <strong>Company:</strong>
+  <%= @service_call.company %>
+</p>
+<p>
+  <strong>Address:</strong>
+  <%= @service_call.address %>
+</p>
+<p>
+  <strong>SOS # :</strong>
+  <%= @service_call.sos %>
+</p>
+<p>
+  <strong>Comment</strong>
+  <%= @service_call.comment %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_service_call_path(@mservice_call) %> |
+  <%= link_to "Destroy", @service_call, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", service_calls_path %>
+</p>

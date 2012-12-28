@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
     redirect_to root_path, :alert => exception.message
   end
 
-  before_filter :display_products, :display_categories, :new_message 
+  before_filter :display_products, :display_categories, :new_meter, :new_supply, :new_service  
   
   def send_mail
     ServiceMailer.meters(params).deliver
@@ -30,7 +30,15 @@ private
     @products = Product.all
   end
 
-  def new_message 
-    @message = Message.new
+  def new_meter 
+    @meter = Meter.new
+  end
+    
+  def new_supply 
+    @supply_order = SupplyOrder.new
+  end
+
+  def new_service
+    @service_call = ServiceCall.new
   end
 end

@@ -1,0 +1,32 @@
+<% provide(:title, "Message") %>
+
+<p>
+  <strong>First:</strong>
+  <%= @meter.first %>
+</p>
+<p>
+  <strong>Last:</strong>
+  <%= @meter.last %>
+</p>
+<p>
+  <strong>Company:</strong>
+  <%= @meter.company %>
+</p>
+<p>
+  <strong>Address:</strong>
+  <%= @meter.address %>
+</p>
+<p>
+  <strong>SOS # :</strong>
+  <%= @meter.sos %>
+</p>
+<p>
+  <strong>Meter</strong>
+  <%= @meter.meter %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_meter_path(@meter) %> |
+  <%= link_to "Destroy", @meter, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", meters_path %>
+</p>

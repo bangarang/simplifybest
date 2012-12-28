@@ -1,0 +1,30 @@
+<%= form_for @meter do |f| %>
+  <% @meter.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+   <% end %>
+  <p>
+    <%= f.label :first %><br />
+    <%= f.text_field :first %>
+  </p>
+  <p>
+    <%= f.label :last %><br />
+    <%= f.text_field :last %>
+  </p>
+  <p>
+    <%= f.label :company %><br />
+    <%= f.text_field :company %>
+  </p>
+  <p>
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </p>
+  <p>
+    <%= f.label :sos %><br />
+    <%= f.text_field :sos %>
+  </p>
+  <p>
+    <%= f.label :meter %><br />
+    <%= f.text_field :meter %>
+  </p>
+  <p><%= f.submit %></p>
+<% end %>

@@ -1,0 +1,23 @@
+<% provide(:title, "supply_order") %>
+
+<table>
+  <tr>
+    <th>First</th>
+    <th>Last</th>
+    <th>Company</th>
+    <th>Address</th>
+  </tr>
+  <% for supply_order in @supply_orders %>
+    <tr>
+      <td><%= supply_order.first %></td>
+      <td><%= supply_order.last %></td>
+      <td><%= supply_order.company %></td>
+      <td><%= supply_order.address %></td>
+      <td><%= link_to "Show", supply_order %></td>
+      <td><%= link_to "Edit", edit_supply_order_path(supply_order) %></td>
+      <td><%= link_to "Destroy", supply_order, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Message", new_supply_order_path %></p>

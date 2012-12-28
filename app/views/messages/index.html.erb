@@ -1,23 +1,44 @@
-<% provide(:title, "Messages") %>
+<% provide(:title, "All Messages") %>
 
-<table>
-  <tr>
-    <th>First</th>
-    <th>Last</th>
-    <th>Company</th>
-    <th>Address</th>
-  </tr>
-  <% for message in @messages %>
-    <tr>
-      <td><%= message.first %></td>
-      <td><%= message.last %></td>
-      <td><%= message.company %></td>
-      <td><%= message.address %></td>
-      <td><%= link_to "Show", message %></td>
-      <td><%= link_to "Edit", edit_message_path(message) %></td>
-      <td><%= link_to "Destroy", message, :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
-  <% end %>
-</table>
-
-<p><%= link_to "New Message", new_message_path %></p>
+<div class="box">
+  <ul class="block-grid four-up mobile index">
+    <% for message in @messages %>
+    <li>
+      <a href="<%= message_path(message) %>">
+        <ul class="pricing-table box message">
+          <% if message.service? %>
+          <li class="title <%= message.type %>">Service Call</li>
+          <% end %>
+          <% if message.supply? %>
+          <li class="title <%= message.type %>">Supply Order</li>
+          <% end %>
+          <% if message.meter? %>
+          <li class="title <%= message.type %>">Meter Reading</li>
+          <% end %>
+          <li class="bullet-item"><%= message.first %> <%= message.last %></li>
+          <li class="bullet-item"><%= message.company %></li>
+          <li class="bullet-item"><%= message.address %></li>
+          <li class="bullet-item"><%= message.sos %></li>
+          <% if message.meter? %>
+          <li class="bullet-item"><%= message.meter %></li>
+          <% else %>
+          <li class="description"><%= message.comment %></li>
+          <% end %>
+          <li class="cta-button"><%= link_to "Destroy", message, :confirm => 'Are you sure?', :method => :delete, :class => "small button" %></li>
+        </ul>
+      </a>
+    </li>
+    <% end %>
+  </ul>
+  <div class="row" style="padding:20px 0;">
+    <div class="four columns">
+      <%= link_to "Meter Reading", new_meter_path, :class => "small button" %>
+    </div>
+    <div class="four columns">
+      <%= link_to "Service Call", new_service_call_path, :class => "small button" %>
+    </div>
+    <div class="four columns">
+      <%= link_to "Supply Order", new_supply_order_path, :class => "small button" %>
+    </div>
+  </div>
+</div>

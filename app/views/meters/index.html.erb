@@ -1,0 +1,23 @@
+<% provide(:title, "Meters") %>
+
+<table>
+  <tr>
+    <th>First</th>
+    <th>Last</th>
+    <th>Company</th>
+    <th>Address</th>
+  </tr>
+  <% for meter in @meters %>
+    <tr>
+      <td><%= meter.first %></td>
+      <td><%= meter.last %></td>
+      <td><%= meter.company %></td>
+      <td><%= meter.address %></td>
+      <td><%= link_to "Show", meter %></td>
+      <td><%= link_to "Edit", edit_meter_path(meter) %></td>
+      <td><%= link_to "Destroy", meter, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Message", new_meter_path %></p>

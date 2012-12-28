@@ -1,0 +1,53 @@
+<%= form_for @service_call do |f| %>
+  <% @service_call.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+   <% end %>
+  <div class="row">
+    <div class="two columns">
+      <%= f.label "Name:", :class => "right inline" %>
+    </div>
+    <div class="five columns">
+      <%= f.text_field :first, :placeholder => "First" %>
+    </div>
+    <div class="five columns">
+      <%= f.text_field :last, :placeholder => "Last" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="two columns">
+      <%= f.label "Company:", :class => "right inline" %>
+    </div>
+    <div class="ten columns">
+      <%= f.text_field :company, :placeholder => "My Company, LLC." %>
+    </div>
+  </div>  
+  <div class="row">
+    <div class="two columns">
+      <%= f.label "E-Mail:", :class => "right inline" %>
+    </div>
+    <div class="ten columns">
+      <%= f.text_field :address, :placeholder => "me@mycompany.com" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="two columns">
+      <%= f.label 'SOS#:', :class => "right inline" %>
+    </div>
+    <div class="ten columns">
+      <%= f.text_field :sos, :placeholder => "SOS1234" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="two columns">
+      <%= f.label "Service Needs:", :class => "right inline" %>
+    </div>
+    <div class="ten columns">
+      <%= f.text_area :comment, :placeholder => "Tell us about your Service Needs.", :rows => "10" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="four columns centered">
+      <%= f.submit "Submit Service Call", :class => "small button" %>
+    </div>
+  </div>
+<% end %>
