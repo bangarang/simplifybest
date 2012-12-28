@@ -15,4 +15,13 @@ class ServiceMailer < ActionMailer::Base
     @meter = email_params[:meter]
     mail(:subject => "Meter Reading")
   end
+
+  def hi(email_params, sent_at = Time.now)
+    @sent_on = sent_at
+    @first = email_params[:first]
+    @last = email_params[:last]
+    @company = email_params[:company]
+    @address = email_params[:address]
+    mail(:subject => "Messages Test")
+  end
 end

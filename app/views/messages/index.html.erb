@@ -1,0 +1,23 @@
+<% provide(:title, "Messages") %>
+
+<table>
+  <tr>
+    <th>First</th>
+    <th>Last</th>
+    <th>Company</th>
+    <th>Address</th>
+  </tr>
+  <% for message in @messages %>
+    <tr>
+      <td><%= message.first %></td>
+      <td><%= message.last %></td>
+      <td><%= message.company %></td>
+      <td><%= message.address %></td>
+      <td><%= link_to "Show", message %></td>
+      <td><%= link_to "Edit", edit_message_path(message) %></td>
+      <td><%= link_to "Destroy", message, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Message", new_message_path %></p>

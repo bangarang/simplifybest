@@ -33,7 +33,9 @@
 	<% end %>
 	<%= render "layouts/header" %>
   	<%= yield %>
-  	<%= render "shared/meters" %>
+  	<div id="meters" class="reveal-modal">
+  		<%= render "messages/form" %>
+  	</div>
   	<%= render "layouts/footer" %>
 </body>
 </html>

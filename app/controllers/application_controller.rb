@@ -1,10 +1,11 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-    rescue_from CanCan::AccessDenied do |exception|
+  
+  rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_path, :alert => exception.message
   end
 
-  before_filter :display_products, :display_categories
+  before_filter :display_products, :display_categories, :new_message 
   
   def send_mail
     ServiceMailer.meters(params).deliver
@@ -27,5 +28,9 @@ private
 
   def display_products
     @products = Product.all
+  end
+
+  def new_message 
+    @message = Message.new
   end
 end

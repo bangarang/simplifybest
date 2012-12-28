@@ -1,0 +1,11 @@
+one:
+  first: MyString
+  last: MyString
+  company: MyString
+  address: MyString
+
+two:
+  first: MyString
+  last: MyString
+  company: MyString
+  address: MyString

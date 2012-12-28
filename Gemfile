@@ -11,6 +11,9 @@ gem 'devise'
 gem 'rolify'
 gem 'cancan'
 
+gem 'turbolinks'
+gem 'jquery-turbolinks'
+
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'

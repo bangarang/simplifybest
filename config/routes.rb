@@ -1,4 +1,6 @@
 Simplifybest::Application.routes.draw do
+  resources :messages
+
   resources :users
 
   devise_for :users, :skip => [:sessions]

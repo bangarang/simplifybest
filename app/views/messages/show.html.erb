@@ -1,0 +1,24 @@
+<% provide(:title, "Message") %>
+
+<p>
+  <strong>First:</strong>
+  <%= @message.first %>
+</p>
+<p>
+  <strong>Last:</strong>
+  <%= @message.last %>
+</p>
+<p>
+  <strong>Company:</strong>
+  <%= @message.company %>
+</p>
+<p>
+  <strong>Address:</strong>
+  <%= @message.address %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_message_path(@message) %> |
+  <%= link_to "Destroy", @message, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", messages_path %>
+</p>
