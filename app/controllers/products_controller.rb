@@ -10,8 +10,13 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 
+  def duplicate
+    @old_product = Product.find_by_slug(params[:slug])
+    @product = @old_product.dup
+    render :action => 'new'
+  end
+
   def show
-    @category = Category.all
   end
 
   def edit

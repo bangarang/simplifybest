@@ -13,12 +13,13 @@ class SupplyOrdersController < ApplicationController
   end
 
   def create
+    session[:return_to] = request.referer
     @supply_order = SupplyOrder.new(params[:supply_order])
     if @supply_order.save
       ServiceMailer.supply(@supply_order).deliver
-      redirect_to root_url, :notice => "Successfully Sent supply order"
+      redirect_to session[:return_to], :notice => "Successfully Sent supply order"
     else
-      render :action => 'new'
+      redirect_to session[:return_to]
     end
   end
   

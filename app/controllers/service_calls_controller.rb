@@ -13,12 +13,13 @@ class ServiceCallsController < ApplicationController
   end
 
   def create
+    session[:return_to] = request.referer
     @service_call = ServiceCall.new(params[:service_call])
     if @service_call.save
       ServiceMailer.service(@service_call).deliver
-      redirect_to root_url, :notice => "Successfully Sent supply order"
+      redirect_to session[:return_to], :notice => "Successfully Sent supply order"
     else
-      render :action => 'new'
+      redirect_to session[:return_to]
     end
   end
   

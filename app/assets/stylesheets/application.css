@@ -67,11 +67,11 @@ p.name { color: #d00; margin:0; padding:5px; font-size: 14px; }
 .accessories, .supplies { width:100%; background: white; }
 .trs { background: white; }
 
-.home-placeholder { background: url('/assets/paperpile.jpg'); background-size: 100%; padding-bottom: 125px;}
+.home-placeholder { background: url('/assets/paperpile.jpg'); background-size: 100%; padding-bottom: 125px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); -moz-box-shadow: 0 0 15px rgba(0,0,0,0.13); -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.13);}
 .home-content { margin-top: -136px; }
 
 
-.product-placeholder { background: url('/assets/paperpile.jpg'); background-size: 100%;  padding-bottom: 200px;}
+.product-placeholder { background: url('/assets/paperpile.jpg'); background-size: 100%;  padding-bottom: 200px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); -moz-box-shadow: 0 0 15px rgba(0,0,0,0.13); -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.13);}
 .product-content { margin-top: -200px; background:white;}
 
 .prod-admin {margin-top: -20px; background: rgba(255,255,255,0.9);}
@@ -80,11 +80,16 @@ p.name { color: #d00; margin:0; padding:5px; font-size: 14px; }
 .thumbnail { display: table; margin:auto; padding: 15px; }
 .downloads ul li { list-style: none; }
 
-.banner { margin:5px 20px 0 20px; }
-.banner a img.logo { height:100px; }
+.banner { }
+.name a img.logo { height:55px; }
 .not-banner { display:none; }
 
-.white-bar { background: white; height:60px; }
+.rbar { background: #181818; height:60px;box-shadow: 0 0 15px rgba(0, 0, 0, 0.7); -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.7); -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);}
+.rbar ul li { list-style: none; float:left;}
+
+
+
+
 @media only screen and (max-width: 1030px) {
   	h3.title { margin:10px -15px 10px 0; }
 }

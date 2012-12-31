@@ -13,12 +13,13 @@ class MetersController < ApplicationController
   end
 
   def create
+    session[:return_to] = request.referer
     @meter = Meter.new(params[:meter])
     if @meter.save
       ServiceMailer.meter(@meter).deliver
-      redirect_to root_url, :notice => "Successfully Sent Meter"
+      redirect_to session[:return_to], :notice => "Successfully Sent Meter"
     else
-      render :action => 'new'
+      redirect_to session[:return_to]
     end
   end
   

@@ -20,6 +20,8 @@ Simplifybest::Application.routes.draw do
 
   resources :products
 
+  match 'products/:slug/dup' => 'products#duplicate'
+
   root :to => 'pages#home'
 
   match 'about' => 'pages#about'
