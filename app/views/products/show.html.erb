@@ -19,7 +19,7 @@
     <div class="right">
       <%= link_to "Edit", edit_product_path(@product) %> |
       <%= link_to "Delete Product", @product, :confirm => 'Are you sure?', :method => :delete %> |
-      <%= link_to "Duplicate Product", 'dup' %> |
+      <a href="<%=@product.slug%>/dup">Duplicate Product</a> |
       <%= link_to "View All", products_path %>
     </div>
   </div>
