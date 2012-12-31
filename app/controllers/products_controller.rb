@@ -7,12 +7,23 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @product = Product.new
+    @product = Product.new  
   end
 
   def duplicate
+    @product = Product.new  
     @old_product = Product.find_by_slug(params[:slug])
     @product = @old_product.dup
+    for accessory in @old_product.accessories
+      @temp = accessory.dup
+      @product.accessories.new(:name => @temp.name, :description => @temp.description )
+    end
+
+    for supply_item in @old_product.supply_items
+      @temp = supply_item.dup
+      @product.supply_items.new(:name => @temp.name, :description => @temp.description )
+    end
+    
     render :action => 'new'
   end
 
