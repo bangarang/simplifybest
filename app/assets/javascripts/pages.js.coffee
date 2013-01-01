@@ -15,7 +15,7 @@ $(document).ready ->
 	), (e) ->
 	  $(".scontainer").removeClass("open").find(".pcontainer").slideUp "fast"
 	  $("#overlay").css
-      	"z-index": 0
+      	"z-index": -100
      	 opacity: 0
 
 	$(".scontainer").bind("mouseenter", (e) ->

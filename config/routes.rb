@@ -25,8 +25,8 @@ Simplifybest::Application.routes.draw do
   root :to => 'pages#home'
 
   match 'about' => 'pages#about'
-
-  match '/email' => 'application#send_mail'
+  match 'styles' => 'pages#styles'
+  match 'email' => 'application#send_mail'
 
   # Color MFPs
 

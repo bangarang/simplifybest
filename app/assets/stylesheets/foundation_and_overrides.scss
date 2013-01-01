@@ -13,7 +13,7 @@
 // Colors Settings
 
 // $mainColor: #2ba6cb;
-// $mainColor: #d00;
+$mainColor: #08C;
 // $secondaryColor: #e9e9e9;
 // $alertColor: #c60f13;
 // $successColor: #5da423;
@@ -306,3 +306,5 @@ div.alert-box { color: #fff; text-shadow: 0 -1px rgba(0, 0, 0, 0.3); height:30px
 .rbar section ul li a:hover { color:white; }
 
 .scontainer { height:0;  background:white; position:absolute; left:50%; margin-left:-500px;}
+
+dl.sub-nav { margin: -4px 0 18px -7px; } 

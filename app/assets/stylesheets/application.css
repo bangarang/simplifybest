@@ -36,24 +36,23 @@ h1.super { color: white; font-size: 100px; line-height: 100px; margin-bottom: 12
 h1.super.last-line { color:#d00; }
 .box { background: white; width: 1000px; max-width: 100%; margin: 10px auto; padding: 0; box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); -moz-box-shadow: 0 0 15px rgba(0,0,0,0.13); -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); }
 
+.prodnav { background:#212121; }
+
 .top-bar { margin: 0; }
-.title h1 { color: #d00; text-shadow: rgba(0, 0, 0, 0.4) 0 1px 2px; margin: 20px 0 20px -30px; padding:5px 30px; font-size: 70px; background: rgba(255,255,255,0.9); }
+.title h1 { color: #d00; text-shadow: rgba(0, 0, 0, 0.4) 0 1px 2px; font-size: 70px; }
 
 .title h3 { margin:20px 0 20px -30px; padding:5px 30px; background: rgba(255,255,255,0.9); }
-
-/*h3.title { color: white;background: rgba(221, 0, 0, 0.9);text-shadow: rgba(0, 0, 0, 0.9) 0 1px 2px;margin: 10px -30px 10px 0;padding: 5px 30px;font-size: 40px;text-transform: uppercase; }*/
+.title h4 { line-height: 70px; }
 
 h3.title { text-transform: uppercase; text-shadow: rgba(0, 0, 0, 0.3) 0 1px 2px; color: #d00; font-size: 40px;}
 
 h4.title { color: #d00; }
-.prodnav { z-index: 1; background: white; width:1060px;}
+
 p.name { color: #d00; margin:0; padding:5px; font-size: 14px; }
 
 .sect { box-shadow: 0 4px 2px -2px #eee;}
 .orbit-bullets li.has-thumb { width: 100px; height: 75px; }
 .sub-nav { width: 100%; }
-
-/*#gallery, #accessories { background: url('/assets/linen.png') repeat; padding: 10px 0; }*/
 
 .specs { padding: 0 30px; }
 
@@ -73,11 +72,13 @@ p.name { color: #d00; margin:0; padding:5px; font-size: 14px; }
 .home-content { margin-top: -136px; }
 
 
-.product-placeholder { background: url('/assets/paperpile.jpg'); background-size: 100%;  padding-bottom: 200px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); -moz-box-shadow: 0 0 15px rgba(0,0,0,0.13); -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.13);}
-.product-content { margin-top: -200px; background:white;}
+.product-placeholder { background: url('/assets/paperpile.jpg'); padding-top: 100px; background-size: 100%; box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); -moz-box-shadow: 0 0 15px rgba(0,0,0,0.13); -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.13);}
+.product-content { margin-top:0;}
 
-.prod-admin {margin-top: -20px; background: rgba(255,255,255,0.9);}
-.prod-admin div { padding: 10px; background: white;}
+.prod-admin {margin-top: -20px; color:white; font-weight:bold; background: #d00; background: rgba(221,0,0,0.9);}
+.prod-admin div { padding: 10px;}
+.prod-admin a { color: #eee; }
+.prod-admin a:hover { color:white; }
 
 .thumbnail { display: table; margin:auto; padding: 15px; }
 .downloads ul li { list-style: none; }
@@ -90,7 +91,7 @@ p.name { color: #d00; margin:0; padding:5px; font-size: 14px; }
 .rbar ul li { list-style: none; float:left; color: white;}
 
 
-#overlay { position:absolute; height:100%; width:100%; background-color:#333; opacity: 0; z-index:0; }
+#overlay { position:absolute; height:100%; width:100%; background-color:#333; opacity: 0; z-index:-30; }
 .pcontainer { display:none; background:white; width:100%;  z-index:32; box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); -moz-box-shadow: 0 0 15px rgba(0,0,0,0.5); -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); }
 .pcontainer li { margin:10px; list-style:none;}
 .pcontainer ul { border-right:#eee solid thin; }

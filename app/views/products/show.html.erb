@@ -1,16 +1,29 @@
 <% provide(:title, @product.name) %>
 
 <div class="product-placeholder">
-  <div class="row title homepage">
-    <h1 class="right"><%= @product.name %></h1>
+  <div class="row">
+    <div class="twelve columns title prodnav">
+      <div class="row">
+        <div class="seven columns">
+          <h1><%= @product.name %></h1>
+        </div>
+        <div class="five columns">
+          <h4 class="subheader"><%= @product.excerpt %></h4>
+        </div>
+        <div class="twelve columns">
+          <dl class="sub-nav left">
+            <dt>Navigation:</dt>
+            <dd><a href="#overview">Overview</a></dd>
+            <% unless @product.product_pictures.empty? %><dd><a href="#gallery">Gallery</a></dd><% end %>
+            <dd><a href="#specifications">Specifications</a></dd>
+            <% unless @product.supply_items.empty? && @product.accessories.empty? %><dd><a href="#accessories">Accessories</a></dd><% end %>
+            <% unless @product.downloads.empty? %><dd><a href="#downloads">Downloads</a></dd><% end %>
+          </dl>
+        </div>
+      </div>
+    </div>
   </div>
-   <div class="row title homepage">
-    <h3 class="subheader right"><%= @product.excerpt %></h3>
-  </div>
-</div>
-
-<div class="box product-content">
-    <% if can? :edit, @product %>
+  <% if can? :edit, @product %>
   <div class="row prod-admin">
     <div class="left">
       <%= @product.category.name %>
@@ -24,24 +37,13 @@
     </div>
   </div>
   <% end %>
-  <div class="row prodnav page">
+</div>
+
+<div class="box product-content">
+  <div class="row" id="overview"> 
     <div class="twelve columns">
       <h3 class="title">Overview</h3>
     </div>
-    <div class="twelve columns">
-      <dl class="sub-nav">
-        <dt><%= @product.name %> Navigation:</dt>
-        <dd><a href="#overview">Overview</a></dd>
-        <% unless @product.product_pictures.empty? %><dd><a href="#gallery">Gallery</a></dd><% end %>
-        <dd><a href="#specifications">Specifications</a></dd>
-        <% unless @product.supply_items.empty? && @product.accessories.empty? %><dd><a href="#accessories">Accessories</a></dd><% end %>
-        <% unless @product.downloads.empty? %><dd><a href="#downloads">Downloads</a></dd><% end %>
-      </dl>
-    </div>
-  </div>
-
-
-  <div class="row page" id="overview"> 
     <div class="four columns mainimage">
         <%= image_tag @product.image_url(:main).to_s if @product.image? %>
       </div>
@@ -65,7 +67,7 @@
   </div>
 <% end %>
 
-  <div class="row page" id='specifications'>
+  <div class="row" id='specifications'>
     <div class="twelve columns"><h3 class="title">Specifications</h3></div>
     <div class="twelve columns specs">
       <dl class="tabs four-up">
@@ -291,7 +293,7 @@
   </div>
 <% end %>
 <% unless @product.downloads.empty? %>
-  <div class="row page" id='downloads'>
+  <div class="row" id='downloads'>
     <div class="twelve columns"><h3 class="title">Downloads</h3></div>
     <div class="twelve columns downloads">
       <ul> 
