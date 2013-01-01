@@ -26,7 +26,10 @@
   <% end %>
   <div class="row prodnav page">
     <div class="twelve columns">
-      <dl class="sub-nav right">
+      <h3 class="title">Overview</h3>
+    </div>
+    <div class="twelve columns">
+      <dl class="sub-nav">
         <dt><%= @product.name %> Navigation:</dt>
         <dd><a href="#overview">Overview</a></dd>
         <% unless @product.product_pictures.empty? %><dd><a href="#gallery">Gallery</a></dd><% end %>
@@ -39,9 +42,6 @@
 
 
   <div class="row page" id="overview"> 
-    <div class="twelve columns">
-      <h3 class="title right">Overview</h3>
-    </div>
     <div class="four columns mainimage">
         <%= image_tag @product.image_url(:main).to_s if @product.image? %>
       </div>
@@ -52,7 +52,7 @@
 
 <% unless @product.product_pictures.empty? %>
   <div class="row" id="gallery">
-    <div class="twelve columns"><h3 class="title right">Gallery</h3></div>
+    <div class="twelve columns"><h3 class="title">Gallery</h3></div>
     <div class="twelve columns"> 
       <ul class='block-grid eight-up mobile-three-up' data-clearing>
         <% for product_picture in @product.product_pictures %>
@@ -66,7 +66,7 @@
 <% end %>
 
   <div class="row page" id='specifications'>
-    <div class="twelve columns"><h3 class="title right">Specifications</h3></div>
+    <div class="twelve columns"><h3 class="title">Specifications</h3></div>
     <div class="twelve columns specs">
       <dl class="tabs four-up">
         <dd class="active"><a href="#general">General Specifications</a></dd>
@@ -256,7 +256,7 @@
   </div>
 <% unless @product.supply_items.empty? && @product.accessories.empty? %>
   <div class="row" id='accessories'>
-    <div class="twelve columns"><h3 class="title right">Accessories</h3></div>
+    <div class="twelve columns"><h3 class="title">Accessories</h3></div>
     <div class="six columns">
       <table class="accessories"> 
         <tbody>
@@ -292,7 +292,7 @@
 <% end %>
 <% unless @product.downloads.empty? %>
   <div class="row page" id='downloads'>
-    <div class="twelve columns"><h3 class="title right">Downloads</h3></div>
+    <div class="twelve columns"><h3 class="title">Downloads</h3></div>
     <div class="twelve columns downloads">
       <ul> 
         <% for download in @product.downloads %>

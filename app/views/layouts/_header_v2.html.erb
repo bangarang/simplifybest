@@ -1,33 +1,51 @@
-<div class="">
-  <nav class="row rbar">
-    <ul class="left">
-<!--       <li class="name banner"><a href="<%= root_url %>"><%= image_tag("LOGOM.png", :class => "logo") %></a></li> -->
-      <li class="name"><a href="<%= root_url %>"><%= image_tag("logo.t.png", :class => "logo") %></a></li>
-      <li class="toggle-topbar"><a href="#"></a></li>
-    </ul>
-    <section>
-      <ul class="left">
-        <li><%= link_to'Meet Simplified', about_path %></li>
-        <% if user_signed_in? %>
-        <li style="color:white;">Signed in as: <%= current_user.email %></li>
-        <% end %>
-        <li class="has-dropdown">
-          <% if can? :edit, Message %>
-          <%= link_to 'Service', messages_url %>
+<div class="rbar-container">
+  <div class="row">
+    <div class="twelve columns">
+      <nav class="rbar">
+        <ul class="left">
+    <!--       <li class="name banner"><a href="<%= root_url %>"><%= image_tag("LOGOM.png", :class => "logo") %></a></li> -->
+          <li class="name" style="z-index:100;"><a href="<%= root_url %>"><%= image_tag("logo.t.png", :class => "logo") %></a></li>
+          <li class="toggle-topbar"><a href="#"></a></li>
+        </ul>
+        <section>
+          <ul class="left">
+            <li><%= link_to'Meet Simplified', about_path %></li>
+            <% if user_signed_in? %>
+            <li style="color:white;">Signed in as: <%= current_user.email %></li>
+            <% end %>
+            <li class="has-dropdown">
+              <% if can? :edit, Message %>
+              <%= link_to 'Service', messages_url %>
+              <% else %>
+              <a href="#">Service</a>
+              <% end %>
+            </li>
+            <li class="product-button">
+              <%= link_to "Our Products", products_path %>
+            </li>
+             <li class="divider"></li>
+          <% if user_signed_in? %>
+            <li><%= link_to 'Log Out', destroy_user_session_path, :method => 'delete', :confirm => 'Are you sure?' %></li>
           <% else %>
-          <a href="#">Service</a>
+            <li><%= link_to 'Log In', new_user_session_path %></li>
           <% end %>
-        </li>
-        <li>
-          <%= link_to "Our Products", products_path%>
-        </li>
-        <li class="divider"></li>
-      <% if user_signed_in? %>
-        <li><%= link_to 'Log Out', destroy_user_session_path, :method => 'delete', :confirm => 'Are you sure?' %></li>
-      <% else %>
-        <li><%= link_to 'Log In', new_user_session_path %></li>
+          </ul> 
+        </section>
+      </nav> 
+    </div>
+  </div>
+</div>
+
+
+<div class="row scontainer">
+  <div class="twelve columns pcontainer">
+    <% for category in @categories %>
+    <ul class="<%= category.slug%>" style="float:left;">
+      <li><label><%= category.name %></label></li>
+      <% for product in category.products %> 
+      <li><%= link_to product.name, product %></li>
       <% end %>
-      </ul>
-    </section>
-  </nav>
+    </ul>
+    <% end %>
+  </div>
 </div>

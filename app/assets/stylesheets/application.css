@@ -41,7 +41,9 @@ h1.super.last-line { color:#d00; }
 
 .title h3 { margin:20px 0 20px -30px; padding:5px 30px; background: rgba(255,255,255,0.9); }
 
-h3.title { color: white;background: rgba(221, 0, 0, 0.9);text-shadow: rgba(0, 0, 0, 0.9) 0 1px 2px;margin: 10px -30px 10px 0;padding: 5px 30px;font-size: 40px;text-transform: uppercase; }
+/*h3.title { color: white;background: rgba(221, 0, 0, 0.9);text-shadow: rgba(0, 0, 0, 0.9) 0 1px 2px;margin: 10px -30px 10px 0;padding: 5px 30px;font-size: 40px;text-transform: uppercase; }*/
+
+h3.title { text-transform: uppercase; text-shadow: rgba(0, 0, 0, 0.3) 0 1px 2px; color: #d00; font-size: 40px;}
 
 h4.title { color: #d00; }
 .prodnav { z-index: 1; background: white; width:1060px;}
@@ -51,11 +53,11 @@ p.name { color: #d00; margin:0; padding:5px; font-size: 14px; }
 .orbit-bullets li.has-thumb { width: 100px; height: 75px; }
 .sub-nav { width: 100%; }
 
-#gallery, #accessories { background: url('/assets/linen.png') repeat; padding: 10px 0; }
+/*#gallery, #accessories { background: url('/assets/linen.png') repeat; padding: 10px 0; }*/
 
 .specs { padding: 0 30px; }
 
-.mainimage {margin: -80px 0 0 0; text-align: center;}
+.mainimage {margin: 0; text-align: center;}
 .mainimage img { max-height: 400px;  }
 
 .wrapper { background: #112; height: 400px; margin-bottom: -400px; margin-top: 0; }
@@ -67,7 +69,7 @@ p.name { color: #d00; margin:0; padding:5px; font-size: 14px; }
 .accessories, .supplies { width:100%; background: white; }
 .trs { background: white; }
 
-.home-placeholder { background: url('/assets/paperpile.jpg'); background-size: 100%; padding-bottom: 125px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); -moz-box-shadow: 0 0 15px rgba(0,0,0,0.13); -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.13);}
+.home-placeholder { background: url('/assets/bg6.jpg'); background-size: 100%; padding-bottom: 125px; box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); -moz-box-shadow: 0 0 15px rgba(0,0,0,0.5); -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);}
 .home-content { margin-top: -136px; }
 
 
@@ -81,13 +83,18 @@ p.name { color: #d00; margin:0; padding:5px; font-size: 14px; }
 .downloads ul li { list-style: none; }
 
 .banner { }
-.name a img.logo { height:55px; }
+.name a img { height:60px; z-index: 50;}
 .not-banner { display:none; }
 
-.rbar { background: #181818; height:60px;box-shadow: 0 0 15px rgba(0, 0, 0, 0.7); -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.7); -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);}
-.rbar ul li { list-style: none; float:left;}
+.rbar-container { background: #181818; height:60px;box-shadow: 0 0 15px rgba(0, 0, 0, 0.7); -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.7); -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);}
+.rbar ul li { list-style: none; float:left; color: white;}
 
 
+#overlay { position:absolute; height:100%; width:100%; background-color:#333; opacity: 0; z-index:0; }
+.pcontainer { display:none; background:white; width:100%;  z-index:32; box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); -moz-box-shadow: 0 0 15px rgba(0,0,0,0.5); -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); }
+.pcontainer li { margin:10px; list-style:none;}
+.pcontainer ul { border-right:#eee solid thin; }
+.pcontainer label { color:black; text-decoration: underline; }
 
 
 @media only screen and (max-width: 1030px) {

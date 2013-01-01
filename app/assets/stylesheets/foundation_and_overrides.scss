@@ -301,3 +301,8 @@ div.alert-box { color: #fff; text-shadow: 0 -1px rgba(0, 0, 0, 0.3); height:30px
 .pricing-table .title.SupplyOrder { background:#f89406; color:white; }
 .pricing-table .title.Meter { background:#49afcd; color:white; }
 
+.rbar section ul li { border-left: #333 solid 2px; }
+.rbar section ul li a { list-style: none; float:left; color: #ccc; font-weight:bold; margin:18px 20px;}
+.rbar section ul li a:hover { color:white; }
+
+.scontainer { height:0;  background:white; position:absolute; left:50%; margin-left:-500px;}

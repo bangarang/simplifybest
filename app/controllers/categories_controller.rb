@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  before_filter :find_category, only: [:show, :edit, :update, :destroy]
   def index
     @categories = Category.all
   end
@@ -34,5 +35,10 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     @category.destroy
     redirect_to categories_url, :notice => "Successfully destroyed Product."
+  end
+
+private 
+  def find_category
+    @category = Category.find_by_slug!(params[:id])
   end
 end
