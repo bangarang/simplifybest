@@ -39,7 +39,7 @@
     <% for category in @categories %>
     <ul class="<%= category.slug%>" style="float:left;">
       <li><label><%= category.name %></label></li>
-      <% for product in category.products %> 
+      <% for product in category.products.order(:name) %> 
       <li><%= link_to product.name, product %></li>
       <% end %>
     </ul>
