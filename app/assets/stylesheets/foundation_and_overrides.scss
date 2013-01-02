@@ -301,10 +301,21 @@ div.alert-box { color: #fff; text-shadow: 0 -1px rgba(0, 0, 0, 0.3); height:30px
 .pricing-table .title.SupplyOrder { background:#f89406; color:white; }
 .pricing-table .title.Meter { background:#49afcd; color:white; }
 
-.rbar section ul li { border-left: #333 solid 2px; }
-.rbar section ul li a { list-style: none; float:left; color: #ccc; font-weight:bold; margin:18px 20px;}
-.rbar section ul li a:hover { color:white; }
+.rbar ul li { list-style: none; float:left; line-height: 40px; padding:0 15px; }
+.rbar ul.top { border-radius: 5px; }
+.rbar ul.top li { background:#333; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; }
+.rbar ul.top.in li { background:#c00; }
+.rbar ul.top.in li:first-child { border-bottom-right-radius: 0; }
+.rbar ul.top.in li:last-child { border-bottom-left-radius: 0; }
+.rbar ul.top.in li a { color:#FCE6E6; }
+.rbar ul.top.in li a:hover { color:white; }
+.rbar ul.top { margin-bottom:0; }
+.rbar ul li a { color: #ccc; font-weight:bold; }
+.rbar ul li a:hover { color:white; }
 
 .scontainer { height:0;  background:white; position:absolute; left:50%; margin-left:-500px;}
 
 dl.sub-nav { margin: -4px 0 18px -7px; } 
+@media only screen and (max-width: 767px) {
+  [class*="column"] + [class*="column"]:last-child { float: right; }
+}

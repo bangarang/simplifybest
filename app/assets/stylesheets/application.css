@@ -36,7 +36,7 @@ h1.super { color: white; font-size: 100px; line-height: 100px; margin-bottom: 12
 h1.super.last-line { color:#d00; }
 .box { background: white; width: 1000px; max-width: 100%; margin: 10px auto; padding: 0; box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); -moz-box-shadow: 0 0 15px rgba(0,0,0,0.13); -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); }
 
-.prodnav { background:#212121; }
+.prodnav { background:rgb(33,33,33); background:rgba(33,33,33,0.9); }
 
 .top-bar { margin: 0; }
 .title h1 { color: #d00; text-shadow: rgba(0, 0, 0, 0.4) 0 1px 2px; font-size: 70px; }
@@ -84,14 +84,16 @@ p.name { color: #d00; margin:0; padding:5px; font-size: 14px; }
 .downloads ul li { list-style: none; }
 
 .banner { }
-.name a img { height:60px; z-index: 50;}
+img.logo { }
 .not-banner { display:none; }
 
-.rbar-container { background: #181818; height:60px;box-shadow: 0 0 15px rgba(0, 0, 0, 0.7); -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.7); -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);}
-.rbar ul li { list-style: none; float:left; color: white;}
+.rbar-container { background:rgb(33,33,33); box-shadow: 0 0 15px rgba(0, 0, 0, 0.7); -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.7); -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);}
 
 
-#overlay { position:absolute; height:100%; width:100%; background-color:#333; opacity: 0; z-index:-30; }
+/*.rbar .top { background:red; }*/
+/*.rbar .bottom { background: blue;   }*/
+
+#overlay { display:none;position:absolute; height:100%; width:100%; background-color:#333; opacity: 0; z-index:-30; }
 .pcontainer { display:none; background:white; width:100%;  z-index:32; box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); -moz-box-shadow: 0 0 15px rgba(0,0,0,0.5); -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); }
 .pcontainer li { margin:10px; list-style:none;}
 .pcontainer ul { border-right:#eee solid thin; }
@@ -113,7 +115,11 @@ p.name { color: #d00; margin:0; padding:5px; font-size: 14px; }
 	.mainimage { margin-top:0 ; } 
 	.wrapper { margin-top: 0;} 
 	h1.super { font-size: 40px; line-height: 40px; }
-	.title h1 { font-size: 30px; text-align: center; }
-	.title h3 { font-size: 25px; text-align: center;}
+	.title h1 { font-size: 30px; text-align: center; margin:0;}
+	.title h4 { line-height: 19px; text-align: center; font-size: 15px; margin: 0;}
+	.title h4.subheader { margin-bottom:0; }
 	h3.title { font-size: 25px ; 	}
+	.product-placeholder { padding-top: 0; }
+
+
 }
