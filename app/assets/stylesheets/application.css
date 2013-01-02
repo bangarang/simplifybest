@@ -84,17 +84,14 @@ p.name { color: #d00; margin:0; padding:5px; font-size: 14px; }
 .downloads ul li { list-style: none; }
 
 .banner { }
-img.logo { max-width: 146px}
+img.logo { max-height: 80px}
 .not-banner { display:none; }
 
 .rbar-container { background:rgb(33,33,33); box-shadow: 0 0 15px rgba(0, 0, 0, 0.7); -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.7); -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);}
 
-
-/*.rbar .top { background:red; }*/
-/*.rbar .bottom { background: blue;   }*/
-
-#overlay { display:none;position:absolute; height:100%; width:100%; background-color:#333; opacity: 0; z-index:-30; }
-.pcontainer { display:none; background:white; width:100%;  z-index:32; box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); -moz-box-shadow: 0 0 15px rgba(0,0,0,0.5); -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); }
+#overlay { position:absolute; height:100%; width:100%; background-color:#000; opacity: 0; z-index:-30; }
+.scontainer { display:none; background: white; position:relative; margin:0 auto; z-index:32; }
+.pcontainer { width:100%;  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); -moz-box-shadow: 0 0 15px rgba(0,0,0,0.5); -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); }
 .pcontainer li { margin:10px; list-style:none;}
 .pcontainer ul { border-right:#eee solid thin; }
 .pcontainer label { color:black; text-decoration: underline; }
@@ -109,6 +106,15 @@ ul.edit li p { font-style:bold; }
 ul.edit li i { text-align: center; margin-bottom: -25px;}
 
 .user { color:white; }
+
+.button.dd ul {-webkit-box-sizing: content-box;-moz-box-sizing: content-box; box-sizing: content-box; display: none; position: absolute; left: -1px; top:37px; background: white; background: rgba(255, 255, 255, 0.95); list-style: none; margin: 0; padding: 0; border: 1px solid #CCC; border-top: none; min-width: 100%; z-index: 40;}
+.button.dd ul li { width: 100%; cursor: pointer; padding: 0; min-height: 18px; line-height: 18px; margin: 0; white-space: nowrap; list-style: none;}
+.button.dd  ul li a { display: block; color: #555; font-size: 13px; font-weight: normal; padding: 6px 14px; text-align: left; }
+.button.dd  ul li a:hover { background:#95CDFB; }
+.button.dd:hover + .button.dd ul { display: block; }
+
+.large i { font-size: 100px; line-height: 100px; text-align: center; display: run-in; }
+.large h4 { text-align: center; }
 
 @media only screen and (max-width: 1030px) {
   	h3.title { margin:10px -15px 10px 0; }
@@ -139,4 +145,6 @@ ul.edit li i { text-align: center; margin-bottom: -25px;}
 	ul.top.right { float: right; }
 
 	.prod-admin { height:50px; }
+
+	.button.dd ul {right: -1px;top:29px; left:-80px;}
 }

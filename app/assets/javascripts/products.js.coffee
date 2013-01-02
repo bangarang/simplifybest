@@ -29,3 +29,11 @@ jQuery ->
     regexp = new RegExp($(this).data('id'), 'g')
     $(this).before($(this).data('fields').replace(regexp, time))
     event.preventDefault()
+
+  $("div.button.dd").click ->
+    $(".button.dd ul").slideDown "fast"
+  $("div.button.dd").mouseleave ->
+    $(".button.dd ul").slideUp "fast"
+
+
+

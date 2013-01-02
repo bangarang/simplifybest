@@ -311,7 +311,8 @@ div.alert-box { color: #fff; text-shadow: 0 -1px rgba(0, 0, 0, 0.3); height:30px
 .rbar ul li a { color: #ccc; font-weight:bold; }
 .rbar ul li a:hover { color:white; }
 
-.scontainer { height:0;  background:white; position:absolute; left:50%; margin-left:-500px;}
+.thumbnail { height: 132px; }
+/* .scontainer { height:0;  background:white; position:absolute; left:50%; margin-left:-500px;} */
 
 dl.sub-nav { margin: -4px 0 18px -7px; float:left;} 
 
@@ -320,5 +321,6 @@ dl.sub-nav { margin: -4px 0 18px -7px; float:left;}
 
   dl.sub-nav.prod-sub dt { display: none; }
 
+  .button.dropdown > ul { right: -1px; top: 29px;}
 
 }

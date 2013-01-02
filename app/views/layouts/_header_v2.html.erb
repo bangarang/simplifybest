@@ -24,17 +24,14 @@
             <a href="#">Service</a>
             <% end %>
           </li>
-          <li class="product-button">
-            <%= link_to "Our Products", products_path %>
-          </li>
+          <li class="product-button"><%= link_to "Our Products", products_path %></li>
         </ul> 
       </div>
     </div>
   </div>
 </div>
 
-
-<div class="row scontainer">
+<div class="box scontainer">
   <div class="twelve columns pcontainer">
     <% for category in @categories %>
     <ul class="<%= category.slug%>" style="float:left;">
