@@ -1,10 +1,10 @@
-@import "g_settings";
+@import "gsettings";
 
 /* font-face */
 @include face;
 
 /* global foundicon styles */
-[class*="#{$generalPrefix}"] {
+[class*="#{$classPrefix}"] {
   display: inline;
   width: auto;
   height: auto;
@@ -14,8 +14,8 @@
   background-position: 0 0;
   background-repeat: repeat;
 }
-[class*="#{$generalPrefix}"]:before {
-  font-family: $gFontName;
+[class*="#{$classPrefix}"]:before {
+  font-family: $fontName;
   font-weight: normal;
   font-style: normal;
   text-decoration: inherit;

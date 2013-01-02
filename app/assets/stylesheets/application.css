@@ -84,7 +84,7 @@ p.name { color: #d00; margin:0; padding:5px; font-size: 14px; }
 .downloads ul li { list-style: none; }
 
 .banner { }
-img.logo { }
+img.logo { max-width: 146px}
 .not-banner { display:none; }
 
 .rbar-container { background:rgb(33,33,33); box-shadow: 0 0 15px rgba(0, 0, 0, 0.7); -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.7); -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);}
@@ -99,6 +99,16 @@ img.logo { }
 .pcontainer ul { border-right:#eee solid thin; }
 .pcontainer label { color:black; text-decoration: underline; }
 
+.icons li i { width:20px; font-size: 20px; }
+.icons li { float:left; padding:10px; list-style:none; }
+
+ul.edit li {float:left; list-style:none; margin:0 5px;}
+
+ul.edit li p { font-style:bold; }
+
+ul.edit li i { text-align: center; margin-bottom: -25px;}
+
+.user { color:white; }
 
 @media only screen and (max-width: 1030px) {
   	h3.title { margin:10px -15px 10px 0; }
@@ -110,6 +120,7 @@ img.logo { }
 }
 
 @media only screen and (max-width: 767px) { 
+	.bottom { display: none; }
 	.specs { padding:0; } 
 	h3.title { margin: 10px 0; text-align: center; padding:5px;} 
 	.mainimage { margin-top:0 ; } 
@@ -120,6 +131,12 @@ img.logo { }
 	.title h4.subheader { margin-bottom:0; }
 	h3.title { font-size: 25px ; 	}
 	.product-placeholder { padding-top: 0; }
+	
+	ul.edit li span, .user { display:none;}
 
+	ul.edit { float: right; padding-bottom: 10px; }
 
+	ul.top.right { float: right; }
+
+	.prod-admin { height:50px; }
 }

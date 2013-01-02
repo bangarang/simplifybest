@@ -8,18 +8,21 @@
   </div>
   <div class="row prod-admin">
     <% if can? :edit, Product %>
-    <div class="twelve columns">
-       <div href="#" class="small alert button split dropdown">
-          <a href="/products/new">New Product</a>
-            <span></span>
-          <ul>
-            <li><label>Copy Current:</label></li>
-            <li class="divider"></li>
-            <% for product in @products %>
-            <li><a href="/products/<%= product.slug %>/dup"><%= product.name %></a></li>
-            <% end %>
-          </ul>
-        </div>
+    <div class="right">
+       <ul class="edit">
+        <li><%= link_to "<i class='general foundicon-edit'></i><br><span>New Product</span>".html_safe, new_product_path, :class=> "small alert button"%></li>
+        <li>
+         <div href="#" class="small alert button dropdown">
+          <a href="/products/new"><i class="general foundicon-add-doc"></i><br><span>Copy Existing Product</span></a>
+              <span></span>
+            <ul>
+              <% for product in @products %>
+              <li><a href="/products/<%= product.slug %>/dup"><%= product.name %></a></li>
+              <% end %>
+            </ul>
+          </div>
+        </li>
+      </ul>
     </div>
     <% end %>
   </div>
@@ -41,7 +44,7 @@
               <li class="title"><%= product.name %></li>
               <li class="description"><%= product.excerpt %></li>
               <li class="bullet-item"><%= product.maxdutycycle %></li>
-              <li class="cta-button"><a class="small button" href="<%= product_path(product) %>">More Info&raquo;</a></li>
+              <li class="cta-button"><a class="small button" href="<%= product_path(product) %>">More Info &raquo;</a></li>
             </ul>
           </a>
         </li>

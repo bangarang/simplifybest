@@ -1,10 +1,10 @@
-@import "ge_settings";
+@import "gesettings";
 
 /* font-face */
 @include face;
 
 /* global foundicon styles */
-[class*="#{$geClassPrefix}"] {
+[class*="#{$classPrefix}"] {
   display: inline;
   width: auto;
   height: auto;
@@ -14,8 +14,8 @@
   background-position: 0 0;
   background-repeat: repeat;
 }
-[class*="#{$geClassPrefix}"]:before {
-  font-family: $geFontName;
+[class*="#{$classPrefix}"]:before {
+  font-family: $fontName;
   font-weight: normal;
   font-style: normal;
   text-decoration: inherit;

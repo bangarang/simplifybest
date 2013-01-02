@@ -1,10 +1,10 @@
-@import "a_settings";
+@import "asettings";
 
 /* font-face */
 @include face;
 
 /* global foundicon styles */
-[class*="#{$accessPrefix}"] {
+[class*="#{$classPrefix}"] {
   display: inline;
   width: auto;
   height: auto;
@@ -14,8 +14,8 @@
   background-position: 0 0;
   background-repeat: repeat;
 }
-[class*="#{$accessPrefix}"]:before {
-  font-family: $aFontName;
+[class*="#{$classPrefix}"]:before {
+  font-family: $fontName;
   font-weight: normal;
   font-style: normal;
   text-decoration: inherit;

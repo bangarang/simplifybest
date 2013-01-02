@@ -1,8 +1,8 @@
-@import "a_settings";
+@import "asettings";
 
 /* general icons for IE7 */
-[class*="#{$accessPrefix}"] {
-  font-family: $aFontName;
+[class*="#{$classPrefix}"] {
+  font-family: $fontName;
   font-weight: normal;
   font-style: normal;
 }

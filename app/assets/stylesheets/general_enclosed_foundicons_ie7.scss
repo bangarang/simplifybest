@@ -1,8 +1,8 @@
-@import "ge_settings";
+@import "gesettings";
 
 /* general icons for IE7 */
-[class*="#{$geClassPrefix}"] {
-  font-family: $geFontName;
+[class*="#{$classPrefix}"] {
+  font-family: $fontName;
   font-weight: normal;
   font-style: normal;
 }

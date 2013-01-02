@@ -11,7 +11,7 @@
           <h4 class="subheader"><%= @product.excerpt %></h4>
         </div>
         <div class="twelve columns">
-          <dl class="sub-nav left">
+          <dl class="sub-nav prod-sub left">
             <dt>Navigation:</dt>
             <dd><a href="#overview">Overview</a></dd>
             <% unless @product.product_pictures.empty? %><dd><a href="#gallery">Gallery</a></dd><% end %>
@@ -25,15 +25,13 @@
   </div>
   <% if can? :edit, @product %>
   <div class="row prod-admin">
-    <div class="left">
-      <%= @product.category.name %>
-    </div>
-    
     <div class="right">
-      <%= link_to "Edit", edit_product_path(@product) %> |
-      <%= link_to "Delete Product", @product, :confirm => 'Are you sure?', :method => :delete %> |
-      <a href="<%=@product.slug%>/dup">Duplicate Product</a> |
-      <%= link_to "View All", products_path %>
+      <ul class="edit">
+        <li><%= link_to "<i class='general foundicon-edit'></i><br><span>Edit</span>".html_safe, edit_product_path(@product), :class=> "small alert button"%></li>
+        <li><%= link_to "<i class='general foundicon-trash'></i><br><span>Delete Product</span>".html_safe, @product, :confirm => 'Are you sure?', :method => :delete, :class=> "small alert button" %></li>
+        <li><a href="<%=@product.slug%>/dup" class="small alert button"><i class='general foundicon-add-doc'></i><br><span>Duplicate Product</span></a></li>
+        <li><%= link_to "<i class='general foundicon-left-arrow'></i><br><span>View All</span>".html_safe, products_path, :class=> "small alert button" %></li>
+      </ul>
     </div>
   </div>
   <% end %>
