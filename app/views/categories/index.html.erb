@@ -1,23 +1,50 @@
-<h1>Listing categories</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @categories.each do |category| %>
-  <tr>
-    <td><%= category.name %></td>
-    <td><%= link_to 'Show', category %></td>
-    <td><%= link_to 'Edit', edit_category_path(category) %></td>
-    <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
 
 <%= link_to 'New Category', new_category_path %>
+
+
+<% provide(:title, 'Product Types') %>
+
+<div class="product-placeholder">
+  <div class="row">
+    <div class="twelve columns title prodnav">
+      <h1>Product Types</h1>
+    </div>
+  </div>
+  <div class="row prod-admin">
+    <% if can? :edit, Product %>
+    <div class="right">
+       <ul class="edit">
+        <li><%= link_to "<i class='general foundicon-edit'></i><br><span>New Product</span>".html_safe, new_product_path, :class=> "small alert button"%></li>
+        </li>
+      </ul>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="box product-content">
+  <% for category in @categories %>
+  <div class="row">
+    <div class="twelve columns"><h3 class="title"><%= category.name %></h3></div>
+  </div>
+  <div class="row">
+    <div class="twelve columns">
+      <ul class="block-grid four-up mobile-two-up">
+      <% for product in category.products.order(:name) %>
+        <li>
+          <a href="<%= product_path(product) %>">
+            <ul class="pricing-table box product">
+              <li class="thumbnail"><%= image_tag product.image_url(:thumb).to_s if product.image? %></li>
+              <li class="title"><%= product.name %></li>
+              <li class="description"><%= product.excerpt %></li>
+              <li class="bullet-item"><%= product.maxdutycycle %></li>
+              <li class="cta-button"><a class="small button" href="<%= product_path(product) %>">More Info &raquo;</a></li>
+            </ul>
+          </a>
+        </li>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+  <% end %>
+</div>

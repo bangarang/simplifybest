@@ -43,7 +43,7 @@ class Product < ActiveRecord::Base
         if category = Category.find(:first, :conditions => {:name => new_category_name}) then 
            self.category_id = category 
         else 
-           create_category(:name => new_category_name) 
+           create_category(:name => new_category_name, :slug => new_category_name.parameterize) 
         end 
      end 
   end

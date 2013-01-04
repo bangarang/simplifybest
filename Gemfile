@@ -10,7 +10,7 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'rolify'
 gem 'cancan'
-
+gem 'numbers_and_words'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
@@ -25,7 +25,7 @@ group :assets do
   gem 'coffee-rails', '3.2.2'
   gem 'uglifier', '1.2.3'
   gem 'compass-rails'
-  gem 'zurb-foundation'
+  gem 'zurb-foundation', :git => 'git://github.com/zurb/foundation.git'
 end
 
 

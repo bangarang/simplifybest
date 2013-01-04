@@ -16,33 +16,26 @@ Simplifybest::Application.routes.draw do
 
   resources :product_pictures
 
-  resources :categories
+  # resources :categories
+  # match 'type' => 'categories#index'
+  match 'types' => 'products#index'
+  resources :categories, :path => 'types'
 
   resources :products
-
   match 'products/:slug/dup' => 'products#duplicate'
+
+  # match 'product/type' => 'categories#index'
+  # match 'product/type/:id' => 'categories#show'
+  # match 'product/type/new' => 'categories#show'
+  # match 'product/type/:id/edit' => 'categories#edit'
 
   root :to => 'pages#home'
 
   match 'about' => 'pages#about'
   match 'styles' => 'pages#styles'
   match 'icons' => 'pages#icons'
+  match 'offcanvas' => 'pages#offcanvas'
   match 'email' => 'application#send_mail'
-
-  # Color MFPs
-
-  match 'taskalfa3050ci' => 'pages#taskalfa3050ci'
-  match 'taskalfa3550ci' => 'pages#taskalfa3550ci'
-  match 'taskalfa4550ci' => 'pages#taskalfa4550ci'
-  match 'taskalfa5550ci' => 'pages#taskalfa5550ci'
-  match 'taskalfa6550ci' => 'pages#taskalfa6550ci'
-  match 'taskalfa7550ci' => 'pages#taskalfa7550ci'
-
-
-  # BW MFPs
-  match 'taskalfa3500i' => 'pages#taskalfa3500i'
-  match 'taskalfa4500i' => 'pages#taskalfa4500i'
-  match 'taskalfa5500i' => 'pages#taskalfa5500i'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

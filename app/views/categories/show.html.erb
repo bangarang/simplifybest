@@ -1,10 +1,41 @@
-<p id="notice"><%= notice %></p>
+<% provide(:title, "#{@category.name} Products") %>
 
-<p>
-  <b>Name:</b>
-  <%= @category.name %>
-</p>
+<div class="product-placeholder">
+  <div class="row">
+    <div class="twelve columns title prodnav">
+      <h1><%= @category.name %></h1>
+    </div>
+  </div>
+  <div class="row prod-admin">
+    <% if can? :edit, Product %>
+    <div class="right">
+       <ul class="edit">
+        <li><%= link_to "<i class='general foundicon-edit'></i><br><span>Edit Category</span>".html_safe, edit_category_path(@category), :class=> "small alert button"%></li>
+        <li><%= link_to "<i class='general foundicon-left-arrow'></i><br><span>View All</span>".html_safe, categories_path, :class=> "small alert button" %></li>
+      </ul>
+    </div>
+    <% end %>
+  </div>
+</div>
 
-
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<div class="box product-content">
+  <div class="row">
+    <div class="twelve columns">
+      <ul class="block-grid four-up mobile-two-up">
+      <% for product in @category.products.order(:name) %>
+        <li>
+          <a href="<%= product_path(product) %>">
+            <ul class="pricing-table box product">
+              <li class="thumbnail"><%= image_tag product.image_url(:thumb).to_s if product.image? %></li>
+              <li class="title"><%= product.name %></li>
+              <li class="description"><%= product.excerpt %></li>
+              <li class="bullet-item"><%= product.maxdutycycle %></li>
+              <li class="cta-button"><a class="small button" href="<%= product_path(product) %>">More Info &raquo;</a></li>
+            </ul>
+          </a>
+        </li>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -301,23 +301,32 @@ div.alert-box { color: #fff; text-shadow: 0 -1px rgba(0, 0, 0, 0.3); height:30px
 .pricing-table .title.SupplyOrder { background:#f89406; color:white; }
 .pricing-table .title.Meter { background:#49afcd; color:white; }
 
-.rbar ul li { list-style: none; float:left; line-height: 40px; padding:0 15px; }
+.rbar-container { border-top: #333 solid 5px; position:relative; z-index:1; }
+.rbar-container.in { border-top: #c00 solid 5px }
+.rbar ul.top li { list-style: none; float:left; line-height: 40px; padding:0 15px; }
 .rbar ul.top { border-radius: 5px; }
 .rbar ul.top li { background:#333;  }
 .rbar ul.top.in li { background:#c00; }
 .rbar ul.top.in li a { color:#FCE6E6; }
 .rbar ul.top.in li a:hover { color:white; }
 .rbar ul.top { margin-bottom:0; }
-.rbar ul li a { color: #ccc; font-weight:bold; }
+.rbar ul li a { color: #ccc; font-weight:bold; height: 40px; }
 .rbar ul li a:hover { color:white; }
 
+.mainpic { height: 80px; }
+.nav-bar { background:transparent; }
+.nav-bar li, .nav-bar li:last-child { border: none; -webkit-box-shadow: none; -moz-box-shadow:none; box-shadow: none; padding:0;}
+.nav-bar li ul li:last-child { border-left: solid 3px #CCC; }
 .thumbnail { height: 132px; }
 /* .scontainer { height:0;  background:white; position:absolute; left:50%; margin-left:-500px;} */
+
+#mainNav ul li { line-height: 40px;}
+.flyout { background:white; }
 
 dl.sub-nav { margin: -4px 0 18px -7px; float:left;} 
 
 @media only screen and (max-width: 767px) {
-  [class*="column"] + [class*="column"]:last-child { float: right; }
+  [class*="column .top"] + [class*="column .top"]:last-child { float: right; }
 
   dl.sub-nav.prod-sub dt { display: none; }
 

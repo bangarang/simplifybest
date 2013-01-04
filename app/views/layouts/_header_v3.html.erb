@@ -1,0 +1,91 @@
+<div class="rbar-container <% if user_signed_in?%> in<% end %>">
+  <div class="row rbar">
+    <div class="two columns mainpic hide-for-small">
+      <a href="<%= root_url %>"><%= image_tag("logo.t.png", :class => "logo") %></a>
+    </div>
+    <div class="ten columns">
+      <div class="top twelve">
+        <ul class="top right<% if user_signed_in?%> in<% end %>">
+          <% if user_signed_in? %>
+          <li class="user">Signed in as: <%= current_user.email %></li>
+          <li ><%= link_to 'Log Out', destroy_user_session_path, :method => 'delete', :confirm => 'Are you sure?' %></li>
+          <% else %>
+          <li><%= link_to 'Log In', new_user_session_path %></li>
+          <% end %>
+        </ul> 
+      </div>
+      <div class="two columns show-for-small">
+        <a href="<%= root_url %>"><%= image_tag("logo.t.png", :class => "slogo") %></a>
+      </div>
+      <div class="bottom twelve columns">
+        <nav id="menu" role="navigation">
+          <ul id="mainNav" class="nav-bar">
+            <li><a href="#">Why Simplified?</a></li>
+            <li class="has-flyout">
+              <a href="#">Service</a>
+              <a href="#" class="flyout-toggle"><span> </span></a>
+              <ul class="flyout">
+                <li><a href="#">Sub Nav Item 1</a></li>
+                <li><a href="#">Sub Nav Item 2</a></li>
+                <li><a href="#">Sub Nav 3</a></li>
+                <li><a href="#">Sub Nav 4</a></li>
+                <li><a href="#">Sub Nav Item 5</a></li>
+              </ul>
+            </li>
+            <li class="has-flyout">
+              <%= link_to "Products Accordian", products_url %> 
+              <a href="#" class="flyout-toggle"><span> </span></a>
+              <div class="flyout large right"> 
+                <div class="row">
+                  <ul class="accordion">
+                    <% for category in @categories %>
+                    <li>
+                      <div class="title">
+                        <h5 class="<%= category.slug %>"><%= category.name %></h5>
+                      </div>
+                      <div class="content">
+                        <ul>
+                          <% for product in category.products %>
+                          <li><%=link_to product.name, product %></li>
+                          <% end %>
+                        </ul>
+                      </div>
+                    </li>
+                    <% end %>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="has-flyout">
+              <%= link_to "Products", products_url %> 
+              <a href="#" class="flyout-toggle"><span> </span></a>
+              <div class="flyout large right"> 
+                <div class="row">
+                  <div class="six columns">
+                    <ul>
+                      <li>Product Types</li>
+                    <% for category in @categories %>
+                      <li><%= link_to category.name, category %></li>
+                    <% end %>
+                    </ul>
+                  </div>
+                  <div class="six columns">
+                    Products
+                    <% for category in @categories %>
+                    <ul class="<%= category.slug %>">
+                      <li><%= category.name %></li>
+                      <% for product in category.products %>
+                      <li><%=link_to product.name, product %></li>
+                      <% end %>
+                    <ul>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
