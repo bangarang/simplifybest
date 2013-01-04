@@ -9,13 +9,13 @@
           <a href="<%= message_path(message) %>">
             <ul class="pricing-table box message">
               <% if message.service? %>
-              <li class="title <%= message.type %>">Service Call</li>
+              <li class="ticket <%= message.type %>">Service Call</li>
               <% end %>
               <% if message.supply? %>
-              <li class="title <%= message.type %>">Supply Order</li>
+              <li class="ticket <%= message.type %>">Supply Order</li>
               <% end %>
               <% if message.meter? %>
-              <li class="title <%= message.type %>">Meter Reading</li>
+              <li class="ticket <%= message.type %>">Meter Reading</li>
               <% end %>
               <li class="bullet-item"><%= message.first %> <%= message.last %></li>
               <li class="bullet-item"><%= message.company %></li>

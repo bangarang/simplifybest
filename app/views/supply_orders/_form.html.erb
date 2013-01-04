@@ -2,7 +2,7 @@
   <% @supply_order.errors.full_messages.each do |msg| %>
       <p><%= msg %></p>
    <% end %>
-  <div class="row">
+  <div>
     <div class="two columns">
       <%= f.label "Name:", :class => "right inline" %>
     </div>
@@ -13,7 +13,7 @@
       <%= f.text_field :last, :placeholder => "Last" %>
     </div>
   </div>
-  <div class="row">
+  <div>
     <div class="two columns">
       <%= f.label "Company:", :class => "right inline" %>
     </div>
@@ -21,7 +21,7 @@
       <%= f.text_field :company, :placeholder => "My Company, LLC." %>
     </div>
   </div>  
-  <div class="row">
+  <div>
     <div class="two columns">
       <%= f.label "E-Mail:", :class => "right inline" %>
     </div>
@@ -29,7 +29,7 @@
       <%= f.text_field :address, :placeholder => "me@mycompany.com" %>
     </div>
   </div>
-  <div class="row">
+  <div>
     <div class="two columns">
       <%= f.label 'SOS#:', :class => "right inline" %>
     </div>
@@ -37,7 +37,7 @@
       <%= f.text_field :sos, :placeholder => "SOS1234" %>
     </div>
   </div>
-  <div class="row">
+  <div>
     <div class="two columns">
       <%= f.label "Supply Order:", :class => "right inline" %>
     </div>
@@ -45,7 +45,7 @@
       <%= f.text_area :comment, :placeholder => "Tell us what supplies you need.", :rows => "10" %>
     </div>
   </div>
-  <div class="row">
+  <div>
     <div class="four columns centered">
       <%= f.submit "Submit Supply Order", :class => "small button" %>
     </div>

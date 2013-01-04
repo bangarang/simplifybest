@@ -1,5 +1,17 @@
 <% provide(:title, "New Message") %>
+<div class="mcontainer">
+	<div class="twelve columns">
+		<div class="row">
+			<div class="five columns">
+				<h4 class="title">Place a Supply Order</h4>
+			</div>
+			<div class="seven columns shadow">
+				<div class="row">
+					<h4 class="ticket SupplyOrder">Supply Order</h4>
+				</div>
+				<%= render 'form' %>
+			</div>
+		</div>
+	</div>
+</div>
 
-<%= render 'form' %>
-
-<p><%= link_to "Back to List", supply_order_path %></p>

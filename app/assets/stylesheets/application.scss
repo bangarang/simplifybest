@@ -33,7 +33,12 @@ body { background: #fafafa; }
 .top-bar { margin:0; }
 h1.super { color: white; font-size: 100px; line-height: 100px; margin-bottom: 12px;  text-shadow: rgba(0, 0, 0, 0.4) 0 1px 2px; text-align: right; }
 h1.super.last-line { color:#d00;}
+
+.mcontainer {width:1000px;margin: 20px auto;max-width: 100%;}
 .box { background: white; width: 1000px; max-width: 100%; margin: 10px auto; padding: 0; box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); -moz-box-shadow: 0 0 15px rgba(0,0,0,0.13); -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); }
+.shadow {background: white; box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); -moz-box-shadow: 0 0 15px rgba(0,0,0,0.13); -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); }
+
+
 .simplified { background:white; margin: 0 auto; }
 .prodnav { background:rgb(33,33,33); background:rgba(33,33,33,0.9); }
 
@@ -121,6 +126,19 @@ ul.edit li i { text-align: center; margin-bottom: -25px;}
 
 .cat { background: rgba(0, 136, 204, 0.1); }
 .cat ul { margin: 14px inherit; }
+
+.bottom p.menu { margin-bottom: 0;}
+.bottom p.menu a {
+	color: #CCC;
+	font-weight: bold;
+	float: right;
+	background: #333;
+	line-height: 40px;
+	padding: 0 15px;
+	margin-top: -40px;
+}
+.bottom p.menu a:hover { color: white; }
+
 @media only screen and (max-width: 1030px) {
   	h3.title { margin:10px -15px 10px 0; }
 }
@@ -151,4 +169,6 @@ ul.edit li i { text-align: center; margin-bottom: -25px;}
 	.prod-admin { height:50px; }
 
 	.button.dd ul {right: -1px;top:29px; left:-80px;}
+
+	.top-menu { display: none; }
 }

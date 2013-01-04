@@ -8,6 +8,10 @@ class MessagesController < ApplicationController
     @message = Message.find(params[:id])
   end
 
+  def new
+    @message = Message.new
+  end
+
   def destroy
     @message = Message.find(params[:id])
     @message.destroy

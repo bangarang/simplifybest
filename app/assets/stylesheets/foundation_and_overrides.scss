@@ -295,11 +295,14 @@ div.alert-box { color: #fff; text-shadow: 0 -1px rgba(0, 0, 0, 0.3); height:30px
 .alert-box.error { background: #d00; }
 .alert-box.alert { background: #e9e9e9; color: #505050;}
 
-.pricing-table .title { background: #eee; color: #d00; }
+.pricing-table .ticket { font-weight: bold; text-align: center;padding: 20px 0; background: #eee; color: #d00; }
 
-.pricing-table .title.ServiceCall { background:#d14; color:white; }
-.pricing-table .title.SupplyOrder { background:#f89406; color:white; }
-.pricing-table .title.Meter { background:#49afcd; color:white; }
+.ticket.ServiceCall { background:#e00; color:white; }
+.ticket.SupplyOrder { background:#f89406; color:white; }
+.ticket.Meter { background:#49afcd; color:white; }
+
+h4.ticket { margin-top:0; text-align:center; padding: 20px 0; }
+
 
 .rbar-container { border-top: #333 solid 5px; position:relative; z-index:1; }
 .rbar-container.in { border-top: #c00 solid 5px }
@@ -325,11 +328,16 @@ div.alert-box { color: #fff; text-shadow: 0 -1px rgba(0, 0, 0, 0.3); height:30px
 
 dl.sub-nav { margin: -4px 0 18px -7px; float:left;} 
 
+.bottom { padding:0; }
+.shadow {  }
+.mcontainer { float:none }
+
 @media only screen and (max-width: 767px) {
   [class*="column .top"] + [class*="column .top"]:last-child { float: right; }
 
   dl.sub-nav.prod-sub dt { display: none; }
 
   .button.dropdown > ul { right: -1px; top: 29px;}
+  .nav-bar { background:#333; }
 
 }

@@ -18,18 +18,21 @@
         <a href="<%= root_url %>"><%= image_tag("logo.t.png", :class => "slogo") %></a>
       </div>
       <div class="bottom twelve columns">
-        <nav id="menu" role="navigation">
+        <p class="menu show-for-small"><a href="#">Menu</a></p>
+        <nav id="menu" role="navigation" class="top-menu">
           <ul id="mainNav" class="nav-bar">
             <li><a href="#">Why Simplified?</a></li>
             <li class="has-flyout">
+              <% if can? :edit, Message %>
+              <%= link_to "Service", messages_url %>
+              <% else %>
               <a href="#">Service</a>
+              <% end %>
               <a href="#" class="flyout-toggle"><span> </span></a>
               <ul class="flyout">
-                <li><a href="#">Sub Nav Item 1</a></li>
-                <li><a href="#">Sub Nav Item 2</a></li>
-                <li><a href="#">Sub Nav 3</a></li>
-                <li><a href="#">Sub Nav 4</a></li>
-                <li><a href="#">Sub Nav Item 5</a></li>
+                <li><%= link_to "Meter Reading", new_meter_path %></li>
+                <li><%= link_to "Service Call", new_service_call_path %></li>
+                <li><%= link_to "Supply Order", new_supply_order_path %></li>
               </ul>
             </li>
             <li class="has-flyout">

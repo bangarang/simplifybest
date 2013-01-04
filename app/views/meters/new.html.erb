@@ -1,5 +1,17 @@
 <% provide(:title, "New Message") %>
 
-<%= render 'form' %>
-
-<p><%= link_to "Back to List", meter_path %></p>
+<div class="mcontainer">
+	<div class="twelve columns">
+		<div class="row">
+			<div class="five columns">
+				<h4 class="title">Submit a Meter Reading</h4>
+			</div>
+			<div class="seven columns shadow">
+				<div class="row">
+					<h4 class="ticket Meter">Meter Reading</h4>
+				</div>
+				<%= render 'form' %>
+			</div>
+		</div>
+	</div>
+</div>
