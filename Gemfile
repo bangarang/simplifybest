@@ -25,7 +25,7 @@ group :assets do
   gem 'coffee-rails', '3.2.2'
   gem 'uglifier', '1.2.3'
   gem 'compass-rails'
-  gem 'zurb-foundation', :git => 'git://github.com/zurb/foundation.git'
+  gem 'zurb-foundation'
 end
 
 

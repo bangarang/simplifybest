@@ -1,13 +1,3 @@
-GIT
-  remote: git://github.com/zurb/foundation.git
-  revision: 06a8f20433420c231f6a294ee1999e87ff8c69c3
-  specs:
-    zurb-foundation (3.2.3)
-      compass (>= 0.12.2)
-      modular-scale (>= 1.0.2)
-      rake
-      sass (>= 3.2.0)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -202,6 +192,11 @@ GEM
       rack (>= 1.0)
     xpath (0.1.4)
       nokogiri (~> 1.3)
+    zurb-foundation (3.2.3)
+      compass (>= 0.12.2)
+      modular-scale (>= 1.0.2)
+      rake
+      sass (>= 3.2.0)
 
 PLATFORMS
   ruby
@@ -228,4 +223,4 @@ DEPENDENCIES
   sqlite3 (= 1.3.5)
   uglifier (= 1.2.3)
   unicorn
-  zurb-foundation!
+  zurb-foundation
