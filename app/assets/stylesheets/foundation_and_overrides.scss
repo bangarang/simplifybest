@@ -326,6 +326,14 @@ h4.ticket { margin-top:0; text-align:center; padding: 20px 0; }
 
 #mainNav ul li { line-height: 40px;}
 .flyout { background:white; }
+ul.flyout li, .nav-bar li ul li { border: none; }
+.nav-bar li ul li:last-child { border: none; }
+ul.accordion li .content { padding:0; }
+ul.flyout li.active, .nav-bar li ul li.active { border:none; }
+ul.flyout li.active a, .nav-bar li ul li.active a { background: #d00; }
+ul.flyout li.active a:hover, .nav-bar li ul li.active a:hover { background: #d88; }
+
+.title h5 { color: #d00; }
 
 dl.sub-nav { margin: -4px 0 18px -7px; float:left;} 
 

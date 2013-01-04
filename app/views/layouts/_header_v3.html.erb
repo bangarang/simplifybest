@@ -34,55 +34,29 @@
               </ul>
             </li>
             <li class="has-flyout">
-              <%= link_to "Products Accordian", products_url %> 
+              <a href="#">Products<a>
               <a href="#" class="flyout-toggle"><span> </span></a>
-              <div class="flyout large right"> 
-                <div class="row">
-                  <ul class="accordion">
+              
+                  <ul class="flyout accordion">
                     <% for category in @categories %>
                     <li>
                       <div class="title">
-                        <h5 class="<%= category.slug %>"><%= category.name %></h5>
+                        <h6><%= category.name %></h6>
                       </div>
                       <div class="content">
                         <ul>
                           <% for product in category.products %>
                           <li><%=link_to product.name, product %></li>
                           <% end %>
+                          <li><%= link_to "View all", category %></li>
                         </ul>
                       </div>
                     </li>
                     <% end %>
+                    <li style="color:black;">
+                      <h5><%= link_to "View All of Our Products", products_url %></h5>
+                    </li>
                   </ul>
-                </div>
-              </div>
-            </li>
-            <li class="has-flyout">
-              <%= link_to "Products", products_url %> 
-              <a href="#" class="flyout-toggle"><span> </span></a>
-              <div class="flyout large right"> 
-                <div class="row">
-                  <div class="six columns">
-                    <ul>
-                      <li>Product Types</li>
-                    <% for category in @categories %>
-                      <li><%= link_to category.name, category %></li>
-                    <% end %>
-                    </ul>
-                  </div>
-                  <div class="six columns">
-                    Products
-                    <% for category in @categories %>
-                    <ul class="<%= category.slug %>">
-                      <li><%= category.name %></li>
-                      <% for product in category.products %>
-                      <li><%=link_to product.name, product %></li>
-                      <% end %>
-                    <ul>
-                    <% end %>
-                  </div>
-                </div>
-              </div>
             </li>
           </ul>
         </nav>
