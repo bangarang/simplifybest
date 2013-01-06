@@ -1,7 +1,4 @@
-<%= form_for @meter do |f| %>
-  <% @meter.errors.full_messages.each do |msg| %>
-      <div class="row"><p><%= msg %></p></div>
-   <% end %>
+<%= form_for @meter, :validate => true do |f| %>
   <div class="row">
     <div class="two columns">
       <%= f.label "Name:", :class => "right inline" %>
@@ -23,6 +20,14 @@
   </div>  
   <div class="row">
     <div class="two columns">
+      <%= f.label "Phone:", :class => "right inline" %>
+    </div>
+    <div class="ten columns">
+      <%= f.text_field :phone_number, :placeholder => "(111) 123-4567" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="two columns">
       <%= f.label "E-Mail:", :class => "right inline" %>
     </div>
     <div class="ten columns">
@@ -34,7 +39,14 @@
       <%= f.label "SOS#:", :class => "right inline" %>
     </div>
     <div class="ten columns">
-      <%= f.text_field :sos, :placeholder => "SOS1234" %>
+      <div class="row collapse">
+        <div class="two mobile-one columns">
+          <span class="prefix">SOS</span>
+        </div>
+        <div class="ten mobile-three columns">
+          <%= f.text_field :sos, :placeholder => "1234" %>
+        </div>
+      </div>
     </div>
   </div>
   <div class="row">
@@ -46,8 +58,8 @@
     </div>
   </div>
   <div class="row">
-    <div class="four columns centered">
-      <%= f.submit "Submit Meter Reading", :class => "small button" %>
+    <div class="two columns centered">
+      <%= f.submit "Submit", :class => "small button" %>
     </div>
   </div>
 <% end %>

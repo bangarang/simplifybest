@@ -46,6 +46,7 @@ GEM
     childprocess (0.3.6)
       ffi (~> 1.0, >= 1.0.6)
     chunky_png (1.2.6)
+    client_side_validations (3.2.1)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -59,6 +60,9 @@ GEM
       sass (~> 3.1)
     compass-rails (1.0.3)
       compass (>= 0.12.2, < 0.14)
+    countries (0.8.4)
+      currencies (>= 0.4.0)
+    currencies (0.4.0)
     devise (2.1.2)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -80,6 +84,8 @@ GEM
       net-ssh (>= 2.1.3)
       nokogiri (~> 1.5.0)
       ruby-hmac
+    font-awesome-rails (0.4.1)
+      railties (~> 3.1)
     formatador (0.2.4)
     fssm (0.2.9)
     hike (1.2.1)
@@ -114,6 +120,11 @@ GEM
       i18n
     orm_adapter (0.4.0)
     pg (0.12.2)
+    phony (1.8.4)
+    phony_rails (0.1.12)
+      activerecord (>= 3.0)
+      countries (>= 0.8.2)
+      phony (>= 1.7.7)
     polyglot (0.3.3)
     rack (1.4.1)
     rack-cache (1.2)
@@ -188,6 +199,7 @@ GEM
       kgio (~> 2.6)
       rack
       raindrops (~> 0.7)
+    validates_as_phone_number (0.7.5)
     warden (1.2.1)
       rack (>= 1.0)
     xpath (0.1.4)
@@ -205,16 +217,19 @@ DEPENDENCIES
   cancan
   capybara (= 1.1.2)
   carrierwave
+  client_side_validations
   coffee-rails (= 3.2.2)
   compass-rails
   devise
   fog
+  font-awesome-rails
   jquery-rails
   mocha
   newrelic_rpm
   nifty-generators
   numbers_and_words
   pg (= 0.12.2)
+  phony_rails
   rails (= 3.2.8)
   rmagick
   rolify
@@ -223,4 +238,5 @@ DEPENDENCIES
   sqlite3 (= 1.3.5)
   uglifier (= 1.2.3)
   unicorn
+  validates_as_phone_number
   zurb-foundation

@@ -11,6 +11,10 @@ gem 'devise'
 gem 'rolify'
 gem 'cancan'
 gem 'numbers_and_words'
+gem 'client_side_validations'
+gem 'phony_rails'
+gem 'validates_as_phone_number'
+gem 'font-awesome-rails'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'

@@ -10,6 +10,7 @@
  *
  *= require_self
  *= require foundation_and_overrides
+ *= require 'font-awesome'
  *= require_tree .
  */
 body { background: #fafafa; }
@@ -41,6 +42,10 @@ h1.super.last-line { color:#d00;}
 
 .simplified { background:white; margin: 0 auto; }
 .prodnav { background:rgb(33,33,33); background:rgba(33,33,33,0.9); }
+.messnav { background:rgb(0,136,204); background:rgba(0,136,204,0.9); }
+.adminnav { background:rgb(0,136,204); background:rgba(0,136,204,0.8); }
+.title.messnav h1 { color: white; }
+.title.adminnav h1 { color: white; }
 
 .top-bar { margin: 0; }
 .title h1 { color: #d00; text-shadow: rgba(0, 0, 0, 0.4) 0 1px 2px; font-size: 70px; }
@@ -72,17 +77,22 @@ p.name { color: #d00; margin:0; padding:5px; font-size: 14px; }
 .accessories, .supplies { width:100%; background: white; }
 .trs { background: white; }
 
-.home-placeholder { background: url('/assets/linen.png'); background-size: 100%; position:relative; z-index:0;}
+.home-placeholder { background: url('/assets/linen.png'); background-size: 100%; height:400px; }
 .homepage { margin-top:0; }
-.home-content {  }
+.home-content {  padding-top: 40px; background: url('/assets/linen.png') repeat-x;  }
 
-.product-placeholder { background: url('/assets/paperpile.jpg'); padding-top: 100px; background-size: 100%; box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); -moz-box-shadow: 0 0 15px rgba(0,0,0,0.13); -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.13);}
+.product-placeholder { background: url('/assets/paperpile.jpg'); padding-top: 40px; background-size: 100%; box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); -moz-box-shadow: 0 0 15px rgba(0,0,0,0.13); -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.13);}
 .product-content { margin-top:0;}
 
 .prod-admin {margin-top: -20px; color:white; font-weight:bold; background: #d00; background: rgba(221,0,0,0.9);}
 .prod-admin div { padding: 10px;}
 .prod-admin a { color: #eee; }
 .prod-admin a:hover { color:white; }
+
+.mess-admin {margin-top: -20px; color:white; font-weight:bold; background:rgb(33,33,33); background:rgba(33,33,33,0.9); }
+.mess-admin div { padding: 10px;}
+.mess-admin a { color: #eee; }
+.mess-admin a:hover { color:white; }
 
 .thumbnail { display: table; margin:auto; padding: 15px; }
 .downloads ul li { list-style: none; }
@@ -92,7 +102,7 @@ img.logo { }
 img.slogo { height: 100px;}
 .not-banner { display:none; }
 
-.rbar-container { background:rgb(33,33,33); box-shadow: 0 0 15px rgba(0, 0, 0, 0.7); -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.7); -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);}
+.rbar-container { background:rgb(33,33,33);}
 
 #overlay { position:absolute; height:100%; width:100%; background-color:#000; opacity: 0; z-index:-30; }
 .scontainer { background: white; position:relative; margin:0 auto; z-index:32; margin-top: -250px;margin-bottom: 250px; }
@@ -120,25 +130,26 @@ ul.edit li i { text-align: center; margin-bottom: -25px;}
 .button.dd:hover + .button.dd ul { display: block; }
 
 .large i { font-size: 100px; line-height: 100px; text-align: center; display: run-in; }
-.large h4 { text-align: center; }
+.large h4,.large h5  { text-align: center; }
 
 #menu ul { margin:0; }
 
 .cat { background: rgba(0, 136, 204, 0.1); }
 .cat ul { margin: 14px inherit; }
 
-.bottom p.menu { margin-bottom: 0;}
-.bottom p.menu a {
-	color: #CCC;
+p.menu { margin-bottom: 0;}
+p.menu { line-height:40px;}
+p.menu a {
+	color: #F8CCCC;
 	font-weight: bold;
 	float: right;
-	background: #333;
+	background: #d00;
 	line-height: 40px;
 	padding: 0 15px;
 	margin-top: -40px;
 }
-.bottom p.menu a:hover { color: white; }
-.mcontainer.simplified { overflow:hidden; height:106px; }
+p.menu a:hover { color: white; }
+/* .mcontainer.simplified { overflow:hidden; height:106px; }
 h1.super.last-line {
   	-webkit-animation-duration: 0.3s;
   	-webkit-animation-timing-function: ease;
@@ -154,7 +165,9 @@ h1.super.last-line {
     margin-top: 0%;
   }
 }
-
+*/
+ul.message-admin {  }
+ul.message-admin li { list-style: none; float:left; }
 
 @media only screen and (max-width: 1030px) {
   	h3.title { margin:10px -15px 10px 0; }
@@ -187,7 +200,7 @@ h1.super.last-line {
 
 	.button.dd ul {right: -1px;top:29px; left:-80px;}
 
-	.top-menu { display: none; }
+	.top-menu { display: none; margin-bottom:10px;}
 
-	.mcontainer.simplified { overflow:hidden; height: 66px; }
+	/*.mcontainer.simplified { overflow:hidden; height: 66px; }*/
 }

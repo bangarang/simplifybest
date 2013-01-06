@@ -1,8 +1,5 @@
-<%= form_for @supply_order do |f| %>
-  <% @supply_order.errors.full_messages.each do |msg| %>
-      <p><%= msg %></p>
-   <% end %>
-  <div>
+<%= form_for @supply_order, :validate => true do |f| %>
+  <div class="row">
     <div class="two columns">
       <%= f.label "Name:", :class => "right inline" %>
     </div>
@@ -13,7 +10,7 @@
       <%= f.text_field :last, :placeholder => "Last" %>
     </div>
   </div>
-  <div>
+  <div class="row">
     <div class="two columns">
       <%= f.label "Company:", :class => "right inline" %>
     </div>
@@ -21,7 +18,15 @@
       <%= f.text_field :company, :placeholder => "My Company, LLC." %>
     </div>
   </div>  
-  <div>
+  <div class="row">
+    <div class="two columns">
+      <%= f.label "Phone:", :class => "right inline" %>
+    </div>
+    <div class="ten columns">
+      <%= f.text_field :phone_number, :placeholder => "(111) 123-4567" %>
+    </div>
+  </div>
+  <div class="row">
     <div class="two columns">
       <%= f.label "E-Mail:", :class => "right inline" %>
     </div>
@@ -29,15 +34,22 @@
       <%= f.text_field :address, :placeholder => "me@mycompany.com" %>
     </div>
   </div>
-  <div>
+  <div class="row">
     <div class="two columns">
-      <%= f.label 'SOS#:', :class => "right inline" %>
+      <%= f.label "SOS#:", :class => "right inline" %>
     </div>
     <div class="ten columns">
-      <%= f.text_field :sos, :placeholder => "SOS1234" %>
+      <div class="row collapse">
+        <div class="two mobile-one columns">
+          <span class="prefix">SOS</span>
+        </div>
+        <div class="ten mobile-three columns">
+          <%= f.text_field :sos, :placeholder => "1234" %>
+        </div>
+      </div>
     </div>
   </div>
-  <div>
+  <div class="row">
     <div class="two columns">
       <%= f.label "Supply Order:", :class => "right inline" %>
     </div>
@@ -45,9 +57,9 @@
       <%= f.text_area :comment, :placeholder => "Tell us what supplies you need.", :rows => "10" %>
     </div>
   </div>
-  <div>
-    <div class="four columns centered">
-      <%= f.submit "Submit Supply Order", :class => "small button" %>
+  <div class="row">
+    <div class="two columns centered">
+      <%= f.submit "Submit", :class => "small button" %>
     </div>
   </div>
 <% end %>

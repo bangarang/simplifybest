@@ -1,60 +1,31 @@
 <% provide(:title, 'Home') %>
 
-<div class="home-placeholder">
-	<div class="row">
-		<div class="eight columns offset-by-four">
-			<div class="homepage-copy">
-				<h1 class="super">Copiers</h1>
-				<h1 class="super">Printers</h1>
-				<h1 class="super">All-in-One</h1>		
+<div class="container home-content">
+	<div class="box homepage">
+		<div class="row">
+			<div id="featured">
+				<img src="http://placehold.it/1000x450/fff/000">
+				<img src="http://placehold.it/1000x450/000/fff">
+				<img src="http://placehold.it/1000x450/fff/d00">
+				<img src="http://placehold.it/1000x450/d00/fff">
 			</div>
 		</div>
-	</div>
-	<div class="mcontainer simplified">
 		<div class="row">
-			<div class="eight columns offset-by-four">
-				<h1 class="super last-line">Simplified.</h1>
+			<div class="eight columns" style="border-right: #ccc dotted thin;">
+				<% 10.times do |i| %>
+				<h3>Featured Item <%= i %></h3>
+				<h5 class="subheader">Featured Item <%= i %> is just so cool and stuff...</h5>
+				<% end %>
 			</div>
+		    <div class="four columns">
+		    	<div class="large">
+			      <dl>
+			        <dt><h4><i class="accessibility foundicon-adult"></i>Expert Service</h4></dt>
+			        <dd><h5 class="subheader">A way to tell the world about the people that worked on the sites you build, giving them kudos they deserve.</h5></dd>
+			      </dl>
+				</div>
+		    </div>
 		</div>
 	</div>
 </div>
 
-<div class="container home-content">
-	<div class="box homepage">
-		<div class="row">
-			<div class="twelve columns">
-				<h3>Why Simplified Office Solutions?</h3>
-				<h5 class="subheader">Simplified Office Solutions offers some of the finest copiers, printers and all-in-one machines in Omaha. We are dedicated to helping your office run smoothly and function better. Contact us today for help or questions; we would love to hear from you!</h5>
-				<hr>
-			</div>
-		</div>
-		<div class="row">
-			<div id="featured">
-				<img src="http://placehold.it/1000x350/fff/000">
-				<img src="http://placehold.it/1000x350/000/fff">
-				<img src="http://placehold.it/1000x350/fff/d00">
-				<img src="http://placehold.it/1000x350/d00/fff">
-			</div>
-		</div>
-		<div class="row large">
-		    <div class="four columns">
-		      <dl>
-		        <dt><h4><i class="general foundicon-page"></i> Quality Products</h4></dt>
-		        <dd>A sample structure for page content, giving you something to use as a basic structural template for the rest of the pages in your project.</dd>
-		      </dl>
-		    </div>
-		    <div class="four columns">
-		      <dl>
-		        <dt><h4><i class="accessibility foundicon-adult"></i> Expert Service</h4></dt>
-		        <dd>A way to tell the world about the people that worked on the sites you build, giving them kudos they deserve.</dd>
-		      </dl>
-		    </div>
-		    <div class="four columns">
-		      <dl>
-		        <dt><h4><i class="general foundicon-folder"></i> robots.txt</h4></dt>
-		        <dd>Give instructions to web robots so search engines know what to do when they crawl your site for content.</dd>
-		      </dl>
-		    </div>
-		</div>
-	</div>
-</div>

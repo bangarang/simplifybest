@@ -19,7 +19,7 @@ class SupplyOrdersController < ApplicationController
       ServiceMailer.supply(@supply_order).deliver
       redirect_to session[:return_to], :notice => "Successfully Sent supply order"
     else
-      redirect_to session[:return_to]
+      render :action => 'new'
     end
   end
   

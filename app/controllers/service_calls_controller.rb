@@ -19,7 +19,7 @@ class ServiceCallsController < ApplicationController
       ServiceMailer.service(@service_call).deliver
       redirect_to session[:return_to], :notice => "Successfully Sent supply order"
     else
-      redirect_to session[:return_to]
+      render :action => 'new'
     end
   end
   
