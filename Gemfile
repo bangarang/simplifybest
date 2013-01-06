@@ -16,6 +16,9 @@ gem 'phony_rails'
 gem 'validates_as_phone_number'
 gem 'font-awesome-rails'
 
+gem 'turbolinks'
+gem 'jquery-turbolinks'
+
 group :development, :test do
   gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.11.0'
