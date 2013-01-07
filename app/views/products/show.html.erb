@@ -15,7 +15,7 @@
             <dt>Navigation:</dt>
             <dd><a href="#overview">Overview</a></dd>
             <% unless @product.product_pictures.empty? %><dd><a href="#gallery">Gallery</a></dd><% end %>
-            <dd><a href="#specifications">Specifications</a></dd>
+            <% if @specs %><dd><a href="#specifications">Specifications</a></dd><% end %>
             <% unless @product.supply_items.empty? && @product.accessories.empty? %><dd><a href="#accessories">Accessories</a></dd><% end %>
             <% unless @product.downloads.empty? %><dd><a href="#downloads">Downloads</a></dd><% end %>
           </dl>
@@ -65,195 +65,275 @@
   </div>
 <% end %>
 
+<% if @specs %>
   <div class="row" id='specifications'>
     <div class="twelve columns"><h3 class="title">Specifications</h3></div>
     <div class="twelve columns specs">
       <dl class="tabs four-up">
-        <dd class="active"><a href="#general">Main Specifications</a></dd>
-        <dd><a href="#papersupply">Paper Supply</a></dd>
-        <dd><a href="#print">Print Specifications</a></dd>
-        <dd><a href="#scan">Scan Specifications</a></dd>
+        <% if @mainspecs %><dd class="active"><a href="#general">Main Specifications</a></dd><% end %>
+        <% if @paperpecs %><dd><a href="#papersupply">Paper Supply</a></dd><% end %>
+        <% if @printspecs %><dd><a href="#print">Print Specifications</a></dd><% end %>
+        <% if @scanspecs %><dd><a href="#scan">Scan Specifications</a></dd><% end %>
       </dl>
       <ul class="tabs-content">
-        <li class="active" id="generalTab">
+        <% if @mainspecs %><li class="active" id="generalTab">
             <table style="width: 100%;"> 
               <tbody>
+                <% unless @product.configuration.empty? %>
                 <tr>
                   <td><b>Configuration</b></td>
                   <td><%= @product.configuration %></td>
                 </tr>
+                <% end %>
+                <% unless @product.speed.empty? %>
                 <tr>
                   <td><b>Speed</b></td>
                   <td><%= @product.speed %></td>
                 </tr>
+                <% end %>
+                <% unless @product.warmup.empty? %>
                 <tr>
                   <td><b>Warm-up Time</b></td>
                   <td><%= @product.warmup %></td>
                 </tr>
+                <% end %>
+                <% unless @product.firstout.empty? %>
                 <tr>
                   <td><b>First Page Out</b></td>
                   <td><%= @product.firstout %></td>
                 </tr>
+                <% end %>
+                <% unless @product.resolution.empty? %>
                 <tr>
                   <td><b>Resolution</b></td>
                   <td><%= @product.resolution %></td>
                 </tr>
+                <% end %>
+                <% unless @product.memory.empty? %>
                 <tr>
                   <td><b>Memory</b></td>
                   <td><%= @product.memory %></td>
                 </tr>
+                <% end %>
+                <% unless @product.hdd.empty? %>
                 <tr>
                   <td><b>Hard Disk Drive</b></td>
                   <td><%= @product.hdd %></td>
                 </tr>
+                <% end %>
+                <% unless @product.duplex.empty? %>
                 <tr>
                   <td><b>Duplex</b></td>
                   <td><%= @product.duplex %></td>
                 </tr>
+                <% end %>
+                <% unless @product.stdoutput.empty? %>
                 <tr>
                   <td><b>Standard Output Tray</b></td>
                   <td><%= @product.stdoutput %></td>
                 </tr>
+                <% end %>
+                <% unless @product.electrical.empty? %>
                 <tr>
                   <td><b>Electrical</b></td>
                   <td><%= @product.electrical %></td>
                 </tr>
+                <% end %>
+                <% unless @product.dimensions.empty? %>
                 <tr>
                   <td><b>Dimensions</b></td>
                   <td><%= @product.dimensions %></td>
                 </tr>
+                <% end %>
+                <% unless @product.weight.empty? %>
                 <tr>
                   <td><b>Weight</b></td>
                   <td><%= @product.weight %></td>
                 </tr>
+                <% end %>
+                <% unless @product.maxdutycycle.empty? %>
                 <tr>
                   <td><b>Max Duty Cycle</b></td>
                   <td><%= @product.maxdutycycle %></td>
                 </tr>
+                <% end %>
               </tbody>
             </table>
-        </li>
-        <li id="papersupplyTab">
+        </li><% end %>
+        <% if @paperspecs %><li id="papersupplyTab">
             <table style="width: 100%;"> 
               <tbody>
+                <% unless @product.stdsources.empty? %>
                 <tr>
                   <td><b>Standard Paper Sources</b></td>
                   <td><%= @product.stdsources %></td>
                 </tr>
+                <% end %>
+                <% unless @product.optsources.empty? %>
                 <tr>
                   <td><b>Optional Paper Sources</b></td>
                   <td><%= @product.optsources %></td>
                 </tr>
+                <% end %>
+                <% unless @product.papercap.empty? %>
                 <tr>
                   <td><b>Paper Capacity</b></td>
                   <td><%= @product.papercap %></td>
                 </tr>
+                <% end %>
+                <% unless @product.papersize.empty? %>
                 <tr>
                   <td><b>Paper Size</b></td>
                   <td><%= @product.papersize %></td>
                 </tr>
+                <% end %>
+                <% unless @product.paperweight.empty? %>
                 <tr>
                   <td><b>Paper Weight</b></td>
                   <td><%= @product.paperweight %></td>
                 </tr>
+                <% end %>
+                <% unless @product.inputmaterials.empty? %>
                 <tr>
                   <td><b>Input Materials</b></td>
                   <td><%= @product.inputmaterials %></td>
                 </tr>
+                <% end %>
               </tbody>
             </table>
-        </li>
-        <li id="printTab">
+        </li><% end %>
+         <% if @printspecs %><li id="printTab">
             <table style="width: 100%;"> 
               <tbody>
+                <% unless @product.stdcontroller.empty? %>
                 <tr>
                   <td><b>Standard Controller</b></td>
                   <td><%= @product.stdcontroller %></td>
                 </tr>
+                <% end %>
+                <% unless @product.emulations.empty? %>
                 <tr>
                   <td><b>PDLs / Emulations</b></td>
                   <td><%= @product.emulations %></td>
                 </tr>
+                <% end %>
+                <% unless @product.fonts.empty? %>
                 <tr>
                   <td><b>Fonts</b></td>
                   <td><%= @product.fonts %></td>
                 </tr>
+                <% end %>
+                <% unless @product.windows.empty? %>
                 <tr>
                   <td><b>Windows OS Compatibility</b></td>
                   <td><%= @product.windows %></td>
                 </tr>
+                <% end %>
+                <% unless @product.novell.empty? %>
                 <tr>
                   <td><b>Novell OS Compatibility</b></td>
                   <td><%= @product.novell %></td>
                 </tr>
+                <% end %>
+                <% unless @product.macos.empty? %>
                 <tr>
                   <td><b>MAC OS Compatibility</b></td>
                   <td><%= @product.macos %></td>
                 </tr>
+                <% end %>
+                <% unless @product.unixos.empty? %>
                 <tr>
                   <td><b>UNIX OS Compatibility</b></td>
                   <td><%= @product.unixos %></td>
                 </tr>
+                <% end %>
+                <% unless @product.interfaces.empty? %>
                 <tr>
                   <td><b>Interfaces</b></td>
                   <td><%= @product.interfaces %></td>
                 </tr>
+                <% end %>
+                <% unless @product.protocols.empty? %>
                 <tr>
                   <td><b>Network Print and Supported Protocols</b></td>
                   <td><%= @product.protocols %></td>
                 </tr>
+                <% end %>
+                <% unless @product.drivers.empty? %>
                 <tr>
                   <td><b>Drivers</b></td>
                   <td><%= @product.drivers %></td>
                 </tr>
+                <% end %>
+                <% unless @product.utilities.empty? %>
                 <tr>
                   <td><b>Utilities</b></td>
                   <td><%= @product.utilities %></td>
                 </tr>
+                <% end %>
               </tbody>
             </table>
-        </li>
+        </li><% end %>
+        <% if @scanspecs %>
         <li id="scanTab">
-            <table style="width: 100%;"> 
-              <tbody>
-                <tr>
-                  <td><b>Scan Resolution</b></td>
-                  <td><%= @product.scanresolutions %></td>
-                </tr>
-                <tr>
-                  <td><b>File Formats</b></td>
-                  <td><%= @product.fileformats %></td>
-                </tr>
-                <tr>
-                  <td><b>PDF Extension</b></td>
-                  <td><%= @product.pdfextension %></td>
-                </tr>
-                <tr>
-                  <td><b>Scan Speeds</b></td>
-                  <td><%= @product.scanspeed %></td>
-                </tr>
-                <tr>
-                  <td><b>Connectivity / Supported Protocols</b></td>
-                  <td><%= @product.connectivity %></td>
-                </tr>
-                <tr>
-                  <td><b>Scanning Functions</b></td>
-                  <td><%= @product.scanfunction %></td>
-                </tr>
-                <tr>
-                  <td><b>Original Size</b></td>
-                  <td><%= @product.originalsize %></td>
-                </tr>
-                <tr>
-                  <td><b>Scan Driver</b></td>
-                  <td><%= @product.scandriver%></td>
-                </tr>
-              </tbody>
-            </table>
+          <table style="width: 100%;"> 
+            <tbody>
+              <% unless @product.scanresolutions.empty? %>
+              <tr>
+                <td><b>Scan Resolution</b></td>
+                <td><%= @product.scanresolutions %></td>
+              </tr>
+              <% end %>
+              <% unless @product.fileformats.empty? %>
+              <tr>
+                <td><b>File Formats</b></td>
+                <td><%= @product.fileformats %></td>
+              </tr>
+              <% end %>
+              <% unless @product.pdfextension.empty? %>
+              <tr>
+                <td><b>PDF Extension</b></td>
+                <td><%= @product.pdfextension %></td>
+              </tr>
+              <% end %>
+              <% unless @product.scanspeed.empty? %>
+              <tr>
+                <td><b>Scan Speeds</b></td>
+                <td><%= @product.scanspeed %></td>
+              </tr>
+              <% end %>
+              <% unless @product.connectivity.empty? %>
+              <tr>
+                <td><b>Connectivity / Supported Protocols</b></td>
+                <td><%= @product.connectivity %></td>
+              </tr>
+              <% end %>
+              <% unless @product.scanfunction.empty? %>
+              <tr>
+                <td><b>Scanning Functions</b></td>
+                <td><%= @product.scanfunction %></td>
+              </tr>
+              <% end %>
+              <% unless @product.originalsize.empty? %>
+              <tr>
+                <td><b>Original Size</b></td>
+                <td><%= @product.originalsize %></td>
+              </tr>
+              <% end %>
+              <% unless @product.scandriver.empty? %>
+              <tr>
+                <td><b>Scan Driver</b></td>
+                <td><%= @product.scandriver %></td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
         </li>
+        <% end %>
       </ul>
     </div>
   </div>
+<% end %>
 <% unless @product.supply_items.empty? && @product.accessories.empty? %>
   <div class="row" id='accessories'>
     <div class="twelve columns"><h3 class="title">Accessories</h3></div>
@@ -297,7 +377,8 @@
       <ul> 
         <% for download in @product.downloads %>
           <% if download.download %>
-            <li><%= link_to download.name, download.download_url %></li>
+            <li><%= link_to "<i class='general foundicon-page'></i> #{download.name}".html_safe, download.download_url %>
+            </li>
           <% end %>
         <% end %>
       </ul>

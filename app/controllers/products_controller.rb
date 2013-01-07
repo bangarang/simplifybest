@@ -28,6 +28,31 @@ class ProductsController < ApplicationController
   end
 
   def show
+    # @mainspecs = false
+    # @paperspecs = false
+    # @printspecs = false
+    # @scanspecs = false
+
+    unless (@product.configuration.empty? && @product.speed.empty? && @product.warmup.empty? && @product.firstout.empty? && @product.resolution.empty? && @product.memory.empty? && @product.hdd.empty? && @product.duplex.empty? && @product.stdoutput.empty? && @product.electrical.empty? && @product.dimensions.empty? && @product.weight.empty? && @product.maxdutycycle.empty?)
+      @mainspecs = true
+    end
+
+    unless (@product.stdsources.empty? && @product.optsources.empty? && @product.papercap.empty? && @product.papersize.empty? && @product.paperweight.empty? && @product.inputmaterials.empty?)
+      @paperspecs = true
+    end
+
+
+    unless (@product.stdcontroller.empty? && @product.emulations.empty? && @product.fonts.empty? && @product.windows.empty? && @product.novell.empty? && @product.macos.empty? && @product.unixos.empty? && @product.interfaces.empty? && @product.protocols.empty? && @product.drivers.empty? && @product.utilities.empty?)
+      @printspecs = true
+    end
+
+    unless (@product.scanresolutions.empty? && @product.fileformats.empty? && @product.pdfextension.empty? && @product.scanspeed.empty? && @product.connectivity.empty? && @product.scanfunction.empty? && @product.originalsize.empty? && @product.scandriver.empty?)
+      @scanspecs = true
+    end
+
+    unless (!@mainspecs && !@paperspecs && !@printspecs && !@scanspecs)
+      @specs = true
+    end
   end
 
   def edit

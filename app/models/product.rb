@@ -2,7 +2,7 @@ class Product < ActiveRecord::Base
   attr_accessible :name, :excerpt, :description, :image, :remote_image_url, :category_id, :new_category_name, :accessories_attributes, :supply_items_attributes, :product_pictures_attributes, :downloads_attributes
   mount_uploader :image, ImageUploader
 
-  # General Specs
+  # Main Specs
   attr_accessible :configuration, :speed, :warmup, :firstout, :resolution, :memory, :hdd, :duplex, :stdoutput, :electrical, :dimensions, :weight, :maxdutycycle
 
   # Paper Supply
