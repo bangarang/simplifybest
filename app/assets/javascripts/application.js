@@ -11,9 +11,9 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require jquery_ujs
-//= require rails.validations
-//= require jquery.turbolinks
 //= require turbolinks
+//= require jquery.turbolinks
+//= require jquery_ujs
 //= require foundation
+//= require rails.validations
 //= require_tree .
