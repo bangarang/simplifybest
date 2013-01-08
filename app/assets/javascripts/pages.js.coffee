@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 jQuery -> 
-	$("#featured").orbit "bullets": true
+	$("#featured").orbit "bullets": true, "pauseOnHover": true, "startClockOnMouseOut": true, "startClockOnMouseOutAfter": 500
 	$(".menu").click ->
 		$(".top-menu").slideToggle "fast"
 
