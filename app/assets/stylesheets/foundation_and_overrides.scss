@@ -358,8 +358,10 @@ ul.flyout li.active ul li:hover a::after { content: ' >'; }
 ul.flyout li a, .nav-bar li ul li a { padding: 15px; background: #f6f6f6; color: #222; border: none;}
 
 ul.flyout li a:hover, ul.flyout li a:focus, .nav-bar li ul li a:hover, .nav-bar li ul li a:focus { background: #f6f6f6; text-decoration: none; color: #d00;  }
-ul.flyout li:hover a::after, .nav-bar li ul li:hover a::after { content: ' >'; }
+ul.flyout li:hover a::after { content: ' >'; }
+ul.flyout li.active:hover a::after { content: ''; }
 
+.nav-bar li.has-flyout a:first-child::after { border-color: white transparent transparent transparent; }
 
 .title h5 { color: #d00; }
 
@@ -373,7 +375,7 @@ dl.sub-nav { margin: -4px 0 18px -7px; float:left;}
   margin-top: -13px;
   margin-bottom: 12px;
   text-align:center;
-  background: #c60f13;
+  background: #d00;
   color: #fff;
   font-size: 12px;
   font-weight: bold;
