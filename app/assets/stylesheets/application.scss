@@ -182,16 +182,15 @@ h2.fas { background: #333; background: rgba(0,0,0,0.8); padding: 10px 5px; color
 
 @media only screen and (max-width: 767px) { 
 	.specs { padding:0; } 
-	h3.title { margin: 10px 0; text-align: center; padding:5px;} 
+	h3.title { margin: 10px 0;  padding:5px;} 
 	.mainimage { margin-top:0 ; } 
 	.wrapper { margin-top: 0;} 
 	h1.super { font-size: 40px; line-height: 40px; }
-	.title h1 { font-size: 30px; text-align: center; margin:0;}
-	.title h4 { line-height: 19px; text-align: center; font-size: 15px; margin: 0;}
+	.title h1 { font-size: 30px; margin:0;}
+	.title h4 { line-height: 19px; font-size: 15px; margin: 0;}
 	.title h4.subheader { margin-bottom:0; }
 	h3.title { font-size: 25px ; 	}
 	.product-placeholder { padding-top: 0; }
-	
 	ul.edit li span, .user { display:none;}
 
 	ul.edit { float: right; padding-bottom: 10px; height: 29px; }

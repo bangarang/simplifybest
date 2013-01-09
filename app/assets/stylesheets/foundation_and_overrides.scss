@@ -344,7 +344,7 @@ ul.flyout li.active, .nav-bar li ul li.active { border:none; }
 
 ul.accordion li.active .title { background:#f6f6f6; }
 ul.accordion li.active .title h6 { color: #d00; }
-ul.accordion > li.active .title::after { border-color: #d00 transparent transparent transparent;}
+ul.accordion li.active .title::after { border-color: #d00 transparent transparent transparent;}
 
 ul.flyout li div.title h6:hover { color: #d00; }
 
@@ -403,5 +403,7 @@ p.menu a i { font-style: normal; }
   .nav-bar { background:#d00; }
 
   .flyout p:last-child { margin-bottom: 0; }
+
+  dl.sub-nav dt, dl.sub-nav dd { margin-bottom: 0; }
 
 }
