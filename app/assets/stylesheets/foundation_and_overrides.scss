@@ -328,10 +328,10 @@ h4.ticket { margin-top:0; text-align:center; padding: 20px 0; }
 .nav-bar li a { color:white; }
 .nav-bar li a:hover { background:transparent; text-decoration:underline; color:white; }
 .nav-bar li:hover { background: transparent; color: white; }
-.nav-bar li, .nav-bar li:last-child { text-transform: uppercase;font-weight: bold;line-height: 40px;border: none; -webkit-box-shadow: none; -moz-box-shadow:none; box-shadow: none; padding:0;}
+.nav-bar li, .nav-bar li:last-child { font-weight: bold;line-height: 40px;border: none; -webkit-box-shadow: none; -moz-box-shadow:none; box-shadow: none; padding:0;}
 .nav-bar li ul li:last-child { border-left: solid 3px #CCC; }
-.thumbnail { height: 132px; }
-/* .scontainer { height:0;  background:white; position:absolute; left:50%; margin-left:-500px;} */
+.thumbnail { height: 102px; }
+
 
 .menu-bar { background: #d00; }
 .menu-bar .columns { min-height: 0px; }
@@ -341,8 +341,12 @@ ul.flyout li, .nav-bar li ul li { border: none; }
 .nav-bar li ul li:last-child { border: none; }
 ul.accordion li .content { padding:0; }
 ul.flyout li.active, .nav-bar li ul li.active { border:none; }
-ul.flyout li.active a, .nav-bar li ul li.active a { color: #d00; background:white; }
-ul.flyout li.active a:hover, .nav-bar li ul li.active a:hover { background: #ccc; }
+
+.nav-bar li ul li.active a { color: #222; background:transparent;  padding: 15px 20px 5px 20px;}
+ul.flyout li.active ul li p.subheader { padding: 5px 0 5px 20px; }
+ul.flyout li.active ul li:hover { background: #f2f2f2; }
+ul.flyout li.active ul li:hover a { color: #d00;text-decoration:none; }
+ul.flyout li.active ul li:hover a::after { content: ' >'; }
 
 .title h5 { color: #d00; }
 

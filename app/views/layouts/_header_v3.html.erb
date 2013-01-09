@@ -51,7 +51,11 @@
                 <div class="content">
                   <ul>
                     <% for product in category.products %>
-                    <li><%=link_to product.name, product %></li>
+                    <li>
+                      <%=link_to product.name, product %>
+                      <p class='subheader'><%= product.excerpt %></p>
+                    </li>
+
                     <% end %>
                     <li><%= link_to "View all", category %></li>
                   </ul>
