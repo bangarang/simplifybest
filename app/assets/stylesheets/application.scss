@@ -177,6 +177,7 @@ h2.fas { background: #333; background: rgba(0,0,0,0.8); padding: 10px 5px; color
 @media only screen and (max-width: 940px) {
   	 .banner { display:none; }
   	 .not-banner { display:block; width:115px;}
+  	 h2.fas { font-size:30px; }
 }
 
 @media only screen and (max-width: 767px) { 
@@ -203,5 +204,5 @@ h2.fas { background: #333; background: rgba(0,0,0,0.8); padding: 10px 5px; color
 
 	.top-menu { display: none; margin-bottom:10px;}
 
-	/*.mcontainer.simplified { overflow:hidden; height: 66px; }*/
+	h2.fas { font-size: 17px; }
 }

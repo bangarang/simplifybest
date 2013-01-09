@@ -342,11 +342,24 @@ ul.flyout li, .nav-bar li ul li { border: none; }
 ul.accordion li .content { padding:0; }
 ul.flyout li.active, .nav-bar li ul li.active { border:none; }
 
-.nav-bar li ul li.active a { color: #222; background:transparent;  padding: 15px 20px 5px 20px;}
-ul.flyout li.active ul li p.subheader { padding: 5px 0 5px 20px; }
-ul.flyout li.active ul li:hover { background: #f2f2f2; }
+ul.accordion li.active .title { background:#f6f6f6; }
+ul.accordion li.active .title h6 { color: #d00; }
+ul.accordion > li.active .title::after { border-color: #d00 transparent transparent transparent;}
+
+ul.flyout li div.title h6:hover { color: #d00; }
+
+.nav-bar li ul li.active a { color: #222; background:transparent;  padding: 15px 20px 15px 20px;}
+ul.flyout li.active ul li p.subheader { padding: 0 0 5px 20px; margin-top:-10px; }
+ul.flyout li.active ul li:hover { background: #f6f6f6; }
 ul.flyout li.active ul li:hover a { color: #d00;text-decoration:none; }
 ul.flyout li.active ul li:hover a::after { content: ' >'; }
+
+
+ul.flyout li a, .nav-bar li ul li a { padding: 15px; background: #f6f6f6; color: #222; border: none;}
+
+ul.flyout li a:hover, ul.flyout li a:focus, .nav-bar li ul li a:hover, .nav-bar li ul li a:focus { background: #f6f6f6; text-decoration: none; color: #d00;  }
+ul.flyout li:hover a::after, .nav-bar li ul li:hover a::after { content: ' >'; }
+
 
 .title h5 { color: #d00; }
 
@@ -388,5 +401,7 @@ p.menu a i { font-style: normal; }
   .button.dropdown > ul { right: -1px; top: 29px;}
   .menu-bar { background: #212121; }
   .nav-bar { background:#d00; }
+
+  .flyout p:last-child { margin-bottom: 0; }
 
 }
