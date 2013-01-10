@@ -21,10 +21,15 @@
 		    <div class="four columns">
 		    	<div class="large">
 			      <dl>
-			        <dt><h4><i class="accessibility foundicon-adult"></i>Expert Service</h4></dt>
-			        <dd><h5 class="subheader">A way to tell the world about the people that worked on the sites you build, giving them kudos they deserve.</h5></dd>
+			        <dt><h4>Quality Customer Service</h4></dt>
+			        <dd><h5 class="subheader">We believe that great customer service starts with communication. So, we've made a few easy ways to contact us. Let us know if you need to place a service call, supply order or submit a meter reading right from our site. Or leave us any other comments at the bottom of the page.</h5></dd>
 			      </dl>
 				</div>
+				<ul class="home-edit">
+					<li><%= link_to "<i class='general foundicon-graph'></i><br><span>Meter Reading</span>".html_safe, new_meter_path, :class => "button" %></li>
+			        <li><%= link_to "<i class='general foundicon-tools'></i><br><span>Service Call</span>".html_safe, new_service_call_path, :class => "button alert" %></li>
+			        <li><%= link_to "<i class='general foundicon-cart'></i><br><span>Supply Order</span>".html_safe, new_supply_order_path, :class => "button supply" %></li>
+				</ul>
 		    </div>
 		</div>
 	</div>

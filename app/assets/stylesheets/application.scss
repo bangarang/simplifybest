@@ -127,8 +127,7 @@ ul.edit li i { text-align: center; margin-bottom: -25px;}
 .button.dd  ul li a:hover { background:#95CDFB; }
 .button.dd:hover + .button.dd ul { display: block; }
 
-.large i { font-size: 100px; line-height: 100px; text-align: center; display: run-in; }
-.large h4,.large h5  { text-align: center; }
+.large i { font-size: 100px; line-height: 100px; display: run-in; }
 
 #menu ul { margin:0; }
 
@@ -171,7 +170,7 @@ h2.fas { background: #333; background: rgba(0,0,0,0.8); padding: 10px 5px; color
 
 .prod-footer dt { font-weight: bold; }
 
-.prod-footer h5 { color: #333; border-bottom: #333 dotted 1px }
+.prod-footer h5 { color: #333; border-bottom: #333 dotted 1px; padding: 5px 0; margin: 10px 0; }
 
 .prod-footer { color: #333; }
 .prod-footer ul { float: left; margin: 0 50px 30px 0}
@@ -184,6 +183,8 @@ h2.fas { background: #333; background: rgba(0,0,0,0.8); padding: 10px 5px; color
 .copyright img.logo { width:175px; display: table; margin: auto; }
 .copyright p { text-align:center; }
 .signin a { padding: 10px; }
+
+.home-edit li { list-style: none; margin: 5px 0;}
 @media only screen and (max-width: 1030px) {
   	h3.title { margin:10px -15px 10px 0; }
 }
