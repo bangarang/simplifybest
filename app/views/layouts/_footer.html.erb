@@ -1,14 +1,20 @@
-<div class="row"></div>
-
-<div class="prod-footer hide-for-small">
+<div class="prod-footer">
   <div class="row">
-    <div class="two columns">
+    <div class="three columns hide-for-small">
       <h5 class="subheader">Products Types</h5>
       <ul>
         <% for category in @categories %>
         <li><%= link_to category.name, category %></li>
         <% end %>
         <li><%= link_to "View All", products_url %></li>
+      </ul>
+    </div>
+    <div class="three columns hide-for-small">
+      <h5 class="subheader">Customer Service</h5>
+      <ul>
+        <li><%= link_to "Meter Reading", new_meter_path %></li>
+        <li><%= link_to "Service Call", new_service_call_path %></li>
+        <li><%= link_to "Supply Order", new_supply_order_path %></li>
       </ul>
     </div>
     <div class="three columns">
@@ -21,15 +27,7 @@
         <dd>Toll-Free: 1 (877) 677-6482 </dd>
       </dl>
     </div>
-    <div class="three columns">
-      <h5 class="subheader">Customer Service</h5>
-      <ul>
-        <li><%= link_to "Meter Reading", new_meter_path %></li>
-        <li><%= link_to "Service Call", new_service_call_path %></li>
-        <li><%= link_to "Supply Order", new_supply_order_path %></li>
-      </ul>
-    </div>
-    <div class="contact-form four columns">
+    <div class="contact-form three columns hide-for-small">
       <h5 class="subheader">Leave a Comment</h5>
       <%= render 'shared/contact_form' %>
     </div>

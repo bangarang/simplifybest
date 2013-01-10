@@ -24,30 +24,31 @@
       <ul class="block-grid four-up mobile index">
         <% for message in @messages %>
         <li>
-          <a href="<%= message_path(message) %>">
-            <ul class="pricing-table box message">
-              <% if message.service? %>
-              <li class="ticket <%= message.type %>">Service Call</li>
-              <% end %>
-              <% if message.supply? %>
-              <li class="ticket <%= message.type %>">Supply Order</li>
-              <% end %>
-              <% if message.meter? %>
-              <li class="ticket <%= message.type %>">Meter Reading</li>
-              <% end %>
-              <li class="bullet-item"><%= message.first %> <%= message.last %></li>
-              <li class="bullet-item"><%= message.company %></li>
-              <li class="bullet-item"><%= message.address %></li>
-              <% if message.phone_number %><li class="bullet-item"><%= message.phone_number.phony_formatted(:format => :national, :spaces => :-) %></li><% end %>
-              <li class="bullet-item"><%= message.sos %></li>
-              <% if message.meter? %>
-              <li class="bullet-item"><%= message.meter %></li>
-              <% else %>
-              <li class="description"><%= message.comment %></li>
-              <% end %>
-              <li class="cta-button"><%= link_to "Destroy", message, :confirm => 'Are you sure?', :method => :delete, :class => "small button" %></li>
-            </ul>
-          </a>
+          <ul class="pricing-table box message">
+            <% if message.service? %>
+            <li class="ticket <%= message.type %>">Service Call</li>
+            <% end %>
+            <% if message.supply? %>
+            <li class="ticket <%= message.type %>">Supply Order</li>
+            <% end %>
+            <% if message.meter? %>
+            <li class="ticket <%= message.type %>">Meter Reading</li>
+            <% end %>
+            <% if message.contact? %>
+            <li class="ticket <%= message.type %>">General Contact</li>
+            <% end %>
+            <li class="bullet-item"><%= message.first %> <%= message.last %></li>
+            <% unless message.contact? %><li class="bullet-item"><%= message.company %></li><% end %>
+            <li class="bullet-item"><%= message.address %></li>
+            <% if message.phone_number %><li class="bullet-item"><%= message.phone_number.phony_formatted(:format => :national, :spaces => :-) %></li><% end %>
+            <% unless message.sos.blank? %><li class="bullet-item"><%= message.sos %></li><% end %>
+            <% if message.meter? %>
+            <li class="bullet-item"><%= message.meter %></li>
+            <% else %>
+            <li class="description"><%= message.comment %></li>
+            <% end %>
+            <li class="cta-button"><%= link_to "Destroy", message, :confirm => 'Are you sure?', :method => :delete, :class => "small button" %></li>
+          </ul>
         </li>
         <% end %>
       </ul>
