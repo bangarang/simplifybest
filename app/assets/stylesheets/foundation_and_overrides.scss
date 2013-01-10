@@ -385,6 +385,22 @@ dl.sub-nav { margin: -4px 0 18px -7px; float:left;}
 
 p.menu a i { font-style: normal; }
 
+.contact-form input:focus, .contact-form textarea:focus { background: white; }
+
+.contact-form input::-webkit-input-placeholder, .contact-form textarea::-webkit-input-placeholder {
+font-size: 12px;
+color: #aaa;
+}
+.contact-form input.contact-input::-moz-placeholder, .contact-form textarea::-moz-placeholder {
+font-size: 12px;
+color: #aaa;
+}
+.contact-form input.contact-input::-ms-input-placeholder, .contact-form textarea::-ms-input-placeholder {
+font-size: 12px;
+color: #aaa;
+}
+
+
 @media only screen and (max-width: 767px) {
   dl.sub-nav.prod-sub dt { display: none; }
 

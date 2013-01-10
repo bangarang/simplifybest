@@ -1,59 +1,37 @@
-
-<div class="top-footer hide-for-small">
-  <div class="row">
-    <h3>We'd love to hear from you!</h3>
-    <h5>Call us local at: (402) 935-7936 
-    <br>or Toll-Free at:   1 (877) 677-6482 </h5>
-  </div>
-</div>
-
-<div class="contact-footer hide-for-small">
-  <div class="row">
-    <div class="contact-form six columns">
-      <%= render 'shared/contact_form' %>
-    </div>
-    <div class="six columns">
-        <dl>
-          <dt>Hours:</dt>
-          <dd>M-F: 8:00 am - 5:00 pm </dd>
-        </dl>
-    </div>
-  </div>
-</div>
-
-<div class="mid-footer hide-for-small">
-  <div class="row">
-    <div class="six columns">
-      <dl>
-        <dt><h4>Our office is located at:</dt>
-        <dd><h4 class="subheader">6630 South 118th Street<br >Omaha, NE 68137</dd>
-      </dl>
-    </div>
-    <div class="six columns map">
-      <h3>Visit us!</h3>
-      <div id="mapviewer"><iframe id="map" Name="mapFrame" scrolling="no" width="350" height="280" frameborder="0" src="http://www.bing.com/maps/embed/?lvl=16&amp;cp=41.191979~-96.096946&amp;sty=r&amp;draggable=false&amp;v=2&amp;dir=0&amp;where1=6630+S+118th+St%2C+Omaha%2C+NE+68137&amp;form=LMLTEW&amp;pp=41.191979348659515~-96.09694607555866&amp;mkt=en-us&amp;gen=false&amp;emid=496eca5a-55f9-5366-d3a6-bd06f89debd0&amp;w=350&amp;h=280"></iframe><div id="LME_maplinks" style="line-height:20px;"><a id="LME_largerMap" href="http://www.bing.com/maps/?cp=41.191979~-96.096946&amp;sty=r&amp;lvl=16&amp;where1=6630 S 118th St, Omaha, NE 68137&amp;mm_embed=map&amp;form=LMLTEW" target="_blank">View Larger Map</a>&nbsp;<a id="LME_directions" href="http://www.bing.com/maps/?cp=41.191979~-96.096946&amp;sty=r&amp;lvl=16&amp;rtp=~pos.41.191979_-96.096946_6630 S 118th St, Omaha, NE 68137&amp;mm_embed=dir&amp;form=LMLTEW" target="_blank">Get Directions</a>&nbsp;</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
+<div class="row"></div>
 
 <div class="prod-footer hide-for-small">
-  <div class="row collapse">
-    <div class="twelve columns">
-      <h3 class="subheader six columns" >Products by Category:</h3>
-      <h5 class="subheader right"><%= link_to "Or check out all #{ @products.length.to_words } products on our site.", products_url %></h5>
-    </div>
-    <div class="twelve columns">
-      <% for category in @categories %>
+  <div class="row">
+    <div class="two columns">
+      <h5 class="subheader">Products Types</h5>
       <ul>
-        <li><label><%= link_to category.name, category %></label></li>
-        <% for product in category.products.order(:name) %>
-        <li><%= link_to product.name, product %></li>
+        <% for category in @categories %>
+        <li><%= link_to category.name, category %></li>
         <% end %>
+        <li><%= link_to "View All", products_url %></li>
       </ul>
-      <% end %>
+    </div>
+    <div class="three columns">
+      <h5 class="subheader">Contact Us</h5>
+      <dl>
+        <dt>Address</dt>
+        <dd>6630 South 118th Street<br >Omaha, NE 68137</dd>
+        <dt>Phone Number</dt>
+        <dd>Local: (402) 935-7936</dd> 
+        <dd>Toll-Free: 1 (877) 677-6482 </dd>
+      </dl>
+    </div>
+    <div class="three columns">
+      <h5 class="subheader">Customer Service</h5>
+      <ul>
+        <li><%= link_to "Meter Reading", new_meter_path %></li>
+        <li><%= link_to "Service Call", new_service_call_path %></li>
+        <li><%= link_to "Supply Order", new_supply_order_path %></li>
+      </ul>
+    </div>
+    <div class="contact-form four columns">
+      <h5 class="subheader">Leave a Comment</h5>
+      <%= render 'shared/contact_form' %>
     </div>
   </div>
 </div>

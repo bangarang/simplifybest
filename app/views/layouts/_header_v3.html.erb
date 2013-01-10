@@ -28,9 +28,9 @@
           <li><%= link_to 'Why Simplified?', about_path %></li>
           <li class="has-flyout">
             <% if can? :edit, Message %>
-            <%= link_to "Service", messages_url %>
+            <%= link_to "Customer Service", messages_url %>
             <% else %>
-            <a href="#">Service</a>
+            <a href="#">Customer Service</a>
             <% end %>
             <a href="#" class="flyout-toggle"><span> </span></a>
             <ul class="flyout">
