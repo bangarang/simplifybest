@@ -1,7 +1,7 @@
 <div class="rbar-container <% if user_signed_in?%> in<% end %>">
   <div class="row rbar">
     <div class="three left mainpic hide-for-small">
-      <a href="<%= root_url %>"><%= image_tag("logo.t.png", :class => "logo") %></a>
+      <a href="<%= root_url %>"><%= image_tag("logo.250.png", :class => "logo") %></a>
     </div>
     <div class="nine columns">
       <div class="top twelve">
@@ -14,7 +14,7 @@
           <% end %>
         </ul> 
       </div>
-      <a class="show-for-small" href="<%= root_url %>"><%= image_tag("logo.t.png", :class => "slogo") %></a>
+      <a class="show-for-small" href="<%= root_url %>"><%= image_tag("logo.250.png", :class => "slogo") %></a>
       <p class="menu show-for-small" style=""><a href="#"><i class="icon-reorder"> Menu</i></a></p>
     </div>
   </div>
@@ -57,13 +57,13 @@
                     </li>
 
                     <% end %>
-                    <li><%= link_to "View all", category %></li>
+                    <li><%= link_to "View All #{category.name}", category %></li>
                   </ul>
                 </div>
               </li>
               <% end %>
               <li style="color:black;">
-                <h5><%= link_to "View All of Our Products", products_url %></h5>
+                <h5><%= link_to "View All Products", products_url %></h5>
               </li>
             </ul>
           </li>

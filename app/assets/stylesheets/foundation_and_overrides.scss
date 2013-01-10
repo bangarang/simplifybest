@@ -277,10 +277,6 @@ ul[data-clearing] li { cursor: pointer; }
 
 [class*="columns ppicture"] + [class*="columns ppicture"]:last-child { float:left;}
 
-@media only screen and (max-width: 767px) {
-  [class*="column"] + [class*="column"]:last-child { float: none;}
-}
-
 div.ppicture { padding: 0 5px; }
 
 .remove_div { display: table; margin:10px auto; }
@@ -396,8 +392,6 @@ p.menu a i { font-style: normal; }
 #featured.orbit img { display: block;  }
 
 @media only screen and (max-width: 767px) {
-  [class*="column .top"] + [class*="column .top"]:last-child { float: right; }
-
   dl.sub-nav.prod-sub dt { display: none; }
 
   .button.dropdown > ul { right: -1px; top: 29px;}
