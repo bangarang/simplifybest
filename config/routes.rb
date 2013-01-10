@@ -1,6 +1,6 @@
 Simplifybest::Application.routes.draw do
   resources :messages
-
+  resources :contacts
   resources :meters
   resources :supply_orders
   resources :service_calls

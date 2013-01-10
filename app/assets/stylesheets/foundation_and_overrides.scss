@@ -385,12 +385,6 @@ dl.sub-nav { margin: -4px 0 18px -7px; float:left;}
 
 p.menu a i { font-style: normal; }
 
-#featured { background: url(spinner.gif) center center #f4f4f4; height: 300px; }
-#featured img { display: none; }
-
-#featured.orbit { background: none; }
-#featured.orbit img { display: block;  }
-
 @media only screen and (max-width: 767px) {
   dl.sub-nav.prod-sub dt { display: none; }
 

@@ -17,7 +17,7 @@ body { background: #fafafa; }
 
 .copyright {
 	background: #272727;
-	padding-top: 20px !important;
+	padding-top: 10px !important;
 	color: #BCBCBC;
 }
 
@@ -77,10 +77,10 @@ p.name { color: #d00; margin:0; padding:5px; font-size: 14px; }
 
 .home-placeholder { background: url('/assets/linen.png'); background-size: 100%; height:400px; }
 .homepage { margin-top:0; }
-.home-content {  padding-top: 40px; background: url('/assets/linen.png') repeat-x;  }
+.home-content {  padding-top: 40px; background: url('/assets/linen.png') repeat-x; position:relative; z-index:1; }
 
 .product-placeholder { background: url('/assets/paperpile.jpg'); padding-top: 40px; background-size: 100%; box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); -moz-box-shadow: 0 0 15px rgba(0,0,0,0.13); -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.13);}
-.product-content { margin-top:0;}
+.product-content { margin-top:0; position:relative; z-index:1;}
 
 .prod-admin {margin-top: -20px; color:white; font-weight:bold; background: #d00; background: rgba(221,0,0,0.9);}
 .prod-admin div { padding: 10px;}
@@ -169,14 +169,34 @@ ul.message-admin li { list-style: none; float:left; }
 
 h2.fas { background: #333; background: rgba(0,0,0,0.8); padding: 10px 5px; color: #d00; margin: 0 0 -60px 0; position: relative; z-index: 35; width: 50%; }
 
+.top-footer { background: #d00; margin-top:-150px; padding-top: 150px; }
+.top-footer h3, .top-footer h5 { color: white }
+.top-footer h3 { float: right }
+
+.mid-footer { background: rgb(63,63,63); }
+.mid-footer dl h4 { margin-top: 20px; color: white; text-align: center;}
+.mid-footer dt { font-weight: bold }
+
+.map { margin-top: -200px; background: rgb(63,63,63); }
+.map  h3 { color: white; text-align: center; }
+#mapviewer { display: table; margin: auto; }
+
+.contact-footer { background: #FAFFDC; color: #BCBCBC; }
+.contact-form { background: #FAFFDC; padding: 10px;    }
+.contact-form h4 { text-align: center; }
+
 .prod-footer { background: #333; color: #BCBCBC; }
-.prod-footer h5 { color: #BCBCBC; }
+.prod-footer h5 a, .prod-footer h3 { color: #BCBCBC; }
+.prod-footer h5 a:hover { color: white; }
+.prod-footer h5 { background: #6F6F6F; padding: 5px 15px; margin-top: 0; }
 .prod-footer ul { float: left; margin: 0 50px 30px 0}
 .prod-footer ul li label { text-decoration:underline;   }
 .prod-footer ul li { list-style:none;   }
 .prod-footer ul li a { color: #BCBCBC; }
 .prod-footer ul li a:hover { color: white; }
 
+.copyright img.logo { width:175px; display: table; margin: auto; }
+.copyright p { text-align:center; }
 
 @media only screen and (max-width: 1030px) {
   	h3.title { margin:10px -15px 10px 0; }

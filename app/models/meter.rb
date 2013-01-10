@@ -5,13 +5,5 @@ class Meter < Message
   
 	def meter?
   		true
-  	end
-
-  	def supply?
-  		false
-  	end
-
-   	def service?
-  		false
-  	end
+	end
 end

@@ -6,6 +6,14 @@ class ServiceMailer < ActionMailer::Base
   #
   #   en.service_mailer.meters.subject
   #
+  def contact(contact, sent_at = Time.now)
+    @sent_on = sent_at
+    @first = contact.first
+    @last = contact.last
+    @address = contact.address
+    @comment = contact.comment
+    mail(:subject => "General Contact", :from => "general-contact@simplifybest.com")
+  end
 
   def meter(meter, sent_at = Time.now)
     @sent_on = sent_at
