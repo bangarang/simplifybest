@@ -40,7 +40,7 @@
             <li class="bullet-item"><%= message.first %> <%= message.last %></li>
             <% unless message.contact? %><li class="bullet-item"><%= message.company %></li><% end %>
             <li class="bullet-item"><%= message.address %></li>
-            <% if message.phone_number %><li class="bullet-item"><%= message.phone_number.phony_formatted(:format => :national, :spaces => :-) %></li><% end %>
+            <% if message.phone_number %><li class="bullet-item"><%= message.phone_number %></li><% end %>
             <% unless message.sos.blank? %><li class="bullet-item"><%= message.sos %></li><% end %>
             <% if message.meter? %>
             <li class="bullet-item"><%= message.meter %></li>
