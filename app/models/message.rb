@@ -5,7 +5,6 @@ class Message < ActiveRecord::Base
   validates_presence_of :company, :unless => :contact?
   validates_format_of :address,:with => Devise.email_regexp
   validates_as_phone_number :phone_number, :message => 'Enter an Actual Phone Number Please :)' 
-  phony_normalize :phone_number, :default_country_code => 'US'
     
   def contact?
     false
