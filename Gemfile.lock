@@ -94,8 +94,6 @@ GEM
     jquery-rails (2.0.2)
       railties (>= 3.2.0, < 5.0)
       thor (~> 0.14)
-    jquery-turbolinks (0.2.1)
-      rails (>= 3.1.0)
     json (1.7.6)
     kgio (2.7.4)
     libwebsocket (0.1.5)
@@ -193,8 +191,6 @@ GEM
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
-    turbolinks (0.6.1)
-      coffee-rails
     tzinfo (0.3.35)
     uglifier (1.2.3)
       execjs (>= 0.3.0)
@@ -228,7 +224,6 @@ DEPENDENCIES
   fog
   font-awesome-rails
   jquery-rails
-  jquery-turbolinks
   mocha
   newrelic_rpm
   nifty-generators
@@ -240,7 +235,6 @@ DEPENDENCIES
   rolify
   rspec-rails (= 2.11.0)
   sass-rails (= 3.2.5)
-  turbolinks
   uglifier (= 1.2.3)
   unicorn
   validates_as_phone_number

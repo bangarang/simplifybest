@@ -41,9 +41,9 @@ h1.super.last-line { color:#d00;}
 
 .simplified { background:white; margin: 0 auto; }
 .prodnav { background:rgb(33,33,33); background:rgba(33,33,33,0.9); }
-.messnav { background:rgb(0,136,204); background:rgba(0,136,204,0.9); }
+.messnav { }
 .adminnav { background:rgb(0,136,204); background:rgba(0,136,204,0.8); }
-.title.messnav h1 { color: white; }
+.title.messnav h1 {  }
 .title.adminnav h1 { color: white; }
 
 .top-bar { margin: 0; }
@@ -52,7 +52,7 @@ h1.super.last-line { color:#d00;}
 .title h3 { margin:20px 0 20px -30px; padding:5px 30px; background: rgba(255,255,255,0.9); }
 .title h4 { line-height: 70px; }
 
-h3.title { text-transform: uppercase; text-shadow: rgba(0, 0, 0, 0.3) 0 1px 2px; color: #d00; font-size: 40px;}
+h3.title { text-shadow: rgba(0, 0, 0, 0.3) 0 1px 2px; color: #d00; font-size: 40px;}
 
 h4.title { color: #d00; }
 
@@ -87,7 +87,7 @@ p.name { color: #d00; margin:0; padding:5px; font-size: 14px; }
 .prod-admin a { color: #eee; }
 .prod-admin a:hover { color:white; }
 
-.mess-admin {margin-top: -20px; color:white; font-weight:bold; background:rgb(33,33,33); background:rgba(33,33,33,0.9); }
+.mess-admin {margin-top: -20px; color:white; font-weight:bold; }
 .mess-admin div { padding: 10px;}
 .mess-admin a { color: #eee; }
 .mess-admin a:hover { color:white; }

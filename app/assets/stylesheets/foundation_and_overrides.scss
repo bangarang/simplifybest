@@ -405,6 +405,13 @@ color: #aaa;
 
 .home-edit .button { width: 100%; }
 
+#featured { }
+#featured img { display: none; }
+
+#featured.orbit { background: none; }
+#featured.orbit img { display: block; }
+
+
 @media only screen and (max-width: 767px) {
   dl.sub-nav.prod-sub dt { display: none; }
 
