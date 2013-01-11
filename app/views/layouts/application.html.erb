@@ -4,6 +4,7 @@
 <!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
 <head>
+	<meta name="robots" content="noindex, nofollow">
 	<meta charset="utf-8" />
 	
 	<!-- Uncomment to make IE8 render like IE7 -->
@@ -13,16 +14,19 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	
 	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
-  
+
+  	<!-- Typekit -->
+	<script type="text/javascript" src="//use.typekit.net/bkq5xlt.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	<!-- Included CSS Files -->
 	<%= stylesheet_link_tag    "application" %>
 	
 	<!-- Included JS Files  -->
 	<%= javascript_include_tag "application" %>
-  
+
   <%= csrf_meta_tags %>
 </head>
-<body id="page" class="off-canvas hide-extras">
+<body>
 	<%= render "layouts/header_v3" %>
     <%= render "layouts/errors" %>
   	<%= yield %>
