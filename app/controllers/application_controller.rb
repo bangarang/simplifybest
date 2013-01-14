@@ -23,7 +23,7 @@ private
   end
 
   def display_categories
-    @categories = Category.all
+    @categories = Category.order(:id)
   end
 
   def display_products
