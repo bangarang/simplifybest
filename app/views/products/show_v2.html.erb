@@ -1,19 +1,28 @@
 <% provide(:title, @product.name) %>
-<div class="prod-nav row">
-  <div class="six columns">
-    <h1 class="title"><%= @product.name %></h1>
-  </div>
-  <div class="six columns">
-    <ul class="right">
-      <li><a href="#overview">Overview</a></li>
-      <% unless @product.product_pictures.empty? %><li><a href="#gallery">Gallery</a></li><% end %>
-      <% if @specs %><li><a href="#specifications">Specifications</a></li><% end %>
-      <% unless @product.supply_items.empty? && @product.accessories.empty? %><li><a href="#accessories">Accessories</a></li><% end %>
-      <% unless @product.downloads.empty? %><li><a href="#downloads">Downloads</a></li><% end %>
-    </ul>
-  </div>
-</div>
 
+<div class="product-placeholder">
+  <div class="row">
+    <div class="twelve columns title prodnav">
+      <div class="row">
+        <div class="seven columns">
+          <h1><%= @product.name %></h1>
+        </div>
+        <div class="five columns">
+          <h4 class="subheader"><%= @product.excerpt %></h4>
+        </div>
+        <div class="twelve columns">
+          <dl class="sub-nav prod-sub left">
+            <dt>Navigation:</dt>
+            <dd><a href="#overview">Overview</a></dd>
+            <% unless @product.product_pictures.empty? %><dd><a href="#gallery">Gallery</a></dd><% end %>
+            <% if @specs %><dd><a href="#specifications">Specifications</a></dd><% end %>
+            <% unless @product.supply_items.empty? && @product.accessories.empty? %><dd><a href="#accessories">Accessories</a></dd><% end %>
+            <% unless @product.downloads.empty? %><dd><a href="#downloads">Downloads</a></dd><% end %>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </div>
   <% if can? :edit, @product %>
   <div class="row prod-admin">
     <div class="right">
@@ -28,9 +37,9 @@
   <% end %>
 </div>
 
-<div class="box">
-  <div class="bread row">
-    <div class="twelve columns">
+<div class="box product-content">
+  <div class="row">
+    <div class="six columns">
       <ul class="breadcrumbs">
         <li><%= link_to "Home", root_url %></li>
         <li><%= link_to "Products", products_url %></li>
@@ -38,23 +47,32 @@
         <li class="current"><%= link_to @product.name, @product %></li>
       </ul>
     </div>
+    <div class="six columns">
+      <dl class="sub-nav prod-sub left">
+        <dt>Navigation:</dt>
+        <dd><a href="#overview">Overview</a></dd>
+        <% unless @product.product_pictures.empty? %><dd><a href="#gallery">Gallery</a></dd><% end %>
+        <% if @specs %><dd><a href="#specifications">Specifications</a></dd><% end %>
+        <% unless @product.supply_items.empty? && @product.accessories.empty? %><dd><a href="#accessories">Accessories</a></dd><% end %>
+        <% unless @product.downloads.empty? %><dd><a href="#downloads">Downloads</a></dd><% end %>
+      </dl>
+    </div>
   </div>
   <div class="row" id="overview"> 
     <div class="twelve columns">
-      <h3 class="title">Overview <small class="subheader">Read a General Overview</small></h3>
+      <h3 class="title">Overview</h3>
     </div>
-    <div class="six columns mainimage">
+    <div class="four columns mainimage">
         <%= image_tag @product.image_url(:main).to_s if @product.image? %>
       </div>
-    <div class="six columns">
-      <h4 class="subheader"><%= @product.excerpt %></h4>
+    <div class="eight columns">
       <%= @product.description.html_safe %>
     </div>
   </div>
 
 <% unless @product.product_pictures.empty? %>
   <div class="row" id="gallery">
-    <div class="twelve columns"><h3 class="title">Gallery <small class="subheader">View the Photo Gallery</small></h3></div>
+    <div class="twelve columns"><h3 class="title">Gallery</h3></div>
     <div class="twelve columns"> 
       <ul class='block-grid eight-up mobile-three-up' data-clearing>
         <% for product_picture in @product.product_pictures %>
@@ -69,7 +87,7 @@
 
 <% if @specs %>
   <div class="row" id='specifications'>
-    <div class="twelve columns"><h3 class="title">Specifications <small class="subheader">Detailed Technical Specifications</small></h3></div>
+    <div class="twelve columns"><h3 class="title">Specifications</h3></div>
     <div class="twelve columns specs">
       <dl class="tabs four-up">
         <% if @mainspecs %><dd class="active"><a href="#general">Main Specifications</a></dd><% end %>
@@ -338,12 +356,12 @@
 <% end %>
 <% unless @product.supply_items.empty? && @product.accessories.empty? %>
   <div class="row" id='accessories'>
-    <div class="twelve columns"><h3 class="title">Accessories <small class="subheader">Additional Compatible Equipment</small></h3></div>
+    <div class="twelve columns"><h3 class="title">Accessories</h3></div>
     <div class="six columns">
       <table class="accessories"> 
         <tbody>
           <tr>
-            <td><h4>Accessories</h4></td>
+            <td><h4 class="title">Accessories</h4></td>
           </tr>
           <% @product.accessories.each do |accessory| %>
           <tr>
@@ -359,7 +377,7 @@
       <table class="supplies"> 
         <tbody>
         	<tr>
-          	<td><h4>Supply Items</h4></td>
+          	<td><h4 class="title">Supply Items</h4></td>
           </tr>
 			    <% @product.supply_items.each do |supply_item| %>
           <tr>
@@ -374,7 +392,7 @@
 <% end %>
 <% unless @product.downloads.empty? %>
   <div class="row" id='downloads'>
-    <div class="twelve columns"><h3 class="title">Downloads <small class="subheader">Downloadable Brochures and Drivers</small></h3></div>
+    <div class="twelve columns"><h3 class="title">Downloads</h3></div>
     <div class="twelve columns downloads">
       <ul> 
         <% for download in @product.downloads %>

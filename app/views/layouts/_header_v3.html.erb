@@ -34,9 +34,9 @@
             <% end %>
             <a href="#" class="flyout-toggle"><span> </span></a>
             <ul class="flyout">
-              <li><%= link_to "Meter Reading", new_meter_path %></li>
-              <li><%= link_to "Service Call", new_service_call_path %></li>
-              <li><%= link_to "Supply Order", new_supply_order_path %></li>
+              <li><h5><%= link_to "Meter Reading", new_meter_path %></h5></li>
+              <li><h5><%= link_to "Service Call", new_service_call_path %></h5></li>
+              <li><h5><%= link_to "Supply Order", new_supply_order_path %></h5></li>
             </ul>
           </li>
           <li class="has-flyout">
@@ -46,7 +46,7 @@
               <% for category in @categories %>
               <li>
                 <div class="title">
-                  <h6><%= category.name %></h6>
+                  <h5><%= category.name %></h5>
                 </div>
                 <div class="content">
                   <ul>

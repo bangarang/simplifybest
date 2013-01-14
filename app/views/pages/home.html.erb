@@ -1,37 +1,47 @@
 <% provide(:title, 'Home') %>
 
-<div class="container home-content">
-	<div class="box homepage">
-		<div class="row">
-			<h2 class="fas">Featured at Simplified:</h2>
-			<div id="featured">
-				<img src="/assets/featured/1.jpg">
-				<img src="/assets/featured/2.jpg">
-				<img src="/assets/featured/3.jpg">
-				<img src="/assets/featured/4.jpg">
-			</div>
-		</div>
-		<div class="row">
-			<div class="eight columns" style="border-right: #ccc dotted thin;">
-				<% 10.times do |i| %>
-				<h3>Featured Item <%= i %></h3>
-				<h5 class="subheader">Featured Item <%= i %> is just so cool and stuff...</h5>
-				<% end %>
-			</div>
-		    <div class="four columns">
-		    	<div class="large">
-			      <dl>
-			        <dt><h4>Quality Customer Service</h4></dt>
-			        <dd><h5 class="subheader">We believe that great customer service starts with communication. So, we've made a few easy ways to contact us. Let us know if you need to place a service call, supply order or submit a meter reading right from our site. Or leave us any other comments at the bottom of the page.</h5></dd>
-			      </dl>
-				</div>
-				<ul class="home-edit">
-					<li><%= link_to "<i class='general foundicon-graph'></i><br><span>Meter Reading</span>".html_safe, new_meter_path, :class => "button" %></li>
-			        <li><%= link_to "<i class='general foundicon-tools'></i><br><span>Service Call</span>".html_safe, new_service_call_path, :class => "button alert" %></li>
-			        <li><%= link_to "<i class='general foundicon-cart'></i><br><span>Supply Order</span>".html_safe, new_supply_order_path, :class => "button supply" %></li>
-				</ul>
-		    </div>
+<div class="row">
+	<div class="twelve columns">
+		<h1 class="subheader">Welcome to Simplified Office Solutions!</h1>
+	</div>
+</div>
+
+<div class="row box">
+	<div class="three columns">
+      <dl>
+        <dt><h3>Quality Customer Service</h3></dt>
+        <dd><p class="subheader">We believe that great customer service starts with communication. So, we've made a few easy ways to contact us. Let us know if you need to place a service call, supply order or submit a meter reading right from our site. Or leave us any other comments at the bottom of the page.</p></dd>
+      </dl>
+	</div>
+	<div class="three columns serv-col meterreading">
+		<%= link_to "<i class='general foundicon-graph'></i><br><span>Meter Reading</span>".html_safe, new_meter_path, :class => 'service-button' %>
+	</div>
+	<div class="three columns serv-col servicecall">
+		<%= link_to "<i class='general foundicon-tools'></i><br><span>Service Call</span>".html_safe, new_service_call_path, :class => 'service-button' %>
+	</div>
+	<div class="three columns serv-col supplyorder">
+		<%= link_to "<i class='general foundicon-cart'></i><br><span>Supply Order</span>".html_safe, new_supply_order_path, :class => 'service-button' %>
+	</div>
+</div>
+
+<div class="row">
+	<div class="six columns">
+		<h2>Featured at Simplified</h1>
+		<div id="featured">
+			<img src="/assets/featured/1.jpg">
+			<img src="/assets/featured/2.jpg">
+			<img src="/assets/featured/3.jpg">
+			<img src="/assets/featured/4.jpg">
 		</div>
 	</div>
 </div>
 
+
+<div class="row">
+	<div class="eight columns" style="border-right: #ccc dotted thin;">
+		<% 10.times do |i| %>
+		<h3>Featured Item <%= i %></h3>
+		<h5 class="subheader">Featured Item <%= i %> is just so cool and stuff...</h5>
+		<% end %>
+	</div>
+</div>

@@ -1,5 +1,5 @@
 class Category < ActiveRecord::Base
-  attr_accessible :name, :slug
+  attr_accessible :name, :slug, :description
   has_many :products
 
   def to_param

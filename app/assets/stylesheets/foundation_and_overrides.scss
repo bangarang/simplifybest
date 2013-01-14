@@ -26,11 +26,11 @@ $mainColor: #08C;
 
 // Font Settings
 
-// $headerFontFamily: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$headerFontFamily: "jaf-bernina-sans-comp",sans-serif;
 // $headerFontWeight: bold;
 // $headerFontStyle: normal;
 // $headerFontColor: #222;
-// $bodyFontFamily: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$bodyFontFamily: "jaf-facitweb",sans-serif;
 // $bodyFontWeight: normal;
 // $bodyFontStyle: normal;
 // $bodyFontColor: $txtColor;
@@ -234,7 +234,7 @@ $topBarHeight: 45px;
 
 // Modular Scale Settings
 
-// $ratio: $golden; // THIS IS DEFAULT IN MODULAR-SCALE
+$ratio: $minor-sixth; // THIS IS DEFAULT IN MODULAR-SCALE
 // $baseFontSize: 14px;
 // $importantModNum: 44px;
 // $base-size: $baseFontSize $importantModNum;
@@ -242,6 +242,15 @@ $topBarHeight: 45px;
 // http://www.modularscale.com by Tim Brown
 // https://github.com/scottkellum/modular-scale by scottkellum
 @import 'foundation';
+
+body, p { font-size:ms(0); }
+h5 { font-size:ms(1); }
+h4 { font-size:ms(2); }
+h3 { font-size:ms(3); }
+h2 { font-size:ms(4); }
+h1 { font-size:ms(5); }
+
+ul.flyout li a, .nav-bar li ul li a { font-size: inherit; } 
 
 /* Overrides clear:both; when using block-grid with Clearing. Also overrided .th styling when Clearing is open */
 ul.block-grid[data-clearing] { overflow: visible; }
@@ -302,8 +311,8 @@ h4.ServiceCall { color:#e00; }
 h4.SupplyOrder { color:#f89406; }
 h4.Meter { color:#08c; }
 
-.supply { background:#f89406; }
-.supply:hover { background: #B36709; }
+.supply { background:#f89406; border-color:#B36709; }
+.supply:hover { background: #B36709; border-color:#B36709; }
 h4.ticket { margin-top:0; text-align:center; padding: 20px 0; }
 
 
@@ -339,7 +348,7 @@ ul.accordion li .content { padding:0; }
 ul.flyout li.active, .nav-bar li ul li.active { border:none; }
 
 ul.accordion li.active .title { background:#f6f6f6; }
-ul.accordion li.active .title h6 { color: #d00; }
+ul.accordion li.active .title h5 { color: #d00; }
 ul.accordion li.active .title::after { border-color: #d00 transparent transparent transparent;}
 
 ul.flyout li div.title h6:hover { color: #d00; }
@@ -359,7 +368,7 @@ ul.flyout li.active:hover a::after { content: ''; }
 
 .nav-bar li.has-flyout a:first-child::after { border-color: white transparent transparent transparent; }
 
-.title h5 { color: #d00; }
+
 
 dl.sub-nav { margin: -4px 0 18px -7px; float:left;} 
 
@@ -410,6 +419,17 @@ color: #aaa;
 
 #featured.orbit { background: none; }
 #featured.orbit img { display: block; }
+.serv-col { height: 255px; border-left: #eee solid thin; }
+.serv-col:hover { background: #EEEEEE; }
+.service-button { display: table; margin:auto; padding: 70px 0; color: #333; }
+.service-button i { font-size: 100px }
+
+.meterreading {  }
+.meterreading:hover a { color: #08c; }
+.supplyorder {  }
+.supplyorder:hover a { color: #f89406; }
+.servicecall {  }
+.servicecall:hover a { color: #c00;  }
 
 
 @media only screen and (max-width: 767px) {
@@ -422,5 +442,5 @@ color: #aaa;
   .flyout p:last-child { margin-bottom: 0; }
 
   dl.sub-nav dt, dl.sub-nav dd { margin-bottom: 0; }
-
+  .serv-col { border-left:none; height: inherit; }
 }

@@ -1,9 +1,8 @@
 <% provide(:title, "#{@category.name} Products") %>
 
-<div class="product-placeholder">
   <div class="row">
-    <div class="twelve columns title prodnav">
-      <h1><%= @category.name %></h1>
+    <div class="twelve columns">
+      <h1><%= @category.name %>  <small class="subheader"><%= @category.description %></small></h1>
     </div>
   </div>
   <div class="row prod-admin">
@@ -16,9 +15,17 @@
     </div>
     <% end %>
   </div>
-</div>
 
 <div class="box product-content">
+  <div class="bread row">
+    <div class="twelve columns">
+      <ul class="breadcrumbs">
+        <li><%= link_to "Home", root_url %></li>
+        <li><%= link_to "Products", products_url %></li>
+        <li class="current"><%= link_to @category.name, category_path(@category) %></li>
+      </ul>
+    </div>
+  </div>
   <div class="row">
     <div class="twelve columns">
       <ul class="block-grid four-up mobile-two-up">

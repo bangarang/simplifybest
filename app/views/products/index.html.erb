@@ -1,12 +1,10 @@
 <% provide(:title, 'Products') %>
 
-<div class="product-placeholder">
   <div class="row">
-    <div class="twelve columns title prodnav">
+    <div class="twelve columns">
       <h1>Our Products</h1>
     </div>
   </div>
-
   <% if can? :edit, Product %>
   <div class="row prod-admin">
     <div class="right">
@@ -28,20 +26,20 @@
     </div>
   </div>
   <% end %>
-</div>
 
 <div class="box product-content">
+  <div class="bread row">
+    <div class="twelve columns">
+      <ul class="breadcrumbs">
+        <li><%= link_to "Home", root_url %></li>
+        <li class="current"><%= link_to "Products", products_url %></li>
+      </ul>
+    </div>
+  </div>
   <% for category in @categories %>
   <div class="row">
     <div class="twelve columns <% if can? :edit, Category %>cat<% end %>">
-      <h3 class="title left"><%= category.name %></h3>
-      <% if category.products.length > 1 %>
-      <h4 class="subheader right">These <%= category.products.length.to_words %> machines are great!</h4>
-      <% elsif category.products.length == 1 %>
-      <h4 class="subheader right">Check out this sweet machine.</h4>
-      <% else %>
-      <h4 class="subheader right">Not sure why this type is here. There aren't any in it...</h4>
-      <% end %>
+      <h3 class="title"><%= link_to category.name, category %>  <small class="subheader"><%= category.description %></small></h3>
       <% if can? :edit, Category %>
       <ul class="edit right">
         <li><%= link_to "<i class='general foundicon-right-arrow'></i><br><span>View</span>".html_safe, category, :class=> "small button" %></li>

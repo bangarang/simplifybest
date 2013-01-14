@@ -52,8 +52,7 @@ h1.super.last-line { color:#d00;}
 .title h3 { margin:20px 0 20px -30px; padding:5px 30px; background: rgba(255,255,255,0.9); }
 .title h4 { line-height: 70px; }
 
-/* h3.title { text-shadow: rgba(0, 0, 0, 0.3) 0 1px 2px; color: #d00; font-size: 40px;} */
-h3.title { color: #d00; font-size: 40px;}
+h3.title { color: #333; border-top: #ccc solid thin; padding:10px 0;}
 
 h4.title { color: #d00; }
 
@@ -101,7 +100,7 @@ img.logo { }
 img.slogo { height: 100px;}
 .not-banner { display:none; }
 
-.rbar-container { background:rgb(33,33,33);}
+.rbar-container { background:#111;}
 
 #overlay { position:absolute; height:100%; width:100%; background-color:#000; opacity: 0; z-index:-30; }
 .scontainer { background: white; position:relative; margin:0 auto; z-index:32; margin-top: -250px;margin-bottom: 250px; }
@@ -147,23 +146,7 @@ p.menu a {
 	margin-top: -40px;
 }
 p.menu a:hover { color: white; }
-/* .mcontainer.simplified { overflow:hidden; height:106px; }
-h1.super.last-line {
-  	-webkit-animation-duration: 0.3s;
-  	-webkit-animation-timing-function: ease;
-  	-webkit-animation-name: slidein;
-}
- 
-@-webkit-keyframes slidein {
-  from {
-    margin-top: -1000%;
-  }
- 
-  to {
-    margin-top: 0%;
-  }
-}
-*/
+
 ul.message-admin {  }
 ul.message-admin li { list-style: none; float:left; }
 
@@ -171,7 +154,7 @@ h2.fas { background: #333; background: rgba(0,0,0,0.8); padding: 10px 5px; color
 
 .prod-footer dt { font-weight: bold; }
 
-.prod-footer h5 { color: #333; border-bottom: #333 dotted 1px; padding: 5px 0; margin: 10px 0; }
+.prod-footer h4 { color: #333; border-bottom: #333 dotted 1px; padding: 5px 0; margin: 10px 0; }
 
 .prod-footer { color: #333; }
 .prod-footer ul { float: left; margin: 0 50px 30px 0}
@@ -186,6 +169,17 @@ h2.fas { background: #333; background: rgba(0,0,0,0.8); padding: 10px 5px; color
 .signin a { padding: 10px; }
 
 .home-edit li { list-style: none; margin: 5px 0;}
+
+.prod-nav ul { padding-top: 40px; margin-bottom: 0; }
+.prod-nav ul li { list-style: none; float:left; padding: 0 5px; }
+.prod-nav h1 { margin-bottom: 0; }
+
+.bread { background:#f6f6f6; }
+.bread ul.breadcrumbs { background:none; border: none; margin-bottom:0; padding: 6px 0 7px;}
+.bread ul.breadcrumbs li a, .bread ul.breadcrumbs li:hover a  { color: #d00; }
+
+.home.button { width:100%; }
+
 @media only screen and (max-width: 1030px) {
   	h3.title { margin:10px -15px 10px 0; }
 }

@@ -1,7 +1,7 @@
 <div class="prod-footer">
   <div class="row">
     <div class="three columns hide-for-small">
-      <h5 class="subheader">Products Types</h5>
+      <h4 class="subheader">Products Types</h4>
       <ul>
         <% for category in @categories %>
         <li><%= link_to category.name, category %></li>
@@ -10,7 +10,7 @@
       </ul>
     </div>
     <div class="three columns hide-for-small">
-      <h5 class="subheader">Customer Service</h5>
+      <h4 class="subheader">Customer Service</h4>
       <ul>
         <li><%= link_to "Meter Reading", new_meter_path %></li>
         <li><%= link_to "Service Call", new_service_call_path %></li>
@@ -18,7 +18,7 @@
       </ul>
     </div>
     <div class="three columns">
-      <h5 class="subheader">Contact Us</h5>
+      <h4 class="subheader">Contact Us</h4>
       <dl>
         <dt>Address</dt>
         <dd>6630 South 118th Street<br >Omaha, NE 68137</dd>
@@ -28,7 +28,7 @@
       </dl>
     </div>
     <div class="contact-form three columns hide-for-small">
-      <h5 class="subheader">Leave a Comment</h5>
+      <h4 class="subheader">Leave a Comment</h4>
       <%= render 'shared/contact_form' %>
     </div>
   </div>
