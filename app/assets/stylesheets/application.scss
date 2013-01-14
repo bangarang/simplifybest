@@ -50,9 +50,8 @@ h1.super.last-line { color:#d00;}
 .title h1 { color: #d00; text-shadow: rgba(0, 0, 0, 0.4) 0 1px 2px; font-size: 70px; }
 
 .title h3 { margin:20px 0 20px -30px; padding:5px 30px; background: rgba(255,255,255,0.9); }
-.title h4 { line-height: 70px; }
 
-h3.title { color: #333; border-top: #ccc solid thin; padding:10px 0;}
+h3.title { color: #333; border-bottom: #ccc solid thin; }
 
 h3.title a { color:#d00; }
 h3.title a:hover { color:#b00; }
@@ -177,7 +176,7 @@ h2.fas { background: #333; background: rgba(0,0,0,0.8); padding: 10px 5px; color
 .prod-nav ul li { list-style: none; float:left; padding: 0 5px; }
 .prod-nav h1 { margin-bottom: 0; }
 
-.bread { background:#f6f6f6; }
+.bread { background: #f6f6f6; margin-bottom:0 }
 .bread ul.breadcrumbs { background:none; border: none; margin-bottom:0; padding: 6px 0 7px;}
 .bread ul.breadcrumbs li a, .bread ul.breadcrumbs li:hover a  { color: #d00; }
 

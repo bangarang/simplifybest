@@ -30,7 +30,7 @@ $headerFontFamily: "jaf-bernina-sans-comp",sans-serif;
 // $headerFontWeight: bold;
 // $headerFontStyle: normal;
 // $headerFontColor: #222;
-$bodyFontFamily: "skolar",serif;
+$bodyFontFamily: "jaf-bernina-sans",sans-serif;
 // $bodyFontWeight: normal;
 // $bodyFontStyle: normal;
 // $bodyFontColor: $txtColor;
@@ -348,7 +348,7 @@ ul.accordion li .content { padding:0; }
 ul.flyout li.active, .nav-bar li ul li.active { border:none; }
 
 ul.accordion li.active .title { background:#f6f6f6; }
-ul.accordion li.active .title h5 { color: #d00; }
+ul.accordion li.active h4 { color: #d00; }
 ul.accordion li.active .title::after { border-color: #d00 transparent transparent transparent;}
 
 ul.flyout li div.title h6:hover { color: #d00; }
@@ -367,7 +367,7 @@ ul.flyout li:hover a::after { content: ' >'; }
 ul.flyout li.active:hover a::after { content: ''; }
 
 .nav-bar li.has-flyout a:first-child::after { border-color: white transparent transparent transparent; }
-
+.nav-bar li ul li h5 { margin-bottom: 0; }
 
 
 dl.sub-nav { margin: -4px 0 18px -7px; float:left;} 
@@ -433,7 +433,7 @@ color: #aaa;
 .servicecall {  }
 .servicecall:hover a { color: #c00;  }
 
-
+ul.breadcrumbs li a, ul.breadcrumbs li span { text-transform: none; font-weight:bold; }
 @media only screen and (max-width: 767px) {
   dl.sub-nav.prod-sub dt { display: none; }
 
