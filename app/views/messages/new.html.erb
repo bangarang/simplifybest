@@ -1,5 +1,68 @@
 <% provide(:title, "New Message") %>
 
-<%= render 'form' %>
+<div class="mcontainer">
+	<div class="row">
+		<div class="twelve columns"><hr></div>
+		<div class="five columns">
+			<h1 class="Meter">Submit a Meter Reading</h1>
+			<h3>We need 3 things from you:</h3>
+			<ol>
+				<li>Your contact information</li> 
+				<li>The SOS# of the machine  <span class="subheader">(if you have it)</span></li> 
+				<li>Meter Reading</li> 
+			</ol>
+			<p>If you have any trouble, feel free to call us or leave us a comment at the bottom of the page.</p>
+		</div>
+		<div class="seven columns shadow">
+			<div class="row">
+				<h4 class="ticket Meter">Meter Reading Ticket</h4>
+			</div>
+			<%= render 'meters/form' %>
+		</div>
+		<div class="twelve columns"><hr></div>
+	</div>
+</div>
 
-<p><%= link_to "Back to List", messages_path %></p>
+<div class="mcontainer">
+	<div class="row">
+		<div class="five columns">
+			<h1 class="SupplyOrder">Place a Supply Order</h1>
+			<h3>We need 3 things from you:</h3>
+			<ol>
+				<li>Your contact information</li> 
+				<li>The SOS# of the machine  <span class="subheader">(if you have it)</span></li>
+				<li>The supply item or items that you'd like to order.</li> 
+			</ol>
+			<p>If you have any trouble, feel free to call us or leave us a comment at the bottom of the page.</p>
+		</div>
+		<div class="seven columns shadow">
+			<div class="row">
+				<h4 class="ticket SupplyOrder">Supply Order Ticket</h4>
+			</div>
+			<%= render 'supply_orders/form' %>
+		</div>
+		<div class="twelve columns"><hr></div>
+	</div>
+</div>
+
+<div class="mcontainer">
+	<div class="row">
+		<div class="five columns">
+			<h1 class="ServiceCall">Place a Service Call</h1>
+			<h3>We need 3 things from you:</h3>
+			<ol>
+				<li>Your contact information</li> 
+				<li>The SOS# of the machine  <span class="subheader">(if you have it)</span></li>
+				<li>A description the problem with the machine</li> 
+			</ol>
+			<p>If you have any trouble, feel free to call us or leave us a comment at the bottom of the page.</p>
+		</div>
+		<div class="seven columns shadow">
+			<div class="row">
+				<h4 class="ticket ServiceCall">Service Call Ticket</h4>
+			</div>
+			<%= render 'service_calls/form' %>
+		</div>
+	</div>
+	<div class="twelve columns"><hr></div>
+</div>

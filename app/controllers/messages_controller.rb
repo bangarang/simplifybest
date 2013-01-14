@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :except => [:new, :create]
   def index
     @messages = Message.all
   end
@@ -10,6 +10,9 @@ class MessagesController < ApplicationController
 
   def new
     @message = Message.new
+    @meter = Meter.new
+    @supply_order = SupplyOrder.new
+    @service_call = ServiceCall.new
   end
 
   def destroy

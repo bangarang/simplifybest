@@ -13,14 +13,16 @@
         <dd><p class="subheader">We believe that great customer service starts with communication. So, we've made a few easy ways to contact us. Let us know if you need to place a service call, supply order or submit a meter reading right from our site. Or leave us any other comments at the bottom of the page.</p></dd>
       </dl>
 	</div>
-	<div class="three columns serv-col meterreading">
-		<%= link_to "<i class='general foundicon-graph'></i><br><span>Meter Reading</span>".html_safe, new_meter_path, :class => 'service-button' %>
-	</div>
-	<div class="three columns serv-col servicecall">
-		<%= link_to "<i class='general foundicon-tools'></i><br><span>Service Call</span>".html_safe, new_service_call_path, :class => 'service-button' %>
-	</div>
-	<div class="three columns serv-col supplyorder">
-		<%= link_to "<i class='general foundicon-cart'></i><br><span>Supply Order</span>".html_safe, new_supply_order_path, :class => 'service-button' %>
+	<div class="nine columns serv-row">
+		<div class="four columns serv-col meterreading">
+			<%= link_to "<i class='general foundicon-graph'></i><br><p>Meter Reading</p>".html_safe, new_meter_path, :class => 'service-button' %>
+		</div>
+		<div class="four columns serv-col servicecall">
+			<%= link_to "<i class='general foundicon-tools'></i><br><p>Service Call</p>".html_safe, new_service_call_path, :class => 'service-button' %>
+		</div>
+		<div class="four columns serv-col supplyorder">
+			<%= link_to "<i class='general foundicon-cart'></i><br><p>Supply Order</p>".html_safe, new_supply_order_path, :class => 'service-button' %>
+		</div>
 	</div>
 </div>
 

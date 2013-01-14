@@ -54,6 +54,9 @@ h1.super.last-line { color:#d00;}
 
 h3.title { color: #333; border-top: #ccc solid thin; padding:10px 0;}
 
+h3.title a { color:#d00; }
+h3.title a:hover { color:#b00; }
+
 h4.title { color: #d00; }
 
 p.name { color: #d00; margin:0; padding:5px; font-size: 14px; }
@@ -129,8 +132,8 @@ ul.edit li i { text-align: center; margin-bottom: -25px;}
 
 .large i { font-size: 100px; line-height: 100px; display: run-in; }
 
-#menu ul { margin:0; }
-
+#menu ul { margin:0; margin-left: -20px; }
+#menu ul li ul li ul { margin:0; }
 .cat { background: rgba(0, 136, 204, 0.1); }
 .cat ul { margin: 14px inherit; }
 
@@ -213,5 +216,6 @@ h2.fas { background: #333; background: rgba(0,0,0,0.8); padding: 10px 5px; color
 
 	.top-menu { display: none; margin-bottom:10px;}
 
-	h2.fas { font-size: 17px; }
+	#menu ul { margin:0; }
+	.prod-nav ul { padding-top: 0; }
 }

@@ -30,7 +30,7 @@ $headerFontFamily: "jaf-bernina-sans-comp",sans-serif;
 // $headerFontWeight: bold;
 // $headerFontStyle: normal;
 // $headerFontColor: #222;
-$bodyFontFamily: "jaf-facitweb",sans-serif;
+$bodyFontFamily: "skolar",serif;
 // $bodyFontWeight: normal;
 // $bodyFontStyle: normal;
 // $bodyFontColor: $txtColor;
@@ -307,9 +307,9 @@ div.alert-box { color: #fff; text-shadow: 0 -1px rgba(0, 0, 0, 0.3); height:30px
 .ticket.SupplyOrder { background:#f89406; color:white; }
 .ticket.Meter { background:#08c; color:white; }
 
-h4.ServiceCall { color:#e00; }
-h4.SupplyOrder { color:#f89406; }
-h4.Meter { color:#08c; }
+h1.ServiceCall { color:#e00; }
+h1.SupplyOrder { color:#f89406; }
+h1.Meter { color:#08c; }
 
 .supply { background:#f89406; border-color:#B36709; }
 .supply:hover { background: #B36709; border-color:#B36709; }
@@ -419,9 +419,11 @@ color: #aaa;
 
 #featured.orbit { background: none; }
 #featured.orbit img { display: block; }
-.serv-col { height: 255px; border-left: #eee solid thin; }
+.serv-col {  border-left: #eee solid thin; }
 .serv-col:hover { background: #EEEEEE; }
-.service-button { display: table; margin:auto; padding: 70px 0; color: #333; }
+.serv-row { margin: 10px 0; }
+
+.service-button { display: table; margin:auto; padding: 48px 0; color: #333; }
 .service-button i { font-size: 100px }
 
 .meterreading {  }
@@ -443,4 +445,5 @@ color: #aaa;
 
   dl.sub-nav dt, dl.sub-nav dd { margin-bottom: 0; }
   .serv-col { border-left:none; height: inherit; }
+  .service-button { padding: 0; }
 }

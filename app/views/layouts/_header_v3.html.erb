@@ -30,7 +30,7 @@
             <% if can? :edit, Message %>
             <%= link_to "Customer Service", messages_url %>
             <% else %>
-            <a href="#">Customer Service</a>
+            <%= link_to "Customer Service", new_message_url %>
             <% end %>
             <a href="#" class="flyout-toggle"><span> </span></a>
             <ul class="flyout">
