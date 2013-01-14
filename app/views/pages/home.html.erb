@@ -2,7 +2,7 @@
 
 <div class="row">
 	<div class="twelve columns">
-		<h1 class="subheader">Welcome to Simplified Office Solutions!</h1>
+		<h1>Welcome to Simplified Office Solutions!</h1>
 	</div>
 </div>
 
@@ -15,13 +15,13 @@
 	</div>
 	<div class="nine columns serv-row">
 		<div class="four columns serv-col meterreading">
-			<%= link_to "<i class='general foundicon-graph'></i><br><p>Meter Reading</p>".html_safe, new_meter_path, :class => 'service-button' %>
+			<%= link_to "<i class='general foundicon-graph'></i><br><p>Submit a Meter Reading</p>".html_safe, new_meter_path, :class => 'service-button' %>
 		</div>
 		<div class="four columns serv-col servicecall">
-			<%= link_to "<i class='general foundicon-tools'></i><br><p>Service Call</p>".html_safe, new_service_call_path, :class => 'service-button' %>
+			<%= link_to "<i class='general foundicon-tools'></i><br><p>Place a Service Call</p>".html_safe, new_service_call_path, :class => 'service-button' %>
 		</div>
 		<div class="four columns serv-col supplyorder">
-			<%= link_to "<i class='general foundicon-cart'></i><br><p>Supply Order</p>".html_safe, new_supply_order_path, :class => 'service-button' %>
+			<%= link_to "<i class='general foundicon-cart'></i><br><p>Place a Supply Order</p>".html_safe, new_supply_order_path, :class => 'service-button' %>
 		</div>
 	</div>
 </div>
@@ -32,7 +32,7 @@
 </div>
 <div class="row box">
 	<div class="seven columns">
-		<h2 class="subheader">Photos from our Demoroom:</h2>
+		<h3>Photos from our Demoroom:</h3>
 		<div id="featured">
 			<img src="/assets/featured/1.jpg">
 			<img src="/assets/featured/2.jpg">
@@ -41,7 +41,7 @@
 		</div>
 	</div>
 	<div class="five columns" style="border-left:#333 dotted thin;">
-		<h2 class="subheader">Used and Refurbished Stock:</h2>
+		<h3>Used and Refurbished Stock:</h3>
 		<% 5.times do |i| %>
 		<h3>Featured Item <%= i %></h3>
 		<h5 class="subheader">Featured Item <%= i %> is just so cool and stuff...</h5>
