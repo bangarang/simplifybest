@@ -409,7 +409,7 @@ font-size: 12px;
 color: #aaa;
 }
 
-.signin { margin: 100px auto; }
+.signin { padding: 50px 0 200px 0; background: white;}
 
 
 .home-edit .button { width: 100%; }
@@ -419,16 +419,16 @@ color: #aaa;
 
 #featured.orbit { background: none; }
 #featured.orbit img { display: block; }
-.serv-col {  border-left: #eee solid thin; }
+.serv-col {  }
 .serv-col:hover { background: #EEEEEE; }
-.serv-row { margin: 10px 0; }
+.serv-row { background: #f6f6f6; padding: 0; border: white solid 10px;  }
 
-.service-button { display: table; margin:auto; padding: 48px 0; color: #333; }
+.service-button { display: table; margin:auto; padding: 50px 0; color: #333; }
 .service-button i { font-size: 100px }
 
 .meterreading {  }
 .meterreading:hover a { color: #08c; }
-.supplyorder {  }
+.supplyorder { float:left; }
 .supplyorder:hover a { color: #f89406; }
 .servicecall {  }
 .servicecall:hover a { color: #c00;  }
