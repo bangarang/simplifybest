@@ -7,30 +7,9 @@
 </div>
 
 <div class="row box">
-	<div class="three columns">
-      <dl>
-        <dt><h3>Expert Customer Service</h3></dt>
-        <dd><p class="subheader">We believe that great customer service starts with communication and we've made a few easy ways to contact us. Let us know if you need to place a service call, supply order or submit a meter reading right from our site. Or leave us any other comments at the bottom of the page.</p></dd>
-      </dl>
-	</div>
-	<div class="nine columns serv-row">
-		<div class="four columns serv-col meterreading">
-			<%= link_to "<i class='general foundicon-graph'></i><br><p>Submit a Meter Reading</p>".html_safe, new_meter_path, :class => 'service-button' %>
-		</div>
-		<div class="four columns serv-col servicecall">
-			<%= link_to "<i class='general foundicon-tools'></i><br><p>Place a Service Call</p>".html_safe, new_service_call_path, :class => 'service-button' %>
-		</div>
-		<div class="four columns serv-col supplyorder">
-			<%= link_to "<i class='general foundicon-cart'></i><br><p>Place a Supply Order</p>".html_safe, new_supply_order_path, :class => 'service-button' %>
-		</div>
-	</div>
-</div>
-<div class="row">
-	<div class="twelve columns">
+	<div class="twelve columns top">
 		<h2>Featured at Simplified:</h2>
 	</div>
-</div>
-<div class="row box">
 	<div class="seven columns">
 		<h3>Photos from our Demoroom:</h3>
 		<div id="featured">
@@ -46,5 +25,23 @@
 		<h3>Featured Item <%= i %></h3>
 		<h5 class="subheader">Featured Item <%= i %> is just so cool and stuff...</h5>
 		<% end %>
+	</div>
+</div>
+<div class="row"><hr></div>
+<div class="row box">
+	<div class="twelve columns">
+      <dl>
+        <dt><h3>Expert Customer Service</h3></dt>
+        <dd><p class="subheader">We believe that great customer service starts with communication and we've made a few easy ways to contact us. Let us know if you need to place a service call, supply order or submit a meter reading right from our site. Or leave us any other comments at the bottom of the page.</p></dd>
+      </dl>
+	</div>
+	<div class="four columns serv-col meterreading">
+		<%= link_to "<i class='general foundicon-graph'></i><br><p>Submit a Meter Reading</p>".html_safe, new_meter_path, :class => 'service-button' %>
+	</div>
+	<div class="four columns serv-col servicecall">
+		<%= link_to "<i class='general foundicon-tools'></i><br><p>Place a Service Call</p>".html_safe, new_service_call_path, :class => 'service-button' %>
+	</div>
+	<div class="four columns serv-col supplyorder">
+		<%= link_to "<i class='general foundicon-cart'></i><br><p>Place a Supply Order</p>".html_safe, new_supply_order_path, :class => 'service-button' %>
 	</div>
 </div>

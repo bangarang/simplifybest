@@ -419,12 +419,12 @@ color: #aaa;
 
 #featured.orbit { background: none; }
 #featured.orbit img { display: block; }
-.serv-col {  }
+.serv-col { background: #f6f6f6; }
 .serv-col:hover { background: #EEEEEE; }
-.serv-row { background: #f6f6f6; padding: 0; border: white solid 10px;  }
+.serv-col p { margin-bottom:0; }
 
-.service-button { display: table; margin:auto; padding: 50px 0; color: #333; }
-.service-button i { font-size: 100px; display: table; margin: auto; }
+.service-button { display: table; margin:auto; padding: 10px 0; color: #333; }
+.service-button i { font-size: 30px; display: table; margin: auto; }
 
 .meterreading {  }
 .meterreading:hover a { color: #08c; }
@@ -435,7 +435,9 @@ color: #aaa;
 
 ul.breadcrumbs li a, ul.breadcrumbs li span { text-transform: none; font-weight:bold; }
 
-.contact-form { background: #FFFcF9; box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); -moz-box-shadow: 0 0 15px rgba(0,0,0,0.13); -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); }
+.top { background: #212121; }
+.top h2 { color: #d00 }
+.contact-form { background: white; box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); -moz-box-shadow: 0 0 15px rgba(0,0,0,0.13); -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); }
 
 @media only screen and (max-width: 767px) {
   dl.sub-nav.prod-sub dt { display: none; }
