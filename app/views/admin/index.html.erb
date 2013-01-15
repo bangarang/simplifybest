@@ -32,7 +32,7 @@
   		</div>
 	</div>
 	<div class="six columns">
-		<h4>Users</h4>
+		<h3>Users</h3>
 		<div class="row admin-edit">
 			<div class="twelve columns links"><%= link_to "<i class='general foundicon-plus'></i> New User".html_safe, new_user_path %></div>
 			<table class="products">
@@ -50,19 +50,24 @@
   			<% end %>
   			</table>
   		</div>
-  		<h4>Photos from our Demoroom:</h4>
+  		<h3>Home Page</h3>
 		<div class="row admin-edit">
-			<div class="twelve columns links"><%= link_to "<i class='general foundicon-plus'></i> New Picture".html_safe, new_featured_picture_path %></div>
-			<table class="products">
-			<% for pic in @featured_pictures %>
-	        	<tr>
-	        		<td><%= image_tag pic.image_url(:thumb) %></td>
-		          	<td><%=link_to pic.name, pic %></td>
-		          	<td><%=link_to "<i class='general foundicon-edit'></i> Edit".html_safe, edit_featured_picture_path(pic) %></td>
-		          	<td><%=link_to "<i class='general foundicon-trash'></i> Delete".html_safe, pic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-		      	</tr>
-  			<% end %>
-  			</table>
-  		</div>
+			<div class="twelve columns">
+		  		<h4>Featured Pictures</h4>
+				<div class="row admin-edit">
+					<div class="twelve columns links"><%= link_to "<i class='general foundicon-plus'></i> New Picture".html_safe, new_featured_picture_path %></div>
+					<table class="products">
+					<% for pic in @featured_pictures %>
+			        	<tr>
+			        		<td><%= image_tag pic.image_url(:thumb) %></td>
+				          	<td><%=link_to pic.name, pic %></td>
+				          	<td><%=link_to "<i class='general foundicon-edit'></i> Edit".html_safe, edit_featured_picture_path(pic) %></td>
+				          	<td><%=link_to "<i class='general foundicon-trash'></i> Delete".html_safe, pic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+				      	</tr>
+		  			<% end %>
+		  			</table>
+		  		</div>
+		  	</div>
+	  	</div>
 	</div>
 </div>
