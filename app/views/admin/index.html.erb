@@ -1,0 +1,68 @@
+<div class="admin row box">
+	<div class="twelve columns top">
+		<h2>Administration</h2>
+	</div>
+	<div class="six columns">
+		<h3>Products</h3>
+		<div class="row admin-edit">
+	        <div class="six columns links"><%= link_to "<i class='general foundicon-plus'> New Product</i>".html_safe, new_product_path %></div>
+	        <div class="six columns links"><%= link_to "<i class='general foundicon-plus'> New Category</i>".html_safe, new_category_path %></div>
+	    	
+	    	<div class="twelve columns">
+				<% for category in @categories %>
+		        <h4><%= category.name %></h4>
+		        <div class="row admin-edit">
+					<div class="six columns links"><%= link_to "<i class='general foundicon-edit'></i> Edit".html_safe, edit_category_path(category) %></div>
+					<div class="six columns links"><%= link_to "<i class='general foundicon-trash'></i> Delete".html_safe, category, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+			    	<div>
+				        <table class="products">
+				        	<% for product in category.products.order(:name) %>
+				        	<tr>
+					          <td><%=link_to product.name, product %></td>
+					          <td><%= link_to "<i class='general foundicon-edit'></i> Edit".html_safe, edit_product_path(product) %></td>
+					          <td><%= link_to "<i class='general foundicon-trash'></i> Delete".html_safe, product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+					          <td><a href="/products/<%= product.slug %>/dup"><i class="icon-copy"></i> Duplicate</a></td>
+					      	</tr>
+				      		<% end %>
+				  		</table>
+				  	</div>
+		  		</div>
+		  		<% end %>
+		  	</div>
+  		</div>
+	</div>
+	<div class="six columns">
+		<h4>Users</h4>
+		<div class="row admin-edit">
+			<div class="twelve columns links"><%= link_to "<i class='general foundicon-plus'></i> New User".html_safe, new_user_path %></div>
+			<table class="products">
+			<% for user in @users %>
+	        	<tr>
+		          <td><%=link_to user.email, user %></td>
+		          <td>
+			          	<% for role in user.roles %>
+			          	<%= role.name %>
+			          	<% end %>
+		          </td>
+		          <td><%=link_to "<i class='general foundicon-edit'></i> Edit".html_safe, edit_user_path(user) %></td>
+		          <td><%=link_to "<i class='general foundicon-trash'></i> Delete".html_safe, user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		      	</tr>
+  			<% end %>
+  			</table>
+  		</div>
+  		<h4>Photos from our Demoroom:</h4>
+		<div class="row admin-edit">
+			<div class="twelve columns links"><%= link_to "<i class='general foundicon-plus'></i> New Picture".html_safe, new_featured_picture_path %></div>
+			<table class="products">
+			<% for pic in @featured_pictures %>
+	        	<tr>
+	        		<td><%= image_tag pic.image_url(:thumb) %></td>
+		          	<td><%=link_to pic.name, pic %></td>
+		          	<td><%=link_to "<i class='general foundicon-edit'></i> Edit".html_safe, edit_featured_picture_path(pic) %></td>
+		          	<td><%=link_to "<i class='general foundicon-trash'></i> Delete".html_safe, pic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		      	</tr>
+  			<% end %>
+  			</table>
+  		</div>
+	</div>
+</div>

@@ -1,0 +1,29 @@
+<div class="admin row box">
+	<div class="twelve columns top">
+		<h2><%= @featured_picture.name %></h2>
+	</div>
+	<div class="twelve columns">
+		<p id="notice"><%= notice %></p>
+
+		<%= image_tag @featured_picture.image_url if @featured_picture.image? %>
+
+		<p>
+		<b>Name:</b>
+		<%= @featured_picture.name %>
+		</p>
+
+		<p>
+		<b>Description:</b>
+		<%= @featured_picture.description %>
+		</p>
+
+		<p>
+		<b>Featured ID:</b>
+		<%= @featured_picture.id %>
+		</p>
+
+
+		<%= link_to 'Edit', edit_featured_picture_path(@featured_picture) %> |
+		<%= link_to 'Back', featured_pictures_path %>
+	</div>
+</div>

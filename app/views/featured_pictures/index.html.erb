@@ -1,0 +1,29 @@
+<div class="admin row box">
+  <div class="twelve columns top">
+    <h2>Featured Pictures</h2>
+  </div>
+  <div class="twelve columns">
+
+    <table class="products">
+      <tr>
+        <th>Name</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+
+    <% @featured_pictures.each do |featured_picture| %>
+      <tr>
+        <td><%= featured_picture.name %></td>
+        <td><%= link_to 'Show', featured_picture %></td>
+        <td><%= link_to 'Edit', edit_featured_picture_path(featured_picture) %></td>
+        <td><%= link_to 'Destroy', featured_picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    </table>
+
+    <br />
+
+    <%= link_to 'New featured picture', new_featured_picture_path %>
+  </div>
+</div>

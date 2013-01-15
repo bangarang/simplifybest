@@ -5,27 +5,7 @@
       <h1>Our Products</h1>
     </div>
   </div>
-  <% if can? :edit, Product %>
-  <div class="row prod-admin">
-    <div class="right">
-       <ul class="edit">
-        <li><%= link_to "<i class='general foundicon-edit'></i><br><span>New Product</span>".html_safe, new_product_path, :class=> "small alert button"%></li>
-        <li><%= link_to "<i class='general foundicon-edit'></i><br><span>New Category</span>".html_safe, new_category_path, :class=> "small button" %></li>
-        <li>
 
-          <div class="small alert button dd">
-            <a href="#"><i class="icon-copy"></i><br><span>Copy Existing Product</span></a>
-            <ul>
-              <% for product in @products %>
-              <li><a href="/products/<%= product.slug %>/dup"><%= product.name %></a></li>
-              <% end %>
-            </ul>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <% end %>
 
 <div class="box product-content">
   <div class="bread row">
@@ -38,15 +18,8 @@
   </div>
   <% for category in @categories %>
   <div class="row">
-    <div class="twelve columns <% if can? :edit, Category %>cat<% end %>">
+    <div class="twelve columns">
       <h3 class="title"><%= link_to category.name, category %>  <small class="subheader"><%= category.description %></small></h3>
-      <% if can? :edit, Category %>
-      <ul class="edit right">
-        <li><%= link_to "<i class='general foundicon-right-arrow'></i><br><span>View</span>".html_safe, category, :class=> "small button" %></li>
-        <li><%= link_to "<i class='general foundicon-edit'></i><br><span>Edit</span>".html_safe, edit_category_path(category), :class=> "small button" %></li>
-        <li><%= link_to "<i class='general foundicon-trash'></i><br><span>Delete</span>".html_safe, category, method: :delete, data: { confirm: 'Are you sure?' }, :class=> "small button" %></li>
-      </ul>
-      <% end %>
     </div>
   </div>
   <div class="row">

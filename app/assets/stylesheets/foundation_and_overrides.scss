@@ -439,6 +439,18 @@ ul.breadcrumbs li a, ul.breadcrumbs li span { text-transform: none; font-weight:
 .top h2 { color: #d00 }
 .contact-form { background: white; box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); -moz-box-shadow: 0 0 15px rgba(0,0,0,0.13); -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); }
 
+.admin { margin: 20px auto; }
+.admin h4,.admin h3  { background:#212121; color: white; padding: 5px; margin-bottom: 0; }
+.admin ul li { list-style: none; }
+.admin div.admin-edit { border: #212121 solid thin; margin:0 0 10px 0; padding:0 0 10px 0; }
+
+.admin .links { background: #f6f6f6; padding: 10px 15px; }
+table.products { width:100%; margin-bottom: 0;}
+
+ul.prod-edit { margin-bottom:0; padding-top: 5px; }
+ul.prod-edit li { list-style:none; float: left; padding: 0 10px; }
+
+
 @media only screen and (max-width: 767px) {
   dl.sub-nav.prod-sub dt { display: none; }
 

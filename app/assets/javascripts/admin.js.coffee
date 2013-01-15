@@ -1,9 +1,3 @@
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
-
-jQuery -> 
-	$("#featured").orbit "bullets": true, "pauseOnHover": true, "startClockOnMouseOut": true, "startClockOnMouseOutAfter": 500, "captions": true
-	$(".menu").click ->
-		$(".top-menu").slideToggle "fast"
-

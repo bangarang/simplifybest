@@ -25,7 +25,7 @@
       <nav id="menu" role="navigation" class="top-menu left">
         <ul id="mainNav" class="nav-bar">
           <li><%= link_to 'Home', root_path %></li>
-          <li><%= link_to 'Why Simplified?', about_path %></li>
+          <% if can? :edit, Product %><li><%= link_to "Admin", admin_index_url %></li><% end %>
           <li class="has-flyout">
             <% if can? :edit, Message %>
             <%= link_to "Customer Service", messages_url %>

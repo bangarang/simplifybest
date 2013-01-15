@@ -5,16 +5,6 @@
       <h1><%= @category.name %>  <small class="subheader"><%= @category.description %></small></h1>
     </div>
   </div>
-  <div class="row prod-admin">
-    <% if can? :edit, Product %>
-    <div class="right">
-       <ul class="edit">
-        <li><%= link_to "<i class='general foundicon-edit'></i><br><span>Edit Category</span>".html_safe, edit_category_path(@category), :class=> "small alert button"%></li>
-        <li><%= link_to "<i class='general foundicon-left-arrow'></i><br><span>View All</span>".html_safe, categories_path, :class=> "small alert button" %></li>
-      </ul>
-    </div>
-    <% end %>
-  </div>
 
 <div class="box product-content">
   <div class="bread row">

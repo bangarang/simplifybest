@@ -10,16 +10,27 @@
 	<div class="twelve columns top">
 		<h2>Featured at Simplified:</h2>
 	</div>
-	<div class="seven columns">
-		<h3>Photos from our Demoroom:</h3>
+	<div class="eight columns centered">
+		<h3>Photos from Our Demoroom:</h3>
 		<div id="featured">
-			<img src="/assets/featured/1.jpg">
-			<img src="/assets/featured/2.jpg">
-			<img src="/assets/featured/3.jpg">
-			<img src="/assets/featured/4.jpg">
+			<% for pic in @featured_pictures %>
+			<div data-caption="#<%= pic.name %>">
+				<%= image_tag pic.image_url %>
+			</div>
+			<% end %>
 		</div>
+		<% for c in @featured_pictures %>
+		<span class="orbit-caption" id="<%=c.name%>"><%= c.description %></span>
+		<% end %>
 	</div>
-	<div class="five columns" style="border-left:#333 dotted thin;">
+	<div class="six columns">
+		<h3>Current Specials!</h3>
+		<% 5.times do |i| %>
+		<h3>Featured Item <%= i %></h3>
+		<h5 class="subheader">Featured Item <%= i %> is just so cool and stuff...</h5>
+		<% end %>
+	</div>
+	<div class="six columns">
 		<h3>Used and Refurbished Stock:</h3>
 		<% 5.times do |i| %>
 		<h3>Featured Item <%= i %></h3>
