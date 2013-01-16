@@ -6,4 +6,9 @@ jQuery ->
 	$("#featured").orbit "pauseOnHover": true, "startClockOnMouseOut": true, "startClockOnMouseOutAfter": 500, "captions": true
 	$(".menu").click ->
 		$(".top-menu").slideToggle "fast"
-
+		
+	$images = $("#featured img")
+	loaded_images_count = 0
+	$images.load ->
+	  loaded_images_count++
+	  $("#featured").show("slow")  if loaded_images_count is $images.length

@@ -41,7 +41,7 @@ $bodyFontFamily: "jaf-bernina-sans",sans-serif;
 
 // Button Settings
 
-// $buttonRadius: 3px;
+$buttonRadius: 8px;
 // $btnBase: 10px;
 
 // $tinyBtnBase: $btnBase - 5;
@@ -432,12 +432,30 @@ color: #aaa;
 .service-button { display: table; margin:auto; padding: 10px 0; color: #333; }
 .service-button i { font-size: 30px; display: table; margin: auto; }
 
-.meterreading {  }
-.meterreading:hover a { color: #08c; }
-.supplyorder { float:left; }
-.supplyorder:hover a { color: #f89406; }
-.servicecall {  }
-.servicecall:hover a { color: #c00;  }
+.home i { font-size: 30px;  }
+
+ul.home.button-group.radius li:first-child .button, ul.home.button-group.radius li:first-child .button.radius {
+  -moz-border-radius-topleft:20px;
+  -webkit-border-top-left-radius:20px;
+  border-top-left-radius:20px;
+  -moz-border-radius-bottomleft:20px;
+  -webkit-border-bottom-left-radius:20px;
+  border-bottom-left-radius:20px;
+}
+ul.home.button-group.radius li:last-child .button, ul.home.button-group.radius li:last-child .button.radius {
+  -moz-border-radius-topright: 20px;
+  -webkit-border-top-right-radius: 20px;
+  border-top-right-radius: 20px;
+  -moz-border-radius-bottomright: 20px;
+  -webkit-border-bottom-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.button.home {background-color: #eee; color: #1d1d1d; border: 1px solid #c3c3c3; }
+.button.home:hover, .button.home:focus { background-color: #ddd; }
+
+.meterreading:hover{ color: #08c; }
+.supplyorder:hover { color: #f89406; }
+.servicecall:hover { color: #c00;  }
 
 ul.breadcrumbs li a, ul.breadcrumbs li span { text-transform: none; font-weight:bold; }
 
@@ -464,8 +482,14 @@ ul.flyout h4 { margin-bottom: 0; }
 .csm, .prods, .hm, .users { cursor:pointer; }
 .prods-content, .hm-content, .users-content { display:none; }
 
+.touch .nav-bar li a { font-size: inherit; }
+
 ul.breadcrumbs li { padding-right: 5px;  }
 ul.breadcrumbs li a, ul.breadcrumbs li span { padding-left: 5px; }
+
+#featured { display: none;  }
+
+#featured.orbit { display: block; margin-top: 15px; background: none; }
 
 @media only screen and (max-width: 767px) {
   dl.sub-nav.prod-sub dt { display: none; }
@@ -481,6 +505,5 @@ ul.breadcrumbs li a, ul.breadcrumbs li span { padding-left: 5px; }
   .service-button { padding: 0; }
 
   .block-grid.eight-up li:nth-child(8n+1), .block-grid.mobile-three-up li:nth-child(3n+1) { clear: none; }
-
 
 }

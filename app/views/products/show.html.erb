@@ -1,9 +1,9 @@
 <% provide(:title, @product.name) %>
 <div class="prod-nav row">
-  <div class="six columns">
+  <div class="four columns">
     <h1 class="title"><%= @product.name %></h1>
   </div>
-  <div class="six columns">
+  <div class="eight columns">
     <ul class="right">
       <li><a href="#overview">Overview</a></li>
       <% unless @product.product_pictures.empty? %><li><a href="#gallery">Gallery</a></li><% end %>
