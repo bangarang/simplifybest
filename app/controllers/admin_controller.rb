@@ -3,5 +3,6 @@ class AdminController < ApplicationController
   def index
   	@users = User.all
   	@featured_pictures = FeaturedPicture.all
+  	@messages = Message.all
   end
 end

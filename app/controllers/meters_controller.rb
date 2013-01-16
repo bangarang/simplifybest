@@ -17,7 +17,7 @@ class MetersController < ApplicationController
     @meter = Meter.new(params[:meter])
     if @meter.save
       ServiceMailer.meter(@meter).deliver
-      redirect_to session[:return_to], :notice => "Successfully Sent Meter"
+      redirect_to session[:return_to], :success => "Successfully Sent Meter"
     else
       render :action => 'new'
     end

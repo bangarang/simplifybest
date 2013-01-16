@@ -1,4 +1,5 @@
 class FeaturedPicturesController < ApplicationController
+  before_filter :authenticate_user!
   def index
     @featured_pictures = FeaturedPicture.all
   end
@@ -30,7 +31,7 @@ class FeaturedPicturesController < ApplicationController
     @featured_picture = FeaturedPicture.find(params[:id])
 
     if @featured_picture.update_attributes(params[:featured_picture])
-      flash[:notice] = "Successfully updated Product Picture."
+      flash[:success] = "Successfully updated Product Picture."
       redirect_to @featured_picture
     else
       render :action => 'edit'

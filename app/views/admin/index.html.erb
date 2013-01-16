@@ -2,11 +2,56 @@
 	<div class="twelve columns top">
 		<h2>Administration</h2>
 	</div>
+	<div class="twelve columns">
+		<h3 class="csm">Customer Service Messages ( <%= @messages.length %> )<i class="icon-angle-down right"></i></h3>
+		<div class="row admin-edit csm-content">
+			<div class="twelve columns links">
+				<div class="four columns"><%= link_to "<i class='general foundicon-plus'> New Meter Reading</i>".html_safe, new_meter_path %></div>
+		        <div class="four columns"><%= link_to "<i class='general foundicon-plus'> New Service Call</i>".html_safe, new_supply_order_path %></div>
+		        <div class="four columns"><%= link_to "<i class='general foundicon-plus'> New Supply Order</i>".html_safe, new_service_call_path %></div>
+		    </div>
+		    <div class="twelve columns">
+		      <ul class="block-grid four-up mobile index">
+		        <% for message in @messages %>
+		        <li>
+		          <ul class="pricing-table box message">
+		            <% if message.service? %>
+		            <li class="ticket <%= message.type %>">Service Call</li>
+		            <% end %>
+		            <% if message.supply? %>
+		            <li class="ticket <%= message.type %>">Supply Order</li>
+		            <% end %>
+		            <% if message.meter? %>
+		            <li class="ticket <%= message.type %>">Meter Reading</li>
+		            <% end %>
+		            <% if message.contact? %>
+		            <li class="ticket <%= message.type %>">General Contact</li>
+		            <% end %>
+		            <li class="bullet-item"><%= message.first %> <%= message.last %></li>
+		            <% unless message.contact? %><li class="bullet-item"><%= message.company %></li><% end %>
+		            <li class="bullet-item"><%= message.address %></li>
+		            <% if message.phone_number %><li class="bullet-item"><%= message.phone_number %></li><% end %>
+		            <% unless message.sos.blank? %><li class="bullet-item"><%= message.sos %></li><% end %>
+		            <% if message.meter? %>
+		            <li class="bullet-item"><%= message.meter %></li>
+		            <% else %>
+		            <li class="description"><%= message.comment %></li>
+		            <% end %>
+		            <li class="cta-button"><%= link_to "Destroy", message, :confirm => 'Are you sure?', :method => :delete, :class => "small button" %></li>
+		          </ul>
+		        </li>
+		        <% end %>
+		      </ul>
+		    </div>
+		</div>
+	</div>
 	<div class="six columns">
-		<h3>Products</h3>
-		<div class="row admin-edit">
-	        <div class="six columns links"><%= link_to "<i class='general foundicon-plus'> New Product</i>".html_safe, new_product_path %></div>
-	        <div class="six columns links"><%= link_to "<i class='general foundicon-plus'> New Category</i>".html_safe, new_category_path %></div>
+		<h3 class="prods">Products ( <%= @products.length %> )<i class="icon-angle-down right"></i></h3>
+		<div class="row admin-edit prods-content">
+			<div class="twelve columns links">
+		        <div class="six columns"><%= link_to "<i class='general foundicon-plus'> New Product</i>".html_safe, new_product_path %></div>
+		        <div class="six columns"><%= link_to "<i class='general foundicon-plus'> New Category</i>".html_safe, new_category_path %></div>
+		    </div>
 	    	
 	    	<div class="twelve columns">
 				<% for category in @categories %>
@@ -32,26 +77,8 @@
   		</div>
 	</div>
 	<div class="six columns">
-		<h3>Users</h3>
-		<div class="row admin-edit">
-			<div class="twelve columns links"><%= link_to "<i class='general foundicon-plus'></i> New User".html_safe, new_user_path %></div>
-			<table class="products">
-			<% for user in @users %>
-	        	<tr>
-		          <td><%=link_to user.email, user %></td>
-		          <td>
-			          	<% for role in user.roles %>
-			          	<%= role.name %>
-			          	<% end %>
-		          </td>
-		          <td><%=link_to "<i class='general foundicon-edit'></i> Edit".html_safe, edit_user_path(user) %></td>
-		          <td><%=link_to "<i class='general foundicon-trash'></i> Delete".html_safe, user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-		      	</tr>
-  			<% end %>
-  			</table>
-  		</div>
-  		<h3>Home Page</h3>
-		<div class="row admin-edit">
+  		<h3 class="hm">Home Page<i class="icon-angle-down right"></i></h3>
+		<div class="row admin-edit hm-content">
 			<div class="twelve columns">
 		  		<h4>Featured Pictures</h4>
 				<div class="row admin-edit">
@@ -69,5 +96,23 @@
 		  		</div>
 		  	</div>
 	  	</div>
+	  	<h3 class="users">Users ( <%= @users.length %> )<i class="icon-angle-down right"></i></h3>
+		<div class="row admin-edit users-content">
+			<div class="twelve columns links"><%= link_to "<i class='general foundicon-plus'></i> New User".html_safe, new_user_path %></div>
+			<table class="products">
+			<% for user in @users %>
+	        	<tr>
+		          <td><%=link_to user.email, user %></td>
+		          <td>
+			          	<% for role in user.roles %>
+			          	<%= role.name %>
+			          	<% end %>
+		          </td>
+		          <td><%=link_to "<i class='general foundicon-edit'></i> Edit".html_safe, edit_user_path(user) %></td>
+		          <td><%=link_to "<i class='general foundicon-trash'></i> Delete".html_safe, user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		      	</tr>
+  			<% end %>
+  			</table>
+  		</div>
 	</div>
 </div>

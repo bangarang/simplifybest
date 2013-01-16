@@ -1,4 +1,5 @@
 class ProductPicturesController < ApplicationController
+  before_filter :authenticate_user!
   def index
     @product_pictures = ProductPicture.all
   end

@@ -1,46 +1,70 @@
-<nav class="top-bar contain-to-grid">
-  <ul>
-    <li class="name banner"><a href="<%= root_url %>"><%= image_tag("logo.t.png", :class => "logo") %></a></li>
-    <li class="name not-banner"><a href="<%= root_url %>"><%= image_tag("logo.t.png", :class => "logo") %></a></li>
-    <li class="toggle-topbar"><a href="#"></a></li>
-  </ul>
-  <section>
-
-    <ul class="right">
-      <% if user_signed_in? %>
-      <li style="color:white;">Signed in as: <%= current_user.email %></li>
-      <% end %>
-      <li class="has-dropdown">
-        <% if can? :edit, Message %>
-        <%= link_to 'Service', messages_url %>
-        <% else %>
-        <a href="#">Service</a>
-        <% end %>
-        <ul class="dropdown">
-          <li><label>Contact Us</label></li>
-          <li><a href="#" data-reveal-id="service">Service Call</a></li>
-          <li><a href="#" data-reveal-id="meter">Meter Reading</a></li>
-          <li><a href="#" data-reveal-id="supply">Supply Order</a></li>
-        </ul>
-      </li>
-      <li class="has-dropdown">
-        <%= link_to "Our Products", products_path%>
-        <ul class="dropdown">
-          <% for category in @categories %>
-            <li><label><%= category.name %></label></li>
-            <% for product in category.products.order(:name) %>
-              <li><%= link_to product.name, product %></li>
-            <% end %>
+<div class="rbar-container <% if user_signed_in?%> in<% end %>">
+  <div class="row rbar">
+    <div class="three left mainpic hide-for-small">
+      <a href="<%= root_url %>"><%= image_tag("logo.250.png", :class => "logo") %></a>
+    </div>
+    <div class="nine columns">
+      <div class="top twelve">
+        <ul class="top right<% if user_signed_in?%> in<% end %>">
+          <% if user_signed_in? %>
+          <li class="user">Signed in as: <%= link_to current_user.email, current_user %></li>
+          <li ><%= link_to 'Log Out', destroy_user_session_path, :method => 'delete', :confirm => 'Are you sure?' %></li>
+          <% else %>
+          <li><%= link_to 'Log In', new_user_session_path %></li>
           <% end %>
+        </ul> 
+      </div>
+      <a class="show-for-small" href="<%= root_url %>"><%= image_tag("logo.250.png", :class => "slogo") %></a>
+      <p class="menu show-for-small" style=""><a href="#"><i class="icon-reorder"> Menu</i></a></p>
+    </div>
+  </div>
+</div>
+<div class="menu-bar">
+  <div class="row">
+    <div class="twelve columns">
+      <nav id="menu" role="navigation" class="top-menu left">
+        <ul id="mainNav" class="nav-bar">
+          <li><%= link_to 'Home', root_path %></li>
+          <li class="has-flyout">
+            <%= link_to "Customer Service", new_message_url %>
+            <a href="#" class="flyout-toggle"><span> </span></a>
+            <ul class="flyout">
+              <li><h4><%= link_to "<i class='general foundicon-graph'></i> Meter Reading".html_safe, new_meter_path %></h4></li>
+              <li><h4><%= link_to "<i class='general foundicon-tools'></i> Service Call".html_safe, new_service_call_path %></h4></li>
+              <li><h4><%= link_to "<i class='general foundicon-cart'></i> Supply Order".html_safe, new_supply_order_path %></h4></li>
+            </ul>
+          </li>
+          <li class="has-flyout">
+            <%= link_to "Products", products_url %>
+            <a href="#" class="flyout-toggle"><span> </span></a>
+            <ul class="flyout accordion">
+              <% for category in @categories %>
+              <li>
+                <div class="title">
+                  <h4><%= category.name %></h4>
+                </div>
+                <div class="content">
+                  <ul>
+                    <% for product in category.products.order(:name) %>
+                    <li>
+                      <h5><%=link_to product.name, product %></h5>
+                      <p class='subheader'><%= product.excerpt %></p>
+                    </li>
+
+                    <% end %>
+                    <li><h5><%= link_to "View All #{category.name}", category %></h5></li>
+                  </ul>
+                </div>
+              </li>
+              <% end %>
+              <li style="color:black;">
+                <h4><%= link_to "View All Products", products_url %></h4>
+              </li>
+            </ul>
+          </li>
+          <% if can? :edit, Product %><li><%= link_to "Admin", admin_index_url %></li><% end %>
         </ul>
-      </li>
-      <li class="divider"></li>
-      <!-- <li><%= link_to'About', about_path %></li> -->
-    <% if user_signed_in? %>
-      <li><%= link_to 'Log Out', destroy_user_session_path, :method => 'delete', :confirm => 'Are you sure?' %></li>
-    <% else %>
-      <li><%= link_to 'Log In', new_user_session_path %></li>
-    <% end %>
-    </ul>
-  </section>
-</nav>
+      </nav>
+    </div>
+  </div>
+</div>

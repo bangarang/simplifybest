@@ -17,7 +17,7 @@ class ServiceCallsController < ApplicationController
     @service_call = ServiceCall.new(params[:service_call])
     if @service_call.save
       ServiceMailer.service(@service_call).deliver
-      redirect_to session[:return_to], :notice => "Successfully Sent supply order"
+      redirect_to session[:return_to], :success => "Successfully Sent supply order"
     else
       render :action => 'new'
     end
