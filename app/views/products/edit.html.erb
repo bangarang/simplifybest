@@ -1,25 +1,30 @@
 <% provide(:title, "Edit #{@product.name}") %>
 <%= form_for @product, :html => {:multipart => true} do |f| %>
-<div class="box">
+<div class="box bb">
   <div class="row">
-    <div class="four columns">
+    <div class="twelve columns top">
+      <h2>Edit Product</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="twelve columns">
+      <h3 class="title">Name, Category, Excerpt and Picture</h3>
+    </div>
+    <div class="six columns">
       <%= image_tag @product.image_url(:main).to_s if @product.image? %>
       <%= f.file_field :image %><br />
       or
       <%= f.text_field :remote_image_url, :placeholder => 'Image URL' %>
 
     </div>
-    <div class="six columns" style="margin-top:30px;">
+    <div class="six columns">
       Name: <%= f.text_field :name, :placeholder => "Product Name" %>
       Excerpt: <%= f.text_field :excerpt, :placeholder => "Product Excerpt" %>
       Category: <%= f.collection_select :category_id, Category.find(:all), :id, :name, :prompt => "Select a Category" %>
           or create one:
       <%= f.text_field :new_category_name %>
       <div class="row">
-        <div class="six columns">
-          <%= f.submit :class => "small radius button"%>
-        </div>
-        <div class="six columns">
+        <div class="twelve columns">
           <%= link_to "Show", @product %> |
           <%= link_to "Delete Product", @product, :confirm => 'Are you sure?', :method => :delete %> |
           <%= link_to "Duplicate Product", 'dup' %> |
@@ -29,23 +34,9 @@
     </div>
   </div>
 
-  <div class="row prodnav">
-    <div class="twelve columns">
-      <dl class="sub-nav right">
-        <dt><%= @product.name %> Navigation:</dt>
-        <dd><a href="#overview">Overview</a></dd>
-        <dd><a href="#gallery">Gallery</a></dd>
-        <dd><a href="#specifications">Specifications</a></dd>
-        <dd><a href="#accessories">Accessories</a></dd>
-        <dd><a href="#downloads">Downloads</a></dd>
-      </dl>
-    </div>
-  </div>
-
-
   <div class="row" id="overview">
     <div class="twelve columns">
-      <h3 class="title right">Overview</h3>
+      <h3 class="title">Overview</h3>
     </div>
     <div class="twelve columns">
     	<%= f.text_area :description %>
@@ -53,20 +44,19 @@
   </div>
 
   <div class="row" id="gallery">
-    <div class="twelve columns"><h3 class="title right">Gallery</h3></div> 
-      <div class="nine columns ppicture_edit">
-        <%= f.fields_for :product_pictures, :html => {:multipart => true} do |builder| %>
-          <%= render 'product_picture_fields', f: builder %>
-        <% end %>
-        <butt>
-      </div>
-      <div class="three columns">
-        <%= link_to_add_pics "Add a Product Picture", f, :product_pictures %>
-      </div>
+    <div class="twelve columns"><h3 class="title">Gallery</h3></div> 
+    <div class="three columns">
+      <%= link_to_add_pics "Add a Product Picture", f, :product_pictures %>
+    </div>
+    <div class="nine columns ppicture_edit">
+      <%= f.fields_for :product_pictures, :html => {:multipart => true} do |builder| %>
+        <%= render 'product_picture_fields', f: builder %>
+      <% end %>
+    </div>
   </div>
 
   <div class="row" id='specifications'>
-    <div class="twelve columns"><h3 class="title right">Specifications</h3></div>
+    <div class="twelve columns"><h3 class="title">Specifications</h3></div>
     <div class="twelve columns specs">
       <dl class="tabs four-up">
         <dd class="active"><a href="#general">General Specifications</a></dd>
@@ -218,12 +208,12 @@
   </div>
 
   <div class="row" id='accessories'>
-    <div class="twelve columns"><h3 class="title right">Accessories</h3></div>
+    <div class="twelve columns"><h3 class="title">Accessories</h3></div>
     <div class="six columns">
       <table class="accessories"> 
         <tbody>
           <tr>
-            <td><h4 class="title">Accessories</h4></td>
+            <td><h4>Accessories:</h4></td>
           </tr>
           <%= f.fields_for :accessories do |builder| %>
             <%= render 'accessory_fields', f: builder %>
@@ -239,7 +229,7 @@
       <table class="supplies"> 
         	<tbody>
             <tr>
-            	<td><h4 class="title">Supply Items</h4></td>
+            	<td><h4>Supply Items:</h4></td>
           	</tr>
   		      <%= f.fields_for :supply_items do |builder| %>
               <%= render 'supply_item_fields', f: builder %>
@@ -253,7 +243,7 @@
   </div>
 
   <div class="row" id='downloads'>
-    <div class="twelve columns"><h3 class="title right">Downloads</h3></div>
+    <div class="twelve columns"><h3 class="title">Downloads</h3></div>
     <div class="twelve columns">
       <ul>
         <%= f.fields_for :downloads, :html => {:multipart => true} do |builder| %>
@@ -262,11 +252,12 @@
         <%= link_to_add_fields "Add a Download", f, :downloads %>
       </ul>
     </div>
+    <div class="twelve columns"><hr></div>
   </div>
-  <!-- <div class="row">
+  <div class="row">
   	<div class="two columns centered">
   		<%= f.submit :class => "medium radius button"%>
   	</div>
-  </div> -->
+  </div>
 </div>
 <% end %>
