@@ -1,9 +1,6 @@
 <div class="rbar-container <% if user_signed_in?%> in<% end %>">
   <div class="row rbar">
-    <div class="three left mainpic hide-for-small">
-      <a href="<%= root_url %>"><%= image_tag("logo.250.png", :class => "logo") %></a>
-    </div>
-    <div class="nine columns">
+    <div class="twelve columns">
       <div class="top twelve">
         <ul class="top right<% if user_signed_in?%> in<% end %>">
           <% if user_signed_in? %>
@@ -14,10 +11,11 @@
           <% end %>
         </ul> 
       </div>
-      <a class="show-for-small" href="<%= root_url %>"><%= image_tag("logo.250.png", :class => "slogo") %></a>
+      <a href="<%= root_url %>"><%= image_tag("logo.250.png", :class => "slogo") %></a>
       <p class="menu show-for-small" style=""><a href="#"><i class="icon-reorder"> Menu</i></a></p>
     </div>
   </div>
+</div>
 </div>
 <div class="menu-bar">
   <div class="row">

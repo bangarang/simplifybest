@@ -28,11 +28,6 @@ class ProductsController < ApplicationController
   end
 
   def show
-    # @mainspecs = false
-    # @paperspecs = false
-    # @printspecs = false
-    # @scanspecs = false
-
     unless (@product.configuration.empty? && @product.speed.empty? && @product.warmup.empty? && @product.firstout.empty? && @product.resolution.empty? && @product.memory.empty? && @product.hdd.empty? && @product.duplex.empty? && @product.stdoutput.empty? && @product.electrical.empty? && @product.dimensions.empty? && @product.weight.empty? && @product.maxdutycycle.empty?)
       @mainspecs = true
     end
@@ -74,7 +69,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(params[:product])
     if @product.save
-      redirect_to products_url, :notice => "Successfully created product."
+      redirect_to @product, :notice => "Successfully created product."
     else
       render :action => 'new'
     end
