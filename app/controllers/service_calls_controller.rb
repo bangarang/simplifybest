@@ -17,7 +17,7 @@ class ServiceCallsController < ApplicationController
     @service_call = ServiceCall.new(params[:service_call])
     if @service_call.save
       ServiceMailer.service(@service_call).deliver
-      redirect_to session[:return_to], :success => "Successfully Sent supply order"
+      redirect_to session[:return_to], :success => "Successfully Sent Service Call"
     else
       render :action => 'new'
     end
@@ -26,6 +26,6 @@ class ServiceCallsController < ApplicationController
   def destroy
     @service_call = ServiceCall.find(params[:id])
     @service_call.destroy
-    redirect_to service_calls_url, :notice => "Successfully destroyed Service Call."
+    redirect_to admin_index_url, :notice => "Successfully Closed Service Call."
   end
 end

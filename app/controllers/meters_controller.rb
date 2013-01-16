@@ -17,7 +17,7 @@ class MetersController < ApplicationController
     @meter = Meter.new(params[:meter])
     if @meter.save
       ServiceMailer.meter(@meter).deliver
-      redirect_to session[:return_to], :success => "Successfully Sent Meter"
+      redirect_to session[:return_to], :success => "Successfully Sent Meter Reading"
     else
       render :action => 'new'
     end
@@ -26,6 +26,6 @@ class MetersController < ApplicationController
   def destroy
     @meter = Meter.find(params[:id])
     @meter.destroy
-    redirect_to messages_url, :notice => "Successfully destroyed meter."
+    redirect_to admin_index_url, :notice => "Successfully Closed Meter Ticket."
   end
 end

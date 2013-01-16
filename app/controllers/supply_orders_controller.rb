@@ -17,7 +17,7 @@ class SupplyOrdersController < ApplicationController
     @supply_order = SupplyOrder.new(params[:supply_order])
     if @supply_order.save
       ServiceMailer.supply(@supply_order).deliver
-      redirect_to session[:return_to], :success => "Successfully Sent supply order"
+      redirect_to session[:return_to], :success => "Successfully Sent Supply Order"
     else
       render :action => 'new'
     end
@@ -26,6 +26,6 @@ class SupplyOrdersController < ApplicationController
   def destroy
     @supply_order = SupplyOrder.find(params[:id])
     @supply_order.destroy
-    redirect_to supply_orders_url, :notice => "Successfully destroyed Supply Order."
+    redirect_to admin_index_url, :notice => "Successfully Closed Supply Order."
   end
 end

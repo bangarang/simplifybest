@@ -26,6 +26,6 @@ class ContactsController < ApplicationController
   def destroy
     @contact = Contact.find(params[:id])
     @contact.destroy
-    redirect_to messages_url, :notice => "Successfully Destroyed Contact."
+    redirect_to admin_index_url, :notice => "Successfully Destroyed Contact."
   end
 end

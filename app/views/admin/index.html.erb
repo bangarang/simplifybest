@@ -1,9 +1,10 @@
+<% provide(:title, "Admin") %>
 <div class="admin row box">
 	<div class="twelve columns top">
 		<h2>Administration</h2>
 	</div>
 	<div class="twelve columns">
-		<h3 class="csm">Customer Service Messages ( <%= @messages.length %> )<i class="icon-angle-down right"></i></h3>
+		<h3 class="csm">Customer Service Messages ( <%= @messages.length %> )<i class="icon-angle-up right"></i></h3>
 		<div class="row admin-edit csm-content">
 			<div class="twelve columns links">
 				<div class="four columns"><%= link_to "<i class='general foundicon-plus'> New Meter Reading</i>".html_safe, new_meter_path %></div>

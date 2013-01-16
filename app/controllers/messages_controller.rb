@@ -10,9 +10,6 @@ class MessagesController < ApplicationController
 
   def new
     @message = Message.new
-    @meter = Meter.new
-    @supply_order = SupplyOrder.new
-    @service_call = ServiceCall.new
   end
 
   def destroy

@@ -1,7 +1,6 @@
 Simplifybest::Application.routes.draw do
   resources :admin
   resources :featured_pictures
-  resources :messages
   resources :contacts
   resources :meters
   resources :supply_orders

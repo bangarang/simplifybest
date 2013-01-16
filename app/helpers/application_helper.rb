@@ -39,7 +39,7 @@ module ApplicationHelper
 
   def flash_class(level)
     case level
-      when :notice then "alert-box notice"
+      when :notice then "alert-box success"
       when :success then "alert-box success"
       when :error then "alert-box error"
       when :alert then "alert-box alert"
