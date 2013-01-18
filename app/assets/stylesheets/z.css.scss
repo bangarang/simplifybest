@@ -23,6 +23,7 @@ body { background: url('fabric_plaid.png'); }
 .button.home:hover { background:#f6f6f6; }
 
 .shadow form { padding: 0 15px 10px; }
+.copyright { background: transparent; color: #333;}
 @media only screen and (min-width: 767px) {
 	#menu { display: block !important; overflow: visible !important; }
 }
