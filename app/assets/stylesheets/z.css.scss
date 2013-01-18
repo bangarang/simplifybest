@@ -23,7 +23,11 @@ body { background: url('fabric_plaid.png'); }
 .button.home:hover { background:#f6f6f6; }
 
 .shadow form { padding: 0 15px 10px; }
+@media only screen and (min-width: 767px) {
+	#menu { display: block !important; overflow: visible !important; }
+}
 @media only screen and (max-width: 767px) { 
+	#menu { display: none; }
 	.rbar ul li a, .rbar ul li a:hover, .rbar ul li a  { color: white; }
 	.nav-bar li.has-flyout a:first-child::after { border-color: white transparent transparent transparent; }
 }
