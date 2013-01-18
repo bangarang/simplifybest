@@ -1,8 +1,6 @@
 <% provide(:title, "New Supply Order") %>
 
-<div class="mcontainer">
 	<div class="row">
-		<div class="twelve columns"><hr></div>
 		<div class="five columns">
 			<h1 class="SupplyOrder">Place a Supply Order</h1>
 			<h3>We need 3 things from you:</h3>
@@ -13,12 +11,10 @@
 			</ol>
 			<p>If you have any trouble, feel free to call us or leave us a comment at the bottom of the page.</p>
 		</div>
-		<div class="seven columns shadow">
-			<div class="row">
+		<div class="seven columns">
+			<div class="shadow">
 				<h4 class="ticket SupplyOrder">Supply Order Ticket</h4>
+				<%= render 'form' %>
 			</div>
-			<%= render 'form' %>
 		</div>
-		<div class="twelve columns"><hr></div>
 	</div>
-</div>

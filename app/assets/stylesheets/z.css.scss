@@ -10,3 +10,20 @@
 [class*="accessibility foundicon-"]:before {
   font-family: "AccessibilityFoundicons";
 }
+
+body { background: url('fabric_plaid.png'); }
+.rbar-container { background: transparent; border-top: none;}
+.menu-bar { background: transparent; }
+.nav-bar li.has-flyout a:first-child::after { border-color: #d00 transparent transparent transparent; }
+.rbar { background: white; }
+
+.rbar ul li a, .rbar ul li a:hover, .rbar ul li a  { color: #d00; }
+
+.button.home { background:white; }
+.button.home:hover { background:#f6f6f6; }
+
+.shadow form { padding: 0 15px 10px; }
+@media only screen and (max-width: 767px) { 
+	.rbar ul li a, .rbar ul li a:hover, .rbar ul li a  { color: white; }
+	.nav-bar li.has-flyout a:first-child::after { border-color: white transparent transparent transparent; }
+}

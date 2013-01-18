@@ -1,21 +1,19 @@
 <% provide(:title, @product.name) %>
-<div class="prod-nav row">
-  <div class="four columns">
-    <h1 class="title"><%= @product.name %></h1>
-  </div>
-  <div class="eight columns">
-    <ul class="right">
-      <li><a href="#overview">Overview</a></li>
-      <% unless @product.product_pictures.empty? %><li><a href="#gallery">Gallery</a></li><% end %>
-      <% if @specs %><li><a href="#specifications">Specifications</a></li><% end %>
-      <% unless @product.supply_items.empty? && @product.accessories.empty? %><li><a href="#accessories">Accessories</a></li><% end %>
-      <% unless @product.downloads.empty? %><li><a href="#downloads">Downloads</a></li><% end %>
-    </ul>
-  </div>
-</div>
-</div>
 
-<div class="box">
+  <div class="prod-nav row">
+    <div class="four columns">
+      <h1 class="title"><%= @product.name %></h1>
+    </div>
+    <div class="eight columns">
+      <ul class="right">
+        <li><a href="#overview">Overview</a></li>
+        <% unless @product.product_pictures.empty? %><li><a href="#gallery">Gallery</a></li><% end %>
+        <% if @specs %><li><a href="#specifications">Specifications</a></li><% end %>
+        <% unless @product.supply_items.empty? && @product.accessories.empty? %><li><a href="#accessories">Accessories</a></li><% end %>
+        <% unless @product.downloads.empty? %><li><a href="#downloads">Downloads</a></li><% end %>
+      </ul>
+    </div>
+  </div>
   <div class="bread row">
     <div class="six columns">
       <ul class="breadcrumbs">
@@ -37,7 +35,7 @@
   </div>
   <div class="row" id="overview"> 
     <div class="twelve columns">
-      <h3 class="title">Overview <small class="subheader">Read a General Overview</small></h3>
+      <h3 class="title">Overview <small class="subheader">General Description of the <%= @product.name %></small></h3>
     </div>
     <div class="six columns mainimage">
         <%= image_tag @product.image_url(:main).to_s if @product.image? %>
@@ -383,5 +381,4 @@
     </div>
   </div>
 <% end %>
-</div>
 

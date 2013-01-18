@@ -1,24 +1,21 @@
 <% provide(:title, "New Meter") %>
 
-<div class="mcontainer">
-	<div class="row">
-		<div class="twelve columns"><hr></div>
-		<div class="five columns">
-			<h1 class="Meter">Submit a Meter Reading</h1>
-			<h3>We need 3 things from you:</h3>
-			<ol>
-				<li>Your contact information</li> 
-				<li>The SOS# of the machine  <span class="subheader">(if you have it)</span></li> 
-				<li>Meter Reading</li> 
-			</ol>
-			<p>If you have any trouble, feel free to call us or leave us a comment at the bottom of the page.</p>
-		</div>
-		<div class="seven columns shadow">
-			<div class="row">
-				<h4 class="ticket Meter">Meter Reading Ticket</h4>
-			</div>
+
+<div class="row">
+	<div class="five columns">
+		<h1 class="Meter">Submit a Meter Reading</h1>
+		<h3>We need 3 things from you:</h3>
+		<ol>
+			<li>Your contact information</li> 
+			<li>The SOS# of the machine  <span class="subheader">(if you have it)</span></li> 
+			<li>Meter Reading</li> 
+		</ol>
+		<p>If you have any trouble, feel free to call us or leave us a comment at the bottom of the page.</p>
+	</div>
+	<div class="seven columns">
+		<div class="shadow">
+			<h4 class="ticket Meter">Meter Reading Ticket</h4>
 			<%= render 'form' %>
 		</div>
-		<div class="twelve columns"><hr></div>
 	</div>
 </div>

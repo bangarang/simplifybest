@@ -450,7 +450,7 @@ ul.home.button-group.radius li:last-child .button, ul.home.button-group.radius l
   -webkit-border-bottom-right-radius: 20px;
   border-bottom-right-radius: 20px;
 }
-.button.home {background-color: #eee; color: #1d1d1d; border: 1px solid #c3c3c3; }
+.button.home {background-color: #eee; color: #1d1d1d; border: none; box-shadow: none;}
 .button.home:hover, .button.home:focus { background-color: #ddd; }
 
 .meterreading:hover{ color: #08c; }
