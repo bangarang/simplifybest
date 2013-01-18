@@ -15,7 +15,7 @@
                   <li class="has-flyout">
                     <a href="#">Customer Service</a>
                     <a href="#" class="flyout-toggle"><span> </span></a>
-                    <ul class="flyout">
+                    <ul class="flyout right">
                       <li><h4><%= link_to "<i class='general foundicon-graph'></i> Meter Reading".html_safe, new_meter_path %></h4></li>
                       <li><h4><%= link_to "<i class='general foundicon-tools'></i> Service Call".html_safe, new_service_call_path %></h4></li>
                       <li><h4><%= link_to "<i class='general foundicon-cart'></i> Supply Order".html_safe, new_supply_order_path %></h4></li>
@@ -24,7 +24,7 @@
                   <li class="has-flyout">
                     <%= link_to "Products", products_url %>
                     <a href="#" class="flyout-toggle"><span> </span></a>
-                    <ul class="flyout accordion">
+                    <ul class="flyout right accordion">
                       <% for category in @categories %>
                       <li>
                         <div class="title">
@@ -53,7 +53,7 @@
                   <li class="has-flyout right">
                     <a href="#">Account</a>
                     <a href="#" class="flyout-toggle"><span> </span></a>
-                    <ul class="flyout">
+                    <ul class="flyout right">
                       <li class="user"><%= link_to "User Profile", current_user %></li>
                       <li ><%= link_to 'Log Out', destroy_user_session_path, :method => 'delete', :confirm => 'Are you sure?' %></li>
                       <% if can? :edit, Product %><li><%= link_to "Admin", admin_index_url %></li><% end %>

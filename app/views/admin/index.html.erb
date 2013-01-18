@@ -17,16 +17,16 @@
 		        <li>
 		          <ul class="pricing-table box message">
 		            <% if message.service? %>
-		            <li class="ticket <%= message.type %>">Service Call</li>
+		            <li class="ticket <%= message.type %>">Service Call Ticket</li>
 		            <% end %>
 		            <% if message.supply? %>
-		            <li class="ticket <%= message.type %>">Supply Order</li>
+		            <li class="ticket <%= message.type %>">Supply Order Ticket</li>
 		            <% end %>
 		            <% if message.meter? %>
-		            <li class="ticket <%= message.type %>">Meter Reading</li>
+		            <li class="ticket <%= message.type %>">Meter Reading Ticket</li>
 		            <% end %>
 		            <% if message.contact? %>
-		            <li class="ticket <%= message.type %>">General Contact</li>
+		            <li class="ticket <%= message.type %>">General Contact Ticket</li>
 		            <% end %>
 		            <li class="bullet-item"><%= message.first %> <%= message.last %></li>
 		            <% unless message.contact? %><li class="bullet-item"><%= message.company %></li><% end %>

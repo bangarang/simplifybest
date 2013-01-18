@@ -22,8 +22,8 @@ body { background: url('fabric_plaid.png'); }
 .button.home { background:white; }
 .button.home:hover { background:#f6f6f6; }
 
-.shadow form { padding: 0 15px 10px; }
-.copyright { background: transparent; color: #333;}
+.shadow form { padding: 0 15px 10px; border: #f6f6f6 solid thin; }
+.copyright { background: transparent; } 
 @media only screen and (min-width: 767px) {
 	#menu { display: block !important; overflow: visible !important; }
 }
