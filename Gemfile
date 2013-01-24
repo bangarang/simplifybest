@@ -34,6 +34,7 @@ group :assets do
   gem 'uglifier', '1.2.3'
   gem 'compass-rails'
   gem 'zurb-foundation'
+  gem 'asset_sync'
 end
 
 
