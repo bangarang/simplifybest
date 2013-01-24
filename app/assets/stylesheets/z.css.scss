@@ -14,6 +14,21 @@
 body { background: url('fabric_plaid.png'); }
 .rbar-container { background: transparent; border-top: none;}
 .menu-bar { background: transparent; }
+.top-menu ul.nav-bar li h4.menu-links { margin: 0; padding:15px; }
+
+.nav-bar li.has-flyout h4.menu-links a:first-child { padding-right: 30px; }
+.nav-bar li.has-flyout h4.menu-links a:first-child::after {
+content: "";
+display: block;
+width: 0;
+height: 0;
+border: solid 6px;
+border-color: #d00 transparent transparent transparent;
+position: absolute;
+right: 20px;
+top: 22px;
+}
+
 .nav-bar li.has-flyout a:first-child::after { border-color: #d00 transparent transparent transparent; }
 .rbar { background: white; }
 
@@ -25,9 +40,7 @@ body { background: url('fabric_plaid.png'); }
 .shadow form { padding: 0 15px 10px; }
 .copyright { background: transparent; } 
 
-.top-menu ul.nav-bar li h4.menu-links { margin: 0; padding:15px; }
-
-.break { border-bottom: #ccc solid thin;  }
+.break { border-bottom: #d00 solid thin;  }
 
 h2.title { font-size: 54px; border-bottom:#ccc solid thin; text-align: center; }
 @media only screen and (min-width: 767px) {
@@ -36,5 +49,5 @@ h2.title { font-size: 54px; border-bottom:#ccc solid thin; text-align: center; }
 @media only screen and (max-width: 767px) { 
 	#menu { display: none; }
 	.rbar ul li a, .rbar ul li a:hover, .rbar ul li a  { color: white; }
-	.nav-bar li.has-flyout a:first-child::after { border-color: white transparent transparent transparent; }
+	.nav-bar li.has-flyout h4.menu-links a:first-child::after { border-color: white transparent transparent transparent; }
 }

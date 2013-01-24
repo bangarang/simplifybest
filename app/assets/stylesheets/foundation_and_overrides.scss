@@ -491,10 +491,12 @@ ul.breadcrumbs li a, ul.breadcrumbs li span { padding-left: 5px; }
 
 #featured.orbit { display: block; margin-top: 15px; background: none; }
 
-.homephrase { height:500px; background:url('bg6.m.png'); margin-top: -1px; }
+.homephrase { background:url('bg6.m.png'); margin-top: -1px; }
 .homephrase h1.subheader { padding-top:175px; color: white;}
 
 .bottomphrase {  padding-bottom: 30px;  }
+
+.rbar div.nine.columns { min-height: 0 ; }
 @media only screen and (max-width: 767px) {
   dl.sub-nav.prod-sub dt { display: none; }
 
