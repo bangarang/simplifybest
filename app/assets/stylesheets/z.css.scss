@@ -29,6 +29,7 @@ body { background: url('fabric_plaid.png'); }
 
 .break { border-bottom: #ccc solid thin;  }
 
+h2.title { font-size: 54px; border-bottom:#ccc solid thin; text-align: center; }
 @media only screen and (min-width: 767px) {
 	#menu { display: block !important; overflow: visible !important; }
 }
