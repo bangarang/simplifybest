@@ -1,20 +1,35 @@
 <% provide(:title, "New Supply Order") %>
 
-	<div class="row">
-		<div class="five columns">
-			<h1 class="SupplyOrder">Place a Supply Order</h1>
-			<h3>We need 3 things from you:</h3>
-			<ol>
-				<li>Your contact information</li> 
-				<li>The SOS# of the machine  <span class="subheader">(if you have it)</span></li>
-				<li>The supply item or items that you'd like to order.</li> 
-			</ol>
-			<p>If you have any trouble, feel free to call us or leave us a comment at the bottom of the page.</p>
-		</div>
-		<div class="seven columns">
-			<div class="shadow">
-				<h4 class="ticket SupplyOrder">Supply Order Ticket</h4>
-				<%= render 'form' %>
-			</div>
+<div class="row">
+  <div class="twelve columns">
+    <h1 class="SupplyOrder">Place a Supply Order</h1>
+  </div>
+</div>
+<div class="bread row">
+	<div class="twelve columns">
+		<ul class="breadcrumbs">
+			<li><%= link_to "Home", root_url %></li>
+			<li><%= link_to "Customer Service", "#" %></li>
+			<li class="current"><%= link_to "Supply Order", new_supply_order_path %></li>
+		</ul>
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="five columns">
+		<h3>We need 3 things from you:</h3>
+		<ol>
+			<li>Your contact information</li> 
+			<li>The SOS# of the machine  <span class="subheader">(if you have it)</span></li>
+			<li>The supply item or items that you'd like to order.</li> 
+		</ol>
+		<p>If you have any trouble, feel free to call us or leave us a comment at the bottom of the page.</p>
+	</div>
+	<div class="seven columns">
+		<div class="shadow">
+			<h4 class="ticket SupplyOrder">Supply Order Ticket</h4>
+			<%= render 'form' %>
 		</div>
 	</div>
+</div>

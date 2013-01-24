@@ -21,8 +21,8 @@ body { background: url('fabric_plaid.png'); }
 
 .button.home { background:white; }
 .button.home:hover { background:#f6f6f6; }
-
-.shadow form { padding: 0 15px 10px; border: #f6f6f6 solid thin; }
+.shadow { border: #f6f6f6 solid thin; margin:10px 0; }
+.shadow form { padding: 0 15px 10px; }
 .copyright { background: transparent; } 
 
 .top-menu ul.nav-bar li h4.menu-links { margin: 0; padding:15px; }

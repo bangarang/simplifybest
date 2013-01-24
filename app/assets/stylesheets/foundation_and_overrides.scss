@@ -307,9 +307,9 @@ div.alert-box { color: #fff; text-shadow: 0 -1px rgba(0, 0, 0, 0.3); height:30px
 .ticket.SupplyOrder { background:#f89406; color:white; }
 .ticket.Meter { background:#08c; color:white; }
 
-h1.ServiceCall { color:#e00; }
-h1.SupplyOrder { color:#f89406; }
-h1.Meter { color:#08c; }
+h1.ServiceCall { color:#e00; margin-bottom:0;}
+h1.SupplyOrder { color:#f89406; margin-bottom:0; }
+h1.Meter { color:#08c; margin-bottom:0; }
 
 .supply { background:#f89406; border-color:#B36709; }
 .supply:hover { background: #B36709; border-color:#B36709; }
@@ -491,6 +491,10 @@ ul.breadcrumbs li a, ul.breadcrumbs li span { padding-left: 5px; }
 
 #featured.orbit { display: block; margin-top: 15px; background: none; }
 
+.homephrase { height:500px; background:url('bg6.m.png'); margin-top: -1px; }
+.homephrase h1.subheader { padding-top:175px; color: white;}
+
+.bottomphrase {  padding-bottom: 100px;  }
 @media only screen and (max-width: 767px) {
   dl.sub-nav.prod-sub dt { display: none; }
 

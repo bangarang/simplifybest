@@ -1,9 +1,22 @@
 <% provide(:title, "New Meter") %>
 
+<div class="row">
+	<div class="twelve columns">
+		<h1 class="Meter">Submit a Meter Reading</h1>
+	</div>
+</div>
+<div class="bread row">
+	<div class="twelve columns">
+		<ul class="breadcrumbs">
+			<li><%= link_to "Home", root_url %></li>
+			<li><%= link_to "Customer Service", "#" %></li>
+			<li class="current"><%= link_to "Meter Reading", new_meter_path %></li>
+		</ul>
+	</div>
+</div>
 
 <div class="row">
 	<div class="five columns">
-		<h1 class="Meter">Submit a Meter Reading</h1>
 		<h3>We need 3 things from you:</h3>
 		<ol>
 			<li>Your contact information</li> 
