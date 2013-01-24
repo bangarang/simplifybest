@@ -8,12 +8,12 @@
         <p class="menu show-for-small" style=""><a href="#"><i class="icon-reorder"> Menu</i></a></p>
         <div class="menu-bar right">
           <div class="row">
-            <div class="twelve columns">
+            <div class="twelve">
               <nav id="menu" role="navigation" class="top-menu">
                 <ul id="mainNav" class="nav-bar">
-                  <li><%= link_to 'Home', root_path %></li>
+                  <li><h4 class="menu-links"><%= link_to 'Home', root_path %></h4></li>
                   <li class="has-flyout">
-                    <a href="#">Customer Service</a>
+                    <h4 class="menu-links"><a href="#">Customer Service</a></h4>
                     <a href="#" class="flyout-toggle"><span> </span></a>
                     <ul class="flyout right">
                       <li><h4><%= link_to "<i class='general foundicon-graph'></i> Meter Reading".html_safe, new_meter_path %></h4></li>
@@ -22,7 +22,7 @@
                     </ul>
                   </li>
                   <li class="has-flyout">
-                    <%= link_to "Products", products_url %>
+                    <h4 class="menu-links"><%= link_to "Products", products_url %></h4>
                     <a href="#" class="flyout-toggle"><span> </span></a>
                     <ul class="flyout right accordion">
                       <% for category in @categories %>
@@ -51,7 +51,7 @@
                   </li>
                   <% if user_signed_in? %>
                   <li class="has-flyout right">
-                    <a href="#">Account</a>
+                    <h4 class="menu-links"><a href="#">Account</a></h4>
                     <a href="#" class="flyout-toggle"><span> </span></a>
                     <ul class="flyout right">
                       <li class="user"><%= link_to "User Profile", current_user %></li>
@@ -60,7 +60,7 @@
                     </ul>
                   </li>
                   <% else %>
-                  <li><%= link_to 'Log In', new_user_session_path %></li>
+                  <li><h4 class="menu-links"><%= link_to 'Log In', new_user_session_path %></h4></li>
                   <% end %>
                 </ul>
               </nav>
@@ -69,3 +69,4 @@
         </div>
       </div>
   </div>
+  <div class="twelve columns"><div class="break"></div></div>

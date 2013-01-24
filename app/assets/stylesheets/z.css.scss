@@ -24,6 +24,11 @@ body { background: url('fabric_plaid.png'); }
 
 .shadow form { padding: 0 15px 10px; border: #f6f6f6 solid thin; }
 .copyright { background: transparent; } 
+
+.top-menu ul.nav-bar li h4.menu-links { margin: 0; padding:15px; }
+
+.break { border-bottom: #ccc solid thin;  }
+
 @media only screen and (min-width: 767px) {
 	#menu { display: block !important; overflow: visible !important; }
 }

@@ -1,23 +1,10 @@
 <% provide(:title, 'Copiers and Printers in Omaha') %>
 
 <div class="row">
-	<div class="twelve columns">
-		<h1>Welcome to Simplified Office Solutions!</h1>
-	</div>
-</div>
+	<div class="twelve columns" style="height:500px;">
+		<h2 class="subheader" style="padding-top:150px;">"We're a <b>service-based</b> company working to provide the best copiers in printers in the Omaha area."</h2>
+		<h3 class="right"><a href="#" ><b>- Meet Simplified</b></a></h3>
 
-<div class="row">
-	<div class="twelve">
-		<div id="featured">
-			<% for pic in @featured_pictures %>
-			<div data-caption="#<%= pic.name %>">
-				<%= image_tag pic.image_url %>
-			</div>
-			<% end %>
-		</div>
-		<% for c in @featured_pictures %>
-		<span class="orbit-caption" id="<%=c.name%>"><%= c.description %></span>
-		<% end %>
 	</div>
 	<div class="twelve columns">
 		<h3 class="title">Featured Products</h3>
@@ -38,6 +25,15 @@
 	        </li>
 	      <% end %>
 	    </ul>
+	</div>
+	<div class="twelve columns">
+		<a href="#" class="button right">Get a Quote <i class="icon-angle-right"></i><i class="icon-angle-right"></i></a>
+	</div>
+	<div class="twelve columns">
+		<h3 class="title">Find Us</h3>
+	</div>
+	<div class="twelve">
+		<iframe width="100%" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Simplified+Office+Solutions,+South+118th+Street,+Omaha,+NE&amp;aq=1&amp;oq=Simplified+Office+&amp;sll=41.192627,-96.096192&amp;sspn=0.00926,0.011351&amp;ie=UTF8&amp;hq=Simplified+Office+Solutions,&amp;hnear=S+118th+St,+Omaha,+Nebraska&amp;t=m&amp;ll=41.209526,-96.097927&amp;spn=0.0452,0.072956&amp;z=13&amp;iwloc=A&amp;output=embed"></iframe>
 	</div>
 	<div class="twelve columns">
 		<h3 class="title">Expert Customer Service</h3>
