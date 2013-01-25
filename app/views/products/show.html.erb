@@ -25,9 +25,9 @@
       <% if can? :edit, @product %>
       <div class="six columns">
         <ul class="right prod-edit">
-          <li><%= link_to "<i class='general foundicon-edit'></i> Edit".html_safe, edit_product_path(@product)%></li>
-          <li><%= link_to "<i class='general foundicon-trash'></i> Delete Product".html_safe, @product, :confirm => 'Are you sure?', :method => :delete %></li>
-          <li><a href="<%=@product.slug%>/dup"><i class='general foundicon-add-doc'></i> Duplicate Product</a></li>
+          <li><%= link_to "<i class='icon-edit'></i> Edit".html_safe, edit_product_path(@product)%></li>
+          <li><%= link_to "<i class='icon-trash'></i> Delete Product".html_safe, @product, :confirm => 'Are you sure?', :method => :delete %></li>
+          <li><a href="<%=@product.slug%>/dup"><i class='icon-copy'></i> Duplicate Product</a></li>
         </ul>
       </div>
       <% end %>

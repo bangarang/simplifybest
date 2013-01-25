@@ -7,9 +7,9 @@
 		<h3 class="csm">Customer Service Messages ( <%= @messages.length %> )<i class="icon-angle-up right"></i></h3>
 		<div class="row admin-edit csm-content">
 			<div class="twelve columns links">
-				<div class="four columns"><%= link_to "<i class='general foundicon-plus'> New Meter Reading</i>".html_safe, new_meter_path %></div>
-		        <div class="four columns"><%= link_to "<i class='general foundicon-plus'> New Service Call</i>".html_safe, new_supply_order_path %></div>
-		        <div class="four columns"><%= link_to "<i class='general foundicon-plus'> New Supply Order</i>".html_safe, new_service_call_path %></div>
+				<div class="four columns"><%= link_to "<i class='icon-plus'></i> New Meter Reading".html_safe, new_meter_path %></div>
+		        <div class="four columns"><%= link_to "<i class='icon-plus'></i> New Service Call".html_safe, new_supply_order_path %></div>
+		        <div class="four columns"><%= link_to "<i class='icon-plus'></i> New Supply Order".html_safe, new_service_call_path %></div>
 		    </div>
 		    <div class="twelve columns">
 		      <ul class="block-grid four-up mobile index">
@@ -50,23 +50,23 @@
 		<h3 class="prods">Products ( <%= @products.length %> )<i class="icon-angle-down right"></i></h3>
 		<div class="row admin-edit prods-content">
 			<div class="twelve columns links">
-		        <div class="six columns"><%= link_to "<i class='general foundicon-plus'> New Product</i>".html_safe, new_product_path %></div>
-		        <div class="six columns"><%= link_to "<i class='general foundicon-plus'> New Category</i>".html_safe, new_category_path %></div>
+		        <div class="six columns"><%= link_to "<i class='icon-plus'></i> New Product".html_safe, new_product_path %></div>
+		        <div class="six columns"><%= link_to "<i class='icon-plus'></i> New Category".html_safe, new_category_path %></div>
 		    </div>
 	    	
 	    	<div class="twelve columns">
 				<% for category in @categories %>
 		        <h4><%= category.name %></h4>
 		        <div class="row admin-edit">
-					<div class="six columns links"><%= link_to "<i class='general foundicon-edit'></i> Edit".html_safe, edit_category_path(category) %></div>
-					<div class="six columns links"><%= link_to "<i class='general foundicon-trash'></i> Delete".html_safe, category, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+					<div class="six columns links"><%= link_to "<i class='icon-edit'></i> Edit".html_safe, edit_category_path(category) %></div>
+					<div class="six columns links"><%= link_to "<i class='icon-trash'></i> Delete".html_safe, category, method: :delete, data: { confirm: 'Are you sure?' } %></div>
 			    	<div>
 				        <table class="products">
 				        	<% for product in category.products.order(:name) %>
 				        	<tr>
 					          <td><%=link_to product.name, product %></td>
-					          <td><%= link_to "<i class='general foundicon-edit'></i> Edit".html_safe, edit_product_path(product) %></td>
-					          <td><%= link_to "<i class='general foundicon-trash'></i> Delete".html_safe, product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+					          <td><%= link_to "<i class='icon-edit'></i> Edit".html_safe, edit_product_path(product) %></td>
+					          <td><%= link_to "<i class='icon-trash'></i> Delete".html_safe, product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 					          <td><a href="/products/<%= product.slug %>/dup"><i class="icon-copy"></i> Duplicate</a></td>
 					      	</tr>
 				      		<% end %>
@@ -89,8 +89,8 @@
 			        	<tr>
 			        		<td><%= image_tag pic.image_url(:thumb) %></td>
 				          	<td><%=link_to pic.name, pic %></td>
-				          	<td><%=link_to "<i class='general foundicon-edit'></i> Edit".html_safe, edit_featured_picture_path(pic) %></td>
-				          	<td><%=link_to "<i class='general foundicon-trash'></i> Delete".html_safe, pic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+				          	<td><%=link_to "<i class='icon-edit'></i> Edit".html_safe, edit_featured_picture_path(pic) %></td>
+				          	<td><%=link_to "<i class='icon-trash'></i> Delete".html_safe, pic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 				      	</tr>
 		  			<% end %>
 		  			</table>
@@ -99,7 +99,7 @@
 	  	</div>
 	  	<h3 class="users">Users ( <%= @users.length %> )<i class="icon-angle-down right"></i></h3>
 		<div class="row admin-edit users-content">
-			<div class="twelve columns links"><%= link_to "<i class='general foundicon-plus'></i> New User".html_safe, new_user_path %></div>
+			<div class="twelve columns links"><%= link_to "<i class='icon-plus'></i> New User".html_safe, new_user_path %></div>
 			<table class="products">
 			<% for user in @users %>
 	        	<tr>
@@ -109,8 +109,8 @@
 			          	<%= role.name %>
 			          	<% end %>
 		          </td>
-		          <td><%=link_to "<i class='general foundicon-edit'></i> Edit".html_safe, edit_user_path(user) %></td>
-		          <td><%=link_to "<i class='general foundicon-trash'></i> Delete".html_safe, user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		          <td><%=link_to "<i class='icon-edit'></i> Edit".html_safe, edit_user_path(user) %></td>
+		          <td><%=link_to "<i class='icon-trash'></i> Delete".html_safe, user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 		      	</tr>
   			<% end %>
   			</table>
