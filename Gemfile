@@ -15,7 +15,7 @@ gem 'client_side_validations'
 gem 'phony_rails'
 gem 'validates_as_phone_number'
 gem 'font-awesome-rails'
-
+gem 'asset_sync'
 # gem 'turbolinks'
 # gem 'jquery-turbolinks'
 
@@ -34,7 +34,6 @@ group :assets do
   gem 'uglifier', '1.2.3'
   gem 'compass-rails'
   gem 'zurb-foundation'
-  gem 'asset_sync'
 end
 
 
