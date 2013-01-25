@@ -3,32 +3,46 @@
 <!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
 <!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
-<head>
-	<meta charset="utf-8" />
-	<link rel="canonical" href="http://www.simplifybest.com" />
-	<link rel="shortcut icon" href="favicon.ico" />
-	<meta name="description" content="We carry the largest selection of printers Omaha has to offer. Quality service and selection of copiers in Omaha, find the right copier for you here today." />
-	<meta name="robots" content="noindex, nofollow">
-	<meta name="keywords" content="printers Omaha, copiers Omaha, Omaha office solutions" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	
-	<title><%= full_title(yield(:title)) %></title>
+	<head>
+		<!-- META -->
+		<meta charset="utf-8" />
+		<meta name="description" content="We carry the largest selection of printers Omaha has to offer. Quality service and selection of copiers in Omaha, find the right copier for you here today." />
+		<meta name="robots" content="noindex, nofollow">
+		<meta name="keywords" content="printers Omaha, copiers Omaha, Omaha office solutions" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  	<!-- Typekit -->
-	<script type="text/javascript" src="//use.typekit.net/bkq5xlt.js"></script>
-	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-	<!-- Included CSS Files -->
-	<%= stylesheet_link_tag    "application" %>
-	
-	<!-- Included JS Files  -->
-	<%= javascript_include_tag "application" %>
+		<!-- LINK -->
+		<link rel="canonical" href="http://www.simplifybest.com" />
+		<link rel="shortcut icon" href="favicon.ico" />
 
-  <%= csrf_meta_tags %>
-</head>
-<body>
-	<%= render "layouts/header" %>
-    <%= render "layouts/errors" %>
-  	<%= yield %>
-  	<%= render "layouts/footer" %>
-</body>
+		<!-- TITLE -->
+		<title><%= full_title(yield(:title)) %></title>
+
+		<!-- CSS -->
+		<%= stylesheet_link_tag    "application" %>
+		
+		<!-- JS  -->
+		<%= javascript_include_tag "application" %>
+
+		<!-- TYPEKIT -->
+		<script type="text/javascript" src="//use.typekit.net/bkq5xlt.js"></script>
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+		<!-- CSRF -->
+	  	<%= csrf_meta_tags %>
+	</head>
+	<body>
+		<!-- HEADER -->
+		<%= render "layouts/header" %>
+		<!-- END HEADER -->
+
+		<!-- MAIN -->
+	    <%= render "layouts/errors" %>
+	  	<%= yield %>
+	  	<!-- END MAIN -->
+
+	  	<!-- FOOTER -->
+	  	<%= render "layouts/footer" %>
+	  	<!-- END FOOTER -->
+	</body>
 </html>
