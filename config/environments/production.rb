@@ -84,9 +84,4 @@ Simplifybest::Application.configure do
   
   config.action_controller.asset_host = 'http://assets.simplifybest.com'
 
-  config.asset_sync.aws_access_key = ENV['AWS_ACCESS_KEY_ID']
-  config.asset_sync.aws_access_secret = ENV['AWS_SECRET_ACCESS_KEY']
-  config.asset_sync.aws_bucket = ENV['FOG_DIRECTORY']
-  config.asset_sync.fog_provider = ENV['FOG_PROVIDER']
-
 end
