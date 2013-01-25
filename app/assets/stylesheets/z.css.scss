@@ -47,6 +47,8 @@ h2.title { font-size: 54px; border-bottom:#ccc solid thin; text-align: center; }
 	#menu { display: block !important; overflow: visible !important; }
 }
 @media only screen and (max-width: 767px) { 
+	.homephrase h1 { font-size: 24px; }
+	h2.title { font-size: 36px; }
 	#menu { display: none; }
 	.rbar ul li a, .rbar ul li a:hover, .rbar ul li a  { color: white; }
 	.nav-bar li.has-flyout h4.menu-links a:first-child::after { border-color: white transparent transparent transparent; }
