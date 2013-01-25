@@ -82,9 +82,6 @@ Simplifybest::Application.configure do
     :password  => ENV["MANDRILL_API_KEY"]
   }
   
-  config.action_controller.asset_host = Proc.new do |source, request|
-    method = request.ssl? ? "https" : "http"
-    "#{method}://assets.simplifybest.com"
-  end
+  config.action_controller.asset_host = "https://simplifybesttest.s3.amazonaws.com"
 
 end
