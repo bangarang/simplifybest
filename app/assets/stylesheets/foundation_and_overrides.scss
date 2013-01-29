@@ -41,7 +41,7 @@ $bodyFontFamily: "jaf-bernina-sans",sans-serif;
 
 // Button Settings
 
-$buttonRadius: 8px;
+// $buttonRadius: 8px;
 // $btnBase: 10px;
 
 // $tinyBtnBase: $btnBase - 5;
@@ -491,7 +491,11 @@ ul.breadcrumbs li a, ul.breadcrumbs li span { padding-left: 5px; }
 
 #featured.orbit { display: block; margin-top: 15px; background: none; }
 
-.homephrase h1.subheader { padding:75px 0; color: #333;}
+.homephrase { padding:150px 15px; text-align:center;}
+.homephrase a { margin-top: 20px; }
+.homephrase a h3 { color: white; }
+.homephrase h1 { font-size: 72px; }
+.homephrase h1, .homephrase h3 { color: #333;}
 .homephrase .simplified { color: #d00;}
 .bottomphrase {  padding-bottom: 30px;  }
 

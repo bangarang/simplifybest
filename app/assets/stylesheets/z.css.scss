@@ -39,7 +39,8 @@ iframe.maps { width:100%; height:450px; }
 }
 @media only screen and (max-width: 767px) { 
 	iframe.maps { width:100%; height:250px; }
-	.homephrase h1.subheader { font-size: 24px;  padding:25px 0;}
+	.homephrase { padding: 15px; }
+	.homephrase h1.subheader { font-size: 44px;}
 	h2.title { font-size: 36px; }
 	#menu { display: none; }
 	.rbar ul li a, .rbar ul li a:hover, .rbar ul li a  { color: white; }
