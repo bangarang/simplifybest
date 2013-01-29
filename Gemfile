@@ -16,8 +16,8 @@ gem 'phony_rails'
 gem 'validates_as_phone_number'
 gem 'font-awesome-rails'
 gem 'asset_sync'
-# gem 'turbolinks'
-# gem 'jquery-turbolinks'
+
+gem 'retina_tag'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'

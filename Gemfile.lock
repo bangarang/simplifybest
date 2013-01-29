@@ -158,6 +158,9 @@ GEM
     rake (10.0.3)
     rdoc (3.12)
       json (~> 1.4)
+    retina_tag (1.1.7)
+      jquery-rails
+      rails (~> 3.1)
     rmagick (2.13.1)
     rolify (3.2.0)
     rspec (2.11.0)
@@ -240,6 +243,7 @@ DEPENDENCIES
   pg (= 0.12.2)
   phony_rails
   rails (= 3.2.11)
+  retina_tag
   rmagick
   rolify
   rspec-rails (= 2.11.0)
