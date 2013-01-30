@@ -1,6 +1,6 @@
 body { background: url('fabric_plaid.png'); }
 .rbar-container { background: transparent; border-top: none;}
-.menu-bar { background: transparent; }
+.top-menu { padding-top: 48px; }
 .top-menu ul.nav-bar li h4.menu-links { margin: 0; padding:15px; }
 
 .nav-bar li.has-flyout h4.menu-links a:first-child { padding-right: 30px; }
@@ -39,6 +39,7 @@ iframe.maps { width:100%; height:450px; }
 }
 @media only screen and (max-width: 767px) { 
 	iframe.maps { width:100%; height:250px; }
+	.top-menu { padding-top: 0; }
 	.homephrase { padding: 15px; }
 	.homephrase h1.subheader { font-size: 44px;}
 	h2.title { font-size: 36px; }

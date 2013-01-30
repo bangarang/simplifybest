@@ -4,13 +4,13 @@
 	<div class="twelve columns homephrase">
 		<h1 class="subheader">Copiers. Printers. All-in-One. <b class="simplified">Simplified.</b></h1>
 		<h3 class="subheader">Great products backed by the best locally-owned support in the Omaha area.</h3>
-		<a class="success large button radius" href="#"><h3>Get a Free Quote</h3></a>
+		<a class="success large button radius" href="/quote"><h3>Get a Free Quote</h3></a>
 	</div>
 	<div class="twelve columns">
 		<h2 class="title">Featured Products</h2>
 	</div>
 	<div class="twelve columns">
-	    <ul class="block-grid four-up mobile-two-up">
+	    <ul class="block-grid four-up mobile">
 	      <% for product in @featured_products %>
 	        <li>
 	          <a href="<%= product_path(product) %>">
@@ -34,7 +34,6 @@
 		  <%= link_to "<i class='icon-calendar'></i><br><br> Submit a Meter Reading".html_safe, new_meter_path, :class => 'home button meterreading four columns' %>
 		  <%= link_to "<i class='icon-wrench'></i><br><br> Place a Service Call".html_safe, new_service_call_path, :class => 'home button servicecall four columns' %>
 		  <%= link_to "<i class='icon-shopping-cart'></i><br><br> Place a Supply Order".html_safe, new_supply_order_path, :class => 'home button supplyorder four columns' %>
-
 	</div>
 	<div class="twelve columns">
 		<h2 class="title">Find Us</h2>

@@ -6,6 +6,9 @@ Simplifybest::Application.routes.draw do
   resources :supply_orders
   resources :service_calls
 
+  match 'quote' => 'quotes#new'
+
+
   # match 'meters/new' => 'meters#new'
   resources :users
 

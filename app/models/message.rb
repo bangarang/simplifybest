@@ -1,8 +1,7 @@
 class Message < ActiveRecord::Base
 	attr_accessible :first, :last, :company, :address, :phone_number
 
-	validates_presence_of :first, :last, :address, :phone_number
-  validates_presence_of :company, :unless => :contact?
+	validates_presence_of :first, :last, :address, :phone_number, :company
   validates_format_of :address,:with => Devise.email_regexp
   validates_as_phone_number :phone_number, :message => 'Enter an Actual Phone Number Please :)' 
     
@@ -19,6 +18,10 @@ class Message < ActiveRecord::Base
   end
 
   def service?
+    false
+  end
+
+  def quote?
     false
   end
 end
