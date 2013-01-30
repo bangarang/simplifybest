@@ -311,6 +311,7 @@ div.alert-box { color: #fff; text-shadow: 0 -1px rgba(0, 0, 0, 0.3); height:30px
 h1.ServiceCall { color:#e00; margin-bottom:0;}
 h1.SupplyOrder { color:#f89406; margin-bottom:0; }
 h1.Meter { color:#08c; margin-bottom:0; }
+h1.Quote { color:#5da423; margin-bottom:0; }
 
 .supply { background:#f89406; border-color:#B36709; }
 .supply:hover { background: #B36709; border-color:#B36709; }
@@ -500,6 +501,10 @@ ul.breadcrumbs li a, ul.breadcrumbs li span { padding-left: 5px; }
 .bottomphrase {  padding-bottom: 30px;  }
 
 .rbar div.nine.columns { min-height: 0 ; }
+
+.quoter h1 { margin-bottom:0; }
+.quoter h2 { margin-top: 0 }
+
 @media only screen and (max-width: 767px) {
   dl.sub-nav.prod-sub dt { display: none; }
 
