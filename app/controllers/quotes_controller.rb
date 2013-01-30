@@ -13,11 +13,10 @@ class QuotesController < ApplicationController
   end
 
   def create
-    session[:return_to] = request.referer
     @quote = Quote.new(params[:quote])
     if @quote.save
-      ServiceMailer.quote(@quote).deliver
-      redirect_to session[:return_to], :notice => "Successfully Sent Quote"
+      ServiceMailer.contact(@quote).deliver
+      redirect_to root_url, :notice => "Thanks for Your Interest!"
     else
       render :action => 'new'
     end
@@ -26,6 +25,6 @@ class QuotesController < ApplicationController
   def destroy
     @quote = Quote.find(params[:id])
     @quote.destroy
-    redirect_to admin_index_url, :notice => "Successfully Destroyed Quote."
+    redirect_to admin_index_url, :notice => "Destroyed Quote."
   end
 end

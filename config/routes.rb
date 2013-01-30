@@ -5,11 +5,10 @@ Simplifybest::Application.routes.draw do
   resources :meters
   resources :supply_orders
   resources :service_calls
+  resources :quotes
 
-  match 'quote' => 'quotes#new'
+  match 'getaquote' => 'quotes#new'
 
-
-  # match 'meters/new' => 'meters#new'
   resources :users
 
   devise_for :users, :skip => [:sessions]

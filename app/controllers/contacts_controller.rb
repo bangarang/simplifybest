@@ -19,7 +19,7 @@ class ContactsController < ApplicationController
       ServiceMailer.contact(@contact).deliver
       redirect_to session[:return_to], :notice => "Successfully Sent Contact"
     else
-      render :action => 'new'
+      render session[:return_to]
     end
   end
   

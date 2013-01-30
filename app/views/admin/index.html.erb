@@ -28,6 +28,9 @@
 		            <% if message.contact? %>
 		            <li class="ticket <%= message.type %>">General Contact Ticket</li>
 		            <% end %>
+		            <% if message.quote? %>
+		            <li class="ticket <%= message.type %>">Sales Quote</li>
+		            <% end %>
 		            <li class="bullet-item"><%= message.first %> <%= message.last %></li>
 		            <% unless message.contact? %><li class="bullet-item"><%= message.company %></li><% end %>
 		            <li class="bullet-item"><%= message.address %></li>
