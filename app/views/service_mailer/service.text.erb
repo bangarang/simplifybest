@@ -1,7 +1,6 @@
-First:<%= @first %> 
-Last:<%= @last %> 
+Name: <%= @first %> <%= @last %> 
 Company: <%= @company %>
 Address: <%= @address %>
 SOS#: <%= @sos %>
-Comment: <%= @comment %>
+Comment: <%= @comment.html_safe %>
 Sent On <%= @sent_on %>

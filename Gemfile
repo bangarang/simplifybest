@@ -15,7 +15,7 @@ gem 'client_side_validations'
 gem 'phony_rails'
 gem 'validates_as_phone_number'
 gem 'font-awesome-rails'
-
+gem 'sitemap_generator'
 gem 'retina_tag'
 
 group :development, :test do
