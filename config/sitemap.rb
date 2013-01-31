@@ -3,7 +3,7 @@ SitemapGenerator::Sitemap.default_host = "http://www.simplifybest.com"
 SitemapGenerator::Sitemap.sitemaps_host = "http://s3.amazonaws.com/assets.simplifybest.com"
 SitemapGenerator::Sitemap.public_path = 'tmp/'
 SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
-SitemapGenerator::Sitemap.adapter = SitemapGenerator::WaveAdapter.new
+SitemapGenerator::Sitemap.adapter = SitemapGenerator::S3Adapter.new
 SitemapGenerator::Sitemap.create do
   add new_service_call_path
   add new_supply_order_path
