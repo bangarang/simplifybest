@@ -28,7 +28,7 @@ class ServiceMailer < ActionMailer::Base
     @address = meter.address
     @sos = meter.sos
     @meter = meter.meter
-    mail(:subject => "Online Meter Reading", :from => "meter-reading@simplifybest.com")
+    mail(:subject => "Meter Reading", :from => "meter-reading@simplifybest.com")
   end
   
   def supply(supply_order, sent_at = Time.now)
@@ -39,7 +39,7 @@ class ServiceMailer < ActionMailer::Base
     @address = supply_order.address
     @sos = supply_order.sos
     @comment = supply_order.comment
-    mail(:subject => "Online Supply Order", :from => "supply-orders@simplifybest.com")
+    mail(:subject => "Supply Order", :from => "supply-orders@simplifybest.com")
   end
   
   def service(service_call, sent_at = Time.now)
@@ -50,6 +50,6 @@ class ServiceMailer < ActionMailer::Base
     @address = service_call.address
     @sos = service_call.sos
     @comment = service_call.comment
-    mail(:subject => "Online Service Call", :from => "service-calls@simplifybest.com")
+    mail(:subject => "Service Call", :from => "service-calls@simplifybest.com", :to => "alex@simplifybest.com, matt@simplifybest.com, donna@simplifybest.com, chad@simplifybest.com")
   end
 end

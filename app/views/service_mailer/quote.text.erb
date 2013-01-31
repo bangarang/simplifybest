@@ -1,5 +1,5 @@
-Name:<%= @first %> <%= @last %> 
+Name: <%= @first %> <%= @last %> 
 Company: <%= @company %>
 E-mail Address: <%= @address %>
-Comment: <%= @comment %>
+Comment: <%= @comment.html_safe %>
 Sent On <%= @sent_on %>
