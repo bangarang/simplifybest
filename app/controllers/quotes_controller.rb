@@ -15,7 +15,7 @@ class QuotesController < ApplicationController
   def create
     @quote = Quote.new(params[:quote])
     if @quote.save
-      ServiceMailer.contact(@quote).deliver
+      ServiceMailer.quote(@quote).deliver
       redirect_to root_url, :notice => "Thanks for Your Interest!"
     else
       render :action => 'new'

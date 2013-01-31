@@ -1,11 +1,7 @@
 class ServiceMailer < ActionMailer::Base
-  default :to => "alex@simplifybest.com"
+  default :to => "alex@simplifybest.com, matt@simplifybest.com, donna@simplifybest.com"
 
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.service_mailer.meters.subject
-  #
+
   def contact(contact, sent_at = Time.now)
     @sent_on = sent_at
     @first = contact.first
@@ -13,6 +9,15 @@ class ServiceMailer < ActionMailer::Base
     @address = contact.address
     @comment = contact.comment
     mail(:subject => "General Contact", :from => "general-contact@simplifybest.com")
+  end
+
+  def quote(quote, sent_at = Time.now)
+    @sent_on = sent_at
+    @first = quote.first
+    @last = quote.last
+    @address = quote.address
+    @comment = quote.comment
+    mail(:subject => "Sales Quote", :from => "sales-quote@simplifybest.com")
   end
 
   def meter(meter, sent_at = Time.now)
