@@ -1,43 +1,39 @@
 <% provide(:title, 'Products') %>
 
-  <div class="row">
-    <div class="twelve columns">
-      <h1>Our Products</h1>
-    </div>
+<div class="row">
+  <div class="twelve columns">
+    <h1>Our Products</h1>
   </div>
-
-
-<div class="product-content">
-  <div class="bread row">
-    <div class="twelve columns">
-      <ul class="breadcrumbs">
-        <li><%= link_to "Home", root_url %></li>
-        <li class="current"><%= link_to "Products", products_url %></li>
-      </ul>
-    </div>
-  </div>
-  <% for category in @categories %>
-  <div class="row">
-    <div class="twelve columns">
-      <h3 class="title"><%= link_to category.name, category %>  <small class="subheader"><%= category.description %></small></h3>
-    </div>
-  </div>
-  <div class="row">
-    <div class="twelve columns">
-      <ul class="block-grid four-up mobile-two-up">
-      <% for product in category.products.order(:name) %>
-        <li>
-          <ul class="pricing-table box product">
-            <li class="thumbnail"><%= image_tag product.image_url(:thumb).to_s if product.image? %></li>
-            <li class="title"><%= link_to product.name, product %></li>
-            <li class="description"><%= product.excerpt %></li>
-            <li class="bullet-item"><%= product.maxdutycycle %></li>
-            <li class="cta-button"><a class="small button" href="<%= product_path(product) %>">More Info &raquo;</a></li>
-          </ul>
-        </li>
-      <% end %>
-      </ul>
-    </div>
-  </div>
-  <% end %>
 </div>
+<div class="bread row">
+  <div class="twelve columns">
+    <ul class="breadcrumbs">
+      <li><%= link_to "Home", root_url %></li>
+      <li class="current"><%= link_to "Products", products_url %></li>
+    </ul>
+  </div>
+</div>
+<% for category in @categories %>
+<div class="row">
+  <div class="twelve columns">
+    <h3 class="title"><%= link_to category.name, category %>  <small class="subheader"><%= category.description %></small></h3>
+  </div>
+</div>
+<div class="row">
+  <div class="twelve columns">
+    <ul class="block-grid four-up mobile-two-up">
+    <% for product in category.products.order(:name) %>
+      <li>
+        <ul class="pricing-table box product">
+          <li class="thumbnail"><%= image_tag product.image_url(:thumb).to_s if product.image? %></li>
+          <li class="title"><%= link_to product.name, product %></li>
+          <li class="description"><%= product.excerpt %></li>
+          <li class="bullet-item"><%= product.maxdutycycle %></li>
+          <li class="cta-button"><a class="small button" href="<%= product_path(product) %>">More Info &raquo;</a></li>
+        </ul>
+      </li>
+    <% end %>
+    </ul>
+  </div>
+</div>
+<% end %>
