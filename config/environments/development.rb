@@ -54,5 +54,8 @@ Simplifybest::Application.configure do
     :enable_starttls_auto => true  
   }
 
+  CarrierWave.configure do |config|
+    config.asset_host = 'http://assets.simplifybest.com'
+  end
 
 end

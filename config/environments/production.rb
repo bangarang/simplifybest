@@ -82,6 +82,8 @@ Simplifybest::Application.configure do
     :password  => ENV["MANDRILL_API_KEY"]
   }
   
-  config.fog_host = 'http://assets.simplifybest.com'
+  CarrierWave.configure do |config|
+    config.asset_host = 'http://assets.simplifybest.com'
+  end
 
 end
