@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require retina_tag
 //= require foundation
 //= require rails.validations
 //= require_tree .
+//= require retina_tag
