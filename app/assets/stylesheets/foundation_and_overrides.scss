@@ -299,8 +299,8 @@ div.alert-box { color: #fff; text-shadow: 0 -1px rgba(0, 0, 0, 0.3); height:30px
 .alert-box.success { background: #5da423; }
 .alert-box.error { background: #d00; }
 .alert-box.alert { background: #e9e9e9; color: #505050;}
-
-.pricing-table .title a { background: #eee; color: #d00; }
+.pricing-table .title { background: #eee; }
+.pricing-table .title a { color: #d00; }
 .pricing-table .title a:hover  { color: #b00; }
 .pricing-table .ticket { font-weight: bold; text-align: center;padding: 20px 0; background: #eee; color: #d00; }
 
