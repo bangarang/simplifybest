@@ -17,6 +17,7 @@ gem 'validates_as_phone_number'
 gem 'font-awesome-rails'
 gem 'sitemap_generator'
 gem 'retina_tag'
+gem 'analytics-ruby'
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
