@@ -30,4 +30,6 @@ after_fork do |server, worker|
     Resque.redis = ENV['REDIS_URI']
     Rails.logger.info('Connected to Redis')
   end
+
+  defined?(Analytics) and Analytics.init(secret: '3lrm0m6x0fcc60c1uzgf')
 end

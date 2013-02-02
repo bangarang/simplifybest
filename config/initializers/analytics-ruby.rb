@@ -1,1 +1,0 @@
-Analytics.init(secret: '3lrm0m6x0fcc60c1uzgf')
