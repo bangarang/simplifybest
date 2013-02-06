@@ -9,6 +9,7 @@ Simplifybest::Application.routes.draw do
 
   match 'getaquote' => 'quotes#new'
 
+  match 'sitemap' => redirect('http://assets.simplifybest.com/sitemaps/sitemap_index.xml.gz'), :as => 'sitemap'
   resources :users
 
   devise_for :users, :skip => [:sessions]
