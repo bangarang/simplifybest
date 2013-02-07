@@ -1,4 +1,7 @@
 Simplifybest::Application.routes.draw do
+
+  root :to => 'pages#home'
+
   resources :admin
   resources :featured_pictures
   resources :contacts
@@ -9,8 +12,6 @@ Simplifybest::Application.routes.draw do
 
   match 'getaquote' => 'quotes#new'
 
-  match 'sitemap_index' => redirect('http://assets.simplifybest.com/sitemaps/sitemap_index.xml.gz'), :as => 'sitemap_index'
-  match 'sitemap' => redirect('http://assets.simplifybest.com/sitemaps/sitemap1.xml.gz'), :as => 'sitemap'
   resources :users
 
   devise_for :users, :skip => [:sessions]
@@ -29,7 +30,9 @@ Simplifybest::Application.routes.draw do
   resources :products
   match 'products/:slug/dup' => 'products#duplicate'
 
-  root :to => 'pages#home'
 
   match 'email' => 'application#send_mail'
+
+  match 'sitemap_index' => redirect('http://assets.simplifybest.com/sitemaps/sitemap_index.xml.gz'), :as => 'sitemap_index'
+  match 'sitemap' => redirect('http://assets.simplifybest.com/sitemaps/sitemap1.xml.gz'), :as => 'sitemap'
 end

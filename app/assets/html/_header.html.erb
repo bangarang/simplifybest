@@ -1,0 +1,66 @@
+<div class="box">
+  <div class="rbar-container">
+    <div class="row rbar <% if user_signed_in?%> in<% end %>">
+      <div class="three columns">
+        <a href="<%= root_url %>"><%= image_tag("logo.png",:height=>100, :class=>"slogo") %></a>
+      </div>
+      <div class="nine columns">
+        <p class="menu show-for-small" style=""><a href="#"><i class="icon-reorder"></i> Menu</a></p>
+        <nav id="menu" role="navigation" class="top-menu right">
+          <ul id="mainNav" class="nav-bar">
+            <li><h4 class="menu-links"><%= link_to 'Home', root_path %></h4></li>
+            <li class="has-flyout">
+              <h4 class="menu-links"><a href="#">Customer Service</a></h4>
+              <a href="#" class="flyout-toggle"><span></span></a>
+              <ul class="flyout right">
+                <li><h4><%= link_to "<i class='icon-calendar'></i> Meter Reading".html_safe, new_meter_path %></h4></li>
+                <li><h4><%= link_to "<i class='icon-wrench'></i> Service Call".html_safe, new_service_call_path %></h4></li>
+                <li><h4><%= link_to "<i class='icon-shopping-cart'></i> Supply Order".html_safe, new_supply_order_path %></h4></li>
+              </ul>
+            </li>
+            <li class="has-flyout">
+              <h4 class="menu-links"><%= link_to "Products", products_url %></h4>
+              <a href="#" class="flyout-toggle"><span> </span></a>
+              <ul class="flyout right accordion">
+                <% for category in @categories %>
+                <li>
+                  <div class="title">
+                    <h4><%= category.name %></h4>
+                  </div>
+                  <div class="content">
+                    <ul>
+                      <% for product in category.products.order(:name) %>
+                      <li>
+                        <h5><%=link_to product.name, product %></h5>
+                        <p class='subheader'><%= product.excerpt %></p>
+                      </li>
+
+                      <% end %>
+                      <li><h5><%= link_to "View All #{category.name}", category %></h5></li>
+                    </ul>
+                  </div>
+                </li>
+                <% end %>
+                <li>
+                  <h4><%= link_to "View All Products", products_url %></h4>
+                </li>
+              </ul>
+            </li>
+            <% if user_signed_in? %>
+            <li class="has-flyout right">
+              <h4 class="menu-links"><a href="#">Account</a></h4>
+              <a href="#" class="flyout-toggle"><span> </span></a>
+              <ul class="flyout right">
+                <li class="user"><h5><%= link_to "User Profile", current_user %></h5></li>
+                <li ><h5><%= link_to 'Log Out', destroy_user_session_path, :method => 'delete', :confirm => 'Are you sure?' %></h5></li>
+                <% if can? :edit, Product %><li><h5><%= link_to "Admin", admin_index_url %></h5></li><% end %>
+              </ul>
+            </li>
+            <% else %>
+            <% end %>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+<div class="twelve columns"><div class="break"></div></div>

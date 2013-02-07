@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+	<head>
+		<!-- META -->
+		<meta name="description" content="We carry the largest selection of printers Omaha has to offer. Quality service and selection of copiers in Omaha, find the right copier for you here today." />
+		<meta name="robots" content="index, follow">
+		<meta name="keywords" content="printers Omaha, copiers Omaha, Omaha office solutions" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- LINK -->
+		<link rel="canonical" href="http://www.simplifybest.com" />
+		<link rel="shortcut icon" href="favicon.ico" />
+
+		<!-- TITLE -->
+		<title><%= full_title(yield(:title)) %></title>
+
+		<!-- CSS -->
+		<%= stylesheet_link_tag 'application', :media => 'all', :digest => true %>
+		
+		<!-- TYPEKIT -->
+		<script type="text/javascript" src="//use.typekit.net/bkq5xlt.js"></script>
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+		<!-- JS  -->
+		<%= javascript_include_tag "application", :media => 'all', :digest => true %>
+
+		<!-- Segment.io -->
+		<script type="text/javascript">
+		  var analytics=analytics||[];analytics.load=function(e){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"===document.location.protocol?"https://":"http://")+"d2dq2ahtl5zl1z.cloudfront.net/analytics.js/v1/"+e+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);var r=function(e){return function(){analytics.push([e].concat(Array.prototype.slice.call(arguments,0)))}},i=["identify","track","trackLink","trackForm","trackClick","trackSubmit","pageview","ab","alias"];for(var s=0;s<i.length;s++)analytics[i[s]]=r(i[s])};
+		  analytics.load("d9d1lykusl");
+		</script>
+
+		<!-- CSRF -->
+	  	<%= csrf_meta_tags %>
+	</head>
+	<body>
+		<!-- HEADER -->
+		<%= render "header" %>
+		<!-- END HEADER -->
+
+		<!-- MAIN -->
+		<% provide(:title, "500 Server Error") %>
+	    <h1>500 Server Error</h1>
+      	<a href="/" class="return">&larr; Return to Homepage</a>
+	  	<!-- END MAIN -->
+
+	  	<!-- FOOTER -->
+	  	<%= render "footer" %>
+	  	<!-- END FOOTER -->
+	</body>
+</html>
