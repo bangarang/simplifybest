@@ -63,7 +63,5 @@ module Simplifybest
     config.assets.version = '1.0'
 
     config.logger = Logger.new(STDOUT)
-
-    config.assets.paths << "#{Rails.root}/app/assets/html"
   end
 end
