@@ -31,3 +31,7 @@
     </ul>
   </div>
 </div>
+
+<%= javascript_tag do %>
+  analytics.track('Viewed <%= @category.name %>');
+<% end %>

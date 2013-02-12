@@ -16,3 +16,6 @@
 		<%= render 'quotes/form' %>
 	</div>
 </div>
+<%= javascript_tag do %>
+  analytics.track('Visited Quote Page');
+<% end %>

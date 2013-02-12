@@ -380,3 +380,6 @@
     </div>
   </div>
 <% end %>
+<%= javascript_tag do %>
+  analytics.track('Viewed <%= @product.name %>');
+<% end %>
