@@ -17,7 +17,7 @@ top: 22px;
 }
 
 .nav-bar li.has-flyout a:first-child::after { border-color: #d00 transparent transparent transparent; }
-.rbar { background: #212121; }
+.rbar { background: #fdfdfd; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07); -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); }
 
 .rbar ul li a, .rbar ul li a:hover, .rbar ul li a  { color: #d00; }
 
