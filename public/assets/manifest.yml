@@ -5,10 +5,10 @@ fabric_plaid.png: fabric_plaid-040a96509f29feaf17fa32c4c924ed45.png
 fabric_plaid/index.png: fabric_plaid-040a96509f29feaf17fa32c4c924ed45.png
 linen.png: linen-0b5977663e3aa6a1a755514f70f89439.png
 linen/index.png: linen-0b5977663e3aa6a1a755514f70f89439.png
-logo.png: logo-d156901e3199427cc063571bd765aa5f.png
-logo/index.png: logo-d156901e3199427cc063571bd765aa5f.png
-logo@2x.png: logo@2x-62bd5aaff8c77e0ec49a58c991e1b5e3.png
-logo@2x/index.png: logo@2x-62bd5aaff8c77e0ec49a58c991e1b5e3.png
+logo.png: logo-305810f7091ac169e0f47c60e861c561.png
+logo/index.png: logo-305810f7091ac169e0f47c60e861c561.png
+logo@2x.png: logo@2x-6531685421e6f67abcdd6b28f62d0777.png
+logo@2x/index.png: logo@2x-6531685421e6f67abcdd6b28f62d0777.png
 pdficon_large.png: pdficon_large-4129fd1a5d8f10cc8309dec84f749252.png
 pdficon_large/index.png: pdficon_large-4129fd1a5d8f10cc8309dec84f749252.png
 pdficon_small.png: pdficon_small-d7791b77ab0e8dd05ae04ffb0cf8e9bc.png
@@ -17,8 +17,8 @@ rails.png: rails-a3386665c05a2d82f711a4aaa72d247c.png
 rails/index.png: rails-a3386665c05a2d82f711a4aaa72d247c.png
 application.js: application-73731a400c7ac6735a043f7d2ee3ed40.js
 application/index.js: application-73731a400c7ac6735a043f7d2ee3ed40.js
-application.css: application-6b3628b2ab82415fc4bbc52ea78181ff.css
-application/index.css: application-6b3628b2ab82415fc4bbc52ea78181ff.css
+application.css: application-c3c1e5d65078511c79d5138e2d70d125.css
+application/index.css: application-c3c1e5d65078511c79d5138e2d70d125.css
 foundation/orbit/bullets.jpg: foundation/orbit/bullets-4fea3b6075ffb7211bfaea707aed9180.jpg
 foundation/orbit/bullets/index.jpg: foundation/orbit/bullets-4fea3b6075ffb7211bfaea707aed9180.jpg
 foundation/orbit/left-arrow-small.png: foundation/orbit/left-arrow-small-f01a4e6ea9f76481f381b16386514f84.png
