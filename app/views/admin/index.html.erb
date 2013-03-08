@@ -81,24 +81,6 @@
   		</div>
 	</div>
 	<div class="six columns">
-  		<h3 class="hm">Home Page<i class="icon-angle-down right"></i></h3>
-		<div class="row admin-edit hm-content">
-			<div class="twelve columns">
-		  		<h4>Featured Pictures</h4>
-				<div class="row admin-edit">
-					<div class="twelve columns links"><%= link_to "<i class='general foundicon-plus'></i> New Picture".html_safe, new_featured_picture_path %></div>
-					<table class="products">
-					<% for pic in @featured_pictures %>
-			        	<tr>
-			        		<td><%= image_tag pic.image_url(:thumb) %></td>
-				          	<td><%=link_to pic.name, pic %></td>
-				          	<td><%=link_to "<i class='icon-edit'></i> Edit".html_safe, edit_featured_picture_path(pic) %></td>
-				          	<td><%=link_to "<i class='icon-trash'></i> Delete".html_safe, pic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-				      	</tr>
-		  			<% end %>
-		  			</table>
-		  		</div>
-		  	</div>
 	  	</div>
 	  	<h3 class="users">Users ( <%= @users.length %> )<i class="icon-angle-down right"></i></h3>
 		<div class="row admin-edit users-content">
