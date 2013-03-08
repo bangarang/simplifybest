@@ -16,6 +16,7 @@ class ServiceMailer < ActionMailer::Base
     @first = quote.first
     @last = quote.last
     @address = quote.address
+    @phone = quote.phone
     @comment = quote.comment
     mail(:subject => "Sales Quote", :from => "sales-quote@simplifybest.com")
   end
