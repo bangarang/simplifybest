@@ -2,13 +2,14 @@
 <html>
 	<head>
 	  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	  <title>Sales Quote</title>
+	  <title>Supply Order</title>
 	</head>
 	<body>
 		<ul style="border: solid 1px #ddd; margin: 15px; text-align:center; padding: 0;">
-			<li style="background: #5da423; color: white; list-style: none; padding: 20px;">Sales Quote</li>
+			<li style="background: #f89406; color: white; list-style: none; padding: 20px;">Supply Order</li>
 			<li style="padding: 15px; text-align:center; border-bottom: dotted 1px #ddd;list-style: none;"><%= @first %> <%= @last %></li>
 			<li style="padding: 15px; text-align:center; border-bottom: dotted 1px #ddd;list-style: none;"><%= @company %></li>
+			<li style="padding: 15px; text-align:center; border-bottom: dotted 1px #ddd;list-style: none;">SOS#: <%= @sos %></li>
 			<li style="padding: 15px; text-align:center; border-bottom: dotted 1px #ddd;list-style: none;"><%= @address %></li>
 			<li style="padding: 15px; text-align:center; border-bottom: dotted 1px #ddd;list-style: none;"><%= @phone %></li>
 			<li style="padding: 15px; text-align:center;list-style: none;"><%= @comment.html_safe %></li>

@@ -14,6 +14,7 @@ class ServiceMailer < ActionMailer::Base
   def quote(quote, sent_at = Time.now)
     @sent_on = sent_at
     @first = quote.first
+    @company = quote.company
     @last = quote.last
     @address = quote.address
     @phone = quote.phone_number
