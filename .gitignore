@@ -16,3 +16,6 @@
 
 # Ignore environment variables
 /config/heroku_env.rb
+
+# Ignore Public Assets
+/public/assets/
