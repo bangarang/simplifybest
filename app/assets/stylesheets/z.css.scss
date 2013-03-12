@@ -1,23 +1,33 @@
-body { background: url('fabric_plaid.png'); }
 .rbar-container { background: transparent; border-top: none;}
 .top-menu { padding-top: 48px; }
 .top-menu ul.nav-bar li h4.menu-links { margin: 0; padding:15px; }
 
-.nav-bar li.has-flyout h4.menu-links a:first-child { padding-right: 30px; }
-.nav-bar li.has-flyout h4.menu-links a:first-child::after {
-content: "";
-display: block;
-width: 0;
-height: 0;
-border: solid 6px;
-border-color: #d00 transparent transparent transparent;
-position: absolute;
-right: 20px;
-top: 22px;
+.nav-bar li.has-flyout h4.menu-links a:first-child { 
+	padding-right: 30px; 
 }
 
-.nav-bar li.has-flyout a:first-child::after { border-color: #d00 transparent transparent transparent; }
-.rbar { background: #fdfdfd; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07); -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); }
+.nav-bar li.has-flyout h4.menu-links a:first-child::after {
+	content: "";
+	display: block;
+	width: 0;
+	height: 0;
+	border: solid 6px;
+	border-color: #d00 transparent transparent transparent;
+	position: absolute;
+	right: 20px;
+	top: 22px;
+}
+
+.nav-bar li.has-flyout a:first-child::after { 
+	border-color: #d00 transparent transparent transparent; 
+}
+
+.rbar { 
+	background: #fdfdfd; 
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07); 
+	-moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); 
+	-webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); 
+}
 
 .rbar ul li a, .rbar ul li a:hover, .rbar ul li a  { color: #d00; }
 
@@ -34,6 +44,7 @@ h2.title { font-size: 54px; border-bottom:#ccc solid thin; text-align: center; }
 iframe.maps { width:100%; height:450px; }
 
 .copyright a p { color: #ccc; cursor: text; }
+
 @media only screen and (min-width: 767px) {
 	#menu { display: block !important; overflow: visible !important; }
 }
