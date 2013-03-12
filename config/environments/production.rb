@@ -83,5 +83,5 @@ Simplifybest::Application.configure do
   CarrierWave.configure do |config|
     config.asset_host = 'http://assets.simplifybest.com'
   end
-
+  config.asset_host = 'http://assets.simplifybest.com'
 end
