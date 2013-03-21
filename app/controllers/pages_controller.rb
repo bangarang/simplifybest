@@ -1,9 +1,12 @@
 class PagesController < ApplicationController
+  before_filter :authenticate_user!, :except => [:home]
+
   def home
-  	@featured_pictures = FeaturedPicture.all
-  	@featured_products = Product.all( :limit => 4, :order => "updated_at DESC" )
+  	@featured_products = Product.where(:featured => true)
   end
 
-  def about
+  def admin
+  	@users = User.all
+  	@messages = Message.all
   end
 end

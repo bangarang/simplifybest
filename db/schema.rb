@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130115031258) do
+ActiveRecord::Schema.define(:version => 20130321052415) do
 
   create_table "accessories", :force => true do |t|
     t.string   "name"
@@ -121,6 +121,7 @@ ActiveRecord::Schema.define(:version => 20130115031258) do
     t.string   "originalsize"
     t.string   "scandriver"
     t.integer  "category_id"
+    t.boolean  "featured"
   end
 
   add_index "products", ["slug"], :name => "index_products_on_slug"

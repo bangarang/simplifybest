@@ -1,5 +1,8 @@
 class Product < ActiveRecord::Base
-  attr_accessible :name, :excerpt, :description, :image, :remote_image_url, :category_id, :new_category_name, :accessories_attributes, :supply_items_attributes, :product_pictures_attributes, :downloads_attributes
+  attr_accessible :name, :excerpt, :description, :image, :remote_image_url, :category_id, 
+    :new_category_name, :accessories_attributes, :supply_items_attributes, :product_pictures_attributes, 
+    :downloads_attributes, :featured
+
   mount_uploader :image, ImageUploader
 
   # Main Specs

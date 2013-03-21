@@ -53,7 +53,7 @@
               <ul class="flyout right">
                 <li><h4><%= link_to "User Profile", current_user %></h4></li>
                 <li ><h4><%= link_to 'Log Out', destroy_user_session_path, :method => 'delete', :confirm => 'Are you sure?' %></h4></li>
-                <% if can? :edit, Product %><li><h4><%= link_to "Admin", admin_index_url %></h4></li><% end %>
+                <% if can? :edit, Product %><li><h4><%= link_to "Admin", admin_url %></h4></li><% end %>
               </ul>
             </li>
             <% else %>

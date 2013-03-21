@@ -1,0 +1,110 @@
+<% provide(:title, "Admin") %>
+<div class="admin row">
+	<div class="twelve columns top">
+		<h2>Administration</h2>
+	</div>
+	<div class="twelve columns">
+		<h3 class="csm">Customer Service Messages ( <%= @messages.length %> )<i class="icon-angle-up right"></i></h3>
+		<div class="row admin-edit csm-content">
+			<div class="twelve columns links">
+				<div class="four columns"><%= link_to "<i class='icon-plus'></i> New Meter Reading".html_safe, new_meter_path %></div>
+		        <div class="four columns"><%= link_to "<i class='icon-plus'></i> New Service Call".html_safe, new_supply_order_path %></div>
+		        <div class="four columns"><%= link_to "<i class='icon-plus'></i> New Supply Order".html_safe, new_service_call_path %></div>
+		    </div>
+		    <div class="twelve columns">
+		      <ul class="block-grid four-up mobile index">
+		        <% for message in @messages %>
+		        <li>
+		          <ul class="pricing-table box message">
+		            <% if message.service? %>
+		            <li class="ticket <%= message.type %>">Service Call Ticket</li>
+		            <% end %>
+		            <% if message.supply? %>
+		            <li class="ticket <%= message.type %>">Supply Order Ticket</li>
+		            <% end %>
+		            <% if message.meter? %>
+		            <li class="ticket <%= message.type %>">Meter Reading Ticket</li>
+		            <% end %>
+		            <% if message.contact? %>
+		            <li class="ticket <%= message.type %>">General Contact Ticket</li>
+		            <% end %>
+		            <% if message.quote? %>
+		            <li class="ticket <%= message.type %>">Sales Quote</li>
+		            <% end %>
+		            <li class="bullet-item"><%= message.first %> <%= message.last %></li>
+		            <% unless message.contact? %><li class="bullet-item"><%= message.company %></li><% end %>
+		            <li class="bullet-item"><%= message.address %></li>
+		            <% if message.phone_number %><li class="bullet-item"><%= message.phone_number %></li><% end %>
+		            <% unless message.sos.blank? %><li class="bullet-item"><%= message.sos %></li><% end %>
+		            <% if message.meter? %>
+		            <li class="bullet-item"><%= message.meter %></li>
+		            <% else %>
+		            <li class="description"><%= message.comment %></li>
+		            <% end %>
+		            <li class="cta-button"><%= link_to "Destroy", message, :confirm => 'Are you sure?', :method => :delete, :class => "small button" %></li>
+		          </ul>
+		        </li>
+		        <% end %>
+		      </ul>
+		    </div>
+		</div>
+	</div>
+	<div class="six columns">
+		<h3 class="prods">Products ( <%= @products.length %> )<i class="icon-angle-down right"></i></h3>
+		<div class="row admin-edit prods-content">
+			<div class="twelve columns links">
+		        <div class="six columns"><%= link_to "<i class='icon-plus'></i> New Product".html_safe, new_product_path %></div>
+		        <div class="six columns"><%= link_to "<i class='icon-plus'></i> New Category".html_safe, new_category_path %></div>
+		    </div>
+	    	
+	    	<div class="twelve columns">
+	    	<%= form_tag featured_products_path, method: :put do %>
+				<% for category in @categories %>
+		        <h4><%= category.name %></h4>
+		        <div class="row admin-edit">
+					<div class="six columns links"><%= link_to "<i class='icon-edit'></i> Edit".html_safe, edit_category_path(category) %></div>
+					<div class="six columns links"><%= link_to "<i class='icon-trash'></i> Delete".html_safe, category, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+			    	<div>
+				        <table class="products">
+				        	<% for product in category.products.order(:name) %>
+				        	<tr>
+				        	  <td><%= check_box_tag "product_ids[]", product.id, product.featured %></td>
+					          <td><%=link_to product.name, product %></td>
+					          <td><%= link_to "<i class='icon-edit'></i> Edit".html_safe, edit_product_path(product) %></td>
+					          <td><%= link_to "<i class='icon-trash'></i> Delete".html_safe, product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+					          <td><a href="/products/<%= product.slug %>/dup"><i class="icon-copy"></i> Duplicate</a></td>
+					      	</tr>
+				      		<% end %>
+				  		</table>
+				  	</div>
+		  		</div>
+		  		<% end %>
+		  		<%= submit_tag "Featured Checked" %>
+		  	<% end %>
+		  	</div>
+  		</div>
+	</div>
+	<div class="six columns">
+	  	<h3 class="users">Users ( <%= @users.length %> )<i class="icon-angle-down right"></i></h3>
+		<div class="row admin-edit users-content">
+			<div class="twelve columns links"><%= link_to "<i class='icon-plus'></i> New User".html_safe, new_user_path %></div>
+			<table class="products">
+			<% for user in @users %>
+	        	<tr>
+		          <td><%=link_to user.email, user %></td>
+		          <td>
+			          	<% for role in user.roles %>
+			          	<%= role.name %>
+			          	<% end %>
+		          </td>
+		          <td><%=link_to "<i class='icon-edit'></i> Edit".html_safe, edit_user_path(user) %></td>
+		          <td><%=link_to "<i class='icon-trash'></i> Delete".html_safe, user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		      	</tr>
+  			<% end %>
+  			</table>
+  		</div>
+	</div>
+</div>
+<%= javascript_tag do %>
+  analytics.track('Viewed Admin Page');
+<% end %>

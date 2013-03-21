@@ -1,8 +1,7 @@
 Simplifybest::Application.routes.draw do
 
   root :to => 'pages#home'
-
-  resources :admin
+  match 'admin' => 'pages#admin'
   resources :featured_pictures
   resources :contacts
   resources :meters
@@ -27,7 +26,11 @@ Simplifybest::Application.routes.draw do
   match 'types' => 'products#index'
   resources :categories, :path => 'types'
 
-  resources :products
+  resources :products do
+    collection do
+      put :featured
+    end
+  end
   match 'products/:slug/dup' => 'products#duplicate'
 
 
