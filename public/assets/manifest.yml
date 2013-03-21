@@ -15,10 +15,10 @@ pdficon_small.png: pdficon_small-d7791b77ab0e8dd05ae04ffb0cf8e9bc.png
 pdficon_small/index.png: pdficon_small-d7791b77ab0e8dd05ae04ffb0cf8e9bc.png
 rails.png: rails-a3386665c05a2d82f711a4aaa72d247c.png
 rails/index.png: rails-a3386665c05a2d82f711a4aaa72d247c.png
-application.js: application-bd90275993ce534db42ba4f28e53b2ce.js
-application/index.js: application-bd90275993ce534db42ba4f28e53b2ce.js
-application.css: application-f12d4bc677a9239aa3d03e20bf332c65.css
-application/index.css: application-f12d4bc677a9239aa3d03e20bf332c65.css
+application.js: application-32f4b21c7298e14f63207868acbd27e1.js
+application/index.js: application-32f4b21c7298e14f63207868acbd27e1.js
+application.css: application-0280f41585be2ae5d7fa6e2eb623472f.css
+application/index.css: application-0280f41585be2ae5d7fa6e2eb623472f.css
 foundation/orbit/bullets.jpg: foundation/orbit/bullets-4fea3b6075ffb7211bfaea707aed9180.jpg
 foundation/orbit/bullets/index.jpg: foundation/orbit/bullets-4fea3b6075ffb7211bfaea707aed9180.jpg
 foundation/orbit/left-arrow-small.png: foundation/orbit/left-arrow-small-f01a4e6ea9f76481f381b16386514f84.png
