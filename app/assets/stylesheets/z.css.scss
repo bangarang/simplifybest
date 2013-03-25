@@ -24,9 +24,9 @@ body { background: #EBEBEB; }
 }
 
 .rbar { 
-	box-shadow: 0px 0px 50px 0px #eee;
-	-moz-box-shadow: 0px 0px 50px 0px #eee;
-	-webkit-box-shadow: 0px 0px 50px 0px #eee;
+	box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.1);
+	-moz-box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.1);
+	-webkit-box-shadow: 0px 0px 50px 0px rgba(0,0,0,0.1);
 }
 
 .rbar ul li a, .rbar ul li a:hover, .rbar ul li a  { color: #d00; }

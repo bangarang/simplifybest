@@ -77,8 +77,6 @@ class ProductsController < ApplicationController
 
   def featured
     Product.update_all({featured: true}, {id: params[:product_ids]})
-    # Product.update_all({featured: false}, {"id NOT IN(?)", params[:product_ids]})
-    # Product.find(params[:product_ids]).update_all({featured: true})
     Product.where("id NOT IN(?)", params[:product_ids]).update_all(featured: false)
     redirect_to admin_url
   end
