@@ -10,6 +10,9 @@ Simplifybest::Application.routes.draw do
   resources :quotes
 
   match 'getaquote' => 'quotes#new'
+  match 'meter' => 'meters#new'
+  match 'supplyorder' => 'supply_orders#new'
+  match 'servicecall' => 'service_calls#new'
 
   resources :users
 
