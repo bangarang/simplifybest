@@ -17,10 +17,11 @@
 	}
 	ul li a {
 		color: #333;
+		border-bottom: dotted 1px #333;
 	}
 	ul li:hover a {
 		color: #111;
-		font-weight: bold;
+		border-color: #111;
 	}
 }
 
