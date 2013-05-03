@@ -1,10 +1,8 @@
-<style>
-.privacy {
-	min-height: 100px;
-}
-
-</style>
 <div class="privacy">
 	<a href="http://www.iubenda.com/privacy-policy/647463" class="iubenda-nostyle no-brand iub-body-embed iubenda-embed" title="Privacy Policy"></a><script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src = "http://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
 
 </div>
+
+<%= javascript_tag do %>
+  analytics.track('Privacy Policy');
+<% end %>

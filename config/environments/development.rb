@@ -35,12 +35,14 @@ Simplifybest::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
+  config.serve_static_assets = false
+  
   # for devise
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
   CarrierWave.configure do |config|
     config.asset_host = 'http://assets.simplifybest.com'
   end
-  config.asset_host = 'http://assets.simplifybest.com'
+  # config.asset_host = 'http://assets.simplifybest.com'
 
 end

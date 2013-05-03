@@ -7,7 +7,7 @@ class PagesController < ApplicationController
 
   def admin
   	@users = User.all
-  	@messages = Message.all
+  	@messages = Message.order("created_at DESC")
   end
   def privacy
   end
