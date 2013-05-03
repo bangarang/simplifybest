@@ -14,6 +14,8 @@ Simplifybest::Application.routes.draw do
   match 'supplyorder' => 'supply_orders#new'
   match 'servicecall' => 'service_calls#new'
 
+  match 'privacy-policy' => 'pages#privacy'
+
   resources :users
 
   devise_for :users, :skip => [:sessions]

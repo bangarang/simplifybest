@@ -9,6 +9,19 @@
 	background: #111;
 	padding-top: 10px !important;
 	color: #BCBCBC;
+	ul {
+		text-align: center;
+	}
+	ul li {
+		padding: 0 10px;
+	}
+	ul li a {
+		color: #333;
+	}
+	ul li:hover a {
+		color: #111;
+		font-weight: bold;
+	}
 }
 
 .page-padding {
