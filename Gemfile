@@ -25,8 +25,6 @@ group :development, :test do
   gem 'nifty-generators'
 end
 
-# Gems used only for assets and not required
-# in production environments by default.
 group :assets do
   gem 'pg', '0.12.2'
   gem 'sass-rails',   '3.2.5'
@@ -35,6 +33,7 @@ group :assets do
   gem 'compass-rails'
   gem 'zurb-foundation'
   gem 'asset_sync'
+  gem 'angularjs-rails'
 end
 
 

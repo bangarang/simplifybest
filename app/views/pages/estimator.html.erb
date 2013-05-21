@@ -1,0 +1,52 @@
+<% provide(:title, 'Color Cost Estimator') %>
+
+<style>
+	input[type=number]::-webkit-inner-spin-button {
+    	-webkit-appearance: none;
+	}
+	.savings {
+	}
+	.savings h3 {
+		text-align: center;
+	}
+	.savings a.getaquote h3 { 
+		color:#5da423; 
+		text-align: center; 	
+		-webkit-transition: all 200ms ease-out;
+		-moz-transition: all 200ms ease-out;
+		transition: all 200ms ease-out; }
+	.savings a.getaquote:hover h3 { color:#396516; }
+	span.s { color: #d00; }
+</style>
+
+<div class="estimator"   ng-app="">
+	<div class="row">
+		<div class="twelve columns">
+			<h2>How Much Could You Save with 3 Cent Prints?</h2>
+		</div>
+	</div>
+	<div class="row">
+		<div class="eight columns centered">
+			<form name="estimate">
+				<p>How much are you paying per click?</p>
+				<input type="number" name="cpc" ng-model="cpc" placeholder="0.50" required>
+				<p>How many prints do you make per month?</p>
+				<input type="number" name="monthly" ng-model="monthly" placeholder="10000" required>
+				<div ng-show="estimate.cpc.$valid && estimate.monthly.$valid">
+					<p>Current Monthly Cost: <strong>${{ cpc * monthly | number:2}}</strong></p>
+					<p>Simplified Monthly Cost: <strong>${{ 0.03 * monthly | number:2}} </strong></p>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="row">
+		<div class="twelve columns">
+				<div class="savings" ng-show="estimate.cpc.$valid && estimate.monthly.$valid">
+					<h3>With <span class="s">Simplified's</span> low $0.03 per color page, you could be saving ${{ (cpc * monthly) - (0.03 * monthly) | number:2}} per month!</h3>
+					<a class="getaquote" href="/getaquote"><h3>Get a Free Quote Today</h3></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<%= javascript_include_tag "angular" %>

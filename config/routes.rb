@@ -8,6 +8,7 @@ Simplifybest::Application.routes.draw do
   resources :supply_orders
   resources :service_calls
   resources :quotes
+  resources :messages
 
   match 'getaquote' => 'quotes#new'
   match 'meter' => 'meters#new'
@@ -15,6 +16,8 @@ Simplifybest::Application.routes.draw do
   match 'servicecall' => 'service_calls#new'
 
   match 'privacy-policy' => 'pages#privacy'
+
+  match 'estimator' => 'pages#estimator'
 
   resources :users
 

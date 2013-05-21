@@ -33,6 +33,7 @@ GEM
       faraday (~> 0.8, < 0.10)
       faraday_middleware (~> 0.9.0)
       multi_json (~> 1.0)
+    angularjs-rails (1.0.6)
     arel (3.0.2)
     asset_sync (0.5.4)
       activemodel
@@ -237,6 +238,7 @@ PLATFORMS
 
 DEPENDENCIES
   analytics-ruby
+  angularjs-rails
   asset_sync
   cancan
   capybara (= 1.1.2)
