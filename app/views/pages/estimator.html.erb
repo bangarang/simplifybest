@@ -19,7 +19,32 @@
 	}
 	.savings a.getaquote:hover h3 { color:#396516; }
 	.s { color: #d00; }
-	.cpc { display: none;}
+	.cpc { display: none; background: #f3f3f3; padding: 0 15px; margin: 0 -15px 15px 0;}
+	.cpc::after {
+		content: "";
+		position: absolute;
+		width: 0px;
+		height: 0px;
+		border-style: solid;
+		border-width: 10px 10px 0 10px;
+		border-color: #f3f3f3 transparent transparent transparent;
+		margin-bottom: -10px;
+		left: 150px;
+	}
+	.close-cpc {
+		font-size: 22px;
+		line-height: .5;
+		position: absolute;
+		top: 8px;
+		right: 0;
+		color: #aaa;
+		text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.6);
+		font-weight: bold;
+		cursor: pointer;
+	}
+	.close-cpc:hover {
+		color: #555;
+	}
 	.cntrd { text-align:center; }
 </style>
 
@@ -48,11 +73,19 @@
 	<div class="row">
 		<div class="eight columns centered">
 			<form name="estimate">
+				<div class="row">
+					<div class="twelve columns">
+						<h3 class="cntrd">How much are you paying per month?</h3>
+					</div>
+				</div>
+
 				<div class="cpc">
 					<div class="row">
 						<div class="twelve columns">
-							<h3 class="cntrd">How much are you paying per color print?</h3>
+							<h4 class="cntrd">How much are you paying per color print?</h4>
+							<a class="close-cpc right">×</a>
 						</div>
+
 					</div>
 					<div class="row">
 						<div class="six columns">
@@ -60,9 +93,6 @@
 						</div>
 						<div class="six columns">
 							<input type="number" name="toner" ng-model="toner" placeholder="200.00" required>
-						</div>
-						<div class="twelve columns">
-							<p class="cntrd"><i>(be sure to include all color toners)</i></p>
 						</div>
 					</div>
 
@@ -80,20 +110,17 @@
 							<p class="right inline">Cost Per Color Print: </p>
 						</div>
 						<div class="six columns">
-							<p><strong>${{ toner / yield }}</strong></p>
+							<p><strong>{{ toner / yield | currency}}</strong></p>
 						</div>
 						
 					</div>
-					<hr>
+					
 				</div>
-				<div class="row">
-						<div class="twelve columns">
-							<h3 class="cntrd">How much are you paying per month?</h3>
-						</div>
-					</div>
+
+
 				<div class="row">
 					<div class="six columns">
-						<p class="right inline"><a class="per" href="#">How much are you paying per color print?</a></p>
+						<p class="right inline"><a class="per has-tip noradius" href="#" title="Calculate your cost per print.">How much are you paying per color print?</a></p>
 					</div>
 					<div class="six columns">
 						<input type="number" name="cpc" ng-model="cpc" placeholder="0.10" required>
@@ -114,8 +141,8 @@
 							<p class="right inline">Total Monthly Cost:</p>
 						</div>
 						<div class="six columns">
-							<p ng-show="estimate.cpc.$valid && estimate.monthly.$valid"><strong>${{ cpc * monthly | number:2}}</strong></p>
-							<p ng-hide="estimate.cpc.$valid && estimate.monthly.$valid">${{ 0.10 * 1000 | number:2}}</p>
+							<p ng-show="estimate.cpc.$valid && estimate.monthly.$valid"><strong>{{ cpc * monthly | currency}}</strong></p>
+							<p ng-hide="estimate.cpc.$valid && estimate.monthly.$valid">{{ 0.10 * 1000 | currency}}</p>
 						</div>
 					</div>
 					<div class="row" ng-show="estimate.cpc.$valid && estimate.monthly.$valid">
@@ -123,24 +150,16 @@
 							<p class="right inline">- Simplified Monthly Cost ( $0.03 * {{ monthly }} ) : </p>
 						</div>
 						<div class="six columns">
-							<p><strong>${{ 0.03 * monthly | number:2}}</strong></p>
+							<p><strong>{{ 0.03 * monthly | currency}}</strong></p>
 						</div>
 						<hr>
 					</div>
 					<div class="row s" ng-show="estimate.cpc.$valid && estimate.monthly.$valid">
 						<div class="six columns right inline">
-							<p class="right inline">Montly Savings:</p>
+							<p class="right inline">Monthly Savings:</p>
 						</div>
 						<div class="six columns">
-							<p><strong>${{ (cpc * monthly) - (0.03 * monthly) | number:2}}</strong></p>
-						</div>
-					</div>
-					<div class="row s" ng-show="estimate.cpc.$valid && estimate.monthly.$valid">
-						<div class="six columns right inline">
-							<p class="right inline">Yearly Savings:</p>
-						</div>
-						<div class="six columns">
-							<p><strong>${{ 12* ( (cpc * monthly) - (0.03 * monthly) ) | number:2}}</strong></p>
+							<p><strong>{{ (cpc * monthly) - (0.03 * monthly) | currency}}</strong></p>
 						</div>
 					</div>
 				</div>
@@ -150,7 +169,7 @@
 	<div class="row">
 		<div class="twelve columns">
 				<div class="savings" ng-show="estimate.cpc.$valid && estimate.monthly.$valid">
-					<h3>With <span class="s">Simplified's</span> low $0.03 per color page, you could be saving ${{ (cpc * monthly) - (0.03 * monthly) | number:2}} per month!</h3>
+					<h3>With <span class="s">Simplified's</span> low $0.03 per color page, you could be saving {{ (cpc * monthly) - (0.03 * monthly) | currency}} per month!</h3>
 					<a class="getaquote" href="/getaquote"><h3>Get a Free Quote Today</h3></a>
 				</div>
 			</div>
@@ -161,8 +180,10 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $('.per').click(function() {
+          $('.cpc').stoggle();
+        });
+        $('.close-cpc').click(function() {
           $('.cpc').toggle();
-          return false;
         });
       });
 </script>
