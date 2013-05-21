@@ -56,13 +56,13 @@
 					</div>
 					<div class="row">
 						<div class="six columns">
-							<p class="right inline">How much are you paying for toner? </p>
+							<p class="right inline">How much are you paying for color toner(s)? </p>
 						</div>
 						<div class="six columns">
 							<input type="number" name="toner" ng-model="toner" placeholder="200.00" required>
 						</div>
 						<div class="twelve columns">
-							<p class="cntrd"><i>(be sure to include all toners if there are more than one)</i></p>
+							<p class="cntrd"><i>(be sure to include all color toners)</i></p>
 						</div>
 					</div>
 
@@ -133,6 +133,14 @@
 						</div>
 						<div class="six columns">
 							<p><strong>${{ (cpc * monthly) - (0.03 * monthly) | number:2}}</strong></p>
+						</div>
+					</div>
+					<div class="row s" ng-show="estimate.cpc.$valid && estimate.monthly.$valid">
+						<div class="six columns right inline">
+							<p class="right inline">Yearly Savings:</p>
+						</div>
+						<div class="six columns">
+							<p><strong>${{ 12* ( (cpc * monthly) - (0.03 * monthly) ) | number:2}}</strong></p>
 						</div>
 					</div>
 				</div>
