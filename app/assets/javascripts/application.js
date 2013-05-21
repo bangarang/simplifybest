@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require foundation
 //= require angular
+//= require angular-resource
 //= require rails.validations
 //= require_tree .
 //= require retina_tag

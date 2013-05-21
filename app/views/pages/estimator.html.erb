@@ -14,27 +14,127 @@
 		text-align: center; 	
 		-webkit-transition: all 200ms ease-out;
 		-moz-transition: all 200ms ease-out;
-		transition: all 200ms ease-out; }
+		transition: all 200ms ease-out; 
+		line-height:100px;
+	}
 	.savings a.getaquote:hover h3 { color:#396516; }
-	span.s { color: #d00; }
+	.s { color: #d00; }
+	.cpc { display: none;}
+	.cntrd { text-align:center; }
 </style>
 
-<div class="estimator"   ng-app="">
+<div class="row">
+	<div class="twelve columns">
+		<h1 class="Quote">Color Cost Estimator</h1>
+	</div>
+</div>
+<div class="bread row">
+	<div class="twelve columns">
+		<ul class="breadcrumbs">
+			<li><%= link_to "Home", root_url %></li>
+			<li><%= link_to "Tools", "#" %></li>
+			<li class="current"><%= link_to "Color Cost Estimator", estimator_path %></li>
+		</ul>
+	</div>
+</div>
+<div class="estimator"  ng-app="">
 	<div class="row">
-		<div class="twelve columns">
-			<h2>How Much Could You Save with 3 Cent Prints?</h2>
+		<div class="twelve columns" style="text-align: center;">
+			<h2 class="subheader">How Much Could You Save with ¢3 Color Prints?</h2>
+			<p class="subheader">Simplified Office Solutions is offering color prints for as low as $0.03 per page! Check out how much you could be saving.</p>
+			<hr>
 		</div>
 	</div>
 	<div class="row">
 		<div class="eight columns centered">
 			<form name="estimate">
-				<p>How much are you paying per click?</p>
-				<input type="number" name="cpc" ng-model="cpc" placeholder="0.50" required>
-				<p>How many prints do you make per month?</p>
-				<input type="number" name="monthly" ng-model="monthly" placeholder="10000" required>
-				<div ng-show="estimate.cpc.$valid && estimate.monthly.$valid">
-					<p>Current Monthly Cost: <strong>${{ cpc * monthly | number:2}}</strong></p>
-					<p>Simplified Monthly Cost: <strong>${{ 0.03 * monthly | number:2}} </strong></p>
+				<div class="cpc">
+					<div class="row">
+						<div class="twelve columns">
+							<h3 class="cntrd">How much are you paying per color print?</h3>
+						</div>
+					</div>
+					<div class="row">
+						<div class="six columns">
+							<p class="right inline">How much are you paying for toner? </p>
+						</div>
+						<div class="six columns">
+							<input type="number" name="toner" ng-model="toner" placeholder="200.00" required>
+						</div>
+						<div class="twelve columns">
+							<p class="cntrd"><i>(be sure to include all toners if there are more than one)</i></p>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="six columns right inline">
+							<p class="right inline">How many prints does the toner last you?</p>
+						</div>
+						<div class="six columns">
+							<input type="number" name="yield" ng-model="yield" placeholder="1000" required>
+						</div>
+					</div>
+
+					<div class="row" ng-show="estimate.toner.$valid && estimate.yield.$valid">
+						<div class="six columns right inline">
+							<p class="right inline">Cost Per Color Print: </p>
+						</div>
+						<div class="six columns">
+							<p><strong>${{ toner / yield }}</strong></p>
+						</div>
+						
+					</div>
+					<hr>
+				</div>
+				<div class="row">
+						<div class="twelve columns">
+							<h3 class="cntrd">How much are you paying per month?</h3>
+						</div>
+					</div>
+				<div class="row">
+					<div class="six columns">
+						<p class="right inline"><a class="per" href="#">How much are you paying per color print?</a></p>
+					</div>
+					<div class="six columns">
+						<input type="number" name="cpc" ng-model="cpc" placeholder="0.10" required>
+					</div>
+				</div>
+			
+				<div class="row">
+					<div class="six columns right inline">
+						<p class="right inline">How many prints do you make per month?</p>
+					</div>
+					<div class="six columns">
+						<input type="number" name="monthly" ng-model="monthly" placeholder="1000" required>
+					</div>
+				</div>
+				<div>
+					<div class="row">
+						<div class="six columns right inline">
+							<p class="right inline">Total Monthly Cost:</p>
+						</div>
+						<div class="six columns">
+							<p ng-show="estimate.cpc.$valid && estimate.monthly.$valid"><strong>${{ cpc * monthly | number:2}}</strong></p>
+							<p ng-hide="estimate.cpc.$valid && estimate.monthly.$valid">${{ 0.10 * 1000 | number:2}}</p>
+						</div>
+					</div>
+					<div class="row" ng-show="estimate.cpc.$valid && estimate.monthly.$valid">
+						<div class="six columns right inline">
+							<p class="right inline">- Simplified Monthly Cost ( $0.03 * {{ monthly }} ) : </p>
+						</div>
+						<div class="six columns">
+							<p><strong>${{ 0.03 * monthly | number:2}}</strong></p>
+						</div>
+						<hr>
+					</div>
+					<div class="row s" ng-show="estimate.cpc.$valid && estimate.monthly.$valid">
+						<div class="six columns right inline">
+							<p class="right inline">Montly Savings:</p>
+						</div>
+						<div class="six columns">
+							<p><strong>${{ (cpc * monthly) - (0.03 * monthly) | number:2}}</strong></p>
+						</div>
+					</div>
 				</div>
 			</form>
 		</div>
@@ -49,3 +149,12 @@
 		</div>
 	</div>
 </div>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.per').click(function() {
+          $('.cpc').toggle();
+          return false;
+        });
+      });
+</script>
