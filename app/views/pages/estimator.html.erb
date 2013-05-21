@@ -19,7 +19,7 @@
 	}
 	.savings a.getaquote:hover h3 { color:#396516; }
 	.s { color: #d00; }
-	.cpc { display: none; background: #f3f3f3; padding: 0 15px; margin: 0 -15px 15px 0;}
+	.cpc { display: none; background: #f3f3f3; padding: 0 15px; margin: 0 -15px 15px;}
 	.cpc::after {
 		content: "";
 		position: absolute;
@@ -181,6 +181,7 @@
     $(document).ready(function(){
         $('.per').click(function() {
           $('.cpc').toggle();
+          return false;
         });
         $('.close-cpc').click(function() {
           $('.cpc').toggle();
