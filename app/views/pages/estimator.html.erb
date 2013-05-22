@@ -140,16 +140,17 @@
 							</div>
 						</div>
 					</div>
-					<div class="row s" ng-show="toner || drum || pm">
+					<div class="s" ng-show="toner || drum || pm">
 						<hr>
-						<div class="six columns right inline">
-							<p class="right inline">Total Cost Per Color Print: </p>
+						<div class="row">
+							<div class="six columns right inline">
+								<p class="right inline">Total Cost Per Color Print: </p>
+							</div>
+							<div class="six columns">
+								<p><strong>{{ totalCPC() | currency}}</strong></p>
+								
+							</div>
 						</div>
-						<div class="six columns">
-							<p><strong>{{ totalCPC() | currency}}</strong></p>
-							<p><input type="checkbox" ng-model="tocpc" ng-change="toCPC()"> Use This to Calculate Monthly Savings?</p>
-						</div>
-
 					</div>
 				</div>
 
