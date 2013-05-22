@@ -173,6 +173,52 @@ h2.fas { background: #333; background: rgba(0,0,0,0.8); padding: 10px 5px; color
 
 img.slogo { height: 100px;}
 
+
+input[type=number]::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+.savings h3 {
+	text-align: center;
+}
+.savings a.getaquote h3 { 
+	color:#5da423; 
+	text-align: center; 	
+	-webkit-transition: all 200ms ease-out;
+	-moz-transition: all 200ms ease-out;
+	transition: all 200ms ease-out; 
+	line-height:100px;
+}
+.savings a.getaquote:hover h3 { color:#396516; }
+.s { color: #d00; }
+.cpc { display: none; background: #f3f3f3; padding: 0 15px; margin: 0 -15px 15px;}
+.cpc::after {
+	content: "";
+	position: absolute;
+	width: 0px;
+	height: 0px;
+	border-style: solid;
+	border-width: 10px 10px 0 10px;
+	border-color: #f3f3f3 transparent transparent transparent;
+	margin-bottom: -10px;
+	left: 150px;
+}
+.close-cpc {
+	font-size: 22px;
+	line-height: .5;
+	position: absolute;
+	top: 8px;
+	right: 0;
+	color: #aaa;
+	text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.6);
+	font-weight: bold;
+	cursor: pointer;
+}
+.close-cpc:hover {
+	color: #555;
+}
+.cntrd { text-align:center; }
+
+
 @media only screen and (max-width: 1030px) {
   	h3.title { margin:10px -15px 10px 0; }
 }

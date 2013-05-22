@@ -12,3 +12,10 @@ jQuery ->
 	$images.load ->
 	  loaded_images_count++
 	  $("#featured").show("slow")  if loaded_images_count is $images.length
+
+	$(".per").click ->
+	  $(".cpc").toggle()
+	  false
+
+	$(".close-cpc").click ->
+	  $(".cpc").toggle()

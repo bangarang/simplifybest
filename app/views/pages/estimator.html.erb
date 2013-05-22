@@ -1,53 +1,5 @@
 <% provide(:title, 'Color Cost Estimator') %>
 
-<style>
-	input[type=number]::-webkit-inner-spin-button {
-    	-webkit-appearance: none;
-	}
-	.savings {
-	}
-	.savings h3 {
-		text-align: center;
-	}
-	.savings a.getaquote h3 { 
-		color:#5da423; 
-		text-align: center; 	
-		-webkit-transition: all 200ms ease-out;
-		-moz-transition: all 200ms ease-out;
-		transition: all 200ms ease-out; 
-		line-height:100px;
-	}
-	.savings a.getaquote:hover h3 { color:#396516; }
-	.s { color: #d00; }
-	.cpc { display: none; background: #f3f3f3; padding: 0 15px; margin: 0 -15px 15px;}
-	.cpc::after {
-		content: "";
-		position: absolute;
-		width: 0px;
-		height: 0px;
-		border-style: solid;
-		border-width: 10px 10px 0 10px;
-		border-color: #f3f3f3 transparent transparent transparent;
-		margin-bottom: -10px;
-		left: 150px;
-	}
-	.close-cpc {
-		font-size: 22px;
-		line-height: .5;
-		position: absolute;
-		top: 8px;
-		right: 0;
-		color: #aaa;
-		text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.6);
-		font-weight: bold;
-		cursor: pointer;
-	}
-	.close-cpc:hover {
-		color: #555;
-	}
-	.cntrd { text-align:center; }
-</style>
-
 <div class="row">
 	<div class="twelve columns">
 		<h1 class="Quote">Color Cost Estimator</h1>
@@ -62,7 +14,8 @@
 		</ul>
 	</div>
 </div>
-<div class="estimator"  ng-app="">
+
+<div class="estimator" ng-app="estimator" ng-controller="EstimatorCtrl">
 	<div class="row">
 		<div class="twelve columns" style="text-align: center;">
 			<h2 class="subheader">How Much Could You Save with ¢3 Color Prints?</h2>
@@ -85,36 +38,118 @@
 							<h4 class="cntrd">How much are you paying per color print?</h4>
 							<a class="close-cpc right">×</a>
 						</div>
+					</div>
+					<div class="row">
+						<div class="twelve columns">
+							<p><input type="checkbox" ng-model="toner" ng-change="noToner()"> Do You pay for Toner?</p>
+						</div>
+					</div>
+					<div ng-show="toner">
+						<div class="row">
+							<div class="six columns">
+								<p class="right inline">How much are you paying for color toner(s)? </p>
+							</div>
+							<div class="six columns">
+								<input type="text" name="tonercost" ng-model="tonercost" placeholder="200.00" required>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="six columns right inline">
+								<p class="right inline">How many prints does the toner last you?</p>
+							</div>
+							<div class="six columns">
+								<input type="text" name="toneryield" ng-model="toneryield" placeholder="1000" required>
+							</div>
+						</div>
+
+						<div class="row" ng-show="estimate.tonercost.$valid && estimate.toneryield.$valid">
+							<div class="six columns right inline">
+								<p class="right inline">Toner Cost Per Color Print: </p>
+							</div>
+							<div class="six columns">
+								<p><strong>{{ tonerCPC() | currency }}</strong></p>
+							</div>
+							
+						</div>
+					</div>
+					<div class="row">
+						<div class="twelve columns">
+							<p><input type="checkbox" ng-model="drum" ng-change="noDrum()"> Do You pay for Drums?</p>
+						</div>
+					</div>
+					<div ng-show="drum">
+						<div class="row">
+							<div class="six columns">
+								<p class="right inline">How much are you paying for color drums? </p>
+							</div>
+							<div class="six columns">
+								<input type="text" name="drumcost" ng-model="drumcost" placeholder="200.00" required>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="six columns right inline">
+								<p class="right inline">How many prints do the drums last you?</p>
+							</div>
+							<div class="six columns">
+								<input type="text" name="drumyield" ng-model="drumyield" placeholder="1000" required>
+							</div>
+						</div>
+
+						<div class="row" ng-show="estimate.drumcost.$valid && estimate.drumyield.$valid">
+							<div class="six columns right inline">
+								<p class="right inline">Drum Cost Per Color Print: </p>
+							</div>
+							<div class="six columns">
+								<p><strong>{{ drumCPC() | currency }}</strong></p>
+							</div>
+						</div>
 
 					</div>
 					<div class="row">
-						<div class="six columns">
-							<p class="right inline">How much are you paying for color toner(s)? </p>
-						</div>
-						<div class="six columns">
-							<input type="number" name="toner" ng-model="toner" placeholder="200.00" required>
+						<div class="twelve columns">
+							<p><input type="checkbox" ng-model="pm" ng-change="noPm()"> Do You pay for PM Kits?</p>
 						</div>
 					</div>
+					<div ng-show="pm">
+						<div class="row">
+							<div class="six columns">
+								<p class="right inline">How much are you paying for a PM Kit? </p>
+							</div>
+							<div class="six columns">
+								<input type="text" name="pmcost" ng-model="pmcost" placeholder="200.00" required>
+							</div>
+						</div>
 
-					<div class="row">
-						<div class="six columns right inline">
-							<p class="right inline">How many prints does the toner last you?</p>
+						<div class="row">
+							<div class="six columns right inline">
+								<p class="right inline">How many prints do the PM Kits last you?</p>
+							</div>
+							<div class="six columns">
+								<input type="text" name="pmyield" ng-model="pmyield" placeholder="1000" required>
+							</div>
 						</div>
-						<div class="six columns">
-							<input type="number" name="yield" ng-model="yield" placeholder="1000" required>
-						</div>
-					</div>
 
-					<div class="row" ng-show="estimate.toner.$valid && estimate.yield.$valid">
+						<div class="row" ng-show="estimate.pmcost.$valid && estimate.pmyield.$valid">
+							<div class="six columns right inline">
+								<p class="right inline">PM Kit Cost Per Color Print: </p>
+							</div>
+							<div class="six columns">
+								<p><strong>{{ pmCPC() | currency }}</strong></p>
+							</div>
+						</div>
+					</div>
+					<div class="row s" ng-show="toner || drum || pm">
+						<hr>
 						<div class="six columns right inline">
-							<p class="right inline">Cost Per Color Print: </p>
+							<p class="right inline">Total Cost Per Color Print: </p>
 						</div>
 						<div class="six columns">
-							<p><strong>{{ toner / yield | currency}}</strong></p>
+							<p><strong>{{ totalCPC() | currency}}</strong></p>
 						</div>
-						
+
 					</div>
-					
 				</div>
 
 
@@ -176,15 +211,3 @@
 		</div>
 	</div>
 </div>
-
-<script type="text/javascript">
-    $(document).ready(function(){
-        $('.per').click(function() {
-          $('.cpc').toggle();
-          return false;
-        });
-        $('.close-cpc').click(function() {
-          $('.cpc').toggle();
-        });
-      });
-</script>
