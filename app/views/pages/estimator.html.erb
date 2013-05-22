@@ -147,6 +147,7 @@
 						</div>
 						<div class="six columns">
 							<p><strong>{{ totalCPC() | currency}}</strong></p>
+							<p><input type="checkbox" ng-model="tocpc" ng-change="toCPC()"> Use This to Calculate Monthly Savings?</p>
 						</div>
 
 					</div>
@@ -204,7 +205,7 @@
 	<div class="row">
 		<div class="twelve columns">
 				<div class="savings" ng-show="estimate.cpc.$valid && estimate.monthly.$valid">
-					<h3>With <span class="s">Simplified's</span> low $0.03 per color page, you could be saving {{ (cpc * monthly) - (0.03 * monthly) | currency}} per month!</h3>
+					<h3>With <span class="s">Simplified's</span> low $0.03 per color page, you could be saving {{ (cpc * monthly) - (0.03 * monthly) | currency }} per month!</h3>
 					<a class="getaquote" href="/getaquote"><h3>Get a Free Quote Today</h3></a>
 				</div>
 			</div>
