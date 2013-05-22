@@ -147,8 +147,9 @@
 								<p class="right inline">Total Cost Per Color Print: </p>
 							</div>
 							<div class="six columns">
-								<a href="" ng-click="toCPC(totalcpc)">{{ totalCPC() | currency}}</a>
-								
+								<p><a href="" ng-click="toCPC(totalcpc)" class="has-tip tip-top noradius s" title="Use This Number to Calculate Monthly Costs.">
+									{{ totalCPC() | currency}}
+								</a></p>
 							</div>
 						</div>
 					</div>
