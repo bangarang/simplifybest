@@ -17,5 +17,9 @@ jQuery ->
 	  $(".cpc").toggle()
 	  false
 
+	$(".pers").click ->
+	  $(".cpc").toggle()
+	  false
+
 	$(".close-cpc").click ->
 	  $(".cpc").toggle()
