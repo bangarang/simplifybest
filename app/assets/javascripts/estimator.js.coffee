@@ -58,7 +58,9 @@ app = angular.module("estimator", [])
     $scope.totalcpc = $scope.tonercpc + $scope.pmcpc + $scope.drumcpc
     $scope.totalcpc
 
-  $scope.toCPC = ->
-    $scope.cpc = $scope.totalcpc
+  $scope.toCPC = (text) ->
+    $scope.cpc = text
+    $scope.cpc
+    
 
 ]

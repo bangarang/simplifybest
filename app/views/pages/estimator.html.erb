@@ -50,7 +50,7 @@
 								<p class="right inline">How much are you paying for color toner(s)? </p>
 							</div>
 							<div class="six columns">
-								<input type="text" name="tonercost" ng-model="tonercost" placeholder="200.00" required>
+								<input type="number" name="tonercost" ng-model="tonercost" placeholder="200.00" required>
 							</div>
 						</div>
 
@@ -59,7 +59,7 @@
 								<p class="right inline">How many prints does the toner last you?</p>
 							</div>
 							<div class="six columns">
-								<input type="text" name="toneryield" ng-model="toneryield" placeholder="1000" required>
+								<input type="number" name="toneryield" ng-model="toneryield" placeholder="1000" required>
 							</div>
 						</div>
 
@@ -84,7 +84,7 @@
 								<p class="right inline">How much are you paying for color drums? </p>
 							</div>
 							<div class="six columns">
-								<input type="text" name="drumcost" ng-model="drumcost" placeholder="200.00" required>
+								<input type="number" name="drumcost" ng-model="drumcost" placeholder="200.00" required>
 							</div>
 						</div>
 
@@ -93,7 +93,7 @@
 								<p class="right inline">How many prints do the drums last you?</p>
 							</div>
 							<div class="six columns">
-								<input type="text" name="drumyield" ng-model="drumyield" placeholder="1000" required>
+								<input type="number" name="drumyield" ng-model="drumyield" placeholder="1000" required>
 							</div>
 						</div>
 
@@ -118,7 +118,7 @@
 								<p class="right inline">How much are you paying for a PM Kit? </p>
 							</div>
 							<div class="six columns">
-								<input type="text" name="pmcost" ng-model="pmcost" placeholder="200.00" required>
+								<input type="number" name="pmcost" ng-model="pmcost" placeholder="200.00" required>
 							</div>
 						</div>
 
@@ -127,7 +127,7 @@
 								<p class="right inline">How many prints do the PM Kits last you?</p>
 							</div>
 							<div class="six columns">
-								<input type="text" name="pmyield" ng-model="pmyield" placeholder="1000" required>
+								<input type="number" name="pmyield" ng-model="pmyield" placeholder="1000" required>
 							</div>
 						</div>
 
@@ -147,7 +147,7 @@
 								<p class="right inline">Total Cost Per Color Print: </p>
 							</div>
 							<div class="six columns">
-								<p><strong ng-model="totalcpc" ng-change="toCPC()">{{ totalCPC() | currency}}</strong></p>
+								<a href="" ng-click="toCPC(totalcpc)">{{ totalCPC() | currency}}</a>
 								
 							</div>
 						</div>
