@@ -15,7 +15,7 @@
 	</div>
 </div>
 
-<div class="estimator" ng-app="estimator" ng-controller="EstimatorCtrl">
+<div class="estimator" ng-app="estimator" ng-controller="EstimatorCtrl" ng-cloak>
 	<div class="row">
 		<div class="twelve columns" style="text-align: center;">
 			<h2 class="subheader">How Much Could You Save with ¢3 Color Prints?</h2>
@@ -148,7 +148,7 @@
 								<p class="right inline">Total Cost Per Color Print: </p>
 							</div>
 							<div class="six columns">
-								<p><a href="" ng-click="toCPC(totalcpc | number:4 )" class="has-tip tip-top noradius s" title="Use This Number to Calculate Monthly Costs.">
+								<p><a href="" ng-click="toCPC(totalcpc)" class="has-tip tip-top noradius s" title="Use This Number to Calculate Monthly Costs.">
 									${{ totalCPC() | number:4 }}
 								</a></p>
 							</div>
