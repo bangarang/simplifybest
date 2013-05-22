@@ -147,7 +147,7 @@
 								<p class="right inline">Total Cost Per Color Print: </p>
 							</div>
 							<div class="six columns">
-								<p><strong>{{ totalCPC() | currency}}</strong></p>
+								<p><strong ng-model="totalcpc" ng-change="toCPC()">{{ totalCPC() | currency}}</strong></p>
 								
 							</div>
 						</div>

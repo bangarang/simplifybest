@@ -11,6 +11,7 @@ app = angular.module("estimator", [])
   $scope.pmyield = 1
   $scope.pmcpc = 0
   $scope.totalcpc = 0
+
   $scope.tonerCPC = ->
     $scope.tonercpc = $scope.tonercost / $scope.toneryield
     $scope.tonercpc
@@ -55,7 +56,6 @@ app = angular.module("estimator", [])
 
   $scope.totalCPC = ->
     $scope.totalcpc = $scope.tonercpc + $scope.pmcpc + $scope.drumcpc
-    $scope.cpc = $scope.totalcpc
     $scope.totalcpc
 
   $scope.toCPC = ->
