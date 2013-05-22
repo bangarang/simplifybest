@@ -42,7 +42,7 @@
 					</div>
 					<div class="row">
 						<div class="twelve columns">
-							<p><input type="checkbox" ng-model="toner" ng-change="noToner()"> Do You pay for Toner?</p>
+							<p><input type="checkbox" ng-model="toner" ng-change="noToner()"> Do you pay for Toner?</p>
 						</div>
 					</div>
 					<div ng-show="toner">
@@ -69,14 +69,14 @@
 								<p class="right inline">Toner Cost Per Color Print: </p>
 							</div>
 							<div class="six columns">
-								<p><strong>{{ tonerCPC() | currency }}</strong></p>
+								<p><strong>${{ tonerCPC() | number:4 }}</strong></p>
 							</div>
 							
 						</div>
 					</div>
 					<div class="row">
 						<div class="twelve columns">
-							<p><input type="checkbox" ng-model="drum" ng-change="noDrum()"> Do You pay for Drums?</p>
+							<p><input type="checkbox" ng-model="drum" ng-change="noDrum()"> Do you pay for Drums?</p>
 						</div>
 					</div>
 					<div ng-show="drum">
@@ -103,14 +103,14 @@
 								<p class="right inline">Drum Cost Per Color Print: </p>
 							</div>
 							<div class="six columns">
-								<p><strong>{{ drumCPC() | currency }}</strong></p>
+								<p><strong>${{ drumCPC() | number:4 }}</strong></p>
 							</div>
 						</div>
 
 					</div>
 					<div class="row">
 						<div class="twelve columns">
-							<p><input type="checkbox" ng-model="pm" ng-change="noPm()"> Do You pay for PM Kits?</p>
+							<p><input type="checkbox" ng-model="pm" ng-change="noPm()"> Do you pay for PM Kits?</p>
 						</div>
 					</div>
 					<div ng-show="pm">
@@ -137,7 +137,7 @@
 								<p class="right inline">PM Kit Cost Per Color Print: </p>
 							</div>
 							<div class="six columns">
-								<p><strong>{{ pmCPC() | currency }}</strong></p>
+								<p><strong>{{ pmCPC() | number:4 }}</strong></p>
 							</div>
 						</div>
 					</div>
@@ -148,8 +148,8 @@
 								<p class="right inline">Total Cost Per Color Print: </p>
 							</div>
 							<div class="six columns">
-								<p><a href="" ng-click="toCPC(totalcpc)" class="has-tip tip-top noradius s" title="Use This Number to Calculate Monthly Costs.">
-									{{ totalCPC() | currency}}
+								<p><a href="" ng-click="toCPC(totalcpc | number:4 )" class="has-tip tip-top noradius s" title="Use This Number to Calculate Monthly Costs.">
+									${{ totalCPC() | number:4 }}
 								</a></p>
 							</div>
 						</div>
