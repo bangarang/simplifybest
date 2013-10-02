@@ -1,7 +1,7 @@
 class Product < ActiveRecord::Base
   attr_accessible :name, :excerpt, :description, :image, :remote_image_url, :category_id, 
     :new_category_name, :accessories_attributes, :supply_items_attributes, :product_pictures_attributes, 
-    :downloads_attributes, :featured
+    :downloads_attributes, :featured, :brand_id, :new_brand_name
 
   mount_uploader :image, ImageUploader
 
@@ -35,6 +35,21 @@ class Product < ActiveRecord::Base
   has_many :downloads
 
   accepts_nested_attributes_for :downloads, allow_destroy: true
+
+  # Brands
+  belongs_to :brand
+  attr_accessor :new_brand_name
+  before_save :create_brand_from_name
+
+  def create_brand_from_name 
+     unless new_brand_name.blank? 
+        if brand = Brand.find(:first, :conditions => {:name => new_brand_name}) then 
+           self.brand_id = brand 
+        else 
+           create_brand(:name => new_brand_name, :slug => new_brand_name.parameterize) 
+        end 
+     end 
+  end
 
   # Categories
   belongs_to :category

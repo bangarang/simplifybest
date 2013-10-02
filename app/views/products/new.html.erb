@@ -16,6 +16,9 @@
       Category: <%= f.collection_select :category_id, Category.find(:all), :id, :name, :prompt => "Select a Category" %>
           or create one:
       <%= f.text_field :new_category_name %>
+      Brand: <%= f.collection_select :brand_id, Brand.find(:all), :id, :name, :prompt => "Select a brand" %>
+          or create one:
+      <%= f.text_field :new_brand_name %>
     </div>
     <div class="six columns">
       <%= f.file_field :image %><br />

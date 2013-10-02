@@ -468,7 +468,7 @@ ul.breadcrumbs li a, ul.breadcrumbs li span { text-transform: none; font-weight:
 .admin ul li { list-style: none; }
 .admin div.admin-edit { border: #212121 solid thin; margin:0 0 10px 0; padding:0 0 10px 0; }
 
-.admin .links { background: #f6f6f6; padding: 10px 15px; }
+.admin .links { background: #f6f6f6; padding: 10px 15px !important; }
 table.products { width:100%; margin-bottom: 0;}
 
 ul.prod-edit { margin-bottom:0; padding-top: 5px; }

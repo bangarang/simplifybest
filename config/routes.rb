@@ -2,6 +2,8 @@ Simplifybest::Application.routes.draw do
 
   root :to => 'pages#home'
   match 'admin' => 'pages#admin'
+  match 'about' => 'pages#about'
+
   resources :featured_pictures
   resources :contacts
   resources :meters
@@ -9,6 +11,8 @@ Simplifybest::Application.routes.draw do
   resources :service_calls
   resources :quotes
   resources :messages
+
+  resources :brands
 
   match 'getaquote' => 'quotes#new'
   match 'meter' => 'meters#new'

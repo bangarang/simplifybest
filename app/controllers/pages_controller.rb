@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  before_filter :authenticate_user!, :except => [:home, :privacy, :estimator]
+  before_filter :authenticate_user!, :except => [:home, :privacy, :estimator, :about]
 
   def home
   	@featured_products = Product.where(:featured => true)

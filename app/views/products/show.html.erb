@@ -1,9 +1,9 @@
 <% provide(:title, @product.name) %>
   <div class="prod-nav row">
-    <div class="four columns">
-      <h1 class="title"><%= @product.name %></h1>
+    <div class="six columns">
+      <h1 class="title"><%= @product.brand.name if @product.brand %> <%= @product.name %></h1>
     </div>
-    <div class="eight columns">
+    <div class="six columns">
       <ul class="right">
         <li><a href="#overview">Overview</a></li>
         <% unless @product.product_pictures.empty? %><li><a href="#gallery">Gallery</a></li><% end %>
@@ -41,7 +41,16 @@
       </div>
     <div class="six columns">
       <h4 class="subheader"><%= @product.excerpt %></h4>
-      <%= @product.description.html_safe %>
+        
+
+      <p><%= @product.description.html_safe %></p>
+      <% if @product.brand %>
+        <% if @product.brand.image? %>
+          <%= image_tag @product.brand.image_url(:main).to_s, :class => "brand"%>
+        <% else %>
+          <h5 class="brand">Made by <%= @product.brand.name %></h5>
+        <% end %>
+      <% end %>
     </div>
   </div>
 

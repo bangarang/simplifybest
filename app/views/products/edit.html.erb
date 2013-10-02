@@ -23,6 +23,9 @@
       Category: <%= f.collection_select :category_id, Category.find(:all), :id, :name, :prompt => "Select a Category" %>
           or create one:
       <%= f.text_field :new_category_name %>
+      Brand: <%= f.collection_select :brand_id, Brand.find(:all), :id, :name, :prompt => "Select a brand" %>
+          or create one:
+      <%= f.text_field :new_brand_name %>
       Featured: <%= f.check_box :featured %>
       <div class="row">
         <div class="twelve columns">
