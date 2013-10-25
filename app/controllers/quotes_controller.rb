@@ -25,6 +25,6 @@ class QuotesController < ApplicationController
   def destroy
     @quote = Quote.find(params[:id])
     @quote.destroy
-    redirect_to admin_index_url, :notice => "Destroyed Quote."
+    redirect_to '/admin', :notice => "Destroyed Quote."
   end
 end

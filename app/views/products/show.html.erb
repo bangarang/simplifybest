@@ -3,41 +3,21 @@
   <div class="large-12 columns box">
   <div class="prod-nav row">
     <div class="large-12 columns">
-      <h1 class="title"><%= @product.brand.name if @product.brand %> <%= @product.name %></h1>
+      <h2 class="title"><%= @product.brand.name if @product.brand %> <%= @product.name %></h2>
     </div>
-<!--     <div class="large-6 columns">
-      <ul class="right">
-        <li><a href="#overview">Overview</a></li>
-        <% unless @product.product_pictures.empty? %><li><a href="#gallery">Gallery</a></li><% end %>
-        <% if @specs %><li><a href="#specifications">Specifications</a></li><% end %>
-        <% unless @product.supply_items.empty? && @product.accessories.empty? %><li><a href="#accessories">Accessories</a></li><% end %>
-        <% unless @product.downloads.empty? %><li><a href="#downloads">Downloads</a></li><% end %>
-      </ul>
-    </div> -->
   </div>
   <div class="bread row  hide-for-print">
-    <div class="large-6 columns">
-      <ul class="breadcrumbs">
-        <li><%= link_to "Home", root_url %></li>
-        <li><%= link_to "Products", products_url %></li>
-        <li><%= link_to @product.category.name, category_path(@product.category) %></li>
-        <li class="current"><%= link_to @product.name, @product %></li>
-      </ul>
-    </div>
       <% if can? :edit, @product %>
       <div class="large-6 columns">
-        <ul class="right prod-edit" data-no-turbolink>
-          <li><%= link_to "<i class='icon-edit'></i> Edit".html_safe, edit_product_path(@product)%></li>
-          <li><%= link_to "<i class='icon-trash'></i> Delete Product".html_safe, @product, :confirm => 'Are you sure?', :method => :delete %></li>
-          <li><a href="<%=@product.slug%>/dup"><i class='icon-copy'></i> Duplicate Product</a></li>
+        <ul class="prod-edit" data-no-turbolink>
+          <li><%= link_to "Edit", edit_product_path(@product)%></li>
+          <li><%= link_to "Delete Product", @product, :confirm => 'Are you sure?', :method => :delete %></li>
+          <li><a href="<%=@product.slug%>/dup">Duplicate Product</a></li>
         </ul>
       </div>
       <% end %>
   </div>
   <div class="row" id="overview"> 
-<!--     <div class="large-12 columns">
-      <h3 class="title">Overview <small class="subheader">General Description of the <%= @product.name %></small></h3>
-    </div> -->
     <div class="large-6 columns mainimage">
         <%= image_tag @product.image_url(:main).to_s if @product.image? %>
       </div>
@@ -58,7 +38,6 @@
 
 <% unless @product.product_pictures.empty? %>
   <div class="row  hide-for-print" id="gallery">
-    <!-- <div class="large-12 columns"><h3 class="title">Gallery <small class="subheader">View the Photo Gallery</small></h3></div> -->
     <div class="large-12 columns"> 
       <ul class='large-block-grid-8 small-block-grid-3 clearing-thumbs' data-clearing>
         <% for product_picture in @product.product_pictures %>
@@ -73,7 +52,6 @@
 
 <% if @specs %>
   <div class="row" id='specifications'>
-    <!-- <div class="large-12 columns"><h3 class="title">Specifications <small class="subheader">Detailed Technical Specifications</small></h3></div> -->
     <div class="large-12 columns">
       <div class="section-container auto" data-section>
           <% if @mainspecs %>
@@ -354,8 +332,7 @@
 <% end %>
 <% unless @product.supply_items.empty? && @product.accessories.empty? %>
   <div class="row" id='accessories'>
-    <!-- <div class="large-12 columns"><h3 class="title">Accessories <small class="subheader">Additional Compatible Equipment</small></h3></div> -->
-    <div class="large-6 columns">
+   <div class="large-6 columns">
       <table class="accessories"> 
         <tbody>
           <tr>
@@ -390,7 +367,6 @@
 <% end %>
 <% unless @product.downloads.empty? %>
   <div class="row hide-for-print" id='downloads'>
-    
     <div class="large-12 columns downloads">
       <h3>Downloads</h3>
       <ul> 

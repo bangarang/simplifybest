@@ -1,8 +1,11 @@
 	<% [:notice, :error, :alert, :success].each do |level| %>
 		<% unless flash[level].blank? %>
 		<div data-alert class="<%= flash_class(level) %>">
-			<%= content_tag :span, flash[level] %>
-			<a href="" class="close">&times;</a>
+			<div class="row">
+				<div class="large-12 columns">
+					<%= content_tag :span, flash[level] %>
+				</div>
+			</div>
 		</div>
 	  <% end %>
 	<% end %>

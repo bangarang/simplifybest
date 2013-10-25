@@ -26,6 +26,6 @@ class MetersController < ApplicationController
   def destroy
     @meter = Meter.find(params[:id])
     @meter.destroy
-    redirect_to admin_index_url, :notice => "Successfully Closed Meter Ticket."
+    redirect_to '/admin', :notice => "Successfully Closed Meter Ticket."
   end
 end

@@ -15,6 +15,6 @@ class MessagesController < ApplicationController
   def destroy
     @message = Message.find(params[:id])
     @message.destroy
-    redirect_to messages_url, :notice => "Successfully destroyed message."
+    redirect_to '/admin', :notice => "Successfully destroyed message."
   end
 end

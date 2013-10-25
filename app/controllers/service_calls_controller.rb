@@ -26,6 +26,6 @@ class ServiceCallsController < ApplicationController
   def destroy
     @service_call = ServiceCall.find(params[:id])
     @service_call.destroy
-    redirect_to admin_index_url, :notice => "Successfully Closed Service Call."
+    redirect_to '/admin', :notice => "Successfully Closed Service Call."
   end
 end
