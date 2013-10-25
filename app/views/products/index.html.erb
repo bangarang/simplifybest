@@ -15,15 +15,7 @@
   <div class="large-12 columns">
     <ul class="large-block-grid-4 small-block-grid-2">
     <% for product in category.products.order(:name) %>
-      <li>
-        <ul class="pricing-table box product">
-          <li class="thumbnail"><%= image_tag product.image_url(:thumb).to_s if product.image? %></li>
-          <li class="title"><%= link_to product.name, product %></li>
-          <li class="description"><%= product.excerpt %></li>
-          <li class="bullet-item"><%= product.maxdutycycle %></li>
-          <li class="cta-button"><a class="small button" href="<%= product_path(product) %>">More Info &raquo;</a></li>
-        </ul>
-      </li>
+      <%= render 'products/product', product: product %>
     <% end %>
     </ul>
   </div>
