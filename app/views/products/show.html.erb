@@ -352,7 +352,7 @@
     </div>
   </div>
 <% end %>
-<% if @product.supply_items.empty? && @product.accessories.empty? %>
+<% unless @product.supply_items.empty? && @product.accessories.empty? %>
   <div class="row" id='accessories'>
     <!-- <div class="large-12 columns"><h3 class="title">Accessories <small class="subheader">Additional Compatible Equipment</small></h3></div> -->
     <div class="large-6 columns">
