@@ -4,6 +4,7 @@
 <!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
 	<head>
+		<meta charset="utf-8" />
 		<!-- META -->
 		<meta name="description" content="We carry the largest selection of printers Omaha has to offer. Quality service and selection of copiers in Omaha, find the right copier for you here today." />
 		<meta name="robots" content="index, follow">
@@ -18,27 +19,28 @@
 		<title><%= full_title(yield(:title)) %></title>
 
 		<!-- CSS -->
-		<%= stylesheet_link_tag "application" %>
+		<%= stylesheet_link_tag "application", :media => "all" %>
 		
 		<!-- TYPEKIT -->
 		<script type="text/javascript" src="//use.typekit.net/bkq5xlt.js"></script>
 		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
 		<!-- JS  -->
-		<%= javascript_include_tag "application" %>
+		<%= javascript_include_tag "vendor/custom.modernizr" %>
+		<%= javascript_include_tag "application",  "data-turbolinks-track" => true %>
 
-		<!-- Segment.io -->
-		<script type="text/javascript">
-		  var analytics=analytics||[];analytics.load=function(e){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=("https:"===document.location.protocol?"https://":"http://")+"d2dq2ahtl5zl1z.cloudfront.net/analytics.js/v1/"+e+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);var r=function(e){return function(){analytics.push([e].concat(Array.prototype.slice.call(arguments,0)))}},i=["identify","track","trackLink","trackForm","trackClick","trackSubmit","pageview","ab","alias"];for(var s=0;s<i.length;s++)analytics[i[s]]=r(i[s])};
-		  analytics.load("d9d1lykusl");
-		</script>
-
+	<% if Rails.env.production? %>
+		<!-- start Mixpanel --><script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==
+typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);
+b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);
+mixpanel.init("89852d6fcaed1d492306abd7f333b37e");</script><!-- end Mixpanel -->
+		<% end %>
 		<!-- CSRF -->
 	  	<%= csrf_meta_tags %>
 	</head>
 	<body>
 		<!-- HEADER -->
-		<%= render "layouts/header" %>
+		<%= render "layouts/header_2" %>
 		<!-- END HEADER -->
 
 		<!-- MAIN -->
@@ -51,6 +53,7 @@
 	  	<!-- END FOOTER -->
 
 	  	<!-- ADROLL PIXEL -->
+	  	<% if Rails.env.production? %>
 	  	<script type="text/javascript">
 			adroll_adv_id = "3FJKSHO5FNFRFNLOV3S3OP";
 			adroll_pix_id = "RMXEAV7YEJC33IYVJKKABS";
@@ -68,7 +71,7 @@
 			   if(oldonload){oldonload()}};
 			}());
 		</script>
-
+		<% end %>
 		<!-- END ADROLL PIXEL -->
 	</body>
 </html>

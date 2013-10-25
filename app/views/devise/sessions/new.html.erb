@@ -1,38 +1,38 @@
 <% provide(:title, 'Login') %>
 <div class="row signin">
-	<div class="six columns centered">
+	<div class="large-6 columns large-centered">
 		<h2>Sign in</h2>
 		<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 			<div class="row">
-			  <div class="two columns">
+			  <div class="large-2 columns">
 			  	<%= f.label :email, :class => "right inline"  %>
 			  </div>
-			  <div class="ten columns">
+			  <div class="large-10 columns">
 			  	<%= f.email_field :email, :placeholder => "me@example.com" %>
 			  </div>
 			</div>
 			<div class="row">
-			  <div class="two columns">
+			  <div class="large-2 columns">
 			  	<%= f.label :password, :class => "right inline" %>
 			  </div>
-			  <div class="ten columns">
+			  <div class="large-10 columns">
 			  	<%= f.password_field :password, :placeholder => "your password" %>
 			  </div>
 			</div>
 
 			<% if devise_mapping.rememberable? -%>
 			<div class="row">
-			  <div class="three columns offset-by-two">
+			  <div class="large-3 columns offset-by-2">
 			  	<%= f.label :remember_me %>
 			  </div>
-			  <div class="seven columns">
+			  <div class="large-7 columns">
 			  	<%= f.check_box :remember_me %>
 			  </div>
 			</div>
 			<% end -%>
 
-		  	<div><%= f.submit "Sign in", :class => 'small button right' %></div>
+		  	<div><%= f.submit "Sign in", :class => 'small button ticket' %></div>
 		<% end %>
-		<%= render "devise/shared/links" %>
+		<% render "devise/shared/links" %>
 	</div>
 </div>

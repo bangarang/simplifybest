@@ -3,6 +3,7 @@ Simplifybest::Application.routes.draw do
   root :to => 'pages#home'
   match 'admin' => 'pages#admin'
   match 'about' => 'pages#about'
+  match 'support' => 'pages#support'
 
   resources :featured_pictures
   resources :contacts

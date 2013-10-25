@@ -1,22 +1,13 @@
 <% provide(:title, "New Meter") %>
 
 <div class="row">
-	<div class="twelve columns">
+	<div class="large-12 columns">
 		<h1 class="Meter">Submit a Meter Reading</h1>
-	</div>
-</div>
-<div class="bread row">
-	<div class="twelve columns">
-		<ul class="breadcrumbs">
-			<li><%= link_to "Home", root_url %></li>
-			<li><%= link_to "Customer Service", "#" %></li>
-			<li class="current"><%= link_to "Meter Reading", new_meter_path %></li>
-		</ul>
 	</div>
 </div>
 
 <div class="row">
-	<div class="five columns">
+	<div class="large-5 columns">
 		<h3>We need 3 things from you:</h3>
 		<ol>
 			<li>Your contact information</li> 
@@ -25,7 +16,7 @@
 		</ol>
 		<p>If you have any trouble, feel free to call us or leave us a comment at the bottom of the page.</p>
 	</div>
-	<div class="seven columns">
+	<div class="large-7 columns">
 		<div class="shadow">
 			<h4 class="ticket Meter">Meter Reading Ticket</h4>
 			<%= render 'form' %>
@@ -34,5 +25,5 @@
 </div>
 
 <%= javascript_tag do %>
-  analytics.track('Visited Meter Page');
+  mixpanel.track('Meter Page');
 <% end %>

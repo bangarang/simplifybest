@@ -1,23 +1,23 @@
 <% provide(:title, "Edit #{@product.name}") %>
 <%= form_for @product, :html => {:multipart => true} do |f| %>
-<div class="bb">
+<div class="bb box">
   <div class="row">
-    <div class="twelve columns top">
+    <div class="large-12 columns top">
       <h2>Edit Product</h2>
     </div>
   </div>
   <div class="row">
-    <div class="twelve columns">
+    <div class="large-12 columns">
       <h3 class="title">Name, Category, Excerpt and Picture</h3>
     </div>
-    <div class="six columns">
+    <div class="large-6 columns">
       <%= image_tag @product.image_url(:main).to_s if @product.image? %>
       <%= f.file_field :image %><br />
       or
       <%= f.text_field :remote_image_url, :placeholder => 'Image URL' %>
 
     </div>
-    <div class="six columns">
+    <div class="large-6 columns">
       Name: <%= f.text_field :name, :placeholder => "Product Name" %>
       Excerpt: <%= f.text_field :excerpt, :placeholder => "Product Excerpt" %>
       Category: <%= f.collection_select :category_id, Category.find(:all), :id, :name, :prompt => "Select a Category" %>
@@ -28,7 +28,7 @@
       <%= f.text_field :new_brand_name %>
       Featured: <%= f.check_box :featured %>
       <div class="row">
-        <div class="twelve columns">
+        <div class="large-12 columns">
           <%= link_to "Show", @product %> |
           <%= link_to "Delete Product", @product, :confirm => 'Are you sure?', :method => :delete %> |
           <%= link_to "Duplicate Product", 'dup' %> |
@@ -39,188 +39,60 @@
   </div>
 
   <div class="row" id="overview">
-    <div class="twelve columns">
+    <div class="large-12 columns">
       <h3 class="title">Overview</h3>
     </div>
-    <div class="twelve columns">
-    	<%= f.text_area :description %>
+    <div class="large-12 columns">
+    	<%= f.text_area :description, "rows" => 30 %>
     </div>
   </div>
 
   <div class="row" id="gallery">
-    <div class="twelve columns"><h3 class="title">Gallery</h3></div> 
-    <div class="three columns">
+    <div class="large-12 columns"><h3 class="title">Gallery</h3></div> 
+    <div class="large-3 columns">
       <%= link_to_add_pics "Add a Product Picture", f, :product_pictures %>
     </div>
-    <div class="nine columns ppicture_edit">
+    <div class="large-9 columns ppicture_edit">
       <%= f.fields_for :product_pictures, :html => {:multipart => true} do |builder| %>
-        <%= render 'product_picture_fields', f: builder %>
+        <%= render 'products/forms/fields/product_picture_fields', f: builder %>
       <% end %>
     </div>
   </div>
 
   <div class="row" id='specifications'>
-    <div class="twelve columns"><h3 class="title">Specifications</h3></div>
-    <div class="twelve columns specs">
-      <dl class="tabs four-up">
-        <dd class="active"><a href="#general">General Specifications</a></dd>
-        <dd><a href="#papersupply">Paper Supply</a></dd>
-        <dd><a href="#print">Print Specifications</a></dd>
-        <dd><a href="#scan">Scan Specifications</a></dd>
-      </dl>
-      <ul class="tabs-content">
-        <li class="active" id="generalTab">
-            <table style="width: 100%;"> 
-              <tbody>
-                <tr>
-                  <td><%= f.text_field :configuration, :placeholder => "Configuration" %></td>
-                </tr>
-                <tr>
-                  <td><%= f.text_field :speed, :placeholder => "Speed" %></td>
-                </tr>
-                <tr>
-                  <td><%= f.text_field :warmup, :placeholder => "Warm-Up Time" %></td>
-                </tr>
-                <tr>
-                  <td><%= f.text_field :firstout, :placeholder => "First Page Out" %></td>
-                </tr>
-                <tr>
-                  <td><%= f.text_field :resolution, :placeholder => "Resolution" %></td>
-                </tr>
-                <tr>
-                  <td><%= f.text_field :memory, :placeholder => "RAM Memory" %></td>
-                </tr>
-                <tr>
-                  <td><%= f.text_field :hdd, :placeholder => "Hard Disk Drive" %></td>
-                </tr>
-                <tr>
-                  <td><%= f.text_field :duplex, :placeholder => "Duplex" %></td>
-                </tr>
-                <tr>
-                  <td><%= f.text_field :stdoutput, :placeholder => "Standard Output Tray" %></td>
-                </tr>
-                <tr>
-                  <td><%= f.text_field :electrical, :placeholder => "Electrical" %></td>
-                </tr>
-                <tr>
-                  <td><%= f.text_field :dimensions, :placeholder => "Dimensions" %></td>
-                </tr>
-                <tr>
-                  <td><%= f.text_field :weight, :placeholder => "Weight" %></td>
-                </tr>
-                <tr>
-                  <td><%= f.text_field :maxdutycycle, :placeholder => "Max Duty Cycle" %></td>
-                </tr>
-              </tbody>
-            </table>
-        </li>
-        <li id="papersupplyTab">
-            <table style="width: 100%;"> 
-              <tbody>
-                <tr>
-                  <td><%= f.text_field :stdsources, :placeholder => "Standard Paper Sources" %></td>
-                </tr>
-                <tr>
-                  <td><%= f.text_field :optsources, :placeholder => "Optional Paper Sources" %></td>
-                </tr>
-                <tr>
-                  <td><%= f.text_field :papercap, :placeholder => "Paper Capacity" %></td>
-                </tr>
-                <tr>
-                  <td><%= f.text_field :papersize, :placeholder => "Paper Size" %></td>
-                </tr>
-                <tr>
-                  <td><%= f.text_field :paperweight, :placeholder => "Paper Weight" %></td>
-                </tr>
-                <tr>
-                  <td><%= f.text_field :inputmaterials, :placeholder => "Input Materials" %></td>
-                </tr>
-              </tbody>
-            </table>
-        </li>
-        <li id="printTab">
-            <table style="width: 100%;"> 
-              <tbody>
-                <tr>
-                  <td><%= f.text_field :stdcontroller, :placeholder => "Standard Controller" %></td>
-                </tr>
-                <tr>
-                  <td><%= f.text_field :emulations, :placeholder => "PDLs / Emulations" %></td>
-                </tr>
-                <tr>
-                  <td><%= f.text_field :fonts, :placeholder => "Fonts" %></td>
-                </tr>
-                <tr>
-                  <td><%= f.text_field :windows, :placeholder => "Windows OS Compatibility" %></td>
-                </tr>
-                <tr>
-                  <td><%= f.text_field :novell, :placeholder => "Novell OS Compatibility" %></td>
-                </tr>
-                <tr>
-                  <td><%= f.text_field :macos, :placeholder => "MAC OS Compatibility" %></td>
-                </tr>
-                <tr>
-                  <td><%= f.text_field :unixos, :placeholder => "UNIX OS Compatibility" %></td>
-                </tr>
-                <tr>
-                  <td><%= f.text_field :interfaces, :placeholder => "Interfaces" %></td>
-                </tr>
-                <tr>
-                  <td><%= f.text_field :protocols, :placeholder => "Network Print and Supported Protocols" %></td>
-                </tr>
-                <tr>
-                  <td><%= f.text_field :drivers, :placeholder => "Drivers" %></td>
-                </tr>
-                <tr>
-                  <td><%= f.text_field :utilities, :placeholder => "Utilities" %></td>
-                </tr>
-              </tbody>
-            </table>
-        </li>
-        <li id="scanTab">
-            <table style="width: 100%;"> 
-              <tbody>
-                <tr>
-                  <td><%= f.text_field :scanresolutions, :placeholder => "Scan Resolution" %></td>
-                </tr>
-                <tr>
-                  <td><%= f.text_field :fileformats, :placeholder => "File Formats" %></td>
-                </tr>
-                <tr>
-                  <td><%= f.text_field :pdfextension, :placeholder => "PDF Extension" %></td>
-                </tr>
-                <tr>
-                  <td><%= f.text_field :scanspeed, :placeholder => "Scan Speeds" %></td>
-                </tr>
-                <tr>
-                  <td><%= f.text_field :connectivity, :placeholder => "Connectivity / Supported Protocols" %></td>
-                </tr>
-                <tr>
-                  <td><%= f.text_field :scanfunction, :placeholder => "Scanning Functions" %></td>
-                </tr>
-                <tr>
-                  <td><%= f.text_field :originalsize, :placeholder => "Original Size" %></td>
-                </tr>
-                <tr>
-                  <td><%= f.text_field :scandriver, :placeholder => "Scan Driver" %></td>
-                </tr>
-              </tbody>
-            </table>
-        </li>
-      </ul>
+    <div class="large-12 columns"><h3 class="title">Specifications</h3></div>
+    <div class="large-12 columns specs">
+      <div class="section-container auto" data-section>
+        <section class="active">
+          <p class="title"><a href="#general">General Specifications</a></p>
+          <div class="content" data-section-content><%= render 'products/forms/generalspec_form', f: f %></div>
+        </section>
+        <section>
+          <p class="title"><a href="#papersupply">Paper Supply</a></p>
+          <div class="content" data-section-content><%= render 'products/forms/papersupply_form', f: f %></div>
+        </section>
+        <section>
+          <p class="title"><a href="#print">Print Specifications</a></p>
+          <div class="content" data-section-content><%= render 'products/forms/printspec_form', f: f %></div>
+        </section>
+        <section>
+          <p class="title"><a href="#scan">Scan Specifications</a></p>
+          <div class="content" data-section-content><%= render 'products/forms/scanspec_form', f: f %></div>
+        </section>
+      </div>
     </div>
   </div>
 
   <div class="row" id='accessories'>
-    <div class="twelve columns"><h3 class="title">Accessories</h3></div>
-    <div class="six columns">
+    <div class="large-12 columns"><h3 class="title">Accessories</h3></div>
+    <div class="large-6 columns">
       <table class="accessories"> 
         <tbody>
           <tr>
             <td><h4>Accessories:</h4></td>
           </tr>
           <%= f.fields_for :accessories do |builder| %>
-            <%= render 'accessory_fields', f: builder %>
+            <%= render 'products/forms/fields/accessory_fields', f: builder %>
           <% end %>
           <tr style="background:white;">
             <td><%= link_to_add_trs "Add an Accessory", f, :accessories %></td>
@@ -229,14 +101,14 @@
       </table>
     </div>
     
-    <div class="six columns">
+    <div class="large-6 columns">
       <table class="supplies"> 
         	<tbody>
             <tr>
             	<td><h4>Supply Items:</h4></td>
           	</tr>
   		      <%= f.fields_for :supply_items do |builder| %>
-              <%= render 'supply_item_fields', f: builder %>
+              <%= render 'products/forms/fields/supply_item_fields', f: builder %>
             <% end %>
             <tr style="background:white;">
               <td><%= link_to_add_trs "Add a Supply Item", f, :supply_items %></td>
@@ -247,19 +119,19 @@
   </div>
 
   <div class="row" id='downloads'>
-    <div class="twelve columns"><h3 class="title">Downloads</h3></div>
-    <div class="twelve columns">
+    <div class="large-12 columns"><h3 class="title">Downloads</h3></div>
+    <div class="large-12 columns">
       <ul>
         <%= f.fields_for :downloads, :html => {:multipart => true} do |builder| %>
-          <%= render 'download_fields', f: builder %>
+          <%= render 'products/forms/fields/download_fields', f: builder %>
         <% end %>
         <%= link_to_add_fields "Add a Download", f, :downloads %>
       </ul>
     </div>
-    <div class="twelve columns"><hr></div>
+    <div class="large-12 columns"><hr></div>
   </div>
   <div class="row">
-  	<div class="two columns centered">
+  	<div class="large2 columns large-centered">
   		<%= f.submit :class => "medium radius button"%>
   	</div>
   </div>
@@ -267,5 +139,5 @@
 <% end %>
 
 <%= javascript_tag do %>
-  analytics.track('Edited <%= @product.name %>');
+  mixpanel.track('Edited <%= @product.name %>');
 <% end %>

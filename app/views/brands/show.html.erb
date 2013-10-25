@@ -33,5 +33,5 @@
 </div>
 
 <%= javascript_tag do %>
-  analytics.track('Viewed <%= @brand.name %>');
+  mixpanel.track('<%= @brand.name %>');
 <% end %>

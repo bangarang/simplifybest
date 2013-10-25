@@ -11,13 +11,21 @@ gem 'devise'
 gem 'rolify'
 gem 'cancan'
 gem 'numbers_and_words'
-gem 'client_side_validations'
 gem 'phony_rails'
 gem 'validates_as_phone_number'
 gem 'font-awesome-rails'
 gem 'sitemap_generator'
 gem 'retina_tag'
 gem 'analytics-ruby'
+gem 'gibbon'
+
+
+gem 'turbolinks'
+gem 'client_side_validations'
+gem 'client_side_validations-turbolinks'
+
+gem 'jquery-turbolinks'
+
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
@@ -31,7 +39,7 @@ group :assets do
   gem 'coffee-rails', '3.2.2'
   gem 'uglifier', '1.2.3'
   gem 'compass-rails'
-  gem 'zurb-foundation', '= 3.2.5'
+  gem 'zurb-foundation'
   gem 'asset_sync'
   gem 'angularjs-rails'
 end

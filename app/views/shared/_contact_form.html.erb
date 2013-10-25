@@ -1,30 +1,30 @@
 <%= form_for @contact, :validate => true do |f| %>
   <div class="row">
-    <div class="six columns">
+    <div class="large-6 columns">
       <%= f.text_field :first, :placeholder => "First Name", :class => "contact-input" %>
     </div>
-    <div class="six columns">
+    <div class="large-6 columns">
       <%= f.text_field :last, :placeholder => "Last Name", :class => "contact-input" %>
     </div>
   </div>
   <div class="row">
-    <div class="twelve columns">
+    <div class="large-12 columns">
       <%= f.text_field :phone_number, :placeholder => "Phone Number: (111) 123-4567", :class => "contact-input" %>
     </div>
   </div>
   <div class="row">
-    <div class="twelve columns">
+    <div class="large-12 columns">
       <%= f.text_field :address, :placeholder => "E-Mail Address: me@mycompany.com", :class => "contact-input" %>
     </div>
   </div>
   <div class="row">
-    <div class="twelve columns">
+    <div class="large-12 columns">
       <%= f.text_area :comment, :placeholder => "Tell us Something", :rows => '5', :class => "contact-input" %>
     </div>
   </div>
   <div class="row">
-    <div class="twelve columns ">
-      <%= f.submit "Submit", :class => "small button right" %>
+    <div class="large-12 columns ">
+      <%= f.submit "Submit", :class => "small button ticket" %>
     </div>
   </div>
 <% end %>

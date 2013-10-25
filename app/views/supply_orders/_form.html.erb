@@ -1,65 +1,65 @@
 <%= form_for @supply_order, :validate => true do |f| %>
   <div class="row">
-    <div class="two columns">
+    <div class="large-2 columns">
       <%= f.label "Name:", :class => "right inline" %>
     </div>
-    <div class="five columns">
+    <div class="large-5 columns">
       <%= f.text_field :first, :placeholder => "First" %>
     </div>
-    <div class="five columns">
+    <div class="large-5 columns">
       <%= f.text_field :last, :placeholder => "Last" %>
     </div>
   </div>
   <div class="row">
-    <div class="two columns">
+    <div class="large-2 columns">
       <%= f.label "Company:", :class => "right inline" %>
     </div>
-    <div class="ten columns">
+    <div class="large-10 columns">
       <%= f.text_field :company, :placeholder => "My Company, LLC." %>
     </div>
   </div>  
   <div class="row">
-    <div class="two columns">
+    <div class="large-2 columns">
       <%= f.label "Phone:", :class => "right inline" %>
     </div>
-    <div class="ten columns">
+    <div class="large-10 columns">
       <%= f.text_field :phone_number, :placeholder => "(111) 123-4567" %>
     </div>
   </div>
   <div class="row">
-    <div class="two columns">
+    <div class="large-2 columns">
       <%= f.label "E-Mail:", :class => "right inline" %>
     </div>
-    <div class="ten columns">
+    <div class="large-10 columns">
       <%= f.text_field :address, :placeholder => "me@mycompany.com" %>
     </div>
   </div>
   <div class="row">
-    <div class="two columns">
+    <div class="large-2 columns">
       <%= f.label "SOS#:", :class => "right inline" %>
     </div>
-    <div class="ten columns">
+    <div class="large-10 columns">
       <div class="row collapse">
-        <div class="two mobile-one columns">
+        <div class="large-2 mobile-one columns">
           <span class="prefix">SOS</span>
         </div>
-        <div class="ten mobile-three columns">
+        <div class="large-10 mobile-three columns">
           <%= f.text_field :sos, :placeholder => "1234" %>
         </div>
       </div>
     </div>
   </div>
   <div class="row">
-    <div class="two columns">
+    <div class="large-2 columns">
       <%= f.label "Supply Item(s):", :class => "right inline" %>
     </div>
-    <div class="ten columns">
+    <div class="large-10 columns">
       <%= f.text_area :comment, :placeholder => "Tell us what supplies you'd like to order.", :rows => "5" %>
     </div>
   </div>
   <div class="row">
-    <div class="two columns centered">
-      <%= f.submit "Submit", :class => "small button" %>
+    <div class="large-12 columns">
+      <%= f.submit "Submit", :class => "small button ticket" %>
     </div>
   </div>
 <% end %>

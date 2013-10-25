@@ -33,7 +33,7 @@ body { background: #EBEBEB; }
 
 .button.home { background:white; }
 .button.home:hover { background:#f6f6f6; }
-.shadow { border: #f6f6f6 solid thin; margin:10px 0; }
+/*.shadow { border: #f6f6f6 solid thin; margin:10px 0; }*/
 .shadow form { padding: 0 15px 10px; }
 .copyright { background: transparent; } 
 
@@ -42,12 +42,20 @@ h2.title { font-size: 54px; border-bottom:#ccc solid thin; text-align: center; }
 iframe.maps { width:100%; height:450px; }
 
 .copyright a p { color: #ccc; cursor: text; }
+@media screen and (min-width: 480px) {
+	.navicontainer {
+		display:none;
+	}
+	ul.menu {
+		display: block !important;
+	}
+}
+
 
 @media only screen and (min-width: 767px) {
 	#menu { display: block !important; overflow: visible !important; }
 }
-@media only screen and (max-width: 767px) { 
-	.box { margin-top: 0; }
+@media only screen and (max-width: 767px) {
 	iframe.maps { width:100%; height:300px; }
 	.top-menu { padding-top: 0; }
 	.homephrase { padding: 15px; }
@@ -56,4 +64,75 @@ iframe.maps { width:100%; height:450px; }
 	#menu { display: none; }
 	.rbar ul li a, .rbar ul li a:hover, .rbar ul li a  { color: white; }
 	.nav-bar li.has-flyout h4.menu-links a:first-child::after { border-color: white transparent transparent transparent; }
+}
+
+@media screen and (max-width: 480px) {
+	.navicontainer{
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding: 44px 40px ; 
+		cursor: pointer;
+		.navicon {
+			content: "";
+			display: block;
+			margin: 0;
+			width: 25px;
+			border-top: #222 solid 12.5px;
+			border-right: transparent solid 12.5px;
+			border-left: transparent solid 12.5px;
+		}
+	}
+	header.top ul.menu { float: none; margin:0; }
+	ul.menu {
+		display: none;
+		min-height: 50px;
+		cursor: pointer;
+		margin: 50px 0 0px;
+		text-align: center;
+		color: white;
+		line-height: 40px;
+		padding: 0 15px;
+		width: 100%;
+		float: none;
+
+		li {
+			width: 100%;
+			float: none;
+			background: white;
+			a {
+				display: block;
+				color: #999;
+				text-shadow: none;
+				text-decoration: none;
+			}
+		}
+		li:hover {
+			width: 100%;
+			float: none;
+			a {
+				color: #d00;
+			}
+		}
+	}
+	.navicontainer:hover {
+		.navicon {
+			border-top: #d00 solid 12.5px;
+		}
+	}
+
+	.navicontainer.clicked:hover {
+		.navicon {
+			border-bottom: #d00 solid 12.5px;
+		}
+	}
+
+	.navicontainer.clicked {
+		.navicon {
+			border-top: none;
+			border-bottom: #222 solid 12.5px;
+			border-right: transparent solid 12.5px;
+			border-left: transparent solid 12.5px;
+		}
+	}
 }

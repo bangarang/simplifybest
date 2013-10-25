@@ -11,10 +11,22 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require turbolinks
 //= require jquery_ujs
-//= require foundation
 //= require angular
 //= require angular-resource
-//= require rails.validations
-//= require_tree .
 //= require retina_tag
+//= require foundation
+//= require rails.validations
+//= require rails.validations.turbolinks
+//= require_tree .
+//= require jquery.turbolinks
+
+$(function(){ $(document).foundation(); });
+$(document).ready(function(){
+    $('.navicontainer').click(function() {
+      $(this).toggleClass("clicked");
+      $('ul.menu').toggle();
+      return false;
+    });
+});

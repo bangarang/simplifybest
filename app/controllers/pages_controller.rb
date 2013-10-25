@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  before_filter :authenticate_user!, :except => [:home, :privacy, :estimator, :about]
+  before_filter :authenticate_user!, :except => [:home, :privacy, :estimator, :about, :support]
 
   def home
   	@featured_products = Product.where(:featured => true)
@@ -14,5 +14,11 @@ class PagesController < ApplicationController
   end
 
   def estimator
+  end
+
+  def support
+    @service_call = ServiceCall.new
+    @supply_order = SupplyOrder.new
+    @meter = Meter.new
   end
 end

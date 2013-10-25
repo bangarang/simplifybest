@@ -2,16 +2,19 @@
 
 <div class="row">
 
-	<div class="twelve columns homephrase">
+	<div class="large-12 columns homephrase">
 		<h1 class="subheader">Copiers. Printers. All-in-One. <b class="simplified">Simplified.</b></h1>
 		<h3 class="subheader">Great products backed by the best locally-owned support in the Omaha area.</h3>
-		<a class="success large button radius" href="/getaquote"><h3>Get a Free Quote</h3></a>
+		<a href="/getaquote"><h2 class="Quote">Get a Free Quote</h2></a>
 	</div>
-	<div class="twelve columns">
+</div>
+
+<div class="row">
+	<div class="large-12 columns">
 		<h2 class="title">Featured Products</h2>
 	</div>
-	<div class="twelve columns">
-	    <ul class="block-grid four-up mobile">
+	<div class="large-12 columns">
+	    <ul class="large-block-grid-4 small-block-grid-2">
 	      <% for product in @featured_products %>
 	        <li>
 	            <ul class="pricing-table box product">
@@ -25,9 +28,29 @@
 	      <% end %>
 	    </ul>
 	</div>
+</div>
+<div class="row">
+	<div class="large-12 columns">
+		<h2 class="title">Sign Up for Monthly Specials!</h2>
+	</div>
+	<div class="large-8 columns large-centered">
+		<div id="mc_embed_signup">
+			<form action="http://simplifybest.us7.list-manage.com/subscribe/post?u=0520304538750e6d8a5e796e0&amp;id=df6de47979" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+				<div class="large-4 columns">
+					<label for="mce-EMAIL" class="right inline">E-mail Address:</label>
+				</div>
+				<div class="large-8 columns">
+					<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="me@example.com" required>
+				</div>
+				<div class="large-4 columns large-centered"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="small success button ticket"></div>
+			</form>
+		</div>
+
+	<!--End mc_embed_signup-->
+	</div>
 
 </div>
 
 <%= javascript_tag do %>
-	analytics.track('Viewed Home Page');
+	mixpanel.track('Home Page');
 <% end %>

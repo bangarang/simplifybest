@@ -1,18 +1,18 @@
 <% provide(:title, "Admin") %>
 <div class="admin row">
-	<div class="twelve columns top">
-		<h2>Administration</h2>
+	<div class="large-12 columns">
+		<h2 class="title">Administration</h2>
 	</div>
-	<div class="twelve columns">
+	<div class="large-12 columns">
 		<h3 class="csm">Customer Service Messages ( <%= @messages.length %> )<i class="icon-angle-up right"></i></h3>
 		<div class="row admin-edit csm-content">
-			<div class="twelve columns links">
-				<div class="four columns"><%= link_to "<i class='icon-plus'></i> New Meter Reading".html_safe, new_meter_path %></div>
-		        <div class="four columns"><%= link_to "<i class='icon-plus'></i> New Service Call".html_safe, new_supply_order_path %></div>
-		        <div class="four columns"><%= link_to "<i class='icon-plus'></i> New Supply Order".html_safe, new_service_call_path %></div>
+			<div class="large-12 columns links">
+				<div class="large-4 columns"><%= link_to "<i class='icon-plus'></i> New Meter Reading".html_safe, new_meter_path %></div>
+		        <div class="large-4 columns"><%= link_to "<i class='icon-plus'></i> New Service Call".html_safe, new_supply_order_path %></div>
+		        <div class="large-4 columns"><%= link_to "<i class='icon-plus'></i> New Supply Order".html_safe, new_service_call_path %></div>
 		    </div>
-		    <div class="twelve columns">
-		      <ul class="block-grid four-up mobile index">
+		    <div class="large-12 columns">
+		      <ul class="large-block-grid-4 small-block-grid-2">
 		        <% for message in @messages %>
 		        <li>
 		          <ul class="pricing-table box message">
@@ -50,21 +50,21 @@
 		    </div>
 		</div>
 	</div>
-	<div class="six columns">
+	<div class="large-6 columns">
 		<h3 class="prods">Products ( <%= @products.length %> )<i class="icon-angle-down right"></i></h3>
 		<div class="row admin-edit prods-content">
-			<div class="twelve columns links">
-		        <div class="six columns"><%= link_to "<i class='icon-plus'></i> New Product".html_safe, new_product_path %></div>
-		        <div class="six columns"><%= link_to "<i class='icon-plus'></i> New Category".html_safe, new_category_path %></div>
+			<div class="large-12 columns links">
+		        <div class="large-6 columns"><%= link_to "<i class='icon-plus'></i> New Product".html_safe, new_product_path %></div>
+		        <div class="large-6 columns"><%= link_to "<i class='icon-plus'></i> New Category".html_safe, new_category_path %></div>
 		    </div>
 	    	
-	    	<div class="twelve columns">
+	    	<div class="large-12 columns">
 	    	<%= form_tag featured_products_path, method: :put do %>
 				<% for category in @categories %>
 		        <h4><%= category.name %></h4>
-		        <div class="row admin-edit">
-					<div class="six columns links"><%= link_to "<i class='icon-edit'></i> Edit".html_safe, edit_category_path(category) %></div>
-					<div class="six columns links"><%= link_to "<i class='icon-trash'></i> Delete".html_safe, category, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+		        <div class="row admin-edit" data-no-turbolink>
+					<div class="large-6 columns links"><%= link_to "<i class='icon-edit'></i> Edit".html_safe, edit_category_path(category) %></div>
+					<div class="large-6 columns links"><%= link_to "<i class='icon-trash'></i> Delete".html_safe, category, method: :delete, data: { confirm: 'Are you sure?' } %></div>
 			    	<div>
 				        <table class="products">
 				        	<% for product in category.products.order(:name) %>
@@ -80,15 +80,15 @@
 				  	</div>
 		  		</div>
 		  		<% end %>
-		  		<%= submit_tag "Featured Checked" %>
+		  		<%= submit_tag "Submit Features", :class => "small button ticket" %>
 		  	<% end %>
 		  	</div>
   		</div>
 	</div>
-	<div class="six columns">
+	<div class="large-6 columns">
 	  	<h3 class="users">Users ( <%= @users.length %> )<i class="icon-angle-down right"></i></h3>
 		<div class="row admin-edit users-content">
-			<div class="twelve columns links"><%= link_to "<i class='icon-plus'></i> New User".html_safe, new_user_path %></div>
+			<div class="large-12 columns links"><%= link_to "<i class='icon-plus'></i> New User".html_safe, new_user_path %></div>
 			<table class="products">
 			<% for user in @users %>
 	        	<tr>
@@ -106,6 +106,3 @@
   		</div>
 	</div>
 </div>
-<%= javascript_tag do %>
-  analytics.track('Viewed Admin Page');
-<% end %>

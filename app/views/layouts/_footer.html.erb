@@ -1,7 +1,7 @@
-</div>
-<div class="prod-footer">
+<!-- </div> -->
+<div class="prod-footer hide-for-print">
   <div class="row">
-    <div class="three columns hide-for-small">
+    <div class="large-3 columns hide-for-small">
       <h4 class="subheader">Products Types</h4>
       <ul>
         <% for category in @categories %>
@@ -10,7 +10,7 @@
         <li><%= link_to "View All", products_url %></li>
       </ul>
     </div>
-    <div class="three columns hide-for-small">
+    <div class="large-3 columns hide-for-small">
       <h4 class="subheader">Customer Service</h4>
       <ul>
         <li><%= link_to "Meter Reading", new_meter_path %></li>
@@ -18,7 +18,7 @@
         <li><%= link_to "Supply Order", new_supply_order_path %></li>
       </ul>
     </div>
-    <div class="three columns">
+    <div class="large-3 columns">
       <h4 class="subheader">Contact Us</h4>
       <dl>
         <dt>Address</dt>
@@ -28,18 +28,17 @@
         <dd>Toll-Free: 1 (877) 677-6482 </dd>
       </dl>
     </div>
-    <div class="contact-form three columns hide-for-small">
+    <div class="contact-form large-3 columns hide-for-small">
       <h4 class="subheader">Leave a Comment</h4>
       <%= render 'shared/contact_form' %>
     </div>
   </div>
-</div>
-<div class="copyright">
-    <div class="row">
+  <div class="row">
+      <div class="copyright large-12 columns">
       <ul>
         <li>&copy; Simplified Office Solutions 2013</li>
         <li><%= link_to "Login", new_user_session_path %></li>
         <li><a href="/privacy-policy">Privacy Policy</a></li>
       </ul>
-    </div>
+  </div>
 </div>

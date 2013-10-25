@@ -1,29 +1,25 @@
 <% provide(:title, 'About Us') %>
-<style>
-h1.super {
-	color: black;
-	margin-bottom: 12px;
-	line-height: 200px;
-	text-shadow: rgba(0, 0, 0, 0.4) 0 1px 2px;
-	text-align: left;
-}
-[simplified] { color:#d00; }
-</style>
-<div class="row">
-	<div class="twelve columns" id="support">
-		<h2 class="title" >Expert Customer Service</h2>
-      	<p class="subheader">We believe that great customer service starts with communication and we've made a few easy ways to contact us. Let us know if you need to place a service call, supply order or submit a meter reading right from our site. Or leave us any other comments at the bottom of the page.</p>
-	</div>
-	<div class="twelve columns bottomphrase">
-		  <%= link_to "<i class='icon-calendar'></i><br><br> Submit a Meter Reading".html_safe, new_meter_path, :class => 'home button meterreading four columns' %>
-		  <%= link_to "<i class='icon-wrench'></i><br><br> Place a Service Call".html_safe, new_service_call_path, :class => 'home button servicecall four columns' %>
-		  <%= link_to "<i class='icon-shopping-cart'></i><br><br> Place a Supply Order".html_safe, new_supply_order_path, :class => 'home button supplyorder four columns' %>
-	</div>
 
-	<div class="twelve columns">
-		<h2 class="title" id="overview">Find Us</h2>
+<div class="box">
+	<div class="row">
+		<div class="large-12 columns" id="support">
+			<h2 class="title" >Expert Customer Service</h2>
+	      	<p class="subheader">We believe that great customer service starts with communication and we've made a few easy ways to contact us. Let us know if you need to place a service call, supply order or submit a meter reading right from our site. Or leave us any other comments at the bottom of the page.</p>
+		</div>
 	</div>
-	<div class="twelve columns bottomphrase">
-		<iframe class="maps" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Simplified+Office+Solutions,+South+118th+Street,+Omaha,+NE&amp;aq=1&amp;oq=Simplified+Office+&amp;sll=41.192627,-96.096192&amp;sspn=0.00926,0.011351&amp;ie=UTF8&amp;hq=Simplified+Office+Solutions,&amp;hnear=S+118th+St,+Omaha,+Nebraska&amp;t=m&amp;ll=41.209526,-96.097927&amp;spn=0.0452,0.072956&amp;z=13&amp;iwloc=A&amp;output=embed"></iframe>
+	<div class="row bottomphrase">
+		  <%= link_to "<i class='icon-calendar'></i><br><br> Submit a Meter Reading".html_safe, new_meter_path, :class => 'home button meterreading large-4 columns' %>
+		  <%= link_to "<i class='icon-wrench'></i><br><br> Place a Service Call".html_safe, new_service_call_path, :class => 'home button servicecall large-4 columns' %>
+		  <%= link_to "<i class='icon-shopping-cart'></i><br><br> Place a Supply Order".html_safe, new_supply_order_path, :class => 'home button supplyorder large-4 columns' %>
+	</div>
+</div>
+<div class="box">
+	<div class="row">
+		<div class="large-12 columns">
+			<h2 class="title" id="overview">Find Us</h2>
+		</div>
+		<div class="large-12 columns bottomphrase">
+			<iframe class="maps" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Simplified+Office+Solutions,+South+118th+Street,+Omaha,+NE&amp;aq=1&amp;oq=Simplified+Office+&amp;sll=41.192627,-96.096192&amp;sspn=0.00926,0.011351&amp;ie=UTF8&amp;hq=Simplified+Office+Solutions,&amp;hnear=S+118th+St,+Omaha,+Nebraska&amp;t=m&amp;ll=41.209526,-96.097927&amp;spn=0.0452,0.072956&amp;z=13&amp;iwloc=A&amp;output=embed"></iframe>
+		</div>
 	</div>
 </div>

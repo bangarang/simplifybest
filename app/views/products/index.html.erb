@@ -1,27 +1,19 @@
 <% provide(:title, 'Products') %>
 
 <div class="row">
-  <div class="twelve columns">
-    <h1>Our Products</h1>
-  </div>
-</div>
-<div class="bread row">
-  <div class="twelve columns">
-    <ul class="breadcrumbs">
-      <li><%= link_to "Home", root_url %></li>
-      <li class="current"><%= link_to "Products", products_url %></li>
-    </ul>
+  <div class="large-12 columns">
+    <h2 class="title">Our Products</h2>
   </div>
 </div>
 <% for category in @categories %>
 <div class="row">
-  <div class="twelve columns">
-    <h3 class="title"><%= link_to category.name, category %>  <small class="subheader"><%= category.description %></small></h3>
+  <div class="large-12 columns">
+    <h3 class="title"><%= link_to category.name, category %></h3>
   </div>
 </div>
 <div class="row">
-  <div class="twelve columns">
-    <ul class="block-grid four-up mobile-two-up">
+  <div class="large-12 columns">
+    <ul class="large-block-grid-4 small-block-grid-2">
     <% for product in category.products.order(:name) %>
       <li>
         <ul class="pricing-table box product">
@@ -39,5 +31,5 @@
 <% end %>
 
 <%= javascript_tag do %>
-  analytics.track('Viewed All Products');
+  mixpanel.track('All Products');
 <% end %>

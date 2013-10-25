@@ -1,9 +1,13 @@
-<header class="top <% if user_signed_in?%> in<% end %>">
-  <a class="logo" href="<%= root_url %>"><%= image_tag("logo.png") %></a>
+<header class="top <% if user_signed_in?%> in<% end %> hide-for-print">
+  <a class="logo hide-for-print" href="<%= root_url %>"><%= image_tag("logo.png") %></a>
+  <section class="navicontainer"><p class="navicon"></p></section>
   <ul class="menu">
-    <li>Products</li>
-    <li>Support</li>
-    <li>Company</li>
+  	<li><h4><%= link_to "Home", root_url, class: active_class?(root_path) %></h4></li>
+    <li><h4><%= link_to "Products", products_url, class: active_class?(products_path) %></h4></li>
+    <li><h4><%= link_to "Support", support_url, class: active_class?(support_path) %></h4></li>
+    <li><h4><%= link_to 'Company', about_path, class: active_class?(about_path) %></h4></li>
+    <% if user_signed_in? %>
+	<li><h4 data-no-turbolink><%= link_to "Admin", admin_url, class: active_class?(admin_path) %></h4></li>
+    <% end %>
   </ul>
-  <h3>1 (402) 935-7936 </h3>
 </header>

@@ -1,16 +1,19 @@
 /*
  *= require_self
- *= require foundation_and_overrides
+ //= require foundation_and_overrides
+ *= require foundation
  *= require 'font-awesome'
  *= require_tree .
  */
 
+textarea { height: auto !important; }
 .copyright {
-	background: #111;
+	background: #ddd;
 	padding-top: 10px !important;
 	color: #BCBCBC;
 	ul {
 		text-align: center;
+		width: 100%;
 	}
 	ul li {
 		padding: 0 10px;
@@ -45,11 +48,11 @@ h1.super { color: white; font-size: 80px; line-height: 80px; margin-bottom: 12px
 h1.super.last-line { color:#d00;}
 
 .mcontainer {width:1000px;margin: 20px auto;max-width: 100%;}
-.box { background: white; width: 1000px; max-width: 100%; margin: 10px auto; padding: 0; box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); -moz-box-shadow: 0 0 15px rgba(0,0,0,0.13); -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); overflow: hidden;}
+.box { background: white; width: 1000px; max-width: 100%; margin: 10px auto; padding: 0; box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); -moz-box-shadow: 0 0 15px rgba(0,0,0,0.13); -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.13);}
 .shadow {background: white; box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); -moz-box-shadow: 0 0 15px rgba(0,0,0,0.13); -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); }
 
 
-.simplified { background:white; margin: 0 auto; }
+.simplified { margin: 0 auto; }
 .prodnav { background:rgb(33,33,33); background:rgba(33,33,33,0.9); }
 .messnav { }
 .adminnav { background:rgb(0,136,204); background:rgba(0,136,204,0.8); }
@@ -61,7 +64,7 @@ h1.super.last-line { color:#d00;}
 
 .title h3 { margin:20px 0 20px -30px; padding:5px 30px; background: rgba(255,255,255,0.9); }
 
-h3.title { color: #333; border-bottom: #ccc solid thin; }
+h3.title { color: #333; text-align: center }
 
 h3.title a { color:#d00; }
 h3.title a:hover { color:#b00; }
@@ -147,7 +150,7 @@ h2.fas { background: #333; background: rgba(0,0,0,0.8); padding: 10px 5px; color
 
 .prod-footer h4 { color: #333; border-bottom: #333 dashed 1px; padding: 5px 0; margin: 10px 0; }
 
-.prod-footer { color: #333; margin: 20px 0}
+.prod-footer { color: #333; margin: 20px 0 0; padding: 15px 0 0; background: #ddd; }
 .prod-footer ul { float: left; margin: 0 50px 30px 0}
 .prod-footer ul li label { text-decoration:underline;   }
 .prod-footer ul li { list-style:none;   }
@@ -168,8 +171,6 @@ h2.fas { background: #333; background: rgba(0,0,0,0.8); padding: 10px 5px; color
 .bread { background: #f6f6f6; margin-bottom:0 }
 .bread ul.breadcrumbs { background:none; border: none; margin-bottom:0; padding: 6px 0 7px;}
 .bread ul.breadcrumbs li a, .bread ul.breadcrumbs li:hover a  { color: #d00; }
-
-.home.button { width:100%; }
 
 .bb { padding-bottom: 10px; }
 
@@ -220,6 +221,50 @@ input[type=number]::-webkit-inner-spin-button {
 }
 .cntrd { text-align:center; }
 
+header.top {
+	background: white; 
+	height: 100px;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.13); 
+	-moz-box-shadow: 0 0 15px rgba(0,0,0,0.13); 
+	-webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.13);
+	a.logo img {
+		height: 80px;
+		margin: 10px 15px;
+		float: left;
+	}
+	h2 { color: #d00 }
+	ul.menu {
+		float: right;
+		margin: 0 15px;
+
+
+
+		li {
+			float: left;
+			list-style: none;
+			padding: 0 15px;
+			line-height: 100px;
+			a {
+				color: #222222;
+				line-height: 100px;
+			}
+			a.active {
+				color:#d00;
+				line-height: 100px;
+			}
+		}
+
+		li:hover {
+			a {
+				color: #d00;
+			}
+		}
+	}
+}
+
+div#gallery {
+	padding: 15px 0;
+}
 
 @media only screen and (max-width: 1030px) {
   	h3.title { margin:10px -15px 10px 0; }
