@@ -8,7 +8,7 @@
     <li><h4><%= link_to 'Company', about_path, class: active_class?(about_path) %></h4></li>
     <% if user_signed_in? %>
   	<li><h4 data-no-turbolink><%= link_to "Admin", admin_url, class: active_class?(admin_path) %></h4></li>
-    <li>h4><%= link_to 'Log Out', destroy_user_session_path, :method => 'delete', :confirm => 'Are you sure?' %></h4></li>
+    <li><h4><%= link_to 'Log Out', destroy_user_session_path, :method => 'delete', :confirm => 'Are you sure?' %></h4></li>
     <% end %>
   </ul>
 </header>
