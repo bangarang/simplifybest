@@ -49,13 +49,13 @@
 
   <div class="row" id="gallery">
     <div class="large-12 columns"><h3 class="title">Gallery</h3></div> 
-    <div class="large-3 columns">
-      <%= link_to_add_pics "Add a Product Picture", f, :product_pictures %>
-    </div>
-    <div class="large-9 columns ppicture_edit">
+    <div class="large-12 columns ppicture_edit">
       <%= f.fields_for :product_pictures, :html => {:multipart => true} do |builder| %>
         <%= render 'products/forms/fields/product_picture_fields', f: builder %>
       <% end %>
+    </div>
+    <div class="large-3  large-centered  columns">
+      <%= link_to_add_pics "Add a Product Picture", f, :product_pictures %>
     </div>
   </div>
 

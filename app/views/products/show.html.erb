@@ -4,19 +4,16 @@
   <div class="prod-nav row">
     <div class="large-12 columns">
       <h2 class="title"><%= @product.brand.name if @product.brand %> <%= @product.name %></h2>
+      <% if can? :edit, @product %>
+      <div class="large-12 columns plinks">
+        <div class="large-4 columns"><%= link_to "Edit", edit_product_path(@product)%></div>
+        <div class="large-4 columns"><%= link_to "Delete Product", @product, :confirm => 'Are you sure?', :method => :delete %></div>
+        <div class="large-4 columns"><a href="<%=@product.slug%>/dup">Duplicate Product</a></div>
+      </div>
+    <% end %>
     </div>
   </div>
-  <div class="bread row  hide-for-print">
-      <% if can? :edit, @product %>
-      <div class="large-6 columns">
-        <ul class="prod-edit" data-no-turbolink>
-          <li><%= link_to "Edit", edit_product_path(@product)%></li>
-          <li><%= link_to "Delete Product", @product, :confirm => 'Are you sure?', :method => :delete %></li>
-          <li><a href="<%=@product.slug%>/dup">Duplicate Product</a></li>
-        </ul>
-      </div>
-      <% end %>
-  </div>
+  
   <div class="row" id="overview"> 
     <div class="large-6 columns mainimage">
         <%= image_tag @product.image_url(:main).to_s if @product.image? %>
