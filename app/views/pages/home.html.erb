@@ -1,12 +1,14 @@
 <% provide(:title, 'Copiers and Printers in Omaha') %>
 
 <div class="loupeandbell">
-	<div class="row">
-
-		<div class="large-8 columns large-centered homephrase box">
-			<h1 class="subheader">Copiers. Printers. All-in-One. <b class="simplified">Simplified.</b></h1>
-			<h3 class="subheader">Great products backed by the best locally-owned support in the Omaha area.</h3>
-			<a href="/getaquote"><h2 class="Quote">Get a Free Quote</h2></a>
+	<div class="homephrase">
+		<div class="row">
+			<div class="large-9 columns">
+				<h2 class="tagline subheader">Great products backed by the best support in the Omaha area.</h2>
+			</div>
+			<div class="large-3 columns">
+				<a class="button success" href="/getaquote"><h2 class="Quote subheader">Get a Quote</h2></a>
+			</div>
 		</div>
 	</div>
 </div>
@@ -23,31 +25,25 @@
 	    </ul>
 	</div>
 </div>
-<div class="row">
-	<div class="large-12 columns">
-		<h2 class="title">Sign Up for Monthly Specials!</h2>
-	</div>
-	<div class="large-8 columns large-centered">
-		<div id="mc_embed_signup">
-			<form action="http://simplifybest.us7.list-manage.com/subscribe/post?u=0520304538750e6d8a5e796e0&amp;id=df6de47979" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-				<div class="row">
-					<div class="large-4 columns">
-						<label for="mce-EMAIL" class="right inline">E-mail Address:</label>
-					</div>
-					<div class="large-8 columns">
-						<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="me@example.com" required>
-					</div>
-				</div>
-				<div class="row">
-					<div class="large-4 columns large-centered"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="small success button ticket"></div>
-				</div>
-			</form>
-		</div>
 
-	<!--End mc_embed_signup-->
-	</div>
-
-</div>
+<section class="newsletter">
+  <div class="row">
+    <div class="large-7 columns">
+      <p class="comment subheader">Sign up for our Monthly Specials!</p>
+    </div>
+    <div class="large-5 columns">
+		<form action="http://simplifybest.us7.list-manage.com/subscribe/post?u=0520304538750e6d8a5e796e0&amp;id=df6de47979" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+			<div class="row collapse">
+				<div class="large-9 small-8 columns">
+					<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="me@example.com" required>
+				</div>
+				<div class="large-3 small-4 columns">
+					<button type="submit" class="small button expand" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">Subscribe</button>
+				</div>
+			</div>
+		</form>
+  </div>
+</section>
 
 <%= javascript_tag do %>
 	mixpanel.track('Home Page');
