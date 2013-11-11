@@ -3,6 +3,7 @@ class PagesController < ApplicationController
 
   def home
   	@featured_products = Product.where(:featured => true)
+    @brands = Brand.all
   end
 
   def admin

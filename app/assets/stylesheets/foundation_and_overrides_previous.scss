@@ -123,6 +123,20 @@ ul.product.Muratec {
 
 }
 
+.manufacturers {
+  background: white;
+  padding: 50px 0;
+  h3 { text-align: center; }
+  img {
+    width: 150px;
+    display: table;
+    margin: auto;
+  }
+  .partner {
+    padding: 20px 0;
+  }
+}
+
 .pricing-table .title { background: #eee; }
 .pricing-table .title a { color: #d00; }
 .pricing-table .title a:hover  { color: #b00; }
@@ -239,7 +253,7 @@ color: #aaa;
 
 .home-edit .button { width: 100%; }
 
-#featured { }
+.featured { padding: 50px 0 }
 #featured img { display: none; }
 
 #featured.orbit { background: none; }
