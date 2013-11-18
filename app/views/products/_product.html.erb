@@ -1,6 +1,6 @@
 	        <li>
 	            <ul class="box product <%= product.brand.name if product.brand %>">
-	              <li class="thumbnail"><%= image_tag product.image_url(:thumb).to_s if product.image? %></li>
+	              <li class="thumbnail"><%= image_tag product.image_url.to_s if product.image? %></li>
 	              <li class="title"><h4><%= link_to product.name, product %></h4></li>
 	              <li class="bullet"><%= product.excerpt %></li>
 	              <li class="bullet"><%= product.maxdutycycle %></li>
