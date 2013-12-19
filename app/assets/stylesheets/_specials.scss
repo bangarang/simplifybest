@@ -1,0 +1,56 @@
+.eoys{
+	.specials {
+		background: #d00;
+		margin-bottom: 15px;
+		h1 {
+			color: white;
+			text-align: center;
+			font-size: 75px;
+			line-height:200px;
+		}
+	}
+	.special {
+		border: #ddd solid 1px;
+		background: white;
+		text-align: center;
+		.name {
+			background: #ddd;
+			margin-top: 0px;
+			line-height: 2;
+			a {
+				color: #555;
+			}
+			a:hover {
+				color: black;
+				-webkit-transition: all 0.2s ease-in-out;
+				-moz-transition: all 0.2s ease-in-out;
+				transition: all 0.2s ease-in-out;
+			}
+		}
+		.description {
+			font-weight: 300;
+			color: #777;
+		}
+		.price {
+			span {
+				text-decoration: line-through;
+				color: #d00;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.eoys{
+		.specials {
+			background: #d00;
+			margin-bottom: 15px;
+			h1 {
+				color: white;
+				text-align: center;
+				font-size: 50px;
+				line-height:75px;
+			}
+		}
+	}
+}
