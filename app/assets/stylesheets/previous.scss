@@ -53,6 +53,11 @@ ul.product {
     list-style: none;
     text-align: center;
   }
+
+  li.thumbnail img {
+    max-height: 200px;
+    max-width: 100%;
+  } 
   li.title h4 {
     background: #222;
     font-weight: bold;

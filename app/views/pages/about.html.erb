@@ -23,3 +23,24 @@
 		</div>
 	</div>
 </div>
+<div class="box">
+	<section class="manufacturers">
+		<div class="row">
+			<div class="large-12 columns">
+				<h2 class="title">Our Partners</h2>
+				<h3 class="subheader">We've partnered with the best manufacturers in the world to deliver you great office machines.</h3>
+			</div>
+		</div>
+		<% for brand in @brands %>
+		<div class="row partner">
+			<div class="large-5 columns">
+				<%= image_tag brand.image_url(:main).to_s %>
+			</div>
+			<div class="large-7 columns">
+				<%= brand.description.html_safe %>
+				<h3><%= link_to "Check out all of our #{brand.name} Products", brand %></h3>
+			</div>
+		</div>
+		<% end %>
+	</section>
+</div>

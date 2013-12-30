@@ -22,4 +22,8 @@ class PagesController < ApplicationController
     @supply_order = SupplyOrder.new
     @meter = Meter.new
   end
+
+  def about
+    @brands = Brand.all
+  end
 end
