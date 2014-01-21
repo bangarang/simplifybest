@@ -5,22 +5,15 @@
     <h2 class="title"><%= @group %></h2> 
   </div>
 </div>
-<% for category in @categories %>
 <div class="row">
   <div class="large-12 columns">
-    <h3 class="title"><%= link_to category.name, category %></h3>
-  </div>
-</div>
-<div class="row">
-  <div class="large-12 columns">
-    <ul class="large-block-grid-4 small-block-grid-2">
-    <% for product in category.products.order(:name) %>
+      <ul class="large-block-grid-4 small-block-grid-2">
+        <% for product in @products.order(:name) %>
       <%= render 'products/product', product: product %>
-    <% end %>
-    </ul>
+        <% end %>
+      </ul>
   </div>
 </div>
-<% end %>
 
 <%= javascript_tag do %>
   mixpanel.track('<%= @group %>');
