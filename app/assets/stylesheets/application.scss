@@ -6,6 +6,10 @@
  *= require 'z'
  */
 
+[data-clearing] li {
+	margin-right: 0px;
+}
+
 textarea { height: auto !important; }
 .copyright {
 	background: #ddd;
