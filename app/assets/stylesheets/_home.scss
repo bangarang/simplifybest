@@ -42,8 +42,9 @@ section.groupfeatures {
 		padding: 0 15px;
 	}
 	.groups {
-		max-height: 150px;
-		display: table;
+		height: 200px;
+		width: 200px;
+		display: block;
 		margin: auto;
 	}
 	h2.groupname {
