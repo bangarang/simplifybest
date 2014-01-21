@@ -5,6 +5,11 @@ Simplifybest::Application.routes.draw do
   match 'about' => 'pages#about'
   match 'support' => 'pages#support'
 
+  match 'smalloffice' => 'pages#smalloffice'
+  match 'printers' => 'pages#printers'
+  match 'workgroup' => 'pages#workgroup'
+  match 'enterprise' => 'pages#enterprise'
+
   resources :featured_pictures
   resources :contacts
   resources :meters

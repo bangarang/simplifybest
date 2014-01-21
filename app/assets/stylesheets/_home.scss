@@ -1,0 +1,75 @@
+section.homemain {
+  background: url(taskalfa6550ci.jpg) no-repeat center center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+	padding: 14% 0;
+	position: relative;
+	.row {
+		padding: 0 15px;
+	}
+	.lead {
+		background: rgba(0,0,0,0.65);
+		padding: 25px;
+		h1 {
+			color: white;
+			font-weight: 300;
+			font-size: 35px;
+		}
+	}
+	.featured-image {
+		bottom: 10px;
+		color: #fff;
+		font-size: 14px;
+		line-height: normal;
+		opacity: 0.8;
+		position: absolute;
+	}
+	.featured-image:hover {
+		opacity: 1;
+	}
+}
+
+section.groupfeatures {
+	background: white;
+	padding: 50px 0;
+
+	.title {
+		border: none;
+	}
+	.row {
+		padding: 0 15px;
+	}
+	.groups {
+		max-height: 150px;
+		display: table;
+		margin: auto;
+	}
+	h2.groupname {
+		text-align: center;
+	}
+	[class*="column"]+[class*="column"]:last-child {
+		float: left;
+	}
+
+	a.moreinfo {
+		color: white;
+		background: #222;
+		text-align: center;
+		display: table;
+		padding: 15px 50px;
+		margin: 15px auto;
+	}
+	a.moreinfo:hover {
+		background: #d00;
+	}
+
+}
+.storeitem {
+	width: 50%;
+	float: left;
+	display: block;
+	margin: -1px -1px 0 0;
+	border: 1px solid #CCC;
+}

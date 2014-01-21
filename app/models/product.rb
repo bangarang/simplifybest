@@ -1,7 +1,7 @@
 class Product < ActiveRecord::Base
   attr_accessible :name, :excerpt, :description, :image, :remote_image_url, :category_id, 
     :new_category_name, :accessories_attributes, :supply_items_attributes, :product_pictures_attributes, 
-    :downloads_attributes, :featured, :brand_id, :new_brand_name
+    :downloads_attributes, :featured, :brand_id, :new_brand_name, :smalloffice, :workgroup, :printer, :enterprise
 
   mount_uploader :image, ImageUploader
 

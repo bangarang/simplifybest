@@ -155,8 +155,7 @@ h2.fas { background: #333; background: rgba(0,0,0,0.8); padding: 10px 5px; color
 .prod-footer ul li label { text-decoration:underline;   }
 .prod-footer ul li { list-style:none;   }
 .prod-footer ul li a { color: #333; }
-.prod-footer ul li:hover a { color: #d00; }
-.prod-footer ul li:hover a:after { content:' >'; }
+.prod-footer ul li:hover a { text-decoration: underline; }
 
 .copyright img.logo { width:175px; display: table; margin: auto; }
 .copyright p { text-align:center; }
@@ -267,9 +266,8 @@ div#gallery {
 	padding: 15px 0;
 }
 
-
-/// BUTTS!
 @import "specials";
+@import "home";
 
 @media only screen and (max-width: 1030px) {
   	h3.title { margin:10px -15px 10px 0; }

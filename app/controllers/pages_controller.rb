@@ -26,4 +26,25 @@ class PagesController < ApplicationController
   def about
     @brands = Brand.all
   end
+
+  def printers
+    @group = "Printer"
+    @categories = Category.joins(:products).where(:products => {:printer => true})
+    render "pages/groups"
+  end 
+  def workgroup
+    @group = "Workgroup"
+    @categories = Category.joins(:products).where(:products => {:workgroup => true})
+    render "pages/groups"
+  end 
+  def smalloffice
+    @group = "Small Office"
+    @categories = Category.joins(:products).where(:products => {:smalloffice => true})
+    render "pages/groups"
+  end 
+  def enterprise
+    @group = "Enterprise"
+    @categories = Category.joins(:products).where(:products => {:enterprise => true})
+    render "pages/groups"
+  end 
 end

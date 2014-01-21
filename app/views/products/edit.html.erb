@@ -15,7 +15,10 @@
       <%= f.file_field :image %><br />
       or
       <%= f.text_field :remote_image_url, :placeholder => 'Image URL' %>
-
+      Small Office: <%= f.check_box :smalloffice %>
+      Workgroup: <%= f.check_box :workgroup %>
+      Printer: <%= f.check_box :printer %>
+      Enterprise: <%= f.check_box :enterprise %>
     </div>
     <div class="large-6 columns">
       Name: <%= f.text_field :name, :placeholder => "Product Name" %>

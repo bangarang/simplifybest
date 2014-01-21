@@ -2,13 +2,14 @@
   <a class="logo hide-for-print" href="<%= root_url %>"><%= image_tag("logo.png") %></a>
   <section class="navicontainer"><p class="navicon"></p></section>
   <ul class="menu">
-  	<li><h4><%= link_to "Home", root_url, class: active_class?(root_path) %></h4></li>
-    <li><h4><%= link_to "Products", products_url, class: active_class?(products_path) %></h4></li>
-    <li><h4><%= link_to "Support", support_url, class: active_class?(support_path) %></h4></li>
-    <li><h4><%= link_to 'Company', about_path, class: active_class?(about_path) %></h4></li>
+  	<li><h5><%= link_to "Home", root_url, class: active_class?(root_path) %></h5></li>
+    <li><h5><%= link_to "Products", products_url, class: active_class?(products_path) %></h5></li>
+    <li><h5><%= link_to "Support", support_url, class: active_class?(support_path) %></h5></li>
+    <li><h5><%= link_to 'Company', about_path, class: active_class?(about_path) %></h5></li>
+    <li><h5><a href="tel:4029357936">(402) 935-7936</a></h5></li>
     <% if user_signed_in? %>
-  	<li><h4 data-no-turbolink><%= link_to "Admin", admin_url, class: active_class?(admin_path) %></h4></li>
-    <li><h4><%= link_to 'Log Out', destroy_user_session_path, :method => 'delete', :confirm => 'Are you sure?' %></h4></li>
+  	<li><h5 data-no-turbolink><%= link_to "Admin", admin_url, class: active_class?(admin_path) %></h5></li>
+    <li><h5><%= link_to 'Log Out', destroy_user_session_path, :method => 'delete', :confirm => 'Are you sure?' %></h5></li>
     <% end %>
   </ul>
 </header>
