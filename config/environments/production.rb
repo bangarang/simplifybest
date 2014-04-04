@@ -81,7 +81,7 @@ Simplifybest::Application.configure do
   }
   
   CarrierWave.configure do |config|
-    config.asset_host = 'd2pljus72idd74.cloudfront.net'
+    config.asset_host = 'http://assets.simplifybest.com/'
   end
-  config.asset_host = 'd2pljus72idd74.cloudfront.net'
+  config.asset_host = 'http://assets.simplifybest.com/'
 end
