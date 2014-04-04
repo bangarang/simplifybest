@@ -1,6 +1,10 @@
 	        <li class="storeitem" style="background-image: url(<%= asset_path(product.brand.image_url(:main)) if product.brand %>);">
 	            <ul class="product <%= product.brand.name if product.brand %>">
-	              <li class="thumbnail"><%= image_tag product.image_url.to_s if product.image? %></li>
+	              <li class="thumbnail">
+	              	<div class="image" style="background-image: url(<%= product.image_url.to_s if product.image? %>);">
+	              	</div>
+	              	
+	              </li>
 	              <li class="title"><h4><%= link_to product.name, product %></h4></li>
 	              <% if product.excerpt %><li class="bullet"><%= product.excerpt %></li><% end %>
 	              <% if product.maxdutycycle %><li class="bullet"><%= product.maxdutycycle %></li><% end %>

@@ -54,9 +54,15 @@ ul.product {
     list-style: none;
     text-align: center;
   }
+  li.thumbnail {
+    width: 100%;
+  }
 
-  li.thumbnail img {
-    max-height: 150px;
+  li.thumbnail div.image {
+    height: 150px;
+    width: 100%;
+    background-size: contain;
+    background-position: center;
   } 
   li.title h4 {
     font-weight: 200;
