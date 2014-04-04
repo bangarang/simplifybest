@@ -65,6 +65,12 @@ ul.product {
     background-position: center;
     background-repeat: no-repeat;
   } 
+  .brand_wrapper {
+    .brand_image {
+      height: 16px;
+    }
+    margin: 0 0 10px;
+  }
   li.title h4 {
     font-weight: 200;
     line-height: 50px;
@@ -87,15 +93,17 @@ ul.product {
   li:last-child {
     border-bottom: none;
   }
-  .moreinfo {
+  a.moreinfo {
     color: white;
     background: #222;
     text-align: center;
     display: table;
     width: 100%;
     line-height: 40px;
+    text-decoration: none;
+    text-transform: uppercase;
   }
-  .moreinfo:hover {
+  a.moreinfo:hover {
     background: #d00;
   }
 }
@@ -311,7 +319,7 @@ ul.home.button-group.radius li:last-child .button, ul.home.button-group.radius l
   -webkit-border-bottom-right-radius: 20px;
   border-bottom-right-radius: 20px;
 }
-.button.home {background-color: #eee; color: #1d1d1d; border: none; box-shadow: none;}
+.button.home {background-color: #eee; color: #1d1d1d; border: none; box-shadow: none; font-weight: 100; font-size: 23px; width: 100%;}
 .button.home:hover, .button.home:focus { background-color: #ddd; }
 
 .meterreading:hover{ color: #08c; }

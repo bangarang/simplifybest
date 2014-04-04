@@ -31,13 +31,12 @@
 
 .rbar ul li a, .rbar ul li a:hover, .rbar ul li a  { color: #d00; }
 
-.button.home { background:white; }
 .button.home:hover { background:#f6f6f6; }
 /*.shadow { border: #f6f6f6 solid thin; margin:10px 0; }*/
 .shadow form { padding: 0 15px 10px; }
 .copyright { background: transparent; } 
 
-h2.title { font-size: 54px; border-bottom:#ccc solid thin; text-align: center; }
+h2.title { font-size: 54px; border-bottom:#ccc solid thin; text-align: center; font-weight: 100;}
 
 iframe.maps { width:100%; height:450px; }
 
@@ -64,7 +63,7 @@ iframe.maps { width:100%; height:450px; }
 		text-align: center; 
 		h1.subheader { font-size: 44px;}
 	}
-	h2.title { font-size: 36px; }
+	h2.title { font-size: 36px;}
 	#menu { display: none; }
 	.rbar ul li a, .rbar ul li a:hover, .rbar ul li a  { color: white; }
 	.nav-bar li.has-flyout h4.menu-links a:first-child::after { border-color: white transparent transparent transparent; }
