@@ -37,6 +37,7 @@ section.groupfeatures {
 
 	.title {
 		border: none;
+		font-weight: 100;
 	}
 	.row {
 		padding: 0 15px;
@@ -47,8 +48,19 @@ section.groupfeatures {
 		display: block;
 		margin: auto;
 	}
+
+	.group_image {
+		height: 200px;
+		width: 100%;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center center;
+
+		margin-top: 1px;
+	}
 	h2.groupname {
 		text-align: center;
+		font-weight: 100;
 	}
 	[class*="column"]+[class*="column"]:last-child {
 		float: left;
@@ -68,9 +80,38 @@ section.groupfeatures {
 
 }
 .storeitem {
-	width: 50%;
+	width: 25%;
 	float: left;
 	display: block;
-	margin: -1px -1px 0 0;
+	margin: 0 -1px 0 0;
 	border: 1px solid #CCC;
+	background-size: 80px;
+	background-position: 5px 5px;
+	background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 768px) { 
+	.storeitem {
+		width: 50%;
+		border-top:none;
+	}
+	.storeitem:first-child {
+		border-top: 1px solid #CCC;
+	}
+	.storeitem:nth-child(2) {
+		border-top: 1px solid #CCC;
+	}
+}
+
+@media only screen and (max-width: 480px) { 
+	.storeitem {
+		width: 100%;
+		border-top:none;
+	}
+	.storeitem:first-child {
+		border-top: 1px solid #CCC;
+	}
+	.storeitem:nth-child(2) {
+		border-top: none;
+	}
 }

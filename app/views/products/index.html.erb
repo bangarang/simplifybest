@@ -13,7 +13,7 @@
 </div>
 <div class="row">
   <div class="large-12 columns">
-    <ul class="large-block-grid-4 small-block-grid-2">
+    <ul class="">
     <% for product in category.products.order(:name) %>
       <%= render 'products/product', product: product %>
     <% end %>

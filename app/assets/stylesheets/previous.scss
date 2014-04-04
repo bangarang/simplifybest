@@ -46,6 +46,7 @@ div.alert-box { color: #fff; margin-bottom:0; text-shadow: 0 -1px rgba(0, 0, 0, 
 
 
 ul.product {
+  margin: 15px;
   a:hover { 
     text-decoration:underline;
   }
@@ -55,16 +56,14 @@ ul.product {
   }
 
   li.thumbnail img {
-    max-height: 200px;
-    max-width: 100%;
+    max-height: 150px;
   } 
   li.title h4 {
-    background: #222;
-    font-weight: bold;
+    font-weight: 200;
     line-height: 50px;
     margin: 0;
     a {
-      color: white;
+      color: #333;
     }
   }
   li.bullet {
@@ -73,13 +72,24 @@ ul.product {
     background: #eee;
     line-height: 30px;
     text-align: center;
-    border-bottom: 1px dotted #ccc;
+    border-bottom: 1px solid #ccc;
     a { 
       font-weight: bold;
     }
   }
   li:last-child {
     border-bottom: none;
+  }
+  .moreinfo {
+    color: white;
+    background: #222;
+    text-align: center;
+    display: table;
+    width: 100%;
+    line-height: 40px;
+  }
+  .moreinfo:hover {
+    background: #d00;
   }
 }
 
@@ -92,27 +102,27 @@ ul.product {
 }
 
 
-ul.product.Kyocera {
-  li.title h4 {
-    background: $kyocera;
-  }
-  li.bullet {
-    a { 
-      color: $kyocera;
-    }
-  } 
-}
-ul.product.Muratec {
-  li.title h4 {
-    background: $muratec;
+// ul.product.Kyocera {
+//   li.title h4 {
+//     background: $kyocera;
+//   }
+//   li.bullet {
+//     a { 
+//       color: $kyocera;
+//     }
+//   } 
+// }
+// ul.product.Muratec {
+//   li.title h4 {
+//     background: $muratec;
 
-  }
-  li.bullet {
-    a { 
-      color: $muratec;
-    }
-  } 
-}
+//   }
+//   li.bullet {
+//     a { 
+//       color: $muratec;
+//     }
+//   } 
+// }
 
 .newsletter {
   background: #004454;

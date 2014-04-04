@@ -20,46 +20,27 @@
 		<h2 class="title">Check out our Products</h2>
 	</div>
 	<div class="row">
-		<div class="storeitem large-6 columns">
-			<%= image_tag('printer.jpg', class: "groups") %>
+		<div class="storeitem">
+			<div class="group_image" style="background-image: url(<%= asset_path('printer.jpg') %>)"></div>
 			<h2 class="groupname">Printers</h2>
 			<a href="/printers" class="moreinfo">EXPLORE</a>
 		</div>
-		<div class="storeitem large-6 columns">
-			<%= image_tag('smalloffice.jpg', class: "groups") %>
+		<div class="storeitem">
+			<div class="group_image" style="background-image: url(<%= asset_path('smalloffice.jpg') %>)"></div>
 			<h2 class="groupname">Small Office</h2>
 			<a href="/smalloffice" class="moreinfo">EXPLORE</a>
 		</div>
-		<div class="storeitem large-6 columns">
-			<%= image_tag('workgroup.jpg', class: "groups") %>
+		<div class="storeitem">
+			<div class="group_image" style="background-image: url(<%= asset_path('workgroup.jpg') %>)"></div>
 			<h2 class="groupname">Workgroup</h2>
 			<a href="/workgroup" class="moreinfo">EXPLORE</a>
 		</div>
-		<div class="storeitem large-6 columns">
-			<%= image_tag('enterprise.jpg', class: "groups") %>
+		<div class="storeitem">
+			<div class="group_image" style="background-image: url(<%= asset_path('enterprise.jpg') %>)"></div>
 			<h2 class="groupname">Enterprise</h2>
 			<a href="/enterprise" class="moreinfo">EXPLORE</a>
 		</div>
 	</div>
-</section>
-
-<section class="newsletter">
-  <div class="row">
-    <div class="large-7 columns">
-      <p class="comment subheader">Sign up for our Monthly Specials!</p>
-    </div>
-    <div class="large-5 columns">
-		<form action="http://simplifybest.us7.list-manage.com/subscribe/post?u=0520304538750e6d8a5e796e0&amp;id=df6de47979" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-			<div class="row collapse">
-				<div class="large-9 small-8 columns">
-					<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="me@example.com" required>
-				</div>
-				<div class="large-3 small-4 columns">
-					<button type="submit" class="small button expand" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">Subscribe</button>
-				</div>
-			</div>
-		</form>
-  </div>
 </section>
 
 <%= javascript_tag do %>
