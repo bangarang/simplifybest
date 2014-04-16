@@ -31,7 +31,7 @@ gem 'client_side_validations'
 gem 'client_side_validations-turbolinks'
 
 gem 'jquery-turbolinks'
-
+gem 'unf' 
 
 group :development, :test do
   gem 'sqlite3', '1.3.5'
