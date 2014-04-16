@@ -5,10 +5,18 @@
     <h2 class="title">Our Products</h2>
   </div>
 </div>
+<div class="linkage">
+  <ul>
+    <li>Jump to:</li>
+    <% for category in @categories %>
+      <li><a href="#<%= category.id %>"><%= category.name %></a></li>
+    <% end %>
+  </ul>
+</div>
 <% for category in @categories %>
 <div class="row">
   <div class="large-12 columns">
-    <h3 class="title"><%= link_to category.name, category %></h3>
+    <h3 class="title" id="<%= category.id %>" ><%= link_to category.name, category %></h3>
   </div>
 </div>
 <div class="row">

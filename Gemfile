@@ -19,7 +19,11 @@ gem 'font-awesome-rails'
 gem 'sitemap_generator'
 gem 'retina_tag'
 gem 'analytics-ruby'
-gem 'gibbon'
+
+gem 'bourbon'
+gem 'neat'
+gem 'tinymce-rails'
+gem 'jquery-fileupload-rails'
 
 
 gem 'turbolinks'

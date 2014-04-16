@@ -30,6 +30,7 @@
           or create one:
       <%= f.text_field :new_brand_name %>
       Featured: <%= f.check_box :featured %>
+      New: <%= f.check_box :new %>
       <div class="row">
         <div class="large-12 columns">
           <%= link_to "Show", @product %> |
@@ -50,7 +51,7 @@
     </div>
   </div>
 
-  <div class="row" id="gallery">
+<!--   <div class="row" id="gallery">
     <div class="large-12 columns"><h3 class="title">Gallery</h3></div> 
     <div class="large-12 columns ppicture_edit">
       <%= f.fields_for :product_pictures, :html => {:multipart => true} do |builder| %>
@@ -60,6 +61,27 @@
     <div class="large-3  large-centered  columns">
       <%= link_to_add_pics "Add a Product Picture", f, :product_pictures %>
     </div>
+  </div> -->
+  <div class="row" id="gallery">
+    <div class="large-12 columns"><h3 class="title">Gallery</h3></div> 
+    <div class="large-12 columns ppicture_edit">
+      <%= render @product.product_pictures %>
+    </div>
+
+
+    <%= s3_uploader_form post: product_pictures_url, as: "product_pictures[picture]", product: @product.id do %>
+      <%= file_field_tag :file, multiple: true %>
+    <% end %>
+
+    <script id="template-upload" type="text/x-tmpl">
+      <div class="upload">
+        {%=o.name%}
+        <div class="progress">
+          <div class="bar" style="width: 0%">
+          </div>
+        </div>
+      </div>
+    </script>
   </div>
 
   <div class="row" id='specifications'>

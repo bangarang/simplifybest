@@ -3,12 +3,14 @@
  *= require foundation
  *= require 'font-awesome'
  *= require 'previous'
- *= require 'z'
  */
 
 [data-clearing] li {
 	margin-right: 0px !important;
 }
+
+$red: #d00;
+$darkred: #b00;
 
 textarea { height: auto !important; }
 .copyright {
@@ -270,6 +272,7 @@ div#gallery {
 
 @import "specials";
 @import "home";
+@import "z";
 
 @media only screen and (max-width: 1030px) {
   	h3.title { margin:10px -15px 10px 0; }
