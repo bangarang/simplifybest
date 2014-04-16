@@ -17,14 +17,14 @@ class ProductPicturesController < ApplicationController
   end
 
   def create
-    @product_picture = ProductPicture.new(params[:product_picture])
+    @product_picture = ProductPicture.create!(params[:product_picture])
 
-    if @product_picture.save
-      flash[:notice] = "Successfully created Product Picture."
-      redirect_to edit_product_path(@product_picture.product)
-    else
-      render :action => 'new'
-    end
+    # if @product_picture.save
+    #   flash[:notice] = "Successfully created Product Picture."
+    #   redirect_to edit_product_path(@product_picture.product)
+    # else
+    #   render :action => 'new'
+    # end
   end
 
   def update

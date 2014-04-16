@@ -378,6 +378,26 @@
   </div>
 <% end %>
 </div>
+<% if can? :edit, @product %>
+  <div>
+    <div class="product_pictures">
+      <%= render(@product.product_pictures) %>
+    </div>
+      <%= s3_uploader_form post: product_pictures_url, as: "product_picture[pic_url]", product: @product.id do %>
+        <%= file_field_tag :file, multiple: true %>
+      <% end %>
+
+      <script id="template-upload" type="text/x-tmpl">
+        <div class="upload">
+          {%=o.name%}
+          <div class="progress">
+            <div class="bar" style="width: 0%">
+            </div>
+          </div>
+        </div>
+      </script>
+  </div>
+  <% end %>
 </div>
 <%= javascript_tag do %>
   mixpanel.track('<%= @product.name %>');

@@ -1,5 +1,5 @@
 <% if @product_picture.new_record? %>
   alert("Failed to upload product_picture: <%= j @product_picture.errors.full_messages.join(', ').html_safe %>");
 <% else %>
-  $(".ppicture_edit").append("<%= j render(@product_picture) %>");
+  $(".product_pictures").append("<%= j render(@product_picture) %>");
 <% end %>

@@ -31,7 +31,7 @@ module UploadHelper
         data: {
           post: @options[:post],
           as: @options[:as],
-          product: @options[:product],
+          product: @options[:product]
         }
       }
     end

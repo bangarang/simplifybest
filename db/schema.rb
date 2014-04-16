@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140414214408) do
+ActiveRecord::Schema.define(:version => 20140416205428) do
 
   create_table "accessories", :force => true do |t|
     t.string   "name"
@@ -137,6 +137,7 @@ ActiveRecord::Schema.define(:version => 20140414214408) do
     t.boolean  "workgroup"
     t.boolean  "enterprise"
     t.boolean  "new"
+    t.string   "pic_url"
   end
 
   add_index "products", ["slug"], :name => "index_products_on_slug"

@@ -20,11 +20,11 @@
 //= require foundation
 //= require rails.validations
 //= require rails.validations.turbolinks
-//= require_tree .
 //= require jquery.turbolinks
+//= require_tree .
 
 $(function(){ $(document).foundation(); });
-$(document).ready(function(){
+	$(document).ready(function(){
     $('.navicontainer').click(function() {
       $(this).toggleClass("clicked");
       $('ul.menu').toggle();
