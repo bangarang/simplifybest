@@ -1,7 +1,8 @@
 <div class="large-3 columns ppicture">
 	<div>
-		<% if f.object.name %>
-			<%= image_tag f.object.picture_url().to_s %>
+		<% if f.object %>
+			<%= image_tag f.object.picture_url().to_s if f.object.picture_url %>
+			<%= image_tag f.object.pic_url if f.object.pic_url %>
 			<%= f.hidden_field :product_id %>
 		    <%= f.text_field :name, :placeholder => "Name" %>
 		    <%= f.file_field :picture %>
