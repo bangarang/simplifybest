@@ -36,18 +36,28 @@
 <% unless @product.product_pictures.empty? %>
   <div class="row  hide-for-print" id="gallery">
     <div class="large-12 columns"> 
-      <ul class='large-block-grid-8 small-block-grid-3 clearing-thumbs' data-clearing>
-        <% for product_picture in @product.product_pictures %>
-          <% if product_picture.picture_url %>
-            <li><a href="<%= product_picture.picture_url %>"><img data-caption="<%= product_picture.name %>" src="<%= product_picture.picture_url %>" ></a></li>
-          <% end %>
-          <% if product_picture.pic_url %>
-            <li><a href="<%= product_picture.pic_url %>"><img data-caption="<%= product_picture.name %>" src="<%= product_picture.pic_url %>" ></a></li>
-          <% end %>
-        <% end %>
+      <ul class='large-block-grid-8 small-block-grid-3 clearing-thumbs product_pictures' data-clearing>
+        <%= render(@product.product_pictures) %>
       </ul>
     </div>
   </div>
+  <% if can? :edit, @product %>
+    <div class="row"> </div>
+      <%= s3_uploader_form post: product_pictures_url, as: "product_picture[pic_url]", product: @product.id do %>
+        <%= file_field_tag :file, multiple: true %>
+      <% end %>
+
+      <script id="template-upload" type="text/x-tmpl">
+        <div class="upload">
+          {%=o.name%}
+          <div class="progress">
+            <div class="bar" style="width: 0%">
+            </div>
+          </div>
+        </div>
+      </script>
+    </div>
+  <% end %>
 <% end %>
 
 <% if @specs %>
@@ -333,19 +343,10 @@
 <% unless @product.supply_items.empty? && @product.accessories.empty? %>
   <div class="row" id='accessories'>
    <div class="large-6 columns">
-      <table class="accessories"> 
-        <tbody>
-          <tr>
-            <td><h4>Accessories</h4></td>
-          </tr>
-          <% @product.accessories.each do |accessory| %>
-          <tr>
-            <td><b><%= accessory.name %></b></td>
-            <td><%= accessory.description %></td>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
+      <h4>Accessories</h4>
+      <p><% @product.accessories.each do |accessory| %>
+        <%= accessory.description %><%= ', ' unless accessory == @product.accessories.last %> 
+      <% end %></p>
     </div>
     
     <div class="large-6 columns">
@@ -381,29 +382,7 @@
   </div>
 <% end %>
 </div>
-<% if can? :edit, @product %>
-  <div>
-    <div class="row">
-      <div class="product_pictures">
-        <%= render(@product.product_pictures) %>
-      </div>
-    </div>
-    
-    <%= s3_uploader_form post: product_pictures_url, as: "product_picture[pic_url]", product: @product.id do %>
-      <%= file_field_tag :file, multiple: true %>
-    <% end %>
 
-      <script id="template-upload" type="text/x-tmpl">
-        <div class="upload">
-          {%=o.name%}
-          <div class="progress">
-            <div class="bar" style="width: 0%">
-            </div>
-          </div>
-        </div>
-      </script>
-  </div>
-  <% end %>
 </div>
 <%= javascript_tag do %>
   mixpanel.track('<%= @product.name %>');

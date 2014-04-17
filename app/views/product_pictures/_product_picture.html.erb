@@ -1,11 +1,6 @@
-<div class="large-3 columns ppicture">
-	<div>
-	  <%= image_tag product_picture.picture if product_picture.picture_url != nil %>
-	  <%= image_tag product_picture.pic_url if product_picture.pic_url != nil %>
-	  <p><%= product_picture.name.to_s %></p>
-	  <span>
-	    <%= link_to "edit", edit_product_picture_path(product_picture) %> |
-	    <%= link_to "remove", product_picture, :confirm => 'Are you sure?', :method => :delete %>
-	  </span>
-	</div>
-</div>
+<% if product_picture.picture_url %>
+  <li><a href="<%= product_picture.picture_url %>"><img data-caption="<%= product_picture.name %>" src="<%= product_picture.picture_url %>" ></a></li>
+<% end %>
+<% if product_picture.pic_url %>
+  <li><a href="<%= product_picture.pic_url %>"><img data-caption="<%= product_picture.name %>" src="<%= product_picture.pic_url %>" ></a></li>
+<% end %>
