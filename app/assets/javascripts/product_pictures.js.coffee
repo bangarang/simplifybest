@@ -10,7 +10,6 @@ jQuery ->
         data.context = $(tmpl("template-upload", file))
         $('#fileupload').append(data.context)
         data.submit()
-        console.log(file)
       else
         alert("#{file.name} is not a gif, jpeg, or png image file")
     
