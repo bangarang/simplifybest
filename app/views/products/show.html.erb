@@ -33,13 +33,16 @@
     </div>
   </div>
 
-<% unless !@product.product_pictures.empty? %>
+<% unless @product.product_pictures.empty? %>
   <div class="row  hide-for-print" id="gallery">
     <div class="large-12 columns"> 
       <ul class='large-block-grid-8 small-block-grid-3 clearing-thumbs' data-clearing>
         <% for product_picture in @product.product_pictures %>
-          <% if product_picture.picture %>
+          <% if product_picture.picture_url %>
             <li><a href="<%= product_picture.picture_url %>"><img data-caption="<%= product_picture.name %>" src="<%= product_picture.picture_url %>" ></a></li>
+          <% end %>
+          <% if product_picture.pic_url %>
+            <li><a href="<%= product_picture.pic_url %>"><img data-caption="<%= product_picture.name %>" src="<%= product_picture.pic_url %>" ></a></li>
           <% end %>
         <% end %>
       </ul>
