@@ -383,9 +383,12 @@
 </div>
 <% if can? :edit, @product %>
   <div>
-    <div class="product_pictures">
-      <%= render(@product.product_pictures) %>
+    <div class="row">
+      <div class="product_pictures">
+        <%= render(@product.product_pictures) %>
+      </div>
     </div>
+    
     <%= s3_uploader_form post: product_pictures_url, as: "product_picture[pic_url]", product: @product.id do %>
       <%= file_field_tag :file, multiple: true %>
     <% end %>

@@ -2,11 +2,10 @@
 	<div>
 	  <%= image_tag product_picture.picture if product_picture.picture_url != nil %>
 	  <%= image_tag product_picture.pic_url if product_picture.pic_url != nil %>
-	  <h3><%= product_picture.name.to_s %></h3>
+	  <p><%= product_picture.name.to_s %></p>
 	  <span>
 	    <%= link_to "edit", edit_product_picture_path(product_picture) %> |
 	    <%= link_to "remove", product_picture, :confirm => 'Are you sure?', :method => :delete %>
 	  </span>
 	</div>
-
 </div>
