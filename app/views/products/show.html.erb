@@ -342,19 +342,15 @@
 <% end %>
 <% unless @product.supply_items.empty? && @product.accessories.empty? %>
   <div class="row" id='accessories'>
-   <div class="large-6 columns">
+   <div class="large-12 columns">
       <h4>Accessories</h4>
-      <p><% @product.accessories.each do |accessory| %>
-        <%= accessory.description %><%= ', ' unless accessory == @product.accessories.last %> 
-      <% end %></p>
+      <h6><% @product.accessories.each do |accessory| %><%= accessory.description %><%= ', ' unless accessory == @product.accessories.last %><% end %></h6>
     </div>
     
-    <div class="large-6 columns">
+    <div class="large-12 columns">
+      <h4>Supply Items</h4>
       <table class="supplies"> 
         <tbody>
-        	<tr>
-          	<td><h4>Supply Items</h4></td>
-          </tr>
 			    <% @product.supply_items.each do |supply_item| %>
           <tr>
             <td><b><%= supply_item.name %></b></td>
