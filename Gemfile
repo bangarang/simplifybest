@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '1.9.3'
 
-gem 'rails', '3.2.11'
+gem 'rails', '3.2.17'
 gem 'newrelic_rpm'
 gem 'carrierwave'
 gem 'rmagick'

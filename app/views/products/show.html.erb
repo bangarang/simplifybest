@@ -33,7 +33,7 @@
     </div>
   </div>
 
-<% unless @product.product_pictures.empty? %>
+<% unless !@product.product_pictures.empty? %>
   <div class="row  hide-for-print" id="gallery">
     <div class="large-12 columns"> 
       <ul class='large-block-grid-8 small-block-grid-3 clearing-thumbs' data-clearing>
@@ -383,9 +383,9 @@
     <div class="product_pictures">
       <%= render(@product.product_pictures) %>
     </div>
-      <%= s3_uploader_form post: product_pictures_url, as: "product_picture[pic_url]", product: @product.id do %>
-        <%= file_field_tag :file, multiple: true %>
-      <% end %>
+    <%= s3_uploader_form post: product_pictures_url, as: "product_picture[pic_url]", product: @product.id do %>
+      <%= file_field_tag :file, multiple: true %>
+    <% end %>
 
       <script id="template-upload" type="text/x-tmpl">
         <div class="upload">

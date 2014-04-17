@@ -10,6 +10,7 @@ jQuery ->
         data.context = $(tmpl("template-upload", file))
         $('#fileupload').append(data.context)
         data.submit()
+        console.log(file)
       else
         alert("#{file.name} is not a gif, jpeg, or png image file")
     
@@ -23,10 +24,9 @@ jQuery ->
       domain = $('#fileupload').attr('action')
       path = $('#fileupload input[name=key]').val().replace('${filename}', file.name)
       to = $('#fileupload').data('post')
-      # gallery = $('#fileupload').data('gallery')
       content = {}
       content[$('#fileupload').data('as')] = domain + path
-      content["photo[product_id]"] = $('#fileupload').data('product')
+      content["product_picture[product_id]"] = $('#fileupload').data('product')
       $.post(to, content)
       data.context.remove() if data.context # remove progress bar
     

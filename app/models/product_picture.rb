@@ -3,13 +3,9 @@ class ProductPicture < ActiveRecord::Base
   belongs_to :product
   mount_uploader :picture, PictureUploader
 
-  before_create :default_name
+ #  before_create :default_name
 
-	# mount_uploader :image, ImageUploader
-
-	
-
-	def default_name
-    self.name ||= File.basename(pic_url, '.*').titleize if pic_url
-  end
+	# def default_name
+ #    self.name ||= File.basename(pic_url, '.*').titleize if pic_url
+ #  end
 end

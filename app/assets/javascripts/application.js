@@ -12,8 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery-fileupload/basic
-//= require jquery-fileupload/vendor/tmpl
 //= require angular
 //= require angular-resource
 //= require retina_tag
@@ -21,6 +19,9 @@
 //= require rails.validations
 //= require rails.validations.turbolinks
 //= require jquery.turbolinks
+//= require jquery-fileupload/basic
+//= require jquery-fileupload/vendor/tmpl
+//= require product_pictures
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
