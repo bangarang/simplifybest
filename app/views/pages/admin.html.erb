@@ -69,7 +69,7 @@
 				        <table class="products">
 				        	<% for product in category.products.order(:name) %>
 				        	<tr>
-				        	  <td><%= check_box_tag "product_ids[]", product.id, product.featured %></td>
+				        	  <td><%= check_box_tag "product_ids[]", product.id, product.new %></td>
 					          <td><%=link_to product.name, product %></td>
 					          <td><%= link_to "<i class='icon-edit'></i> Edit".html_safe, edit_product_path(product) %></td>
 					          <td><%= link_to "<i class='icon-trash'></i> Delete".html_safe, product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
