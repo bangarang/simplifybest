@@ -51,7 +51,7 @@ module UploadHelper
     end
 
     def url
-      "https://#{@options[:bucket]}.s3.amazonaws.com/"
+      "https://s3.amazonaws.com/#{@options[:bucket]}/"
     end
 
     def policy
