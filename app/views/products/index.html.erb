@@ -7,13 +7,13 @@
 </div>
 <div class="linkage">
   <ul>
-    <li>Jump to:</li>
     <% for category in @categories %>
       <li><a href="#<%= category.id %>"><%= category.name %></a></li>
     <% end %>
+    <li><a href="#legacy">Legacy</a></li>
   </ul>
 </div>
-<% for category in @categories %>
+<% for category in @current %>
 <div class="row">
   <div class="large-12 columns">
     <h3 class="title" id="<%= category.id %>" ><%= link_to category.name, category %></h3>
@@ -36,25 +36,18 @@
     <h2 class="title" id="legacy">Legacy Products</h2>
   </div>
 </div>
-<div class="linkage">
-  <ul>
-    <% for category in @categories %>
-      <li><a href="#<%= category.id %>"><%= category.name %></a></li>
-    <% end %>
-    <li><a href="#legacy">Legacy</a></li>
-  </ul>
-</div>
-<% for category in @categories %>
+
+<% for category in @legacy %>
 <div class="row">
   <div class="large-12 columns">
-    <h3 class="title" id="<%= category.id %>" ><%= link_to category.name, category %></h3>
+    <h3 class="title" ><%= category.name %></h3>
   </div>
 </div>
+
 <div class="row">
   <div class="large-12 columns">
-    <ul class="">
+    <ul>
     <% for product in category.products.order(:name) %>
-
       <%= render 'products/product', product: product if !product.new %>
     <% end %>
     </ul>

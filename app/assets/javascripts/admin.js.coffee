@@ -4,14 +4,10 @@
 
 jQuery -> 
 	$(".csm").click ->
-		$(".csm-content").slideToggle "fast"
-		$(".csm i").toggleClass("icon-angle-down").toggleClass("icon-angle-up")
+		$(this).parent().toggleClass "up"
 	$(".prods").click ->
-		$(".prods-content").slideToggle "fast"
-		$(".prods i").toggleClass("icon-angle-down").toggleClass("icon-angle-up")
+		$(this).parent().toggleClass "up"
 	$(".hm").click ->
-		$(".hm-content").slideToggle "fast"
-		$(".hm i").toggleClass("icon-angle-down").toggleClass("icon-angle-up")
+		$(this).parent().toggleClass "up"
 	$(".users").click ->
-		$(".users-content").slideToggle "fast"
-		$(".users i").toggleClass("icon-angle-down").toggleClass("icon-angle-up")
+		$(this).parent().toggleClass "up"

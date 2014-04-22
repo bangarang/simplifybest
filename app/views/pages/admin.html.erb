@@ -4,7 +4,7 @@
 		<h2 class="title">Administration</h2>
 	</div>
 	<div class="large-12 columns">
-		<h3 class="csm">Customer Service Messages ( <%= @messages.length %> )</h3>
+		<h3 class="csm arrow">Customer Service Messages ( <%= @messages.length %> )</h3>
 		<div class="row admin-edit csm-content">
 			<div class="large-12 columns links">
 				<div class="large-4 columns"><%= link_to "<i class='icon-plus'></i> New Meter Reading".html_safe, new_meter_path %></div>
@@ -51,7 +51,7 @@
 		</div>
 	</div>
 	<div class="large-6 columns">
-		<h3 class="prods">Products ( <%= @products.length %> )<i class="icon-angle-down right"></i></h3>
+		<h3 class="prods arrow">Products ( <%= @products.length %> )</h3>
 		<div class="row admin-edit prods-content">
 			<div class="large-12 columns links">
 		        <div class="large-6 columns"><%= link_to "<i class='icon-plus'></i> New Product".html_safe, new_product_path %></div>
@@ -86,7 +86,7 @@
   		</div>
 	</div>
 	<div class="large-6 columns">
-	  	<h3 class="users">Users ( <%= @users.length %> )<i class="icon-angle-down right"></i></h3>
+	  	<h3 class="users arrow">Users ( <%= @users.length %> )</h3>
 		<div class="row admin-edit users-content">
 			<div class="large-12 columns links"><%= link_to "<i class='icon-plus'></i> New User".html_safe, new_user_path %></div>
 			<table class="products">

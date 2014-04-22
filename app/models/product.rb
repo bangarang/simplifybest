@@ -73,4 +73,6 @@ class Product < ActiveRecord::Base
   def generate_slug
   	self.slug ||= name.parameterize
   end
+  scope :current, -> { where(new: true) }
+  scope :legacy, -> { where(new: false) }
 end

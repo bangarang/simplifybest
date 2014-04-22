@@ -4,6 +4,8 @@ class ProductsController < ApplicationController
   before_filter :authenticate_user!, :except => [:show, :index]
 
   def index
+    @current = Category.joins(:products).merge(Product.current)
+    @legacy = Category.joins(:products).merge(Product.legacy)
   end
 
   def new
